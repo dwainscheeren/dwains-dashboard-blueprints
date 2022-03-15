@@ -6,7 +6,7 @@ Note: this blueprint is a ported addon from Dwains Dashboard v2 addons. This por
 ##### Created by [Jeroen Klompen](https://github.com/klumpke/)
 
 
-### Installation
+### Installation of this Blueprint
 - Copy the content of the blueprint file `blueprint.yaml` into the blueprint installation block.
 
 

@@ -195,7 +195,7 @@ sensor:
 sun:
 ```
 
-## Installation Add-on
+## Installation of this Blueprint
 ---
 - Copy the `blueprint.yaml` content into the Blueprint installation codeblock.
 

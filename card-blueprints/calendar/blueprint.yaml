@@ -1,0 +1,32 @@
+blueprint:
+  name: Calendar card Blueprint
+  description: An calendar card by Jeroen Klompen
+  version: "1.0"
+  type: card
+  custom_cards:
+    - atomic-calendar-revive
+    - card-mod
+  input:
+    heading_title:
+      name: Heading title
+      description: This is the heading title
+    calendar_entity:
+      name: Calendar entity
+      description: The calendar entity
+
+card:
+  type: vertical-stack
+  cards:
+    - type: custom:dwains-heading-card
+      title: $heading_title$
+    - type: custom:dwains-flexbox-card
+      items_classes: 'col-xs-12'
+      cards:
+        - type: custom:atomic-calendar-revive
+          style: |
+            .cal-titleContainer {
+              display: none;
+            }
+          showProgressBar: false
+          entities:
+            - $calendar_entity$

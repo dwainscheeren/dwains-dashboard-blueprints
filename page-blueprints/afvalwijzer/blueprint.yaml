@@ -1,0 +1,74 @@
+blueprint:
+  name: Afvalwijzer page Blueprint
+  description: An afvalwijzer blueprint page by Jeroen Klompen
+  version: "1.0"
+  type: card
+  custom_cards:
+    - auto-entities
+  input:
+    sensor_today_entity:
+      name: Sensor today entity
+      description: This is the sensor today entity
+    sensor_tomorrow_entity:
+      name: Sensor tomorrow entity
+      description: This is the sensor tomorrow entity
+    wastecollector:
+      name: Wastecollector
+      description: The waste collector
+
+card:
+  type: custom:dwains-flexbox-card
+  items_classes: 'col-xs-12 col-sm-6 col-md-6 col-lg-6'
+  padding: true
+  cards:
+    - type: horizontal-stack
+      cards:
+        - type: picture-entity
+          entity: $sensor_today_entity$
+          name: Vandaag
+          image: /local/images/afval_geen_large.png
+          state_image:
+            'gft': /local/images/afval_gft_large.png
+            'papier': /local/images/afval_papier_large.png
+            'restafval': /local/images/afval_rest_large.png
+            'pmd': /local/images/afval_pmd_large.png
+            'pbd': /local/images/afval_pmd_large.png
+            'papier, pmd': /local/images/afval_papier-pmd_large.png
+            'kca': /local/images/afval_kca_large.png
+        - type: picture-entity
+          style: |
+            ha-card {
+              padding: 5px;
+              border-radius: 5px;
+              background-color: var(--dwains-theme-primary);
+            }
+          entity: $sensor_tomorrow_entity$
+          name: Morgen
+          image: /local/images/afval_geen_large.png
+          state_image:
+            'gft': /local/images/afval_gft_large.png
+            'papier': /local/images/afval_papier_large.png
+            'restafval': /local/images/afval_rest_large.png
+            'pmd': /local/images/afval_pmd_large.png
+            'pbd': /local/images/afval_pmd_large.png
+            'papier, pmd': /local/images/afval_papier-pmd_large.png
+            'kca': /local/images/afval_kca_large.png
+    - type: 'custom:auto-entities'
+      card:
+        type: glance
+        style: |
+          ha-card {
+            border-radius: 5px;
+            background-color: var(--dwains-theme-primary);
+          }
+      filter:
+        exclude:
+          - entity_id: $sensor_today_entity$
+          - entity_id: $sensor_tomorrow_entity$
+        include:
+          - entity_id: sensor.$wastecollector$*
+      show_header_toggle: false
+      sort:
+        attribute: Sort_date
+        method: attribute
+        numeric: true

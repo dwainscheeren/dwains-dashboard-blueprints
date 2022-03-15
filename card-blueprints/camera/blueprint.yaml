@@ -1,0 +1,34 @@
+blueprint:
+  name: Camera card Blueprint
+  description: An button card camera card by Jeroen Klompen
+  version: "1.0"
+  type: card
+  custom_cards:
+    - button-card
+  input:
+    camera_entity:
+      name: Camera entity
+      description: This is the camera entity
+
+card:
+  type: custom:button-card
+  entity: $camera_entity$
+  show_live_stream: "true"
+  show_entity_picture: "true"
+  show_name: false
+  layout: icon_name_state2nd
+  size: 50%
+  styles:
+    grid:
+      - grid-template-areas: '"i i"'
+      - grid-template-columns: 1fr
+      - grid-template-rows: 1fr
+    card:
+      - margin-bottom: 10px
+      - padding: 5px
+    icon:
+      - width: 100%
+      - height: 100%
+    img_cell:
+      - margin: none
+      - align-items: flex-end

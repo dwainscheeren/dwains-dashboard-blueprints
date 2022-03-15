@@ -1,0 +1,997 @@
+blueprint:
+  name: Weather dashboard page Blueprint
+  description: An weather dashboard page by Leon van der Linden
+  version: "1.0"
+  type: page
+  custom_cards:
+    - button-card
+    - weather-card
+    - mini-graph-card
+    - neerslag-card
+    - fold-entity-row
+    - multiple-entity-row
+    - state-switch
+  input:
+    weather_entity:
+      name: Weather entity
+      description: This is the weather entity
+
+card:
+  type: custom:dwains-flexbox-card
+  items_classes: 'col-xs-12'
+  cards:
+    - type: vertical-stack
+      item_classes: 'col-xs-12 col-sm-4'
+      cards:         
+          #Start of rooms and devices
+          - type: custom:state-switch
+            entity: hash
+            default: forecast
+            states:
+              #FORECAST VIEW
+              forecast:
+                type: vertical-stack
+                cards:
+                  - type: custom:dwains-flexbox-card
+                    padding: true
+                    cards:
+                      #heading  
+                      - type: horizontal-stack
+                        cards:
+                          - type: custom:button-card
+                            name: Forecast # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#forecast"
+                            styles:
+                              name:
+                                - color: var(--dwains-theme-accent)
+                          - type: custom:button-card
+                            name: Neerslag # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#neerslag"
+                          - type: custom:button-card
+                            name: Temp # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#temperatuur"
+                          - type: custom:button-card
+                            name: Stats # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#stats"
+                  - type: vertical-stack
+                    cards:
+                      - type: 'custom:weather-card'
+                        style: |
+                          ha-card {
+                            border-radius: 10px;
+                            padding-bottom: 10px;
+                            background-color: var(--dwains-theme-primary)
+                          }
+                          :host {
+                            --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                          }
+                          .card-header {
+                            padding: 5px 16px;
+                            font-size: 15px;
+                            font-weight: 700 !important;
+                          }
+                          #states {
+                            padding-top: 0px !important;
+                            padding-bottom: 0px !important;
+                          }
+                          .secondary {
+                            color: darkgray !important;
+                            margin-left: 2px !important;
+                          }
+                        entity: $weather_entity$
+                        current: true
+                        details: false
+                        forecast: true
+                        hourly_forecast: false
+                        number_of_forecasts: '5'
+                      - type: 'custom:neerslag-card'
+                        title: Voorspelling # <- translate the card name
+                        icon: 'ios:cloud-rain'
+                        style: |
+                          ha-card {
+                            border-radius: 10px;
+                            padding-bottom: 10px;
+                            background-color: var(--dwains-theme-primary)
+                          }
+                          :host {
+                            --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                          }
+                          .card-header {
+                            padding: 5px 16px;
+                            font-size: 15px;
+                            font-weight: 700 !important;
+                          }
+                          #states {
+                            padding-top: 0px !important;
+                            padding-bottom: 0px !important;
+                          }
+                          .secondary {
+                            color: darkgray !important;
+                            margin-left: 2px !important;
+                          }
+                        entities:
+                          - sensor.neerslag_buienalarm_regen_data
+                          - sensor.neerslag_buienradar_regen_data
+                      - type: 'custom:ha-card-weather-conditions'
+                        style: |
+                          ha-card {
+                            border-radius: 10px;
+                            padding-bottom: 10px;
+                            background-color: var(--dwains-theme-primary)
+                          }
+                          :host {
+                            --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                          }
+                          .card-header {
+                            padding: 5px 16px;
+                            font-size: 15px;
+                            font-weight: 700 !important;
+                          }
+                          #states {
+                            padding-top: 0px !important;
+                            padding-bottom: 0px !important;
+                          }
+                          .secondary {
+                            color: darkgray !important;
+                            margin-left: 2px !important;
+                          }
+                        uv:
+                          protection_window: binary_sensor.protection_window
+                          ozone_level: sensor.current_ozone_level
+                          uv_index: sensor.current_uv_index
+                          uv_level: sensor.current_uv_level
+                          max_uv_index: sensor.max_uv_index
+                          set_skin_type_1: sensor.skin_type_1_safe_exposure_time
+                          set_skin_type_2: sensor.skin_type_2_safe_exposure_time
+                          set_skin_type_3: sensor.skin_type_3_safe_exposure_time
+                          set_skin_type_4: sensor.skin_type_4_safe_exposure_time
+                          set_skin_type_5: sensor.skin_type_5_safe_exposure_time
+                          set_skin_type_6: sensor.skin_type_6_safe_exposure_time
+                          
+            #NEERSLAG VIEW
+              neerslag:
+                type: vertical-stack
+                cards:
+                  - type: custom:dwains-flexbox-card
+                    padding: true
+                    cards:
+                      #heading  
+                      - type: horizontal-stack
+                        cards:
+                          - type: custom:button-card
+                            name: Forecast # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#forecast"
+                          - type: custom:button-card
+                            name: Neerslag # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#neerslag"
+                            styles:
+                              name:
+                                - color: var(--dwains-theme-accent)
+                          - type: custom:button-card
+                            name: Temp # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#temperatuur"
+                          - type: custom:button-card
+                            name: Stats # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#stats"
+                    #Voorspelling 
+                  - type: vertical-stack
+                    cards:
+                      - type: 'custom:neerslag-card'
+                        title: Voorspelling # <- translate this line
+                        icon: 'ios:cloud-rain'
+                        style: |
+                          ha-card {
+                            border-radius: 10px;
+                            padding-bottom: 10px;
+                            background-color: var(--dwains-theme-primary)
+                          }
+                          :host {
+                            --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                          }
+                          .card-header {
+                            padding: 5px 16px;
+                            font-size: 15px;
+                            font-weight: 700 !important;
+                          }
+                          #states {
+                            padding-top: 0px !important;
+                            padding-bottom: 0px !important;
+                          }
+                          .secondary {
+                            color: darkgray !important;
+                            margin-left: 2px !important;
+                          }
+                        entities:
+                          - sensor.neerslag_buienalarm_regen_data
+                          - sensor.neerslag_buienradar_regen_data
+                          
+                      - type: 'custom:mini-graph-card'
+                        title: Afgelopen 24uur # <- translate this line
+                        icon: 'ios:cloud-rain'
+                        style: |
+                          ha-card {
+                            border-radius: 10px;
+                            padding-bottom: 10px;
+                            background-color: var(--dwains-theme-primary)
+                          }
+                          :host {
+                            --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                          }
+                          .card-header {
+                            padding: 5px 16px;
+                            font-size: 15px;
+                            font-weight: 700 !important;
+                          }
+                          #states {
+                            padding-top: 0px !important;
+                            padding-bottom: 0px !important;
+                          }
+                          .secondary {
+                            color: darkgray !important;
+                            margin-left: 2px !important;
+                          }
+                        entities:
+                          - sensor.apeldoorn_rain_last_24h # <- fill in the right sensor
+                        line_color: '#299ec2'
+                        hours_to_show: 12
+                        line_width: 1
+                        hour24: true
+                        points_per_hour: 2
+                        decimals: 0
+                        show:
+                          animate: true
+                          fill: true
+                          icon: true
+                          labels: false
+                          legend: false
+                          name: true
+                          graph: bar
+                          extrema: true
+                          average: true   
+                          
+                      - type: 'custom:mini-graph-card'
+                        title: Afgelopen uur # <- translate this line
+                        icon: 'ios:cloud-rain'
+                        style: |
+                          ha-card {
+                            border-radius: 10px;
+                            padding-bottom: 10px;
+                            background-color: var(--dwains-theme-primary)
+                          }
+                          :host {
+                            --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                          }
+                          .card-header {
+                            padding: 5px 16px;
+                            font-size: 15px;
+                            font-weight: 700 !important;
+                          }
+                          #states {
+                            padding-top: 0px !important;
+                            padding-bottom: 0px !important;
+                          }
+                          .secondary {
+                            color: darkgray !important;
+                            margin-left: 2px !important;
+                          }
+                        entities:
+                          - sensor.apeldoorn_rain_last_hour # <- fill in the right sensor
+                        line_color: '#299ec2'
+                        hours_to_show: 12
+                        line_width: 1
+                        hour24: true
+                        points_per_hour: 2
+                        decimals: 0
+                        show:
+                          animate: true
+                          fill: true
+                          icon: true
+                          labels: false
+                          legend: false
+                          name: true
+                          graph: bar
+                          extrema: true
+                          average: true   
+ 
+
+            #TEMP VIEW
+              temperatuur:
+                type: vertical-stack
+                cards:
+                  - type: custom:dwains-flexbox-card
+                    padding: true
+                    cards:
+                      #heading  
+                      - type: horizontal-stack
+                        cards:
+                          - type: custom:button-card
+                            name: Forecast # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#forecast"
+                          - type: custom:button-card
+                            name: Neerslag # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#neerslag"
+                          - type: custom:button-card
+                            name: Temp # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#temperatuur"
+                            styles:
+                              name:
+                                - color: var(--dwains-theme-accent)
+                          - type: custom:button-card
+                            name: Stats # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#stats"
+              #TEMP VIEW
+                  - type: vertical-stack
+                    cards:
+                      - type: 'custom:ha-card-weather-conditions'
+                        style: |
+                          ha-card {
+                            border-radius: 10px;
+                            padding-bottom: 10px;
+                            background-color: var(--dwains-theme-primary)
+                          }
+                          :host {
+                            --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                          }
+                          .card-header {
+                            padding: 5px 16px;
+                            font-size: 15px;
+                            font-weight: 700 !important;
+                          }
+                          #states {
+                            padding-top: 0px !important;
+                            padding-bottom: 0px !important;
+                          }
+                          .secondary {
+                            color: darkgray !important;
+                            margin-left: 2px !important;
+                          }
+                        uv:
+                          protection_window: binary_sensor.protection_window
+                          ozone_level: sensor.current_ozone_level
+                          uv_index: sensor.current_uv_index
+                          uv_level: sensor.current_uv_level
+                          max_uv_index: sensor.max_uv_index
+                          set_skin_type_1: sensor.skin_type_1_safe_exposure_time
+                          set_skin_type_2: sensor.skin_type_2_safe_exposure_time
+                          set_skin_type_3: sensor.skin_type_3_safe_exposure_time
+                          set_skin_type_4: sensor.skin_type_4_safe_exposure_time
+                          set_skin_type_5: sensor.skin_type_5_safe_exposure_time
+                          set_skin_type_6: sensor.skin_type_6_safe_exposure_time
+                      - type: 'custom:mini-graph-card'
+                        title: Buiten
+                        icon: 'ios:thermometer'
+                        style: |
+                          ha-card {
+                            border-radius: 10px;
+                            padding-bottom: 10px;
+                            background-color: var(--dwains-theme-primary)
+                          }
+                          :host {
+                            --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                          }
+                          .card-header {
+                            padding: 5px 16px;
+                            font-size: 15px;
+                            font-weight: 700 !important;
+                          }
+                          #states {
+                            padding-top: 0px !important;
+                            padding-bottom: 0px !important;
+                          }
+                          .secondary {
+                            color: darkgray !important;
+                            margin-left: 2px !important;
+                          }
+                        entities:
+                          - sensor.netatmo_netatmo_huis_netatmo_woonkamer_netatmo_tuin_temperature # <- fill in the right sensor
+                        line_color: '#299ec2'
+                        font_size: 80
+                        hours_to_show: 12
+                        line_width: 2
+                        hour24: true
+                        points_per_hour: 2
+                        decimals: 1
+                        show:
+                          animate: true
+                          fill: true
+                          icon: true
+                          labels: true
+                          legend: true
+                          name: true
+                          graph: line
+                          extrema: true
+                          average: true   
+                          
+                      - type: 'custom:mini-graph-card'
+                        title: Gevoelstemperatuur # <- translate this line
+                        icon: 'ios:thermometer'
+                        style: |
+                          ha-card {
+                            border-radius: 10px;
+                            padding-bottom: 10px;
+                            background-color: var(--dwains-theme-primary)
+                          }
+                          :host {
+                            --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                          }
+                          .card-header {
+                            padding: 5px 16px;
+                            font-size: 15px;
+                            font-weight: 700 !important;
+                          }
+                          #states {
+                            padding-top: 0px !important;
+                            padding-bottom: 0px !important;
+                          }
+                          .secondary {
+                            color: darkgray !important;
+                            margin-left: 2px !important;
+                          }
+                        entities:
+                          - sensor.apeldoorn_feel_temperature # <- fill in the right sensor
+                        line_color: '#299ec2'
+                        font_size: 80
+                        hours_to_show: 12
+                        line_width: 2
+                        hour24: true
+                        points_per_hour: 2
+                        decimals: 1
+                        show:
+                          animate: true
+                          fill: true
+                          icon: true
+                          labels: true
+                          legend: true
+                          name: true
+                          graph: line
+                          extrema: true
+                          average: true       
+
+                          
+
+
+              #STATS VIEW
+              stats:
+                type: vertical-stack
+                cards:
+                  - type: custom:dwains-flexbox-card
+                    padding: true
+                    cards:
+                      #heading  
+                      - type: horizontal-stack
+                        cards:
+                          - type: custom:button-card
+                            name: Forecast # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#forecast"
+                          - type: custom:button-card
+                            name: Neerslag # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#neerslag"
+                          - type: custom:button-card
+                            name: Temp # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#temperatuur"
+                          - type: custom:button-card
+                            name: Stats # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#stats"
+                            styles:
+                              name:
+                                - color: var(--dwains-theme-accent)
+                  - type: vertical-stack
+                    cards:
+                      - type: entities
+                        title: Statistieken
+                        style: |
+                          ha-card {
+                            border-radius: 10px;
+                            padding-bottom: 10px;
+                            background-color: var(--dwains-theme-primary)
+                          }
+                          :host {
+                            --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                          }
+                          .card-header {
+                            padding: 5px 16px;
+                            font-size: 15px;
+                            font-weight: 700 !important;
+                          }
+                          #states {
+                            padding-top: 0px !important;
+                            padding-bottom: 0px !important;
+                          }
+                          .secondary {
+                            color: darkgray !important;
+                            margin-left: 2px !important;
+                          }
+                        entities:
+                          - entity: sensor.season
+                          - entity: sensor.moon
+                          - entity: sun.sun
+                          - entity: sensor.knmi_weercode
+                          - entity: sensor.knmi_weer_waarschuwing
+                          - type: custom:fold-entity-row
+                            head:
+                              type: section
+                              label: Meer informatie
+                            entities:
+                              - entity: sensor.apeldoorn_barometer # <- fill in the right sensor
+                              - entity: sensor.apeldoorn_barometer_value # <- fill in the right sensor
+                              - entity: sensor.apeldoorn_humidity # <- fill in the right sensor
+                              - entity: sensor.apeldoorn_pressure # <- fill in the right sensor
+                              - entity: sensor.apeldoorn_visibility # <- fill in the right sensor
+                              - entity: sensor.apeldoorn_wind_speed # <- fill in the right sensor
+                                name: Wind snelheid
+                              - entity: sensor.apeldoorn_wind_direction # <- fill in the right sensor
+                                name: Wind richting
+                                icon: 'mdi:compass'
+                              - entity: sensor.apeldoorn_ground_temperature # <- fill in the right sensor
+                                name: Grond temperatuur
+                        
+                                    
+                      - type: entities
+                        title: Pollen
+                        style: |
+                          ha-card {
+                            border-radius: 10px;
+                            padding-bottom: 10px;
+                            background-color: var(--dwains-theme-primary)
+                          }
+                          :host {
+                            --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                          }
+                          .card-header {
+                            padding: 5px 16px;
+                            font-size: 15px;
+                            font-weight: 700 !important;
+                          }
+                          #states {
+                            padding-top: 0px !important;
+                            padding-bottom: 0px !important;
+                          }
+                          .secondary {
+                            color: darkgray !important;
+                            margin-left: 2px !important;
+                          }
+                        entities:
+                          - entity: sensor.pollen_tree_count
+                            type: 'custom:multiple-entity-row'
+                            entities:
+                              - entity: sensor.pollen_bomen
+                                name: false
+                          - entity: sensor.pollen_grass_count
+                            type: 'custom:multiple-entity-row'
+                            entities:
+                              - entity: sensor.pollen_grassen
+                                name: false
+                          - entity: sensor.pollen_weed_count
+                            icon: mdi:nature
+                            type: 'custom:multiple-entity-row'
+                            entities:
+                              - entity: sensor.pollen_onkruiden
+                                name: false
+                          - entity: sensor.pollen_last_updated
+
+
+ 
+#RADAR VIEWS
+        
+    - type: vertical-stack
+      item_classes: 'col-xs-12 col-sm-8'
+      cards:         
+         
+          #Start of rooms and devices
+          - type: custom:state-switch
+            entity: hash
+            default: forecast
+            states:
+              #RADAR VIEW 
+              forecast:
+                type: vertical-stack
+                cards:
+                  - type: custom:dwains-flexbox-card
+                    padding: true
+                    cards:
+                      #heading  
+                      - type: horizontal-stack
+                        cards:
+                          - type: custom:button-card
+                            name: Radar # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#forecast"
+                            styles:
+                              name:
+                                - color: var(--dwains-theme-accent)
+                          - type: custom:button-card
+                            name: Neerslag # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#neerslag"
+                          - type: custom:button-card
+                            name: Temp # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#temperatuur"
+                          - type: custom:button-card
+                            name: Wind # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#wind"
+                          - type: custom:button-card
+                            #name: Stats # <- DONT CHANGE THIS LINE
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#stats"
+                  - type: iframe
+                    style: |
+                      ha-card {
+                        border-radius: 10px;
+                        padding-bottom: 10px;
+                        background-color: var(--dwains-theme-primary)
+                      }
+                       :host {
+                         --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                      }
+                      .card-header {
+                        padding: 5px 16px;
+                        font-size: 15px;
+                        font-weight: 700 !important;
+                      }
+                      #states {
+                        padding-top: 0px !important;
+                        padding-bottom: 0px !important;
+                      }
+                      .secondary {
+                        color: darkgray !important;
+                        margin-left: 2px !important;
+                      }
+                    aspect_ratio: 80%
+                    url: >-
+                      https://embed.windy.com/embed2.html?lat=51.822&lon=5.669&detailLat=51.841&detailLon=5.955&width=750&height=800&zoom=7&level=surface&overlay=radar&product=radar&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=km%2Fh&metricTemp=%C2%B0C&radarRange=-1
+                    name: Windy.com
+                    show_state: false
+              #REGEN VIEW 
+              neerslag:
+                type: vertical-stack
+                cards:
+                  - type: custom:dwains-flexbox-card
+                    padding: true
+                    cards:
+                      #heading  
+                      - type: horizontal-stack
+                        cards:
+                          - type: custom:button-card
+                            name: Radar # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#forecast"
+                          - type: custom:button-card
+                            name: Neerslag # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#neerslag"
+                            styles:
+                              name:
+                                - color: var(--dwains-theme-accent)
+                          - type: custom:button-card
+                            name: Temp # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#temperatuur"
+                          - type: custom:button-card
+                            name: Wind # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#wind"
+                          - type: custom:button-card
+                            #name: Stats # <- DONT CHANGE THIS LINE
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#stats"
+                    #regen row 1   
+                  - type: iframe
+                    style: |
+                      ha-card {
+                        border-radius: 10px;
+                        padding-bottom: 10px;
+                        background-color: var(--dwains-theme-primary)
+                      }
+                       :host {
+                         --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                      }
+                      .card-header {
+                        padding: 5px 16px;
+                        font-size: 15px;
+                        font-weight: 700 !important;
+                      }
+                      #states {
+                        padding-top: 0px !important;
+                        padding-bottom: 0px !important;
+                      }
+                      .secondary {
+                        color: darkgray !important;
+                        margin-left: 2px !important;
+                      }
+                    aspect_ratio: 80%
+                    url: >-
+                      https://embed.windy.com/embed2.html?lat=51.822&lon=5.669&detailLat=52.220&detailLon=5.960&width=750&height=800&zoom=7&level=surface&overlay=rain&product=ecmwf&menu=&message=true&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=km%2Fh&metricTemp=%C2%B0C&radarRange=-1
+                    name: Windy.com
+                    show_state: false
+                    show_name: false
+              #WIND VIEW 
+              wind:
+                type: vertical-stack
+                cards:
+                  - type: custom:dwains-flexbox-card
+                    padding: true
+                    cards:
+                      #heading  
+                      - type: horizontal-stack
+                        cards:
+                          - type: custom:button-card
+                            name: Radar # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#forecast"
+                          - type: custom:button-card
+                            name: Neerslag # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#neerslag"
+                          - type: custom:button-card
+                            name: Temp # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#temperatuur"
+                          - type: custom:button-card
+                            name: Wind # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#wind"
+                            styles:
+                              name:
+                                - color: var(--dwains-theme-accent)
+                          - type: custom:button-card
+                            #name: Stats # <- DONT CHANGE THIS LINE
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#stats"              
+                    #wind row 1   
+                  - type: iframe
+                    style: |
+                      ha-card {
+                        border-radius: 10px;
+                        padding-bottom: 10px;
+                        background-color: var(--dwains-theme-primary)
+                      }
+                       :host {
+                         --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                      }
+                      .card-header {
+                        padding: 5px 16px;
+                        font-size: 15px;
+                        font-weight: 700 !important;
+                      }
+                      #states {
+                        padding-top: 0px !important;
+                        padding-bottom: 0px !important;
+                      }
+                      .secondary {
+                        color: darkgray !important;
+                        margin-left: 2px !important;
+                      }
+                    aspect_ratio: 80%
+                    url: >-
+                      https://embed.windy.com/embed2.html?lat=51.822&lon=5.669&detailLat=52.220&detailLon=5.960&width=750&height=800&zoom=7&level=surface&overlay=wind&product=ecmwf&menu=&message=true&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=km%2Fh&metricTemp=%C2%B0C&radarRange=-1
+                    name: Windy.com
+                    show_state: false
+                    show_name: false
+ 
+              #TEMP VIEW 
+              temperatuur:
+                type: vertical-stack
+                cards:
+                  - type: custom:dwains-flexbox-card
+                    padding: true
+                    cards:
+                      #heading  
+                      - type: horizontal-stack
+                        cards:
+                          - type: custom:button-card
+                            name: Radar # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#forecast"
+                          - type: custom:button-card
+                            name: Neerslag # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#neerslag"
+                          - type: custom:button-card
+                            name: Temp # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#temperatuur"
+                            styles:
+                              name:
+                                - color: var(--dwains-theme-accent)
+                          - type: custom:button-card
+                            name: Wind # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#wind"
+                          - type: custom:button-card
+                            #name: Stats # <- DONT CHANGE THIS LINE
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#stats"
+                    #iFRAME TEMP                     
+                  - type: iframe
+                    style: |
+                      ha-card {
+                        border-radius: 10px;
+                        padding-bottom: 10px;
+                        background-color: var(--dwains-theme-primary)
+                      }
+                       :host {
+                         --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                      }
+                      .card-header {
+                        padding: 5px 16px;
+                        font-size: 15px;
+                        font-weight: 700 !important;
+                      }
+                      #states {
+                        padding-top: 0px !important;
+                        padding-bottom: 0px !important;
+                      }
+                      .secondary {
+                        color: darkgray !important;
+                        margin-left: 2px !important;
+                      }
+                    aspect_ratio: 80%
+                    url: >-
+                      https://embed.windy.com/embed2.html?lat=51.822&lon=5.669&detailLat=52.220&detailLon=5.960&width=750&height=800&zoom=7&level=surface&overlay=temp&product=ecmwf&menu=&message=true&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=km%2Fh&metricTemp=%C2%B0C&radarRange=-1
+                    name: Windy.com
+                    show_state: false
+                    show_name: false
+      
+              #stats VIEW 
+              stats:
+                type: vertical-stack
+                cards:
+                  - type: custom:dwains-flexbox-card
+                    padding: true
+                    cards:
+                      #heading  
+                      - type: horizontal-stack
+                        cards:
+                          - type: custom:button-card
+                            name: Radar # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#forecast"
+                          - type: custom:button-card
+                            name: Neerslag # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#neerslag"
+                          - type: custom:button-card
+                            name: Temp # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#temperatuur"
+                          - type: custom:button-card
+                            name: Wind # <- translate the button name
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#wind"
+                          - type: custom:button-card
+                            #name: Stats # <- DONT CHANGE THIS LINE
+                            template: partials_heading_switch
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#stats"
+                            styles:
+                              name:
+                                - color: var(--dwains-theme-accent)
+                #iFRAME PRESSURE 
+                  - type: iframe
+                    style: |
+                      ha-card {
+                        border-radius: 10px;
+                        padding-bottom: 10px;
+                        background-color: var(--dwains-theme-primary)
+                      }
+                       :host {
+                         --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                      }
+                      .card-header {
+                        padding: 5px 16px;
+                        font-size: 15px;
+                        font-weight: 700 !important;
+                      }
+                      #states {
+                        padding-top: 0px !important;
+                        padding-bottom: 0px !important;
+                      }
+                      .secondary {
+                        color: darkgray !important;
+                        margin-left: 2px !important;
+                      }
+                    aspect_ratio: 80%
+                    url: >-
+                      https://embed.windy.com/embed2.html?lat=51.841&lon=5.955&detailLat=51.841&detailLon=5.955&width=750&height=800&zoom=7&level=surface&overlay=pressure&product=ecmwf&menu=&message=true&marker=true&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=km%2Fh&metricTemp=%C2%B0C&radarRange=-1
+                    name: Windy.com
+                    show_state: false
+                    show_name: false

@@ -1,7 +1,7 @@
 blueprint:
   name: Weather dashboard page Blueprint
   description: An weather dashboard page by Leon van der Linden
-  version: "1.0"
+  version: "1.1"
   type: page
   custom_cards:
     - button-card
@@ -40,7 +40,7 @@ card:
                         cards:
                           - type: custom:button-card
                             name: Forecast # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#forecast"
@@ -49,19 +49,19 @@ card:
                                 - color: var(--dwains-theme-accent)
                           - type: custom:button-card
                             name: Neerslag # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#neerslag"
                           - type: custom:button-card
                             name: Temp # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#temperatuur"
                           - type: custom:button-card
                             name: Stats # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#stats"
@@ -172,13 +172,13 @@ card:
                         cards:
                           - type: custom:button-card
                             name: Forecast # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#forecast"
                           - type: custom:button-card
                             name: Neerslag # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#neerslag"
@@ -187,13 +187,13 @@ card:
                                 - color: var(--dwains-theme-accent)
                           - type: custom:button-card
                             name: Temp # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#temperatuur"
                           - type: custom:button-card
                             name: Stats # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#stats"
@@ -330,19 +330,19 @@ card:
                         cards:
                           - type: custom:button-card
                             name: Forecast # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#forecast"
                           - type: custom:button-card
                             name: Neerslag # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#neerslag"
                           - type: custom:button-card
                             name: Temp # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#temperatuur"
@@ -351,7 +351,7 @@ card:
                                 - color: var(--dwains-theme-accent)
                           - type: custom:button-card
                             name: Stats # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#stats"
@@ -498,25 +498,25 @@ card:
                         cards:
                           - type: custom:button-card
                             name: Forecast # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#forecast"
                           - type: custom:button-card
                             name: Neerslag # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#neerslag"
                           - type: custom:button-card
                             name: Temp # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#temperatuur"
                           - type: custom:button-card
                             name: Stats # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#stats"
@@ -642,7 +642,7 @@ card:
                         cards:
                           - type: custom:button-card
                             name: Radar # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#forecast"
@@ -651,25 +651,25 @@ card:
                                 - color: var(--dwains-theme-accent)
                           - type: custom:button-card
                             name: Neerslag # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#neerslag"
                           - type: custom:button-card
                             name: Temp # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#temperatuur"
                           - type: custom:button-card
                             name: Wind # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#wind"
                           - type: custom:button-card
                             #name: Stats # <- DONT CHANGE THIS LINE
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#stats"
@@ -713,13 +713,13 @@ card:
                         cards:
                           - type: custom:button-card
                             name: Radar # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#forecast"
                           - type: custom:button-card
                             name: Neerslag # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#neerslag"
@@ -728,19 +728,19 @@ card:
                                 - color: var(--dwains-theme-accent)
                           - type: custom:button-card
                             name: Temp # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#temperatuur"
                           - type: custom:button-card
                             name: Wind # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#wind"
                           - type: custom:button-card
                             #name: Stats # <- DONT CHANGE THIS LINE
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#stats"
@@ -786,25 +786,25 @@ card:
                         cards:
                           - type: custom:button-card
                             name: Radar # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#forecast"
                           - type: custom:button-card
                             name: Neerslag # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#neerslag"
                           - type: custom:button-card
                             name: Temp # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#temperatuur"
                           - type: custom:button-card
                             name: Wind # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#wind"
@@ -813,7 +813,7 @@ card:
                                 - color: var(--dwains-theme-accent)
                           - type: custom:button-card
                             #name: Stats # <- DONT CHANGE THIS LINE
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#stats"              
@@ -860,19 +860,19 @@ card:
                         cards:
                           - type: custom:button-card
                             name: Radar # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#forecast"
                           - type: custom:button-card
                             name: Neerslag # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#neerslag"
                           - type: custom:button-card
                             name: Temp # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#temperatuur"
@@ -881,13 +881,13 @@ card:
                                 - color: var(--dwains-theme-accent)
                           - type: custom:button-card
                             name: Wind # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#wind"
                           - type: custom:button-card
                             #name: Stats # <- DONT CHANGE THIS LINE
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#stats"
@@ -934,31 +934,31 @@ card:
                         cards:
                           - type: custom:button-card
                             name: Radar # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#forecast"
                           - type: custom:button-card
                             name: Neerslag # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#neerslag"
                           - type: custom:button-card
                             name: Temp # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#temperatuur"
                           - type: custom:button-card
                             name: Wind # <- translate the button name
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#wind"
                           - type: custom:button-card
                             #name: Stats # <- DONT CHANGE THIS LINE
-                            template: partials_heading_switch
+                            template: weather_dashboard_blueprint_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#stats"
@@ -995,3 +995,19 @@ card:
                     name: Windy.com
                     show_state: false
                     show_name: false
+
+
+button_card_templates:
+  weather_dashboard_blueprint_heading:
+    show_icon: false
+    styles:
+      card:
+        - box-shadow: none
+        - padding: 6px 0 0 0
+        - background: transparent
+        - width: 90px
+      name:
+        - font-weight: bold
+        - justify-self: start
+        - font-size: 16px
+        - padding-left: 1px

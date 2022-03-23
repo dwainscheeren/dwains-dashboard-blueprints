@@ -1,0 +1,59 @@
+blueprint:
+  custom_cards:
+  - button-card
+  description: Scenes card by mase
+  input:
+    scene_entity:
+      description: This is the scene
+      name: Select scene
+      type: entity-picker
+    scene_icon:
+      description: Icon picker
+      name: Icon picker
+      type: icon-picker
+    scene_name:
+      description: This is the scene name
+      name: Scene name
+      type: text-field
+  name: Scenes card Blueprint
+  type: card
+  version: '1.0'
+card:
+  entity: $scene_entity$
+  icon: $scene_icon$
+  name: $scene_name$
+  styles:
+    card:
+    - border-radius: 12px
+    - margin-bottom: 0px
+    - padding-top: 14px
+    - padding-bottom: 14px
+    grid:
+    - grid-template-areas: '"i n"'
+    - grid-template-columns: 35% 65%
+    - grid-template-rows: min-content
+    icon:
+    - color: var(--primary-color)
+    - width: 55%
+    img_cell:
+    - width: 45px
+    - height: 45px
+    - border-radius: 100%
+    - background: var(--secondary-background-color)
+    name:
+    - color: var(--primary-text-color)
+    - justify-self: start
+    - font-size: 15px
+    - align-self: center
+    state:
+    - justify-self: start
+    - align-self: left
+    - font-size: 13px
+    - color: var(--disabled-text-color)
+  tap_action:
+    action: call-service
+    haptic: heavy
+    service: scene.turn_on
+    service_data:
+      entity_id: $scene_entity$
+  type: custom:button-card

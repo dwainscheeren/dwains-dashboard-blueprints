@@ -1,0 +1,103 @@
+blueprint:
+  name: One Person Page Blueprint   test
+  description: An person page by Michel Jourdain
+  version: "1.0.3"
+  type: page
+  custom_cards:
+    - mini-graph-card
+  input:
+    person_name:
+      name: Person name
+      description: This the name of the person
+      type: text-field
+    person_entity:
+      name: Person entity
+      description: The person entity
+      type: entity-picker
+    tracker_entity:
+      name: Tracker entity
+      description: The tracker entity
+      type: entity-picker
+    battery_charging_entity:
+      name: Battery charging
+      description: The battery charging entity
+      type: entity-picker
+    battery_level_entity:
+      name: Battery level
+      description: The battery level entity
+      type: entity-picker
+
+card:
+  type: custom:dwains-flexbox-card
+  items_classes: 'col-xs-12'
+  cards:
+  
+    - type: vertical-stack
+      item_classes: 'col-xs-12 col-sm-6'
+      cards:      
+      
+        - type: custom:dwains-heading-card
+          title: $person_name$
+
+        - type: entities
+          entities:
+             - entity: $person_entity$
+          state_color: true
+                    
+        - type: custom:dwains-heading-card
+          title: Displacements for 24 hours
+                
+        - type: history-graph
+          entities:
+            - entity: $tracker_entity$
+          hours_to_show: 24
+          refresh_interval: 0
+                    
+        - type: custom:dwains-heading-card
+          title: Battery charging
+
+        - type: history-graph
+          entities:
+            - entity: $battery_charging_entity$
+          hours_to_show: 24
+          refresh_interval: 0
+
+        - type: custom:dwains-heading-card
+          title: Battery charge level
+          
+        - type: 'custom:mini-graph-card'
+          style: |
+            .cal-titleContainer {
+              display: none;
+            }
+          entities: 
+            - entity: $battery_level_entity$
+          line_color: green
+          hours_to_show: 24
+          line_width: 2
+          hour24: true
+          points_per_hour: 2
+          decimals: 0
+          show:
+            animate: true
+            fill: true
+            icon: false
+            labels: false
+            legend: false
+            name: false
+            graph: bar
+            extrema: false
+            average: false   
+
+    - type: vertical-stack
+      item_classes: 'col-xs-12 col-sm-6'
+      cards:     
+          
+        - type: custom:dwains-heading-card
+          title: Map
+            
+        - type: map
+          entities:
+             - entity: $tracker_entity$
+          hours_to_show: 24
+          default_zoom: 12

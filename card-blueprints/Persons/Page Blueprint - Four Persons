@@ -1,0 +1,565 @@
+blueprint:
+  name: Four Persons Page Blueprint test
+  description: Four persons page by Michel Jourdain
+  version: "1.0.2"
+  type: page
+  
+  custom_cards:
+    - mini-graph-card
+    - state-switch
+    - button-card
+    
+  input:
+  
+    11_person_name:
+      name: Name person one
+      description: Name of the person one
+      type: text-field
+    12_person_entity:
+      name: Entity person one
+      description: The entity of person one
+      type: entity-picker
+    13_tracker_entity:
+      name: Tracker entity person one
+      description: Tracker entity of person one
+      type: entity-picker
+    14_battery_charging_entity:
+      name: Battery charging person one
+      description: Battery charging entity of person one
+      type: entity-picker
+    15_battery_level_entity:
+      name: Battery level person one
+      description: Battery level entity of person one
+      type: entity-picker
+      
+    21_person_name:
+      name: Name person two
+      description: Name of the person two
+      type: text-field
+    22_person_entity:
+      name: Entity person two
+      description: The entity of person two
+      type: entity-picker
+    23_tracker_entity:
+      name: Tracker entity person two
+      description: Tracker entity of person two
+      type: entity-picker
+    24_battery_charging_entity:
+      name: Battery charging person two
+      description: Battery charging entity of person two
+      type: entity-picker
+    25_battery_level_entity:
+      name: Battery level person two
+      description: Battery level entity of person two
+      type: entity-picker
+      
+    31_person_name:
+      name: Name person three
+      description: Name of the person three
+      type: text-field
+    32_person_entity:
+      name: Entity person three
+      description: The entity of person three
+      type: entity-picker
+    33_tracker_entity:
+      name: Tracker entity person three
+      description: Tracker entity of person three
+      type: entity-picker
+    34_battery_charging_entity:
+      name: Battery charging person three
+      description: Battery charging entity of person three
+      type: entity-picker
+    35_battery_level_entity:
+      name: Battery level person three
+      description: Battery level entity of person three
+      type: entity-picker
+      
+    41_person_name:
+      name: Name person four
+      description: Name of the person four
+      type: text-field
+    42_person_entity:
+      name: Entity person four
+      description: The entity of person four
+      type: entity-picker
+    43_tracker_entity:
+      name: Tracker entity person four
+      description: Tracker entity of person four
+      type: entity-picker
+    44_battery_charging_entity:
+      name: Battery charging person four
+      description: Battery charging entity of person four
+      type: entity-picker
+    45_battery_level_entity:
+      name: Battery level person four
+      description: Battery level entity of person four
+      type: entity-picker
+
+card:
+
+# Persons
+
+  type: custom:dwains-flexbox-card
+  items_classes: 'col-xs-12'
+  cards:
+    - type: vertical-stack
+      item_classes: 'col-xs-12 col-sm-7'
+      cards:         
+         
+          - type: custom:state-switch
+            entity: hash
+            default: page01
+            states:
+              page01:
+                type: vertical-stack
+                cards:
+                  - type: custom:dwains-flexbox-card
+                    padding: true
+                    cards:
+                      - type: horizontal-stack
+                        cards:
+                          - type: custom:button-card
+                            name: $11_person_name$
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#page01"
+                            styles:
+                              card:
+                                 - width: 80px
+                              name:
+                                 - color: lightgreen
+                          - type: custom:button-card
+                            name: $21_person_name$
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#page02"
+                            styles:
+                              card:
+                                 - width: 80px
+                          - type: custom:button-card
+                            name: $31_person_name$
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#page03"
+                            styles:
+                              card:
+                                 - width: 80px
+                          - type: custom:button-card
+                            name: $41_person_name$
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#page04"
+                            styles:
+                              card:
+                                 - width: 80px
+               
+                  - type: custom:dwains-heading-card
+                    title: $11_person_name$
+
+                  - type: entities
+                    entities:
+                      - entity: $12_person_entity$
+                    state_color: true
+                    
+                  - type: custom:dwains-heading-card
+                    title: Displacements for 24 hours
+                    
+                  - type: history-graph
+                    entities:
+                      - entity: $13_tracker_entity$
+                    hours_to_show: 24
+                    refresh_interval: 0
+                    
+                  - type: custom:dwains-heading-card
+                    title: Battery charging
+
+                  - type: history-graph
+                    entities:
+                      - entity: $14_battery_charging_entity$
+                    hours_to_show: 24
+                    refresh_interval: 0
+                    
+                  - type: custom:dwains-heading-card
+                    title: Battery charge level
+          
+                  - type: 'custom:mini-graph-card'
+                    entities: 
+                      - entity: $15_battery_level_entity$
+                    line_color: green
+                    hours_to_show: 24
+                    line_width: 2
+                    hour24: true
+                    points_per_hour: 2
+                    decimals: 0
+                    show:
+                      animate: true
+                      fill: true
+                      icon: false
+                      labels: false
+                      legend: false
+                      name: false
+                      graph: bar
+                      extrema: false
+                      average: false   
+
+              page02:
+                type: vertical-stack
+                cards:
+                  - type: custom:dwains-flexbox-card
+                    padding: true
+                    cards:
+                      - type: horizontal-stack
+                        cards:
+                          - type: custom:button-card
+                            name: $11_person_name$
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#page01"
+                            styles:
+                              card:
+                                 - width: 80px
+                          - type: custom:button-card
+                            name: $21_person_name$
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#page02"
+                            styles:
+                              card:
+                                 - width: 80px
+                              name:
+                                 - color: lightgreen
+                          - type: custom:button-card
+                            name: $31_person_name$
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#page03"
+                            styles:
+                              card:
+                                 - width: 80px
+                          - type: custom:button-card
+                            name: $41_person_name$
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#page04"
+                            styles:
+                              card:
+                                 - width: 80px
+
+                  - type: custom:dwains-heading-card
+                    title: $21_person_name$
+
+                  - type: entities
+                    entities:
+                      - entity: $22_person_entity$
+                    state_color: true
+                    
+                  - type: custom:dwains-heading-card
+                    title: Displacements for 24 hours
+                
+                  - type: history-graph
+                    entities:
+                      - entity: $23_tracker_entity$
+                    hours_to_show: 24
+                    refresh_interval: 0
+                    
+                  - type: custom:dwains-heading-card
+                    title: Battery charging
+
+                  - type: history-graph
+                    entities:
+                      - entity: $24_battery_charging_entity$
+                    hours_to_show: 24
+                    refresh_interval: 0
+
+                  - type: custom:dwains-heading-card
+                    title: Battery charge level
+          
+                  - type: 'custom:mini-graph-card'
+                    entities: 
+                      - entity: $25_battery_level_entity$
+                    line_color: green
+                    hours_to_show: 24
+                    line_width: 2
+                    hour24: true
+                    points_per_hour: 2
+                    decimals: 0
+                    show:
+                      animate: true
+                      fill: true
+                      icon: false
+                      labels: false
+                      legend: false
+                      name: false
+                      graph: bar
+                      extrema: false
+                      average: false   
+                          
+              page03:
+                type: vertical-stack
+                cards:
+                  - type: custom:dwains-flexbox-card
+                    padding: true
+                    cards:
+                      - type: horizontal-stack
+                        cards:
+                          - type: custom:button-card
+                            name: $11_person_name$
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#page01"
+                            styles:
+                              card:
+                                 - width: 80px
+                          - type: custom:button-card
+                            name: $21_person_name$
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#page02"
+                            styles:
+                              card:
+                                 - width: 80px
+                          - type: custom:button-card
+                            name: $31_person_name$
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#page03"
+                            styles:
+                              card:
+                                 - width: 80px
+                              name:
+                                 - color: lightgreen
+                          - type: custom:button-card
+                            name: $41_person_name$
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#page04"
+                            styles:
+                              card:
+                                 - width: 80px
+                                 
+                  - type: custom:dwains-heading-card
+                    title: $31_person_name$
+
+                  - type: entities
+                    entities:
+                      - entity: $32_person_entity$
+                    state_color: true
+                    
+                  - type: custom:dwains-heading-card
+                    title: Displacements for 24 hours
+                
+                  - type: history-graph
+                    entities:
+                      - entity: $33_tracker_entity$
+                    hours_to_show: 24
+                    refresh_interval: 0
+                    
+                  - type: custom:dwains-heading-card
+                    title: Battery charging
+
+                  - type: history-graph
+                    entities:
+                      - entity: $34_battery_charging_entity$
+                    hours_to_show: 24
+                    refresh_interval: 0
+
+                  - type: custom:dwains-heading-card
+                    title: Battery charge level
+          
+                  - type: 'custom:mini-graph-card'
+                    entities: 
+                      - entity: $35_battery_level_entity$
+                    line_color: green
+                    hours_to_show: 24
+                    line_width: 2
+                    hour24: true
+                    points_per_hour: 2
+                    decimals: 0
+                    show:
+                      animate: true
+                      fill: true
+                      icon: false
+                      labels: false
+                      legend: false
+                      name: false
+                      graph: bar
+                      extrema: false
+                      average: false   
+                          
+              page04:
+                type: vertical-stack
+                cards:
+                  - type: custom:dwains-flexbox-card
+                    padding: true
+                    cards:
+                      - type: horizontal-stack
+                        cards:
+                          - type: custom:button-card
+                            name: $11_person_name$
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#page01"
+                            styles:
+                              card:
+                                 - width: 80px
+                          - type: custom:button-card
+                            name: $21_person_name$
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#page02"
+                            styles:
+                              card:
+                                 - width: 80px
+                          - type: custom:button-card
+                            name: $31_person_name$
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#page03"
+                            styles:
+                              card:
+                                 - width: 80px
+                          - type: custom:button-card
+                            name: $41_person_name$
+                            tap_action: 
+                              action: navigate
+                              navigation_path: "#page04"
+                            styles:
+                              card:
+                                 - width: 80px
+                              name:
+                                 - color: lightgreen
+                                 
+                  - type: custom:dwains-heading-card
+                    title: $41_person_name$
+
+                  - type: entities
+                    entities:
+                      - entity: $42_person_entity$
+                    state_color: true
+                    
+                  - type: custom:dwains-heading-card
+                    title: Displacements for 24 hours
+                
+                  - type: history-graph
+                    entities:
+                      - entity: $43_tracker_entity$
+                    hours_to_show: 24
+                    refresh_interval: 0
+                    
+                  - type: custom:dwains-heading-card
+                    title: Battery charging
+
+                  - type: history-graph
+                    entities:
+                      - entity: $44_battery_charging_entity$
+                    hours_to_show: 24
+                    refresh_interval: 0
+
+                  - type: custom:dwains-heading-card
+                    title: Battery charge level
+          
+                  - type: 'custom:mini-graph-card'
+                    entities: 
+                      - entity: $45_battery_level_entity$
+                    line_color: green
+                    hours_to_show: 24
+                    line_width: 2
+                    hour24: true
+                    points_per_hour: 2
+                    decimals: 0
+                    show:
+                      animate: true
+                      fill: true
+                      icon: false
+                      labels: false
+                      legend: false
+                      name: false
+                      graph: bar
+                      extrema: false
+                      average: false   
+
+    - type: vertical-stack
+      item_classes: 'col-xs-12 col-sm-5'
+      cards:         
+ 
+          - type: custom:state-switch
+            entity: hash
+            default: page01
+            states:
+            
+              page01:
+                type: vertical-stack
+                cards:
+                
+                  - type: 'custom:button-card'
+                    color_type: blank-card
+                    styles:
+                     card:
+                       - width: 120px
+                       - height: 59px
+                       
+                  - type: custom:dwains-heading-card
+                    title: Map
+        
+                  - type: map
+                    entities:
+                      - entity: $13_tracker_entity$
+                    hours_to_show: 24
+                    default_zoom: 12
+                    
+              page02:
+                type: vertical-stack
+                cards:
+                  - type: 'custom:button-card'
+                    color_type: blank-card
+                    styles:
+                     card:
+                       - width: 120px
+                       - height: 59px
+                       
+                  - type: custom:dwains-heading-card
+                    title: Map
+        
+                  - type: map
+                    entities:
+                      - entity: $23_tracker_entity$
+                    hours_to_show: 24
+                    default_zoom: 12
+                    
+              page03:
+                type: vertical-stack
+                cards:
+                  - type: 'custom:button-card'
+                    color_type: blank-card
+                    styles:
+                     card:
+                       - width: 120px
+                       - height: 59px
+                       
+                  - type: custom:dwains-heading-card
+                    title: Map
+        
+                  - type: map
+                    entities:
+                      - entity: $33_tracker_entity$
+                    hours_to_show: 24
+                    default_zoom: 12
+                    
+              page04:
+                type: vertical-stack
+                cards:
+                  - type: 'custom:button-card'
+                    color_type: blank-card
+                    styles:
+                     card:
+                       - width: 120px
+                       - height: 59px
+                       
+                  - type: custom:dwains-heading-card
+                    title: Map
+        
+                  - type: map
+                    entities:
+                      - entity: $43_tracker_entity$
+                    hours_to_show: 24
+                    default_zoom: 12

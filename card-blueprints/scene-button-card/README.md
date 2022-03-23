@@ -13,10 +13,10 @@ The card matches the style of [Dwains Dashboard v2](https://dwainscheeren.github
 
 
 ### Screenshots
-**Light theme:**
+**Light theme:**<br>
 ![light](https://github.com/mase60/dwains-dashboard-blueprints/blob/main/card-blueprints/scene-button-card/screenshot_light.png?raw=true "Light")
 
-**Dark theme:**
+**Dark theme:**<br>
 ![dark](https://github.com/mase60/dwains-dashboard-blueprints/blob/main/card-blueprints/scene-button-card/screenshot_dark.png?raw=true "Dark")
 
 

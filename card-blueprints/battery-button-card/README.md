@@ -4,7 +4,7 @@ This is a simple button-card Blueprint to show battery states.
 
 The card matches the style of [Dwains Dashboard v2](https://dwainscheeren.github.io/dwains-lovelace-dashboard/) and will automaticly match your theme.
 
-The icon changes with the state of the battery
+The icon changes with the state of the battery.
 
 ##### Created by [mase](https://github.com/mase60)
 

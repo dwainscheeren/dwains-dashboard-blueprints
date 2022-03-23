@@ -1,0 +1,94 @@
+blueprint:
+  custom_cards:
+  - button-card
+  description: Battery card by mase
+  input:
+    battery_entity:
+      description: This is the battery
+      name: Select Battery
+      type: entity-picker
+    battery_name:
+      description: This is the battery name
+      name: Battery name
+      type: text-field
+  name: Battery card Blueprint
+  type: card
+  version: '1.0'
+card:
+  entity: $battery_entity$
+  name: $battery_name$
+  type: custom:button-card
+  show_name: true
+  show_icon: true
+  show_state: true
+  show_label: false
+  show_last_changed: false
+  color: var(--primary-color)
+  state:
+    - operator: '>='
+      value: 100
+      icon: mdi:battery
+    - operator: '>='
+      value: 90
+      icon: mdi:battery-90
+    - operator: '>='
+      value: 80
+      icon: mdi:battery-80
+    - operator: '>='
+      value: 70
+      icon: mdi:battery-70
+    - operator: '>='
+      value: 60
+      icon: mdi:battery-60
+    - operator: '>='
+      value: 50
+      icon: mdi:battery-50
+      color: 'yellow'
+    - operator: '>='
+      value: 40
+      icon: mdi:battery-40
+      color: 'orange'
+    - operator: '>='
+      value: 30
+      icon: mdi:battery-30
+      color: 'orange'
+    - operator: '>='
+      value: 20
+      icon: mdi:battery-20
+      color: 'red'
+    - operator: '>='
+      value: 10
+      icon: mdi:battery-10
+      color: 'red'
+  styles:
+    grid:
+      - grid-template-areas: '"i s""i n"'
+      - grid-template-columns: 30% 70%
+      - grid-template-rows: min-content
+    card:
+      - border-radius: 12px
+      - margin-bottom: 0px
+      - padding-top: 14px
+      - padding-bottom: 14px
+    icon:
+      - width: 55%
+    img_cell:
+      - width: 45px
+      - height: 45px
+      - background: var(--secondary-background-color)
+      - border-radius: 100%
+    state:
+      - color: var(--disabled-text-color)
+      - justify-self: start
+      - font-size: 15px
+      - align-self: center
+    name:
+      - justify-self: start
+      - align-self: left
+      - font-size: 13px
+      - color: var(--primary-text-color)
+    label:
+      - justify-self: start
+      - align-self: left
+      - font-size: 12px
+      - color: var(--disabled-text-color)

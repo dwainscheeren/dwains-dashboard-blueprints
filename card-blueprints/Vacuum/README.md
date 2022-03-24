@@ -1,4 +1,4 @@
-# TheeCardGraphics Blueprint
+# Vacuum Blueprint
 
 ## Installation of this Blueprint
 - Install vacuum-card from [HACS]

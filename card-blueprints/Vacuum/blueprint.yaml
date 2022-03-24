@@ -1,0 +1,35 @@
+blueprint:
+  name: VacuumBlueprint
+  description: Vacuum bleuprint by Michel Jourdain
+  version: "1.0"
+  type: card
+  custom_cards:
+    - vacuum-card
+  input:
+    heading_title:
+      name: Heading title
+      description: This is the heading title
+      type: text-field
+    vacuum_entity:
+      name: Vacuum entity
+      description: The vacuum entity
+      type: entity-picker
+
+card:
+  type: vertical-stack
+  cards:
+    - type: custom:dwains-heading-card
+      title: $heading_title$
+    - type: custom:dwains-flexbox-card
+      items_classes: 'col-xs-12'
+      cards:
+        - type: custom:vacuum-card
+          style: |
+            .cal-titleContainer {
+              display: none;
+            }
+          entity: $vacuum_entity$
+          compact_view: false
+          show_name: true
+          show_status: true
+          show_toolbar: true   

@@ -1,0 +1,135 @@
+blueprint:
+  name: ThreeGraphicsBlueprint
+  description: Three Graphics Blueprint by Michel Jourdain
+  version: "1.0"
+  type: card
+  custom_cards:
+    - mini-graph-card
+  input:
+
+    10_card_name:
+      name: Name card one
+      description: Name of the card one
+      type: text-field
+    11_card_entity:
+      name: Entity card one
+      description: Etity of the card one
+      type: entity-picker
+    12_card_icon:
+      name: Icon card one
+      description: Icone of the card one
+      type: icon-picker
+
+    20_card_name:
+      name: Name card two
+      description: Name of the card two
+      type: text-field
+    21_card_entity:
+      name: Entity card two
+      description: Etity of the card two
+      type: entity-picker
+    22_card_icon:
+      name: Icon card two
+      description: Icone of the card two
+      type: icon-picker
+
+    30_card_name:
+      name: Name card three
+      description: Name of the card three
+      type: text-field
+    31_card_entity:
+      name: Entity card three
+      description: Etity of the card three
+      type: entity-picker
+    32_card_icon:
+      name: Icon card three
+      description: Icone of the card three
+      type: icon-picker
+
+card:
+  type: custom:dwains-flexbox-card
+  items_classes: 'col-xs-12'
+  cards:
+     - type: horizontal-stack
+       cards:
+
+         - type: custom:mini-graph-card 
+           theme: ios-dark-mode-blue-red
+           name: $10_card_name$
+           entities:
+             - entity: $11_card_entity$
+           icon: $12_card_icon$  
+           height: 300
+           color: Red
+           show_fill: true
+           font_size: 100
+           animate: true
+           align_header: center
+           align_state: center
+           aligne_icon: right
+           smoothing: true
+           hours_to_show: 24
+           line_width: 2
+           hour24: true
+           points_per_hour: 1
+           decimals: 1
+           show:
+             labels: false
+             legend: false
+             graph: bar
+             extrema: false
+             average: false
+
+         - type: custom:mini-graph-card 
+           theme: ios-dark-mode-blue-red
+           name: $20_card_name$
+           entities:
+             - entity: $21_card_entity$
+           icon: $22_card_icon$  
+           height: 300
+           color: Red
+           show_fill: true
+           font_size: 100
+           animate: true
+           align_header: center
+           align_state: center
+           aligne_icon: right
+           smoothing: true
+           hours_to_show: 24
+           line_width: 2
+           hour24: true
+           points_per_hour: 1
+           decimals: 1
+           show:
+             labels: false
+             legend: false
+             graph: bar
+             extrema: false
+             average: false
+
+         - type: custom:mini-graph-card 
+           theme: ios-dark-mode-blue-red
+           name: $30_card_name$
+           entities:
+             - entity: $31_card_entity$
+           icon: $32_card_icon$                 
+           height: 300
+           color: Red
+           show_fill: true
+           font_size: 100
+           animate: true
+           align_header: center
+           align_state: center
+           aligne_icon: right
+           smoothing: true
+           hours_to_show: 24
+           line_width: 2
+           hour24: true
+           points_per_hour: 1
+           decimals: 1
+           show:
+             labels: false
+             legend: false
+             graph: bar
+             extrema: false
+             average: false

@@ -7,7 +7,7 @@
 
 - There are four blueprints depending on how many people you want to display.  There is a blueprint for one person, two persons, three persons and four persons.
 
-- Copy the content of the blueprint file `xxxxPersonsBlueprint.yaml` into the blueprint installation block.
+- Copy the content of the blueprint file `xxxxPersonsBlueprint.yaml` into the Blueprint YAML code.
 
  ## Fields to define for each person.
  - Name of the person

@@ -1,5 +1,24 @@
 # Recently Added / Upcoming Media Card
 
+# Requirements
+Install Upcoming Media Card from [HACS]
+Install Radarr Upcoming Media from [HACS]
+Install Sonarr Intergration from ![Sonarr](https://www.home-assistant.io/integrations/sonarr/ "Sonarr")
+
+Example sensors.yaml entry
+# Radarr Intergration
+- platform: radarr
+  api_key: Api Key from Radarr
+  host: Radarr Host Name / IP Address
+  urlbase: /radarr
+  monitored_conditions:
+    - upcoming
+    - diskspace
+    - status
+    - movies
+  days: 10
+  unit: TB
+
 ##### Created by [dayshiers](https://github.com/dayshiers)
 
 ### Screenshots

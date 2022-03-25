@@ -1,0 +1,139 @@
+blueprint:
+  name: ClockWeatherCalendar
+  description: Clock, Weather and Calendar card by Michel Jourdain
+  version: "1.0"
+  type: card
+  
+  custom_cards:
+    - digital-clock
+    - atomic-calendar-revive
+    - ha-card-weather-conditions
+    
+  input:
+  
+    10_calendar_entity:
+       name: Calendar entity
+       description: The calendar entity
+       type: entity-picker
+      
+    11_calendar_noEventText:
+      name: Calendar no event text
+      description: Calendar no event text in your language Ex Aucun événement pour aujourd'hui
+      type: text-field
+
+    12_calendar_noEventsForNextDaysText:
+      name: Calendar no event text for next days
+      description: Calendar no event text for next days in your language Ex Aucun événement prochainement
+      type: text-field
+      
+    13_calendar_fullDayEventText:
+      name: Calendar full day event text for next days
+      description: Calendar full day event text for next days in your language Ex Jour entier
+      type: text-field
+  
+    14_calendar_untilText:
+      name: Calendar until text
+      description: Calendar until text in your language Ex jusqu'au
+      type: text-field
+      
+    15_calendar_maxDaysToShow:
+      name: Calendar maximun days to show
+      description: Calendar maximun days to show
+      type: text-field
+      
+    16_language:
+      name: Weather card Language
+      description: Weather card Language en/it/nl/es/de/fr/sr-latn/pt/da/no-NO       
+      type: text-field 
+
+    17_temperature_entity:
+      name: Weather temperatture entity
+      description: Temperature Sensor
+      type: entity-picker
+      
+    18_condition_entity:      
+      name: Weather icon condition entity
+      description: Condition Sensor (rain, sunny, cloudy, etc)
+      type: entity-picker
+      
+    19_feels_like:      
+      name: Weather feels like entity
+      description: Feels like temperature condition
+      type: entity-picker
+      
+    20_humidity:      
+      name: Weather humidite entity
+      description: Humidity sensor
+      type: entity-picker
+      
+    21_pressure:      
+      name: Weather pressure entity
+      description: Pressure sensor
+      type: entity-picker
+      
+    22_visibility:      
+      name: Weather visibility entity
+      description: Visibility sensor
+      type: entity-picker
+      
+    23_wind_bearing:      
+      name: Weather wind bearing entity
+      description: wind bearing sensor
+      type: entity-picker
+      
+    24_wind_speed:      
+      name: Weather wind peed entity
+      description: Wind peed sensor
+      type: entity-picker
+
+card:
+
+  type: custom:dwains-flexbox-card
+  items_classes: 'col-xs-12'
+  cards:
+    - type: vertical-stack
+      cards:  
+      
+        - type: custom:digital-clock
+          dateFormat:
+            day: 2-digit
+            month: long
+            weekday: long
+          timeFormat:
+            hour: 2-digit
+            minute: 2-digit
+      
+        - type: custom:ha-card-weather-conditions
+          animation: true
+          language: $16_language$
+          weather:
+            icons_model: defaulthass
+            current:
+              temperature: $17_temperature_entity$
+              current_conditions: $18_condition_entity$
+              feels_like: $19_feels_like$
+              humidity: $20_humidity$
+              pressure: $21_pressure$
+              visibility: $22_visibility$
+              wind_bearing: $23_wind_bearing$
+              wind_speed: $24_wind_speed$
+              forecast: false
+              sun: sun.sun
+              moon_phase: sensor.moon
+              
+        - type: custom:atomic-calendar-revive
+          entities:
+            - entity: $10_calendar_entity$
+          dayWrapperLineColor: Green
+          eventBarColor: Green
+          maxDaysToShow: $15_calendar_maxDaysToShow$
+          showMonth: true
+          showNoEventsForToday: true
+          showProgressBar: true
+          showWeekDay: false
+          timeColor: Green
+          noEventText: $11_calendar_noEventText$
+          noEventsForNextDaysText: $12_calendar_noEventsForNextDaysText$
+          fullDayEventText: $13_calendar_fullDayEventText$
+          untilText: $14_calendar_untilText$
+ 

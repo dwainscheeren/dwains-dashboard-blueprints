@@ -1,0 +1,44 @@
+blueprint:
+  name: Recently Added Media  / Upcoming Media Card
+  description: Display recently added media or upcoming media, support for Plex, Radarr and Sonarr
+  version: "1.0"
+  type: card
+  custom_cards:
+    - upcoming-media-card
+    - horizontal-stack
+  input:
+    heading_title:
+      name: Heading title
+      description: Add title of card
+    plex_entity:
+      description: Media Entity
+      name: Select Media Entity
+      type: entity-picker
+    max_items:
+      name: Maximum number of items
+      description: Maximum number of items to show
+
+card:
+  type: custom:dwains-flexbox-card
+  items_classes: 'col-xs-12'
+  cards:
+     - type: horizontal-stack
+       cards:
+         - type: custom:upcoming-media-card
+           accent_color: 'var(--secondary-background-color)'
+           border_color: 'var(--secondary-background-color)'
+           date: ddmm
+           entity: $plex_entity$
+           flag: false
+           flag_color: '#13274b'
+           image_style: fanart
+           line1_text: $empty
+           line2_size: small
+           line2_text: $episode
+           line3_text: $number
+           line4_text: 'Runtime: $runtime'
+           max: $max_items$
+           title: $heading_title$
+           title_size: large
+           title_text: $title
+           title_color: 'var(--primary-text-color)'

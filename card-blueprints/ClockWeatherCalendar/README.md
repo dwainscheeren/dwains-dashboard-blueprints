@@ -2,32 +2,37 @@
 
 ## Installation of this Blueprint
 
-- digital-clock from [HACS]
-- atomic-calendar-revive from [HACS]
-- ha-card-weather-conditions from [HACS]
+- Install digital-clock from [HACS]
+- Install atomic-calendar-revive from [HACS]
+- Install ha-card-weather-conditions from [HACS]
+
+ ## Integrations
 
 - This card needs the following two integrations to work.
 
-##Sun
+## Sun
 
-    This integration is by default enabled, unless you’ve disabled or removed the default_config: line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
+ This integration is by default enabled, unless you’ve disabled or removed the default_config: line from your configuration. If that is the case, the   following example shows you how to enable this integration manually:
 
-  # Example configuration.yaml entry
+  ### Example configuration.yaml entry
 
     sun:
 
-##Moon
 
-    To enable the moon sensor, add the following lines to your configuration.yaml or your sensors file:
+## Moon
 
-  # Example configuration.yaml entry
+To enable the moon sensor, add the following lines to your configuration.yaml or your sensors file:
+
+  ### Example configuration.yaml entry
 
     sensor:
        - platform: moon
 
+
+
 - Copy the content of the blueprint file `blueprint.yaml` into the Blueprint YAML code.
 
- ## Fields to define for each card.
+ ## Fields to define for this card.
 
  - Entity of the Calendar
  - Calendar no event text in your language Ex : Aucun événement pour aujourd'hui
@@ -47,11 +52,14 @@
 
 
 ### Screenshots
+
 **Light theme:**<br>
 
+![image](https://user-images.githubusercontent.com/83040228/160034776-61a66145-d304-4c21-95df-0f754535d891.jpeg)
 
 **Dark theme:**<br>
 
+![image](https://user-images.githubusercontent.com/83040228/160034808-7ab3a112-4a32-4a58-8d86-c1af6ab240f0.jpeg)
 
 ### Changelog
 #### 1.0

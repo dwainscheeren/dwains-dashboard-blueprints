@@ -1,0 +1,101 @@
+blueprint:
+  name: SunMoonSeason
+  description: Sun elevation and Azimut, Moom phase and Season by Michel Jourdain
+  version: "1.0"
+  type: card
+  
+  custom_cards:
+    - compass-card
+    - sun-card
+    
+  input:
+  
+    01_translate_sun:
+       name: translate sun 
+       description: Translate sun in your language
+       type: text-field
+       
+    02_translate_moon:
+       name: translate moon
+       description: Translate moon in your language
+       type: text-field
+       
+    03_translate_season:
+       name: translate season
+       description: Translate season in your language
+       type: text-field
+       
+    04_lamguage:
+       name: Your language
+       description: Language  da, de, en, es, fr, hu, it, nl, pl, ru, sl
+       type: text-field
+       
+    05_timeFormat:
+       name: Time format
+       description: Time format 12, 24
+       type: text-field
+       
+card:
+
+  type: custom:dwains-flexbox-card
+  items_classes: 'col-xs-12'
+  cards:
+  
+    - type: vertical-stack
+      cards:        
+      
+        - type: custom:dwains-heading-card
+          title: $01_translate_sun$ - $02_translate_moon$ - $03_translate_season$
+          
+        - type: horizontal-stack
+          cards:       
+          
+            - type: entities
+              entities:
+                - entity: sensor.moon
+                  name: $02_translate_moon$
+  
+            - type: entities
+              entities:
+                - entity: sensor.season
+                  name: $03_translate_season$  
+      
+        -  type: custom:sun-card
+           language: $04_lamguage$
+           showAzimuth: true
+           showElevation: true
+           timeFormat: '$05_timeFormat$h'
+          
+        - type: custom:compass-card
+          header:
+            title:
+              value: Azimut
+              icon: sun-compass
+          language: $04_lamguage$
+          indicator_sensors:
+            - sensor: sensor.solar_azimut
+              indicator:
+                type: circle
+                dynamic_style:
+                  sensor: sun.sun
+                  attribute: elevation
+                  bands:
+                    - from_value: 0
+                      show: true
+          value_sensors:
+            - sensor: sensor.solar_angle
+              decimals: 1
+          compass:
+            circle:
+              background_image: /local/images/Sun.png
+              background_opacity: 0.5
+              offset_background: true
+            north:
+              show: true
+              offset: 0
+            east:
+              show: true
+            west:
+              show: true
+            south:
+              show: true

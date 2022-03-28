@@ -1,0 +1,801 @@
+blueprint:
+  name: Eight Panels Blueprint
+  description: Eight Panels Blueprint by Michel Jourdain
+  version: "1.0
+  type: page
+  custom_cards:
+    - button-card
+    - mini-graph-card
+  input:
+  
+    11_panel_1_Header:
+       name: Panel 1 name
+       description: The name of the panel 1
+       type: text-field
+    12_panel_1_main_entity:
+       name: Panel 1 main entity
+       description: The panel 1 main entity 
+       type: entity-picker
+    13_panel_1_icon:
+       name: Panel 1 icon
+       description: The panel 1 icon
+       type: icon-picker
+    14_panel_1_second_entity:
+       name: Panel 1 second entity
+       description: The panel 1 second entity
+       type: entity-picker
+    15_panel_1_second_entity_name:
+       name: Panel 1 second entity name
+       description: The Panel 1 second entity name
+       type: text-field
+    16_panel_1_third_entity:
+       name: Panel 1 third entity
+       description: The panel 1 third entity
+       type: entity-picker
+    17_panel_1_third_entity_name:
+       name: Panel 1 third entity name
+       description: The Panel 1 third entity name
+       type: text-field
+  
+    21_panel_2_Header:
+       name: Panel 2 name
+       description: The name of the panel 2
+       type: text-field
+    22_panel_2_main_entity:
+       name: Panel 2 main entity
+       description: The panel 2 main entity 
+       type: entity-picker
+    23_panel_2_icon:
+       name: Panel 2 icon
+       description: The panel 2 icon
+       type: icon-picker
+    24_panel_2_second_entity:
+       name: Panel 2 second entity
+       description: The panel 2 second entity
+       type: entity-picker
+    25_panel_2_second_entity_name:
+       name: Panel 2 second entity name
+       description: The Panel 2 second entity name
+       type: text-field
+    26_panel_2_third_entity:
+       name: Panel 2 third entity
+       description: The panel 2 third entity
+       type: entity-picker
+    27_panel_2_third_entity_name:
+       name: Panel 2 third entity name
+       description: The Panel 2 third entity name
+       type: text-field
+  
+    31_panel_3_Header:
+       name: Panel 3 name
+       description: The name of the panel 3
+       type: text-field
+    32_panel_3_main_entity:
+       name: Panel 3 main entity
+       description: The panel 3 main entity 
+       type: entity-picker
+    33_panel_3_icon:
+       name: Panel 3 icon
+       description: The panel 3 icon
+       type: icon-picker
+    34_panel_3_second_entity:
+       name: Panel 3 second entity
+       description: The panel 3 second entity
+       type: entity-picker
+    35_panel_3_second_entity_name:
+       name: Panel 3 second entity name
+       description: The Panel 3 second entity name
+       type: text-field
+    36_panel_3_third_entity:
+       name: Panel 3 third entity
+       description: The panel 3 third entity
+       type: entity-picker
+    37_panel_3_third_entity_name:
+       name: Panel 3 third entity name
+       description: The Panel 3 third entity name
+       type: text-field
+  
+    41_panel_4_Header:
+       name: Panel 4 name
+       description: The name of the panel 4
+       type: text-field
+    42_panel_4_main_entity:
+       name: Panel 4 main entity
+       description: The panel 4 main entity 
+       type: entity-picker
+    43_panel_4_icon:
+       name: Panel 4 icon
+       description: The panel 4 icon
+       type: icon-picker
+    44_panel_4_second_entity:
+       name: Panel 4 second entity
+       description: The panel 4 second entity
+       type: entity-picker
+    45_panel_4_second_entity_name:
+       name: Panel 4 second entity name
+       description: The Panel 4 second entity name
+       type: text-field
+    46_panel_4_third_entity:
+       name: Panel 4 third entity
+       description: The panel 4 third entity
+       type: entity-picker
+    47_panel_4_third_entity_name:
+       name: Panel 4 third entity name
+       description: The Panel 4 third entity name
+       type: text-field
+  
+    51_panel_5_Header:
+       name: Panel 5 name
+       description: The name of the panel 5
+       type: text-field
+    52_panel_5_main_entity:
+       name: Panel 5 main entity
+       description: The panel 5 main entity 
+       type: entity-picker
+    53_panel_5_icon:
+       name: Panel 5 icon
+       description: The panel 5 icon
+       type: icon-picker
+    54_panel_5_second_entity:
+       name: Panel 5 second entity
+       description: The panel 5 second entity
+       type: entity-picker
+    55_panel_5_second_entity_name:
+       name: Panel 5 second entity name
+       description: The Panel 5 second entity name
+       type: text-field
+    56_panel_5_third_entity:
+       name: Panel 5 third entity
+       description: The panel 5 third entity
+       type: entity-picker
+    57_panel_5_third_entity_name:
+       name: Panel 5 third entity name
+       description: The Panel 5 third entity name
+       type: text-field
+  
+    61_panel_6_Header:
+       name: Panel 6 name
+       description: The name of the panel 6
+       type: text-field
+    62_panel_6_main_entity:
+       name: Panel 6 main entity
+       description: The panel 6 main entity 
+       type: entity-picker
+    63_panel_6_icon:
+       name: Panel 6 icon
+       description: The panel 6 icon
+       type: icon-picker
+    64_panel_6_second_entity:
+       name: Panel 6 second entity
+       description: The panel 6 second entity
+       type: entity-picker
+    65_panel_6_second_entity_name:
+       name: Panel 6 second entity name
+       description: The Panel 6 second entity name
+       type: text-field
+    66_panel_6_third_entity:
+       name: Panel 6 third entity
+       description: The panel 6 third entity
+       type: entity-picker
+    67_panel_6_third_entity_name:
+       name: Panel 6 third entity name
+       description: The Panel 6 third entity name
+       type: text-field
+  
+    71_panel_7_Header:
+       name: Panel 7 name
+       description: The name of the panel 7
+       type: text-field
+    72_panel_7_main_entity:
+       name: Panel 7 main entity
+       description: The panel 7 main entity 
+       type: entity-picker
+    73_panel_7_icon:
+       name: Panel 7 icon
+       description: The panel 7 icon
+       type: icon-picker
+    74_panel_7_second_entity:
+       name: Panel 7 second entity
+       description: The panel 7 second entity
+       type: entity-picker
+    75_panel_7_second_entity_name:
+       name: Panel 7 second entity name
+       description: The Panel 7 second entity name
+       type: text-field
+    76_panel_7_third_entity:
+       name: Panel 7 third entity
+       description: The panel 7 third entity
+       type: entity-picker
+    77_panel_7_third_entity_name:
+       name: Panel 7 third entity name
+       description: The Panel 7 third entity name
+       type: text-field
+  
+    81_panel_8_Header:
+       name: Panel 8 name
+       description: The name of the panel 8
+       type: text-field
+    82_panel_8_main_entity:
+       name: Panel 8 main entity
+       description: The panel 8 main entity 
+       type: entity-picker
+    83_panel_8_icon:
+       name: Panel 8 icon
+       description: The panel 8 icon
+       type: icon-picker
+    84_panel_8_second_entity:
+       name: Panel 8 second entity
+       description: The panel 8 second entity
+       type: entity-picker
+    85_panel_8_second_entity_name:
+       name: Panel 8 second entity name
+       description: The Panel 8 second entity name
+       type: text-field
+    86_panel_8_third_entity:
+       name: Panel 8 third entity
+       description: The panel 8 third entity
+       type: entity-picker
+    87_panel_8_third_entity_name:
+       name: Panel 8 third entity name
+       description: The Panel 8 third entity name
+       type: text-field
+
+card:
+
+  type: custom:dwains-flexbox-card
+  items_classes: 'col-xs-12 col-sm-6 col-sm-6 col-md-3'
+  cards:
+
+# Card 1
+ 
+    - cards:
+        - name: $11_panel_1_Header$
+          styles:
+            card:
+              - text-transform: uppercase
+              - color: 'var(--dwains-theme-accent)'
+              - font-size: 125%
+              - border-radius: 0%
+              - font-weight: 100
+              - letter-spacing: 10px
+          type: 'custom:button-card'
+        - cards:
+            - entities:
+                - entity: $12_panel_1_main_entity$
+                  color: 'var(--dwains-theme-accent)'
+                  show_fill: true
+                - entity: $12_panel_1_main_entity$
+                  color: green
+                  show_fill: false
+              font_size: 95
+              hours_to_show: 24
+              line_width: 2
+              hour24: true
+              points_per_hour: 2
+              decimals: 0
+              show:
+                animate: true
+                icon: false
+                labels: false
+                legend: false
+                name: false
+                graph: line
+                extrema: true
+                average: false     
+              theme: ios-dark-mode-blue-red
+              type: 'custom:mini-graph-card'
+            - aspect_ratio: 1/1.5
+              color: 'rgb(41, 158, 200)'
+              entity: $12_panel_1_main_entity$
+              icon: '$13_panel_1_icon$'
+              name: $11_panel_1_Header$
+              show_state: true
+              size: 40%
+              state:
+                - color: 'var(--disabled-text-color)'
+                  value: 'off'
+                - color: 'rgb(41, 158, 194)'
+                  value: 'on'
+              styles:
+                name:
+                  - text-transform: uppercase
+                  - font-size: 10px
+                state:
+                  - text-transform: uppercase
+                  - font-size: 15px
+                  - font: bold
+              type: 'custom:button-card'
+          type: horizontal-stack
+        - entities:
+            - entity: $14_panel_1_second_entity$
+              name: $15_panel_1_second_entity_name$     
+            - entity: $16_panel_1_third_entity$
+              name: $17_panel_1_third_entity_name$
+          type: entities
+                            
+      type: vertical-stack
+      
+# Card 2
+ 
+    - cards:
+        - name: $21_panel_2_Header$
+          styles:
+            card:
+              - text-transform: uppercase
+              - color: 'var(--dwains-theme-accent)'
+              - font-size: 125%
+              - border-radius: 0%
+              - font-weight: 100
+              - letter-spacing: 10px
+          type: 'custom:button-card'
+        - cards:
+            - entities:
+                - entity: $22_panel_2_main_entity$
+                  color: 'var(--dwains-theme-accent)'
+                  show_fill: true
+                - entity: $22_panel_2_main_entity$
+                  color: green
+                  show_fill: false
+              font_size: 95
+              hours_to_show: 24
+              line_width: 2
+              hour24: true
+              points_per_hour: 2
+              decimals: 0
+              show:
+                animate: true
+                icon: false
+                labels: false
+                legend: false
+                name: false
+                graph: line
+                extrema: true
+                average: false     
+              theme: ios-dark-mode-blue-red
+              type: 'custom:mini-graph-card'
+            - aspect_ratio: 1/1.5
+              color: 'rgb(41, 158, 200)'
+              entity: $22_panel_2_main_entity$
+              icon: '$23_panel_2_icon$'
+              name: $21_panel_2_Header$
+              show_state: true
+              size: 40%
+              state:
+                - color: 'var(--disabled-text-color)'
+                  value: 'off'
+                - color: 'rgb(41, 158, 194)'
+                  value: 'on'
+              styles:
+                name:
+                  - text-transform: uppercase
+                  - font-size: 10px
+                state:
+                  - text-transform: uppercase
+                  - font-size: 15px
+                  - font: bold
+              type: 'custom:button-card'
+          type: horizontal-stack
+        - entities:
+            - entity: $24_panel_2_second_entity$
+              name: $25_panel_2_second_entity_name$     
+            - entity: $26_panel_2_third_entity$
+              name: $27_panel_2_third_entity_name$
+          type: entities
+                            
+      type: vertical-stack
+      
+# Card 3
+ 
+    - cards:
+        - name: $31_panel_3_Header$
+          styles:
+            card:
+              - text-transform: uppercase
+              - color: 'var(--dwains-theme-accent)'
+              - font-size: 125%
+              - border-radius: 0%
+              - font-weight: 100
+              - letter-spacing: 10px
+          type: 'custom:button-card'
+        - cards:
+            - entities:
+                - entity: $32_panel_3_main_entity$
+                  color: 'var(--dwains-theme-accent)'
+                  show_fill: true
+                - entity: $32_panel_3_main_entity$
+                  color: green
+                  show_fill: false
+              font_size: 95
+              hours_to_show: 24
+              line_width: 2
+              hour24: true
+              points_per_hour: 2
+              decimals: 0
+              show:
+                animate: true
+                icon: false
+                labels: false
+                legend: false
+                name: false
+                graph: line
+                extrema: true
+                average: false     
+              theme: ios-dark-mode-blue-red
+              type: 'custom:mini-graph-card'
+            - aspect_ratio: 1/1.5
+              color: 'rgb(41, 158, 200)'
+              entity: $32_panel_3_main_entity$
+              icon: '$33_panel_3_icon$'
+              name: $31_panel_3_Header$
+              show_state: true
+              size: 40%
+              state:
+                - color: 'var(--disabled-text-color)'
+                  value: 'off'
+                - color: 'rgb(41, 158, 194)'
+                  value: 'on'
+              styles:
+                name:
+                  - text-transform: uppercase
+                  - font-size: 10px
+                state:
+                  - text-transform: uppercase
+                  - font-size: 15px
+                  - font: bold
+              type: 'custom:button-card'
+          type: horizontal-stack
+        - entities:
+            - entity: $34_panel_3_second_entity$
+              name: $35_panel_3_second_entity_name$     
+            - entity: $36_panel_3_third_entity$
+              name: $37_panel_3_third_entity_name$
+          type: entities
+                            
+      type: vertical-stack
+      
+# Card 4
+ 
+    - cards:
+        - name: $41_panel_4_Header$
+          styles:
+            card:
+              - text-transform: uppercase
+              - color: 'var(--dwains-theme-accent)'
+              - font-size: 125%
+              - border-radius: 0%
+              - font-weight: 100
+              - letter-spacing: 10px
+          type: 'custom:button-card'
+        - cards:
+            - entities:
+                - entity: $42_panel_4_main_entity$
+                  color: 'var(--dwains-theme-accent)'
+                  show_fill: true
+                - entity: $42_panel_4_main_entity$
+                  color: green
+                  show_fill: false
+              font_size: 95
+              hours_to_show: 24
+              line_width: 2
+              hour24: true
+              points_per_hour: 2
+              decimals: 0
+              show:
+                animate: true
+                icon: false
+                labels: false
+                legend: false
+                name: false
+                graph: line
+                extrema: true
+                average: false     
+              theme: ios-dark-mode-blue-red
+              type: 'custom:mini-graph-card'
+            - aspect_ratio: 1/1.5
+              color: 'rgb(41, 158, 200)'
+              entity: $42_panel_4_main_entity$
+              icon: '$43_panel_4_icon$'
+              name: $41_panel_4_Header$
+              show_state: true
+              size: 40%
+              state:
+                - color: 'var(--disabled-text-color)'
+                  value: 'off'
+                - color: 'rgb(41, 158, 194)'
+                  value: 'on'
+              styles:
+                name:
+                  - text-transform: uppercase
+                  - font-size: 10px
+                state:
+                  - text-transform: uppercase
+                  - font-size: 15px
+                  - font: bold
+              type: 'custom:button-card'
+          type: horizontal-stack
+        - entities:
+            - entity: $44_panel_4_second_entity$
+              name: $45_panel_4_second_entity_name$     
+            - entity: $46_panel_4_third_entity$
+              name: $47_panel_4_third_entity_name$
+          type: entities
+                            
+      type: vertical-stack
+      
+# Card 5
+ 
+    - cards:
+        - name: $51_panel_5_Header$
+          styles:
+            card:
+              - text-transform: uppercase
+              - color: 'var(--dwains-theme-accent)'
+              - font-size: 125%
+              - border-radius: 0%
+              - font-weight: 100
+              - letter-spacing: 10px
+          type: 'custom:button-card'
+        - cards:
+            - entities:
+                - entity: $52_panel_5_main_entity$
+                  color: 'var(--dwains-theme-accent)'
+                  show_fill: true
+                - entity: $52_panel_5_main_entity$
+                  color: green
+                  show_fill: false
+              font_size: 95
+              hours_to_show: 24
+              line_width: 2
+              hour24: true
+              points_per_hour: 2
+              decimals: 0
+              show:
+                animate: true
+                icon: false
+                labels: false
+                legend: false
+                name: false
+                graph: line
+                extrema: true
+                average: false     
+              theme: ios-dark-mode-blue-red
+              type: 'custom:mini-graph-card'
+            - aspect_ratio: 1/1.5
+              color: 'rgb(41, 158, 200)'
+              entity: $52_panel_5_main_entity$
+              icon: '$53_panel_5_icon$'
+              name: $51_panel_5_Header$
+              show_state: true
+              size: 40%
+              state:
+                - color: 'var(--disabled-text-color)'
+                  value: 'off'
+                - color: 'rgb(41, 158, 194)'
+                  value: 'on'
+              styles:
+                name:
+                  - text-transform: uppercase
+                  - font-size: 10px
+                state:
+                  - text-transform: uppercase
+                  - font-size: 15px
+                  - font: bold
+              type: 'custom:button-card'
+          type: horizontal-stack
+        - entities:
+            - entity: $54_panel_5_second_entity$
+              name: $55_panel_5_second_entity_name$     
+            - entity: $56_panel_5_third_entity$
+              name: $57_panel_5_third_entity_name$
+          type: entities
+                            
+      type: vertical-stack
+      
+# Card 6
+ 
+    - cards:
+        - name: $61_panel_6_Header$
+          styles:
+            card:
+              - text-transform: uppercase
+              - color: 'var(--dwains-theme-accent)'
+              - font-size: 125%
+              - border-radius: 0%
+              - font-weight: 100
+              - letter-spacing: 10px
+          type: 'custom:button-card'
+        - cards:
+            - entities:
+                - entity: $62_panel_6_main_entity$
+                  color: 'var(--dwains-theme-accent)'
+                  show_fill: true
+                - entity: $62_panel_6_main_entity$
+                  color: green
+                  show_fill: false
+              font_size: 95
+              hours_to_show: 24
+              line_width: 2
+              hour24: true
+              points_per_hour: 2
+              decimals: 0
+              show:
+                animate: true
+                icon: false
+                labels: false
+                legend: false
+                name: false
+                graph: line
+                extrema: true
+                average: false     
+              theme: ios-dark-mode-blue-red
+              type: 'custom:mini-graph-card'
+            - aspect_ratio: 1/1.5
+              color: 'rgb(41, 158, 200)'
+              entity: $62_panel_6_main_entity$
+              icon: '$63_panel_6_icon$'
+              name: $61_panel_6_Header$
+              show_state: true
+              size: 40%
+              state:
+                - color: 'var(--disabled-text-color)'
+                  value: 'off'
+                - color: 'rgb(41, 158, 194)'
+                  value: 'on'
+              styles:
+                name:
+                  - text-transform: uppercase
+                  - font-size: 10px
+                state:
+                  - text-transform: uppercase
+                  - font-size: 15px
+                  - font: bold
+              type: 'custom:button-card'
+          type: horizontal-stack
+        - entities:
+            - entity: $64_panel_6_second_entity$
+              name: $65_panel_6_second_entity_name$     
+            - entity: $66_panel_6_third_entity$
+              name: $67_panel_6_third_entity_name$
+          type: entities
+                            
+      type: vertical-stack
+      
+# Card 7
+ 
+    - cards:
+        - name: $71_panel_7_Header$
+          styles:
+            card:
+              - text-transform: uppercase
+              - color: 'var(--dwains-theme-accent)'
+              - font-size: 125%
+              - border-radius: 0%
+              - font-weight: 100
+              - letter-spacing: 10px
+          type: 'custom:button-card'
+        - cards:
+            - entities:
+                - entity: $72_panel_7_main_entity$
+                  color: 'var(--dwains-theme-accent)'
+                  show_fill: true
+                - entity: $72_panel_7_main_entity$
+                  color: green
+                  show_fill: false
+              font_size: 95
+              hours_to_show: 24
+              line_width: 2
+              hour24: true
+              points_per_hour: 2
+              decimals: 0
+              show:
+                animate: true
+                icon: false
+                labels: false
+                legend: false
+                name: false
+                graph: line
+                extrema: true
+                average: false     
+              theme: ios-dark-mode-blue-red
+              type: 'custom:mini-graph-card'
+            - aspect_ratio: 1/1.5
+              color: 'rgb(41, 158, 200)'
+              entity: $72_panel_7_main_entity$
+              icon: '$73_panel_7_icon$'
+              name: $71_panel_7_Header$
+              show_state: true
+              size: 40%
+              state:
+                - color: 'var(--disabled-text-color)'
+                  value: 'off'
+                - color: 'rgb(41, 158, 194)'
+                  value: 'on'
+              styles:
+                name:
+                  - text-transform: uppercase
+                  - font-size: 10px
+                state:
+                  - text-transform: uppercase
+                  - font-size: 15px
+                  - font: bold
+              type: 'custom:button-card'
+          type: horizontal-stack
+        - entities:
+            - entity: $74_panel_7_second_entity$
+              name: $75_panel_7_second_entity_name$     
+            - entity: $76_panel_7_third_entity$
+              name: $77_panel_7_third_entity_name$
+          type: entities
+                            
+      type: vertical-stack
+      
+# Card 8
+ 
+    - cards:
+        - name: $81_panel_8_Header$
+          styles:
+            card:
+              - text-transform: uppercase
+              - color: 'var(--dwains-theme-accent)'
+              - font-size: 125%
+              - border-radius: 0%
+              - font-weight: 100
+              - letter-spacing: 10px
+          type: 'custom:button-card'
+        - cards:
+            - entities:
+                - entity: $82_panel_8_main_entity$
+                  color: 'var(--dwains-theme-accent)'
+                  show_fill: true
+                - entity: $82_panel_8_main_entity$
+                  color: green
+                  show_fill: false
+              font_size: 95
+              hours_to_show: 24
+              line_width: 2
+              hour24: true
+              points_per_hour: 2
+              decimals: 0
+              show:
+                animate: true
+                icon: false
+                labels: false
+                legend: false
+                name: false
+                graph: line
+                extrema: true
+                average: false     
+              theme: ios-dark-mode-blue-red
+              type: 'custom:mini-graph-card'
+            - aspect_ratio: 1/1.5
+              color: 'rgb(41, 158, 200)'
+              entity: $82_panel_8_main_entity$
+              icon: '$83_panel_8_icon$'
+              name: $81_panel_8_Header$
+              show_state: true
+              size: 40%
+              state:
+                - color: 'var(--disabled-text-color)'
+                  value: 'off'
+                - color: 'rgb(41, 158, 194)'
+                  value: 'on'
+              styles:
+                name:
+                  - text-transform: uppercase
+                  - font-size: 10px
+                state:
+                  - text-transform: uppercase
+                  - font-size: 15px
+                  - font: bold
+              type: 'custom:button-card'
+          type: horizontal-stack
+        - entities:
+            - entity: $84_panel_8_second_entity$
+              name: $85_panel_8_second_entity_name$     
+            - entity: $86_panel_8_third_entity$
+              name: $87_panel_8_third_entity_name$
+          type: entities
+                            
+      type: vertical-stack
+      
+      

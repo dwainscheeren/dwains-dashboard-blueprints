@@ -1,7 +1,7 @@
 blueprint:
   name: Eight Panels Blueprint
   description: Eight Panels Blueprint by Michel Jourdain
-  version: "1.0
+  version: "1.0"
   type: page
   custom_cards:
     - button-card

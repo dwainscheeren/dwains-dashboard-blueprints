@@ -13,14 +13,15 @@ This is a simple AdGuard Page.
 
 ### Screenshots
 **Light theme:**<br>
-![light](https://github.com/mase60/dwains-dashboard-blueprints/blob/main/page-blueprints/AdGuard/screenshot_light.png?raw=true "Light")
+![light](https://github.com/mase60/dwains-dashboard-blueprints/blob/main/page-blueprints/AdGuard/screenshot_light 101.png?raw=true "Light")
 
 **Dark theme:**<br>
-![dark](https://github.com/mase60/dwains-dashboard-blueprints/blob/main/page-blueprints/AdGuard/screenshot_dark.png?raw=true "Dark")
+![dark](https://github.com/mase60/dwains-dashboard-blueprints/blob/main/page-blueprints/AdGuard/screenshot_dark101.png?raw=true "Dark")
 
 
 ### Changelog
 #### 1.0.0
 - First release
-
+#### 1.0.1
+- changed layout
 ---

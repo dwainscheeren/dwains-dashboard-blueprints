@@ -3,7 +3,24 @@ blueprint:
   - button-card
   - mini-graph-card
   description: AdGuard Page by mase
-  name: AdGuard Page Blueprint
+  input:
+    adguard_dns_queries:
+      name: e.g. sensor.adguard_dns_queries
+      description: Select DNS Queries
+      type: entity-picker
+    adguard_dns_queries_blocked:
+      name: e.g. sensor.adguard_dns_queries_blocked
+      description: Select DNS Queries Blocked
+      type: entity-picker
+    adguard_protection:
+      name: e.g. switch.adguard_protection
+      description: Select AdGuard Protection
+      type: entity-picker
+    adguard_filtering:
+      name: e.g. switch.adguard_filtering
+      description: Select AdGuard Filtering
+      type: entity-picker
+  name: AdGuard
   type: page
   version: '1.0'
 card:
@@ -12,14 +29,14 @@ card:
   cards:
     - type: custom:mini-graph-card
       entities:
-        - entity: sensor.adguard_dns_queries
+        - entity: $adguard_dns_queries$
           name: DNS Queries
     - type: custom:mini-graph-card
       entities:
-        - entity: sensor.adguard_dns_queries_blocked
+        - entity: $adguard_dns_queries_blocked$
           name: DNS Queries blocked
     - type: custom:button-card
-      entity: switch.adguard_protection
+      entity: $adguard_protection$
       show_name: true
       show_icon: true
       show_state: true
@@ -70,7 +87,7 @@ card:
           - font-size: 12px
           - color: var(--disabled-text-color)
     - type: custom:button-card
-      entity: switch.adguard_filtering
+      entity: $adguard_filtering$
       show_name: true
       show_icon: true
       show_state: true

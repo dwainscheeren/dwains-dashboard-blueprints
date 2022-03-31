@@ -1,0 +1,233 @@
+blueprint:
+  custom_cards:
+  - button-card
+  - mini-graph-card
+  description: AdGuard Page by mase
+  input:
+    adguard_dns_queries:
+      description: Select DNS Queries
+      name: e.g. sensor.adguard_dns_queries
+      type: entity-picker
+    adguard_dns_queries_blocked:
+      description: Select DNS Queries Blocked
+      name: e.g. sensor.adguard_dns_queries_blocked
+      type: entity-picker
+    adguard_filtering:
+      description: Select AdGuard Filtering
+      name: e.g. switch.adguard_filtering
+      type: entity-picker
+    adguard_protection:
+      description: Select AdGuard Protection
+      name: e.g. switch.adguard_protection
+      type: entity-picker
+    adguard_dns_queries_blocked_ratio:
+      description: Select Queries blocked ratio
+      name: e.g. sensor.adguard_dns_queries_blocked_ratio
+      type: entity-picker
+    adguard_average_processing_speed:
+      description: Select average processing speed
+      name: e.g. sensor.adguard_average_processing_speed
+      type: entity-picker
+  name: AdGuard
+  type: page
+  version: '1.0'
+card:
+  items_classes: col-xs-12 col-sm-6 col-md-6 col-lg-6
+  type: custom:dwains-flexbox-card
+  cards:
+    - type: vertical-stack
+      cards:
+        - entities:
+          - entity: $adguard_dns_queries$
+            name: DNS Queries
+          type: custom:mini-graph-card
+        - entities:
+          - entity: $adguard_dns_queries_blocked$
+            name: DNS Queries blocked
+          type: custom:mini-graph-card
+    - type: vertical-stack
+      cards:
+        - entity: $adguard_protection$
+          show_icon: true
+          show_label: false
+          show_last_changed: false
+          show_name: true
+          show_state: true
+          state:
+          - icon: fas:toggle-on
+            value: 'on'
+          - icon: fas:toggle-off
+            styles:
+              icon:
+              - color: '#6c6c75'
+            value: 'off'
+          styles:
+            card:
+            - border-radius: 12px
+            - margin-bottom: 0px
+            - padding-top: 14px
+            - padding-bottom: 14px
+            grid:
+            - grid-template-areas: '"i n""i s"'
+            - grid-template-columns: 30% 70%
+            - grid-template-rows: min-content
+            icon:
+            - width: 55%
+            - color: var(--primary-color)
+            img_cell:
+            - width: 45px
+            - height: 45px
+            - border-radius: 100%
+            - background: var(--secondary-background-color)
+            label:
+            - justify-self: start
+            - align-self: left
+            - font-size: 12px
+            - color: var(--disabled-text-color)
+            name:
+            - color: var(--primary-text-color)
+            - justify-self: start
+            - font-size: 15px
+            - align-self: center
+            state:
+            - justify-self: start
+            - align-self: left
+            - font-size: 13px
+            - color: var(--disabled-text-color)
+          tap_action:
+            action: toggle
+            haptic: light
+          type: custom:button-card
+        - entity: $adguard_filtering$
+          show_icon: true
+          show_label: false
+          show_last_changed: false
+          show_name: true
+          show_state: true
+          state:
+          - icon: fas:toggle-on
+            value: 'on'
+          - icon: fas:toggle-off
+            styles:
+              icon:
+              - color: '#6c6c75'
+            value: 'off'
+          styles:
+            card:
+            - border-radius: 12px
+            - margin-bottom: 0px
+            - padding-top: 14px
+            - padding-bottom: 14px
+            grid:
+            - grid-template-areas: '"i n""i s"'
+            - grid-template-columns: 30% 70%
+            - grid-template-rows: min-content
+            icon:
+            - width: 55%
+            - color: var(--primary-color)
+            img_cell:
+            - width: 45px
+            - height: 45px
+            - border-radius: 100%
+            - background: var(--secondary-background-color)
+            label:
+            - justify-self: start
+            - align-self: left
+            - font-size: 12px
+            - color: var(--disabled-text-color)
+            name:
+            - color: var(--primary-text-color)
+            - justify-self: start
+            - font-size: 15px
+            - align-self: center
+            state:
+            - justify-self: start
+            - align-self: left
+            - font-size: 13px
+            - color: var(--disabled-text-color)
+          tap_action:
+            action: toggle
+            haptic: light
+          type: custom:button-card
+        - type: custom:button-card
+          entity: $adguard_dns_queries_blocked_ratio$
+          name: Queries Blocked Ratio
+          show_name: true
+          show_icon: true
+          show_state: true
+          show_label: false
+          show_last_changed: false
+          styles:
+            grid:
+              - grid-template-areas: '"i n""i s"'
+              - grid-template-columns: 30% 70%
+              - grid-template-rows: min-content
+            card:
+              - border-radius: 12px
+              - margin-bottom: 0px
+              - padding-top: 14px
+              - padding-bottom: 14px
+            icon:
+              - color: var(--primary-color)
+              - width: 55%
+            img_cell:
+              - width: 45px
+              - height: 45px
+              - background: var(--secondary-background-color)
+              - border-radius: 100%
+            name:
+              - color: var(--primary-text-color)
+              - justify-self: start
+              - font-size: 15px
+              - align-self: center
+            state:
+              - justify-self: start
+              - align-self: left
+              - font-size: 13px
+              - color: var(--disabled-text-color)
+            label:
+              - justify-self: start
+              - align-self: left
+              - font-size: 12px
+              - color: var(--disabled-text-color)
+        - type: custom:button-card
+          entity: $adguard_average_processing_speed$
+          name: Average Processing Speed
+          show_name: true
+          show_icon: true
+          show_state: true
+          show_label: false
+          show_last_changed: false
+          styles:
+            grid:
+              - grid-template-areas: '"i n""i s"'
+              - grid-template-columns: 30% 70%
+              - grid-template-rows: min-content
+            card:
+              - border-radius: 12px
+              - margin-bottom: 0px
+              - padding-top: 14px
+              - padding-bottom: 14px
+            icon:
+              - color: var(--primary-color)
+              - width: 55%
+            img_cell:
+              - width: 45px
+              - height: 45px
+              - background: var(--secondary-background-color)
+              - border-radius: 100%
+            name:
+              - color: var(--primary-text-color)
+              - justify-self: start
+              - font-size: 15px
+              - align-self: center
+            state:
+              - justify-self: start
+              - align-self: left
+              - font-size: 13px
+              - color: var(--disabled-text-color)
+            label:
+              - justify-self: start
+              - align-self: left
+              - font-size: 12px
+              - color: var(--disabled-text-color)

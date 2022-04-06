@@ -12,6 +12,7 @@
 
  ## Fields to define for each person.
  - Name of the person
+ - Person entity
  - Tracker entity of the person
  - Battery charging entity of the person
  - Battery level entity of the person

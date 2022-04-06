@@ -1,7 +1,7 @@
 blueprint:
   name: ThreePersonsBlueprint
   description: Three persons bleuprint by Michel Jourdain
-  version: "1.1"
+  version: "1.2"
   type: page
   
   custom_cards:
@@ -16,15 +16,19 @@ blueprint:
       name: Name person one
       description: Name of the person one
       type: text-field
-    12_tracker_entity:
+    12_person_entity:
+      name: Person one entity
+      description: Person one entity
+      type: entity-picker
+    13_tracker_entity:
       name: Tracker entity person one
       description: Tracker entity of person one
       type: entity-picker
-    13_battery_charging_entity:
+    14_battery_charging_entity:
       name: Battery charging person one
       description: Battery charging entity of person one
       type: entity-picker
-    14_battery_level_entity:
+    15_battery_level_entity:
       name: Battery level person one
       description: Battery level entity of person one
       type: entity-picker
@@ -33,15 +37,19 @@ blueprint:
       name: Name person two
       description: Name of the person two
       type: text-field
-    22_tracker_entity:
+    22_person_entity:
+      name: Person two entity
+      description: Person two entity
+      type: entity-picker
+    23_tracker_entity:
       name: Tracker entity person two
       description: Tracker entity of person two
       type: entity-picker
-    23_battery_charging_entity:
+    24_battery_charging_entity:
       name: Battery charging person two
       description: Battery charging entity of person two
       type: entity-picker
-    24_battery_level_entity:
+    25_battery_level_entity:
       name: Battery level person two
       description: Battery level entity of person two
       type: entity-picker
@@ -50,15 +58,19 @@ blueprint:
       name: Name person three
       description: Name of the person three
       type: text-field
-    32_tracker_entity:
+    32_person_entity:
+      name: Person three entity
+      description: Person three entity
+      type: entity-picker
+    33_tracker_entity:
       name: Tracker entity person three
       description: Tracker entity of person three
       type: entity-picker
-    33_battery_charging_entity:
+    34_battery_charging_entity:
       name: Battery charging person three
       description: Battery charging entity of person three
       type: entity-picker
-    34_battery_level_entity:
+    35_battery_level_entity:
       name: Battery level person three
       description: Battery level entity of person three
       type: entity-picker
@@ -114,7 +126,7 @@ card:
                                  - width: 80px
                
                   - type: custom:mushroom-person-card
-                    entity: $12_tracker_entity$
+                    entity: $12_person_entity$
                     name: $11_person_name$
                     icon: mdi:account-plus
                     hide_name: false
@@ -126,7 +138,7 @@ card:
                     
                   - type: history-graph
                     entities:
-                      - entity: $12_tracker_entity$
+                      - entity: $13_tracker_entity$
                     hours_to_show: 24
                     refresh_interval: 0
                     
@@ -135,7 +147,7 @@ card:
 
                   - type: history-graph
                     entities:
-                      - entity: $13_battery_charging_entity$
+                      - entity: $14_battery_charging_entity$
                     hours_to_show: 24
                     refresh_interval: 0
                     
@@ -144,7 +156,7 @@ card:
           
                   - type: 'custom:mini-graph-card'
                     entities: 
-                      - entity: $14_battery_level_entity$
+                      - entity: $15_battery_level_entity$
                     line_color: green
                     hours_to_show: 24
                     line_width: 2
@@ -196,9 +208,9 @@ card:
                             styles:
                               card:
                                  - width: 80px
-
+                    
                   - type: custom:mushroom-person-card
-                    entity: $22_tracker_entity$
+                    entity: $22_person_entity$
                     name: $21_person_name$
                     icon: mdi:account-plus
                     hide_name: false
@@ -210,7 +222,7 @@ card:
                 
                   - type: history-graph
                     entities:
-                      - entity: $22_tracker_entity$
+                      - entity: $23_tracker_entity$
                     hours_to_show: 24
                     refresh_interval: 0
                     
@@ -219,7 +231,7 @@ card:
 
                   - type: history-graph
                     entities:
-                      - entity: $23_battery_charging_entity$
+                      - entity: $24_battery_charging_entity$
                     hours_to_show: 24
                     refresh_interval: 0
 
@@ -228,7 +240,7 @@ card:
           
                   - type: 'custom:mini-graph-card'
                     entities: 
-                      - entity: $24_battery_level_entity$
+                      - entity: $25_battery_level_entity$
                     line_color: green
                     hours_to_show: 24
                     line_width: 2
@@ -282,7 +294,7 @@ card:
                                  - color: lightgreen
                                  
                   - type: custom:mushroom-person-card
-                    entity: $32_tracker_entity$
+                    entity: $32_person_entity$
                     name: $31_person_name$
                     icon: mdi:account-plus
                     hide_name: false
@@ -294,7 +306,7 @@ card:
                 
                   - type: history-graph
                     entities:
-                      - entity: $32_tracker_entity$
+                      - entity: $33_tracker_entity$
                     hours_to_show: 24
                     refresh_interval: 0
                     
@@ -303,7 +315,7 @@ card:
 
                   - type: history-graph
                     entities:
-                      - entity: $33_battery_charging_entity$
+                      - entity: $34_battery_charging_entity$
                     hours_to_show: 24
                     refresh_interval: 0
 
@@ -312,7 +324,7 @@ card:
           
                   - type: 'custom:mini-graph-card'
                     entities: 
-                      - entity: $34_battery_level_entity$
+                      - entity: $35_battery_level_entity$
                     line_color: green
                     hours_to_show: 24
                     line_width: 2
@@ -329,7 +341,7 @@ card:
                       graph: bar
                       extrema: false
                       average: false   
-
+                          
     - type: vertical-stack
       item_classes: 'col-xs-12 col-sm-5'
       cards:         
@@ -355,7 +367,7 @@ card:
         
                   - type: map
                     entities:
-                      - entity: $12_tracker_entity$
+                      - entity: $13_tracker_entity$
                     hours_to_show: 24
                     default_zoom: 12
                     
@@ -374,7 +386,7 @@ card:
         
                   - type: map
                     entities:
-                      - entity: $22_tracker_entity$
+                      - entity: $23_tracker_entity$
                     hours_to_show: 24
                     default_zoom: 12
                     
@@ -393,7 +405,6 @@ card:
         
                   - type: map
                     entities:
-                      - entity: $32_tracker_entity$
+                      - entity: $33_tracker_entity$
                     hours_to_show: 24
                     default_zoom: 12
-                    

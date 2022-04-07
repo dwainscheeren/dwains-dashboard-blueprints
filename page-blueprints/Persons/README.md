@@ -1,9 +1,10 @@
 # Persons Blueprint
 
 ## Installation of this Blueprint
-- Install mini-graph-card from [HACS]
-- Install state-switch from [HACS]
-- Install button-card from [HACS]
+- Install mini-graph-card from HACS
+- Install state-switch from HACS
+- Install button-card from HACS
+- Install mushroom-person-card from HACS
 
 - There are four blueprints depending on how many people you want to display.  There is a blueprint for one person, two persons, three persons and four persons.
 
@@ -11,7 +12,7 @@
 
  ## Fields to define for each person.
  - Name of the person
- - Entity of the person
+ - Person entity
  - Tracker entity of the person
  - Battery charging entity of the person
  - Battery level entity of the person

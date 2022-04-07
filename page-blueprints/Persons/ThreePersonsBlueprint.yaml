@@ -1,12 +1,15 @@
 blueprint:
   name: ThreePersonsBlueprint
-  description: Three persons blueprint by Michel Jourdain
-  version: "1.0"
+  description: Three persons bleuprint by Michel Jourdain
+  version: "1.2"
   type: page
+  
   custom_cards:
     - mini-graph-card
     - state-switch
     - button-card
+    - mushroom-person-card
+    
   input:
   
     11_person_name:
@@ -14,8 +17,8 @@ blueprint:
       description: Name of the person one
       type: text-field
     12_person_entity:
-      name: Entity person one
-      description: The entity of person one
+      name: Person one entity
+      description: Person one entity
       type: entity-picker
     13_tracker_entity:
       name: Tracker entity person one
@@ -35,8 +38,8 @@ blueprint:
       description: Name of the person two
       type: text-field
     22_person_entity:
-      name: Entity person two
-      description: The entity of person two
+      name: Person two entity
+      description: Person two entity
       type: entity-picker
     23_tracker_entity:
       name: Tracker entity person two
@@ -56,8 +59,8 @@ blueprint:
       description: Name of the person three
       type: text-field
     32_person_entity:
-      name: Entity person three
-      description: The entity of person three
+      name: Person three entity
+      description: Person three entity
       type: entity-picker
     33_tracker_entity:
       name: Tracker entity person three
@@ -122,14 +125,14 @@ card:
                               card:
                                  - width: 80px
                
-                  - type: custom:dwains-heading-card
-                    title: $11_person_name$
+                  - type: custom:mushroom-person-card
+                    entity: $12_person_entity$
+                    name: $11_person_name$
+                    icon: mdi:account-plus
+                    hide_name: false
+                    use_entity_picture: true
+                    hide_state: false
 
-                  - type: entities
-                    entities:
-                      - entity: $12_person_entity$
-                    state_color: true
-                    
                   - type: custom:dwains-heading-card
                     title: Displacements for 24 hours
                     
@@ -205,14 +208,14 @@ card:
                             styles:
                               card:
                                  - width: 80px
-
-                  - type: custom:dwains-heading-card
-                    title: $21_person_name$
-
-                  - type: entities
-                    entities:
-                      - entity: $22_person_entity$
-                    state_color: true
+                    
+                  - type: custom:mushroom-person-card
+                    entity: $22_person_entity$
+                    name: $21_person_name$
+                    icon: mdi:account-plus
+                    hide_name: false
+                    use_entity_picture: true
+                    hide_state: false
                     
                   - type: custom:dwains-heading-card
                     title: Displacements for 24 hours
@@ -290,13 +293,13 @@ card:
                               name:
                                  - color: lightgreen
                                  
-                  - type: custom:dwains-heading-card
-                    title: $31_person_name$
-
-                  - type: entities
-                    entities:
-                      - entity: $32_person_entity$
-                    state_color: true
+                  - type: custom:mushroom-person-card
+                    entity: $32_person_entity$
+                    name: $31_person_name$
+                    icon: mdi:account-plus
+                    hide_name: false
+                    use_entity_picture: true
+                    hide_state: false
                     
                   - type: custom:dwains-heading-card
                     title: Displacements for 24 hours
@@ -338,7 +341,7 @@ card:
                       graph: bar
                       extrema: false
                       average: false   
-
+                          
     - type: vertical-stack
       item_classes: 'col-xs-12 col-sm-5'
       cards:         
@@ -347,6 +350,7 @@ card:
             entity: hash
             default: page01
             states:
+            
               page01:
                 type: vertical-stack
                 cards:
@@ -403,4 +407,4 @@ card:
                     entities:
                       - entity: $33_tracker_entity$
                     hours_to_show: 24
-                    default_zoom: 1
+                    default_zoom: 12

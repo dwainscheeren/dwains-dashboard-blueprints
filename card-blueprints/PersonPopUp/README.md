@@ -17,11 +17,11 @@
 ### Screenshots
 **Light theme:**<br>
 
-![image](https://user-images.githubusercontent.com/83040228/162289443-b400be17-17cd-4b45-84a1-8db5608b2ab1.jpeg)
+![image](https://user-images.githubusercontent.com/83040228/162289950-4f694c42-7852-458e-b090-a458d17fc451.jpeg)
 
 **Dark theme:**<br>
 
-![image](https://user-images.githubusercontent.com/83040228/162289463-b3acf9bc-eecb-4709-b88a-2ee157edc977.jpeg)
+![image](https://user-images.githubusercontent.com/83040228/162289994-396f1dcf-de3a-4cf9-87cc-b1e0c545893d.jpeg)
 
 ### Changelog
 #### 1.0

@@ -32,7 +32,7 @@ blueprint:
   type: page
   version: '1.0'
 card:
-  items_classes: col-xs-12 col-sm-6 col-md-6 col-lg-6
+  items_classes: 'col-xs-12 col-sm-6 col-md-4 col-lg-4'
   type: custom:dwains-flexbox-card
   cards:
     - type: vertical-stack

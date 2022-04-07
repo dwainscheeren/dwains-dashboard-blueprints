@@ -97,5 +97,6 @@ card:
         - type: map
           entities:
             - entity: $13_tracker_entity$
+          aspect_ratio: 50%
           hours_to_show: 24
           default_zoom: 12

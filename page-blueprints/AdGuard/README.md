@@ -24,4 +24,6 @@ This is a simple AdGuard Page.
 - First release
 #### 1.0.1
 - changed layout
+#### 1.0.2
+- changed flexbox-card
 ---

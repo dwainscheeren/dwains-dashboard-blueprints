@@ -42,3 +42,4 @@ graph-battery-page.yaml
 #### 1.2.0
 - Added Graph Battery Page
 
+

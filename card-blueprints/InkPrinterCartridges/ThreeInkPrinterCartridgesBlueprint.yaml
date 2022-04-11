@@ -1,0 +1,80 @@
+blueprint:
+  name: ThreeInkPrinterCartridges
+  description: Three Ink Printer Cartridges bleuprint by Michel Jourdain
+  version: "1.0"
+  type: card
+  
+  custom_cards:
+    - button-card
+
+  input:
+  
+    10_Cartridge_1_name:
+      name: Name first Cartridge
+      description: Name of the first Cartridge
+      type: text-field
+    11_Cartridge_1_color:
+      name: Color first Cartridge
+      description: Color of the first Cartridge ---- IN ENGLISH ----
+      type: text-field
+    12_Cartridge_1_entity:
+      name: Entity first Cartridge
+      description: Entity of the first Cartridge
+      type: entity-picker
+      
+    20_Cartridge_2_name:
+      name: Name second Cartridge
+      description: Name of the second Cartridge
+      type: text-field
+    21_Cartridge_2_color:
+      name: Color second Cartridge
+      description: Color of the second Cartridge ---- IN ENGLISH ----
+      type: text-field
+    22_Cartridge_2_entity:
+      name: Entity second Cartridge
+      description: Entity of the second Cartridge
+      type: entity-picker
+      
+    30_Cartridge_3_name:
+      name: Name third Cartridge
+      description: Name of the third Cartridge
+      type: text-field
+    31_Cartridge_3_color:
+      name: Color third Cartridge
+      description: Color of the third Cartridge ---- IN ENGLISH ----
+      type: text-field
+    32_Cartridge_3_entity:
+      name: Entity third Cartridge
+      description: Entity of the third Cartridge
+      type: entity-picker
+
+card:
+
+  type: custom:dwains-flexbox-card
+  items_classes: 'col-xs-12'
+  cards: 
+
+    - type: custom:bar-card
+      direction: up
+      height: 200px
+      position: bottom
+      positions:
+        icon: inside
+        indicator: outside
+        name: outside
+        value: outside
+      unit_of_measurement: '%'
+      width: 100%
+      stack: horizontal
+      target: 10
+
+      entities:
+        - color: $11_Cartridge_1_color$
+          entity: $12_Cartridge_1_entity$
+          name: $10_Cartridge_1_name$
+        - color: $21_Cartridge_2_color$
+          entity: $22_Cartridge_2_entity$
+          name: $20_Cartridge_2_name$
+        - color: $31_Cartridge_3_color$
+          entity: $32_Cartridge_3_entity$
+          name: $30_Cartridge_3_name$

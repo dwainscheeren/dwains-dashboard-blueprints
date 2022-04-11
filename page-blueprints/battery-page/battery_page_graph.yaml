@@ -1,0 +1,47 @@
+blueprint:
+  custom_cards:
+  - button-card
+  - auto-entities
+  description: Battery page with graphs by Bourner
+  name: Battery Page Graph Blueprint
+  type: page
+  version: '1.0'
+card:
+  cards:
+  - card:
+      items_classes: col-xs-12 col-sm-6 col-md-2 col-lg-2
+      padding: true
+      type: custom:dwains-flexbox-card
+    filter:
+      include:
+      - attributes:
+          device_class: battery
+        domain: sensor
+        options:
+          entities:
+          - this.entity_id
+          type: custom:dwains-button-card
+    sort:
+      exclude: []
+      method: state
+      numeric: true
+    type: custom:auto-entities
+  - card:
+      items_classes: col-xs-12 col-sm-6 col-md-2 col-lg-2
+      padding: true
+      type: custom:dwains-flexbox-card
+    filter:
+      include:
+      - attributes:
+          device_class: battery
+        domain: binary_sensor
+        options:
+          entities:
+          - this.entity_id
+          type: custom:dwains-button-card
+    sort:
+      exclude: []
+      method: state
+      numeric: true
+    type: custom:auto-entities
+  type: vertical-stack

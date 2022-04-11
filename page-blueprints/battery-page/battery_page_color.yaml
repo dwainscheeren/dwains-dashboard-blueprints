@@ -2,8 +2,8 @@ blueprint:
   custom_cards:
   - button-card
   - auto-entities
-  description: Battery page by Bourner
-  name: Battery Page Blueprint
+  description: Battery Page with colored Icons by Bourner
+  name: Battery Page Color Blueprint
   type: page
   version: '1.0'
 card:
@@ -25,41 +25,50 @@ card:
           show_name: true
           show_state: true
           state:
-          - icon: mdi:battery
-            operator: '>='
-            value: 90
-          - icon: mdi:battery-90
-            operator: '>='
-            value: 80
-          - icon: mdi:battery-80
-            operator: '>='
-            value: 70
-          - icon: mdi:battery-70
-            operator: '>='
-            value: 60
-          - icon: mdi:battery-60
-            operator: '>='
-            value: 50
-          - color: yellow
-            icon: mdi:battery-50
-            operator: '>='
-            value: 40
-          - color: orange
-            icon: mdi:battery-40
-            operator: '>='
-            value: 30
-          - color: orange
-            icon: mdi:battery-30
-            operator: '>='
-            value: 20
-          - color: red
-            icon: mdi:battery-20
-            operator: '>='
-            value: 10
-          - color: red
+          - color: '#ff0000'
+            icon: mdi:battery-outline
+            operator: <=
+            value: 0          
+          - color: '#ff5b00'
             icon: mdi:battery-10
-            operator: '>='
-            value: 0
+            operator: <=
+            value: 10
+          - color: '#ff8a00'
+            icon: mdi:battery-20
+            operator: <=
+            value: 20
+          - color: '#ffb300'
+            icon: mdi:battery-30
+            operator: <=
+            value: 30
+          - color: '#ffda00'
+            icon: mdi:battery-40
+            operator: <=
+            value: 40
+          - color: '#ffff00'
+            icon: mdi:battery-50
+            operator: <=
+            value: 50
+          - color: '#e3ff00'
+            icon: mdi:battery-60
+            operator: <=
+            value: 60
+          - color: '#c3ff00'
+            icon: mdi:battery-70
+            operator: <=
+            value: 70
+          - color: '#9eff00'
+            icon: mdi:battery-80
+            operator: <=
+            value: 80
+          - color: '#6fff00'
+            icon: mdi:battery-90
+            operator: <=
+            value: 90
+          - color: '#00ff00'
+            icon: mdi:battery
+            operator: <=
+            value: 100
           styles:
             card:
             - border-radius: 12px
@@ -115,41 +124,50 @@ card:
           show_name: true
           show_state: true
           state:
-          - icon: mdi:battery
-            operator: '>='
-            value: 90
-          - icon: mdi:battery-90
-            operator: '>='
-            value: 80
-          - icon: mdi:battery-80
-            operator: '>='
-            value: 70
-          - icon: mdi:battery-70
-            operator: '>='
-            value: 60
-          - icon: mdi:battery-60
-            operator: '>='
-            value: 50
-          - color: yellow
-            icon: mdi:battery-50
-            operator: '>='
-            value: 40
-          - color: orange
-            icon: mdi:battery-40
-            operator: '>='
-            value: 30
-          - color: orange
-            icon: mdi:battery-30
-            operator: '>='
-            value: 20
-          - color: red
-            icon: mdi:battery-20
-            operator: '>='
-            value: 10
-          - color: red
+          - color: '#ff0000'
+            icon: mdi:battery-outline
+            operator: <=
+            value: 0          
+          - color: '#ff5b00'
             icon: mdi:battery-10
-            operator: '>='
-            value: 0
+            operator: <=
+            value: 10
+          - color: '#ff8a00'
+            icon: mdi:battery-20
+            operator: <=
+            value: 20
+          - color: '#ffb300'
+            icon: mdi:battery-30
+            operator: <=
+            value: 30
+          - color: '#ffda00'
+            icon: mdi:battery-40
+            operator: <=
+            value: 40
+          - color: '#ffff00'
+            icon: mdi:battery-50
+            operator: <=
+            value: 50
+          - color: '#e3ff00'
+            icon: mdi:battery-60
+            operator: <=
+            value: 60
+          - color: '#c3ff00'
+            icon: mdi:battery-70
+            operator: <=
+            value: 70
+          - color: '#9eff00'
+            icon: mdi:battery-80
+            operator: <=
+            value: 80
+          - color: '#6fff00'
+            icon: mdi:battery-90
+            operator: <=
+            value: 90
+          - color: '#00ff00'
+            icon: mdi:battery
+            operator: <=
+            value: 100
           styles:
             card:
             - border-radius: 12px
@@ -162,7 +180,6 @@ card:
             - grid-template-rows: min-content
             icon:
             - width: 55%
-            - color: var(--primary-color)
             img_cell:
             - width: 45px
             - height: 45px

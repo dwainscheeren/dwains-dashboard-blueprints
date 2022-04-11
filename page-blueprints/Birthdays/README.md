@@ -22,7 +22,11 @@ This Blueprint is a blueprint version of the birthdays page created by [LRvdLind
 ### Screenshots
 **Light theme:**<br>
 
+![image](https://user-images.githubusercontent.com/83040228/162754689-a985a791-07d9-4f6a-9170-4149cd1d33fc.png)
+
 **Dark theme:**<br>
+
+![image](https://user-images.githubusercontent.com/83040228/162754747-9316813c-ba86-43b2-9e5e-2d1c6d08c766.png)
 
 ### Changelog
 #### 1.0

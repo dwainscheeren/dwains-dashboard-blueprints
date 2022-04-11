@@ -1,0 +1,28 @@
+blueprint:
+  custom_cards:
+  - mushroom-chips-card
+  description: adds motion/window/door sensors with mushroom chip card by Bourner
+  input:
+    entity: 
+      description: Choose entity
+      type: entity-picker
+      name: Entity
+    name: 
+      description: Choose name of entity
+      type: text-field
+      name: Name      
+  name: Mushroom Chip Card for Sensors
+  type: card
+  version: '1.0.1'
+card:
+  chips:
+  - chip:
+      content_info: name
+      name: $name$
+      entity: $entity$
+      type: entity
+    conditions:
+    - entity: $entity$
+      state_not: 'off'
+    type: conditional
+  type: custom:mushroom-chips-card

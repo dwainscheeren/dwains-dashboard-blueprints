@@ -1,0 +1,19 @@
+blueprint:
+  custom_cards:
+  - mushroom-alarm-card
+  description: replaces alarm card with mushroom alarm card by Bourner
+  input:
+    name: null
+  name: Replace Mushroom Alarm Card
+  type: card
+  version: '1.0'
+card:
+  entity: $replace_with_input_entity$
+  hide_state: false
+  states:
+    - armed_home
+    - armed_away
+    - armed_night
+    - armed_vacation
+    - armed_custom_bypass
+  type: custom:mushroom-alarm-control-panel-card

@@ -1,0 +1,23 @@
+blueprint:
+  custom_cards:
+  - mushroom-vacuum-card
+  description: replaces vaccum card with mushroom vacuum card by Bourner
+  input:
+    name:
+      description: 'This is the name of the vacuum'
+      name: 'Select Name'
+      type: text-field  
+  name: Replace Mushroom Vacuum Card
+  type: card
+  version: '1.0'
+card:
+  type: custom:mushroom-vacuum-card
+  entity: $replace_with_input_entity$
+  name: $name$
+  hide_state: false
+  commands:
+    - start_pause
+    - stop
+    - locate
+    - return_home
+    - clean_spot

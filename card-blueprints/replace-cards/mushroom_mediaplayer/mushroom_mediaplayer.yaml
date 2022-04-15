@@ -1,0 +1,25 @@
+blueprint:
+  custom_cards:
+  - mushroom-media-player-card
+  description: replaces media player card with mushroom media player card by Bourner
+  input:
+    name: null
+  name: Replace Mushroom Alarm Card
+  type: card
+  version: '1.0'
+card:
+  type: custom:mushroom-media-player-card
+  use_media_info: true
+  use_media_artwork: true
+  entity: $replace_with_input_entity$
+  volume_controls:
+    - volume_mute
+    - volume_buttons
+    - volume_set
+  media_controls:  
+    - on_off
+    - shuffle
+    - previous
+    - play_pause_stop
+    - next
+    - repeat

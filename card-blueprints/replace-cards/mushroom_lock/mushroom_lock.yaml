@@ -1,0 +1,12 @@
+blueprint:
+  custom_cards:
+  - mushroom-lock-card
+  description: replaces lock card with mushroom lock card by Bourner
+  input:
+    name: null
+  name: Replace Mushroom Lock Card
+  type: card
+  version: '1.0'
+card:
+  type: custom:mushroom-lock-card
+  entity: $replace_with_input_entity$

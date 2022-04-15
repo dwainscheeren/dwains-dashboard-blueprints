@@ -4,7 +4,7 @@ blueprint:
   description: replaces media player card with mushroom media player card by Bourner
   input:
     name: null
-  name: Replace Mushroom Alarm Card
+  name: Replace Mushroom Media Player Card
   type: card
   version: '1.0'
 card:

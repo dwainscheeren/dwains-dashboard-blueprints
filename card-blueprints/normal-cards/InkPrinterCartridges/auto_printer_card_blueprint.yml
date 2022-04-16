@@ -1,0 +1,51 @@
+blueprint:
+  custom_cards:
+  - vertical-stack-in-card
+  - mushroom-template-card
+  - card-templater
+  - bar-card
+  description: Single entity printer By PCPAI
+  input:
+    entity:
+      description: choose printer entity state
+      name: Printer entity
+      type: entity-picker
+  name: Printer auto card english
+  type: card
+  version: '1.0.1'
+card:  
+  entity: $entity$
+  type: custom:vertical-stack-in-card
+  cards:
+    - type: custom:mushroom-template-card
+      icon: >-
+        {{iif(is_state('$entity$', 'idle'),
+        'mdi:printer',iif(is_state('$entity$', 'printing'),
+        'mdi:printer-eye','mdi:printer-alert', 'mdi:printer-off'),
+        'mdi:printer-off')}}
+      multiline_secondary: false
+      icon_color: >-
+        {{iif(is_state('$entity$', 'idle'),
+        'green',iif(is_state('$entity$', 'printing'),
+        'yellow','red', ''), '')}}
+      entity: $entity$
+      secondary: '{{states(''$entity$'')}}'
+      primary: '{{state_attr(''$entity$'',''friendly_name'')}}'
+    - type: custom:card-templater
+      card:
+        type: custom:bar-card
+        entities_template: >-
+          {% for sensor in states.sensor %}{% if sensor.entity_id is
+          search("$entity$", ignorecase=true) %}{% if
+          sensor.entity_id is search("_ink", ignorecase=true) %}{{"- entity: " ~
+          sensor.entity_id ~ "\n  color: " ~
+          sensor.entity_id|regex_replace(find='_ink', replace='',
+          ignorecase=False)|regex_replace(find='$entity$_',
+          replace='', ignorecase=False) ~ "\n"}}{% endif %}{% endif %}{% endfor %}
+        direction: up
+        height: 200px
+        stack: horizontal
+        positions:
+          name: 'off'
+          icon: 'off'
+          indicator: 'off'

@@ -1,7 +1,7 @@
 blueprint:
   name: Weather dashboard page Blueprint
   description: An weather dashboard page by Robert Wilson based on orginial page by Leon van der Linden
-  version: "1.3"
+  version: "1.4"
   type: page
   custom_cards:
     - button-card
@@ -13,7 +13,7 @@ blueprint:
   input:
     weather_entity:
       name: Weather entity
-      description: This is the weather entity
+      description: This is the weather entity (e.g weather.openweathermap )
     weather_entity_temperature:
       name: temperature
       description: This is the temperature from the weather entity (e.g.  sensor.openweathermap_temperature )

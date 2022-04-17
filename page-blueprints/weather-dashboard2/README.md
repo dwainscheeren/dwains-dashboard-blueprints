@@ -21,7 +21,31 @@ Note: this blueprint is a ported addon from Dwains Dashboard Blueprints. This po
 
 ## Prerequisite
 ---
-- Make sure you have installed the lovelace [state-switch](https://github.com/thomasloven/lovelace-state-switch), [mini-graph-card](https://github.com/kalkih/mini-graph-card), [auto-reload-card](https://github.com/ben8p/lovelace-auto-reload-card), [Weather Card](https://github.com/bramkragten/weather-card), [fontawesome icons](https://github.com/thomasloven/hass-fontawesome), [Cupertino Icons](https://github.com/menahishayan/HomeAssistant-Cupertino-Icons), [Button Card](https://github.com/custom-cards/button-card), [HA card Weather Conditions](https://github.com/r-renato/ha-card-weather-conditions), [fold-entity-row](https://github.com/thomasloven/lovelace-fold-entity-row), [multiple-entity-row](https://github.com/benct/lovelace-multiple-entity-row) and the integration [Neerslag app](https://github.com/aex351/home-assistant-neerslag-app). This can be done manually or directly via hacs
+- Make sure you have following installed this can be done manually or directly via hacs if 
+*###Cards
+    -[state-switch](https://github.com/thomasloven/lovelace-state-switch), 
+    -[mini-graph-card](https://github.com/kalkih/mini-graph-card), 
+    -[auto-reload-card](https://github.com/ben8p/lovelace-auto-reload-card), 
+    -[Weather Card](https://github.com/bramkragten/weather-card), 
+    -[fontawesome icons](https://github.com/thomasloven/hass-fontawesome), 
+    -[Cupertino Icons](https://github.com/menahishayan/HomeAssistant-Cupertino-Icons), 
+    -[Button Card](https://github.com/custom-cards/button-card), 
+    -[HA card Weather Conditions](https://github.com/r-renato/ha-card-weather-conditions), 
+    -[fold-entity-row](https://github.com/thomasloven/lovelace-fold-entity-row), 
+    -[multiple-entity-row](https://github.com/benct/lovelace-multiple-entity-row) and the 
+*##Integrations
+    -OpenWeatherMap [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start?domain=openweathermap)
+    -OpenUV [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=openuv)
+
+    -IQVIA [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=openuv)
+
+    -Weatheralerts 
+    -Sun [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=sun)
+
+    -Moon [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=moon)
+
+    -Seasons [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=seasons)
+
 
 <img width="618" alt="image" src="https://user-images.githubusercontent.com/77990847/114733529-b6ca1a00-9d43-11eb-876a-6f4beda466ec.png">
 
@@ -32,7 +56,8 @@ Note: this blueprint is a ported addon from Dwains Dashboard Blueprints. This po
 :warning: Please reboot Home Assistant after config the sensors! :warning:
 
 ### OpenWeatherMap
-- Make the Home Assistant integration with [Buienradar](https://www.home-assistant.io/integrations/sensor.buienradar/) and [OpenUV](https://github.com/LRvdLinden/weather_dd_addon/blob/main/README.md#openuv)
+- Make the Home Assistant integration with 
+- [OpenUV](https://github.com/LRvdLinden/weather_dd_addon/blob/main/README.md#openuv)
 - Choose `latitude` and `longtiude` from the correct [weather station](https://www.google.com/maps/d/embed?mid=1NivHkTGQUOs0dwQTnTMZi8Uatj0&ll=52.92957401169076%2C5.184999999999995&z=7) 
 
 
@@ -65,7 +90,7 @@ Note: this blueprint is a ported addon from Dwains Dashboard Blueprints. This po
                             color: darkgray !important;
                             margin-left: 2px !important;
                           }
-                        entity: weather.thuis_openweathermap_daily
+                        entity: weather.openweathermap
                         current: true
                         details: true
                         forecast: true
@@ -86,7 +111,7 @@ Note: this blueprint is a ported addon from Dwains Dashboard Blueprints. This po
 
 ![image](https://user-images.githubusercontent.com/77990847/117784741-28fb2500-b244-11eb-945a-19dc8f3c3ab0.png)
 
-##NOT SURE THIS IS STILL NECESSARY 
+##Sensors 
 ```
 
 ### Moon sensor

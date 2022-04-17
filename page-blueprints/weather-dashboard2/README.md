@@ -21,8 +21,8 @@ Note: this blueprint is a ported addon from Dwains Dashboard Blueprints. This po
 
 ## Prerequisite
 ---
-- Make sure you have following installed this can be done manually or directly via hacs if 
-*###Cards
+Make sure you have following installed this can be done manually or directly via hacs
+- ###Cards
     -[state-switch](https://github.com/thomasloven/lovelace-state-switch), 
     -[mini-graph-card](https://github.com/kalkih/mini-graph-card), 
     -[auto-reload-card](https://github.com/ben8p/lovelace-auto-reload-card), 
@@ -33,13 +33,15 @@ Note: this blueprint is a ported addon from Dwains Dashboard Blueprints. This po
     -[HA card Weather Conditions](https://github.com/r-renato/ha-card-weather-conditions), 
     -[fold-entity-row](https://github.com/thomasloven/lovelace-fold-entity-row), 
     -[multiple-entity-row](https://github.com/benct/lovelace-multiple-entity-row) and the 
-*##Integrations
+- ###Integrations
     -OpenWeatherMap [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start?domain=openweathermap)
+    
     -OpenUV [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=openuv)
 
     -IQVIA [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=openuv)
 
-    -Weatheralerts 
+    -Weatheralerts
+    
     -Sun [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=sun)
 
     -Moon [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=moon)

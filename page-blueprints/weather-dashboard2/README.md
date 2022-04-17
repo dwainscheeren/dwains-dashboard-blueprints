@@ -75,14 +75,12 @@ Note: this blueprint is a ported addon from Dwains Dashboard v2 addons. This por
 
 ### IQVIA 
 - Make the integration with [IQVIA](https://www.home-assistant.io/integrations/iqvia/)
-- Copy the content of the blueprint file `blueprint.yaml` into the blueprint installation block.
 
-<img width="351" alt="image" src="https://user-images.githubusercontent.com/77990847/118349327-64e9ff00-b550-11eb-9387-db6284ceba9a.gif">
-
+[![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start?domain=iqvia)
 
 ### OpenUV
 - To get the UV index card into the weather dashboard, make sure you have created a [API](https://www.openuv.io/) at [OpenUV](https://www.openuv.io/)
-- After creating the API, install the [OpenUV](https://www.openuv.io/) integartion bij clikking on the button below.
+- After creating the API, install the [OpenUV](https://www.openuv.io/) integartion by clikking on the button below.
 
 [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=http%3A%2F%2Fhomeassistant.local%3A8123%2Fconfig_flow_start%3Fdomain%3Dopenuv)
 

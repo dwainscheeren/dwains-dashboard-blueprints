@@ -17,7 +17,7 @@ blueprint:
     weather_entity_temperature:
       name: temperature
       description: This is the temperature from the weather entity
-    weather_entity_feels_like
+    weather_entity_feels_like:
 			name: Feels Like
 			description: This is the feels like temperature from the weather entity
 		weather_entity_humidity:

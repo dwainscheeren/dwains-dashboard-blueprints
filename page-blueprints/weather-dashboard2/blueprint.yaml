@@ -1,7 +1,7 @@
 blueprint:
   name: Weather dashboard page Blueprint
   description: An weather dashboard page by Robert Wilson based on orginial page by Leon van der Linden
-  version: "1.2"
+  version: "1.3"
   type: page
   custom_cards:
     - button-card
@@ -14,7 +14,51 @@ blueprint:
     weather_entity:
       name: Weather entity
       description: This is the weather entity
-    
+    weather_entity_temperature:
+      name: temperature
+      description: This is the temperature from the weather entity
+    weather_entity_feels_like
+			name: Feels Like
+			description: This is the feels like temperature from the weather entity
+		weather_entity_humidity:
+			name: Humidity
+			description: This is the humidity from the weather entity
+		weather_entity_pressure:
+			name: Barometric pressure
+			description: This is the pressure from the weather entity
+		wind_speed:
+			name: Wind Speed
+			description: Wind speed sensor
+		wind_bearing:
+			name: Wind Direction
+			description: Wind direction sensor
+		#Medical Alerts
+		allergy_index_today:
+			name: Current Allergy index
+			description: allergy index for today
+		allergy_index_forecasted_average:
+			name: Allergy Forecast
+			description: allergy forecast
+		asthma_index_today:
+			name: Asthma Index for today
+			description: daily asthma index
+		asthma_index_forecasted_average:
+			name: asthma forecast
+			description: asthma forecast
+		cold_flu_index_today:
+			name: Cold/Flu index today
+			description: Daily Cold/Flu index
+		cold_flu_forecasted_average:
+			name: Cold/Flu Forecast
+			description: cold/flu forecast
+		#Rain Sensors
+    rain_last_24_hours:
+			name: Rain Last 24 Hours
+			description: Sensor for rain totals last 24 hours
+    rain_last_hour:
+			name: Rain Last Hour
+			description: Sensor for rain total last hour
+    #Lat and Long for the radar map
     long_home:
       name: Longitude for your home
       description: This is the longitude for your home
@@ -151,7 +195,7 @@ card:
                           margin-left: 2px !important;
                         }
                       entities:
-                        - sensor.openweathermap_feels_like_temperature # <- fill in the right sensor
+                        - $weather_entity_feels_like$ # <- fill in the right sensor
                       line_color: "#299ec2"
                       font_size: 80
                       hours_to_show: 12
@@ -270,7 +314,7 @@ card:
                           margin-left: 2px !important;
                         }
                       entities:
-                        - sensor.rain_last_24_hours # <- fill in the right sensor
+                        - $rain_last_24_hours$ # <- fill in the right sensor
                       line_color: "#299ec2"
                       hours_to_show: 12
                       line_width: 1
@@ -314,7 +358,7 @@ card:
                           margin-left: 2px !important;
                         }
                       entities:
-                        - sensor.rain_last_hour # <- fill in the right sensor
+                        - $rain_last_hour$ # <- fill in the right sensor
                       line_color: "#299ec2"
                       hours_to_show: 12
                       line_width: 1
@@ -398,7 +442,7 @@ card:
                           margin-left: 2px !important;
                         }
                       entities:
-                        - sensor.openweathermap_temperature # <- fill in the right sensor
+                        - $weather_entity_temperature$ # <- fill in the right sensor
                       line_color: "#299ec2"
                       font_size: 80
                       hours_to_show: 12
@@ -442,7 +486,7 @@ card:
                           margin-left: 2px !important;
                         }
                       entities:
-                        - sensor.openweathermap_feels_like_temperature # <- fill in the right sensor
+                        - $weather_entity_feels_like$# <- fill in the right sensor
                       line_color: "#299ec2"
                       font_size: 80
                       hours_to_show: 12
@@ -563,21 +607,18 @@ card:
                         - entity: sensor.season
                         - entity: sensor.moon
                         - entity: sun.sun
-                        - entity: sensor.allergy_index_forecasted_average #
-                        - entity: sensor.current_ozone_level
+                        - entity: $allergy_index_today$
+                        - entity: $current_ozone_level$
                         - type: custom:fold-entity-row
                           head:
                             type: section
                             label: Learn More
                           entities:
-                            #- entity: sensor.apeldoorn_barometer # <- fill in the right sensor
-                            #- entity: sensor.apeldoorn_barometer_value # <- fill in the right sensor
-                            - entity: sensor.openweathermap_humidity # <- fill in the right sensor
-                            - entity: sensor.openweathermap_pressure # <- fill in the right sensor
-                            #- entity: sensor.custom_visibility # <- fill in the right sensor  can get this
-                            - entity: sensor.openweathermap_wind_speed # <- fill in the right sensor
+                            - entity: $weather_entity_humidity$
+                            - entity: $weather_entity_pressure$
+                            - entity: $wind_speed$
                               name: Wind Speed
-                            - entity: sensor.openweathermap_wind_bearing # <- fill in the right sensor can get this
+                            - entity: $wind_bearing$#
                               name: Wind Direction
                               icon: "mdi:compass"
                             
@@ -607,17 +648,17 @@ card:
                           margin-left: 2px !important;
                         }
                       entities:
-                        - entity: sensor.allergy_index_forecasted_average
+                        - entity: $sensor.allergy_index_forecasted_average$
                           #type: "custom:multiple-entity-row"
                           #entities:
                             #- entity: sensor.allergy_index_today
                               #name: false
-                        - entity: sensor.asthma_index_forecasted_average
+                        - entity: $sensor.asthma_index_forecasted_average$
                           #type: "custom:multiple-entity-row"
                           #entities:
                            # - entity: sensor.asthma_index_today
                             #  name: false
-                        - entity: sensor.cold_flu_forecasted_average
+                        - entity: $sensor.cold_flu_forecasted_average$
                           icon: mdi:nature
                           #type: "custom:multiple-entity-row"
                           ##entities:

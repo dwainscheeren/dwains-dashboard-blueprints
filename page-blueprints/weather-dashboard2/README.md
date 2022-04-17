@@ -22,31 +22,31 @@ Note: this blueprint is a ported addon from Dwains Dashboard Blueprints. This po
 ## Prerequisite
 ---
 Make sure you have following installed this can be done manually or directly via hacs
-- ###Cards
-    -[state-switch](https://github.com/thomasloven/lovelace-state-switch), 
-    -[mini-graph-card](https://github.com/kalkih/mini-graph-card), 
-    -[auto-reload-card](https://github.com/ben8p/lovelace-auto-reload-card), 
-    -[Weather Card](https://github.com/bramkragten/weather-card), 
-    -[fontawesome icons](https://github.com/thomasloven/hass-fontawesome), 
-    -[Cupertino Icons](https://github.com/menahishayan/HomeAssistant-Cupertino-Icons), 
-    -[Button Card](https://github.com/custom-cards/button-card), 
-    -[HA card Weather Conditions](https://github.com/r-renato/ha-card-weather-conditions), 
-    -[fold-entity-row](https://github.com/thomasloven/lovelace-fold-entity-row), 
-    -[multiple-entity-row](https://github.com/benct/lovelace-multiple-entity-row) and the 
-- ###Integrations
-    -OpenWeatherMap [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start?domain=openweathermap)
+- Cards
+    - [state-switch](https://github.com/thomasloven/lovelace-state-switch), 
+    - [mini-graph-card](https://github.com/kalkih/mini-graph-card), 
+    - [auto-reload-card](https://github.com/ben8p/lovelace-auto-reload-card), 
+    - [Weather Card](https://github.com/bramkragten/weather-card), 
+    - [fontawesome icons](https://github.com/thomasloven/hass-fontawesome), 
+    - [Cupertino Icons](https://github.com/menahishayan/HomeAssistant-Cupertino-Icons), 
+    - [Button Card](https://github.com/custom-cards/button-card), 
+    - [HA card Weather Conditions](https://github.com/r-renato/ha-card-weather-conditions), 
+    - [fold-entity-row](https://github.com/thomasloven/lovelace-fold-entity-row), 
+    - [multiple-entity-row](https://github.com/benct/lovelace-multiple-entity-row) and the 
+- Integrations
+    - OpenWeatherMap [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start?domain=openweathermap)
     
-    -OpenUV [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=openuv)
+    - OpenUV [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=openuv)
 
-    -IQVIA [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=openuv)
+    - IQVIA [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=openuv)
 
-    -Weatheralerts
+    - Weatheralerts
     
-    -Sun [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=sun)
+    - Sun [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=sun)
 
-    -Moon [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=moon)
+    - Moon [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=moon)
 
-    -Seasons [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=seasons)
+    - Seasons [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=seasons)
 
 
 <img width="618" alt="image" src="https://user-images.githubusercontent.com/77990847/114733529-b6ca1a00-9d43-11eb-876a-6f4beda466ec.png">

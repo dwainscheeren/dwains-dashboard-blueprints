@@ -32,7 +32,7 @@ blueprint:
     wind_bearing:
       name: Wind Direction
       description: Wind direction sensor (e.g. sensor.openweathermap_wind_bearing )
-#Medical Alerts
+# Medical Alerts
     allergy_index_today:
       name: Current Allergy index
       description: allergy index for today
@@ -612,16 +612,20 @@ card:
                         - entity: sun.sun
                         - entity: $allergy_index_today$
                         - entity: $current_ozone_level$
+                        - entity: $weather_entity_humidity$
+                        - entity: $weather_entity_pressure$
                         - type: custom:fold-entity-row
                           head:
                             type: section
                             label: Learn More
                           entities:
-                            - entity: $weather_entity_humidity$
-                            - entity: $weather_entity_pressure$
+                            - entity: $allergy_index_today$
+                              name: Allergy Index
+                            - entity: $asthma_index_today$
+                              name: Asthma Index
                             - entity: $wind_speed$
                               name: Wind Speed
-                            - entity: $wind_bearing$#
+                            - entity: $wind_bearing$
                               name: Wind Direction
                               icon: "mdi:compass"
                             
@@ -651,17 +655,17 @@ card:
                           margin-left: 2px !important;
                         }
                       entities:
-                        - entity: $sensor.allergy_index_forecasted_average$
+                        - entity: $allergy_index_forecasted_average$
                           #type: "custom:multiple-entity-row"
                           #entities:
                             #- entity: sensor.allergy_index_today
                               #name: false
-                        - entity: $sensor.asthma_index_forecasted_average$
+                        - entity: $asthma_index_forecasted_average$
                           #type: "custom:multiple-entity-row"
                           #entities:
                            # - entity: sensor.asthma_index_today
                             #  name: false
-                        - entity: $sensor.cold_flu_forecasted_average$
+                        - entity: $cold_flu_forecasted_average$
                           icon: mdi:nature
                           #type: "custom:multiple-entity-row"
                           ##entities:

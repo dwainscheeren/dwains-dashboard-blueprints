@@ -18,46 +18,46 @@ blueprint:
       name: temperature
       description: This is the temperature from the weather entity
     weather_entity_feels_like:
-			name: Feels Like
-			description: This is the feels like temperature from the weather entity
-		weather_entity_humidity:
-			name: Humidity
-			description: This is the humidity from the weather entity
-		weather_entity_pressure:
-			name: Barometric pressure
-			description: This is the pressure from the weather entity
-		wind_speed:
-			name: Wind Speed
-			description: Wind speed sensor
-		wind_bearing:
-			name: Wind Direction
-			description: Wind direction sensor
-		#Medical Alerts
-		allergy_index_today:
-			name: Current Allergy index
-			description: allergy index for today
-		allergy_index_forecasted_average:
-			name: Allergy Forecast
-			description: allergy forecast
-		asthma_index_today:
-			name: Asthma Index for today
-			description: daily asthma index
-		asthma_index_forecasted_average:
-			name: asthma forecast
-			description: asthma forecast
-		cold_flu_index_today:
-			name: Cold/Flu index today
-			description: Daily Cold/Flu index
-		cold_flu_forecasted_average:
-			name: Cold/Flu Forecast
-			description: cold/flu forecast
-		#Rain Sensors
+      name: Feels Like
+      description: This is the feels like temperature from the weather entity
+    weather_entity_humidity:
+      name: Humidity
+      description: This is the humidity from the weather entity
+    weather_entity_pressure:
+      name: Barometric pressure
+      description: This is the pressure from the weather entity
+    wind_speed:
+      name: Wind Speed
+      description: Wind speed sensor
+    wind_bearing:
+      name: Wind Direction
+      description: Wind direction sensor
+#Medical Alerts
+    allergy_index_today:
+      name: Current Allergy index
+      description: allergy index for today
+    allergy_index_forecasted_average:
+      name: Allergy Forecast
+      description: allergy forecast
+    asthma_index_today:
+      name: Asthma Index for today
+      description: daily asthma index
+    asthma_index_forecasted_average:
+      name: asthma forecast
+      description: asthma forecast
+    cold_flu_index_today:
+      name: Cold/Flu index today
+      description: Daily Cold/Flu index
+    cold_flu_forecasted_average:
+      name: Cold/Flu Forecast
+      description: cold/flu forecast
+#Rain Sensors
     rain_last_24_hours:
-			name: Rain Last 24 Hours
-			description: Sensor for rain totals last 24 hours
+      name: Rain Last 24 Hours
+      description: Sensor for rain totals last 24 hours
     rain_last_hour:
-			name: Rain Last Hour
-			description: Sensor for rain total last hour
+      name: Rain Last Hour
+      description: Sensor for rain total last hour
     #Lat and Long for the radar map
     long_home:
       name: Longitude for your home

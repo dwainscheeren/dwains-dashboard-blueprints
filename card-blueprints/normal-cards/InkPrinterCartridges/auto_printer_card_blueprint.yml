@@ -12,7 +12,7 @@ blueprint:
       type: entity-picker
   name: Printer auto card english
   type: card
-  version: '1.0.1'
+  version: '1.1.0'
 card:  
   entity: $entity$
   type: custom:vertical-stack-in-card
@@ -36,12 +36,21 @@ card:
         type: custom:bar-card
         entities_template: >-
           {% for sensor in states.sensor %}{% if sensor.entity_id is
-          search("$entity$", ignorecase=true) %}{% if
-          sensor.entity_id is search("_ink", ignorecase=true) %}{{"- entity: " ~
-          sensor.entity_id ~ "\n  color: " ~
-          sensor.entity_id|regex_replace(find='_ink', replace='',
-          ignorecase=False)|regex_replace(find='$entity$_',
-          replace='', ignorecase=False) ~ "\n"}}{% endif %}{% endif %}{% endfor %}
+          search('$entity$', ignorecase=true)%}{% if
+          state_attr(sensor.entity_id, 'marker_type') == 'inkCartridge' or
+          state_attr(sensor.entity_id, 'marker_type') == 'ink-cartridge'%}{{'-
+          entity: ' ~ sensor.entity_id ~ '\n  color: ' ~
+          sensor.entity_id|regex_replace(find='ink', replace='',
+          ignorecase=true)|regex_replace(find='photo', replace='',
+          ignorecase=true)|regex_replace(find='bk', replace='',
+          ignorecase=true)|regex_replace(find='$entity$',
+          replace='', ignorecase=true)|regex_replace(find='_', replace='',
+          ignorecase=true) ~ '\n'}}{% if sensor.entity_id is search('photo',
+          ignorecase=true) %}{{'  icon: mdi:camera\n  positions:\n    icon:
+          inside\n'}}{% endif %}{% if state_attr(sensor.entity_id,
+          'marker_low_level') %}{{'  target: ' ~ state_attr(sensor.entity_id,
+          'marker_low_level') ~ '\n'}}{% endif %}{% endif %}{% endif %}{% endfor
+          %}
         direction: up
         height: 200px
         stack: horizontal

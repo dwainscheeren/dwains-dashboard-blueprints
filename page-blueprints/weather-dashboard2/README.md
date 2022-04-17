@@ -40,7 +40,7 @@ Make sure you have following installed this can be done manually or directly via
 
     - IQVIA [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=openuv)
 
-    - Weatheralerts
+    - Weatheralerts: may switch to 'nws_alerts' in progress due to weatheralerts no longer maintained
     
     - Sun [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=sun)
 

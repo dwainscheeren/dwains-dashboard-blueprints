@@ -16,22 +16,22 @@ blueprint:
       description: This is the weather entity
     weather_entity_temperature:
       name: temperature
-      description: This is the temperature from the weather entity
+      description: This is the temperature from the weather entity (e.g.  sensor.openweathermap_temperature )
     weather_entity_feels_like:
       name: Feels Like
-      description: This is the feels like temperature from the weather entity
+      description: This is the feels like temperature from the weather entity (e.g. sensor.openweathermap_feels_like_temperature )
     weather_entity_humidity:
       name: Humidity
-      description: This is the humidity from the weather entity
+      description: This is the humidity from the weather entity (e.g. sensor.openweathermap_humidity )
     weather_entity_pressure:
       name: Barometric pressure
-      description: This is the pressure from the weather entity
+      description: This is the pressure from the weather entity (e.g. sensor.openweathermap_pressure)
     wind_speed:
       name: Wind Speed
-      description: Wind speed sensor
+      description: Wind speed sensor (e.g. sensor.openweathermap_wind_speed )
     wind_bearing:
       name: Wind Direction
-      description: Wind direction sensor
+      description: Wind direction sensor (e.g. sensor.openweathermap_wind_bearing )
 #Medical Alerts
     allergy_index_today:
       name: Current Allergy index
@@ -51,14 +51,17 @@ blueprint:
     cold_flu_forecasted_average:
       name: Cold/Flu Forecast
       description: cold/flu forecast
-#Rain Sensors
+    current_ozone_level:
+      name: Ozone level Sensor
+      description: Ozone Level Sensor
+#Rain Sensor
     rain_last_24_hours:
       name: Rain Last 24 Hours
       description: Sensor for rain totals last 24 hours
     rain_last_hour:
       name: Rain Last Hour
       description: Sensor for rain total last hour
-    #Lat and Long for the radar map
+#Lat and Long for the radar map
     long_home:
       name: Longitude for your home
       description: This is the longitude for your home
@@ -358,7 +361,7 @@ card:
                           margin-left: 2px !important;
                         }
                       entities:
-                        - $rain_last_hour$ # <- fill in the right sensor
+                        - $rain_last_hour$
                       line_color: "#299ec2"
                       hours_to_show: 12
                       line_width: 1
@@ -442,7 +445,7 @@ card:
                           margin-left: 2px !important;
                         }
                       entities:
-                        - $weather_entity_temperature$ # <- fill in the right sensor
+                        - $weather_entity_temperature$
                       line_color: "#299ec2"
                       font_size: 80
                       hours_to_show: 12
@@ -486,7 +489,7 @@ card:
                           margin-left: 2px !important;
                         }
                       entities:
-                        - $weather_entity_feels_like$# <- fill in the right sensor
+                        - $weather_entity_feels_like$
                       line_color: "#299ec2"
                       font_size: 80
                       hours_to_show: 12

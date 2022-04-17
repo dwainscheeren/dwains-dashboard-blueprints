@@ -141,8 +141,8 @@ camera:
                         number_of_forecasts: '5'
 ```
 
-### Ambee Pollen sensoren
-- Make the integration with [Ambee Pollen](https://api-dashboard.getambee.com/#/signup)
+### IQVIA 
+- Make the integration with [IQVIA](https://www.home-assistant.io/integrations/iqvia/)
 - Copy the content of the blueprint file `blueprint.yaml` into the blueprint installation block.
 
 <img width="351" alt="image" src="https://user-images.githubusercontent.com/77990847/118349327-64e9ff00-b550-11eb-9387-db6284ceba9a.gif">

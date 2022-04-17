@@ -1,12 +1,12 @@
 <h1 align="center">Weather Dashboard - Dwains Dashboard Blueprint (more_page)</h1> 
 
-Note: this blueprint is a ported addon from Dwains Dashboard v2 addons. This port is done by Dwain Scheeren. The original creator of this addon is Leon van der Linden.
+Note: this blueprint is a ported addon from Dwains Dashboard Blueprints. This port is done by Robert Wilson. The original creator of this addon is Leon van der Linden.
 
 
 <p align="center">Weather Dashboard in Home Assistant Dwains Dashboard.</p>
 
 
-<p align="center">Created by <a href="https://github.com/LRvdLinden">Léon van der Linden</a>
+<p align="center">Created by <a href="https://github.com/rwilson131">Robert Wilson</a>
 </p> 
 
 
@@ -82,7 +82,7 @@ Note: this blueprint is a ported addon from Dwains Dashboard v2 addons. This por
 - To get the UV index card into the weather dashboard, make sure you have created a [API](https://www.openuv.io/) at [OpenUV](https://www.openuv.io/)
 - After creating the API, install the [OpenUV](https://www.openuv.io/) integartion by clikking on the button below.
 
-[![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=http%3A%2F%2Fhomeassistant.local%3A8123%2Fconfig_flow_start%3Fdomain%3Dopenuv)
+[![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=openuv)
 
 ![image](https://user-images.githubusercontent.com/77990847/117784741-28fb2500-b244-11eb-945a-19dc8f3c3ab0.png)
 

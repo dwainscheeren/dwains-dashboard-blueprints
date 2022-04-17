@@ -1,7 +1,7 @@
 blueprint:
   name: Weather dashboard page Blueprint
   description: An weather dashboard page by Robert Wilson based on orginial page by Leon van der Linden
-  version: "1.4"
+  version: "1.5"
   type: page
   custom_cards:
     - button-card
@@ -69,6 +69,28 @@ blueprint:
     lat_home:
       name: Latitude for your home
       description: This is the latitude for your home
+#Translation
+    Feels_Like:
+      name: Translate Feels Like temperature
+    Rain:
+      name: Translate Rain/Precipitation
+    Forcast:
+      name: Translate Weather Forecast
+    Temp:
+      name: Translate temperature
+    Stats:
+      name: Translate Statistics
+    Last_24_Hours:
+      name: Translate the pharse Last 24 hours
+    Last_Hour:
+      name: Translate the pharse Last hour
+    Rain:
+      name: Translate Rain/Precipitation
+    Radar:
+      name: Translate Radar
+    Wind:
+      name: Translate Wind
+    
     
       
 card:
@@ -94,7 +116,7 @@ card:
                     - type: horizontal-stack
                       cards:
                         - type: custom:button-card
-                          name: Forecast # <- translate the button name
+                          name: $Forecast$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
@@ -103,19 +125,19 @@ card:
                             name:
                               - color: var(--dwains-theme-accent)
                         - type: custom:button-card
-                          name: Rain # <- translate the button name
+                          name: $Rain$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#neerslag"
                         - type: custom:button-card
-                          name: Temp # <- translate the button name
+                          name: $Temp$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#temperatuur"
                         - type: custom:button-card
-                          name: Stats # <- translate the button name
+                          name: $Stats$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
@@ -166,14 +188,14 @@ card:
                           color: darkgray !important;
                           margin-left: 2px !important;
                         }
-                      entity: $weather_entity$ #weather.openweathermap
+                      entity: $weather_entity$
                       current: true
                       details: true
                       forecast: true
                       hourly_forecast: false
                       number_of_forecasts: '5'
                     - type: 'custom:mini-graph-card'
-                      title: Feels Like # <- translate this line
+                      title: $Feels_Like$ # <- translate this line
                       icon: 'ios:thermometer'
                       style: |
                         ha-card {
@@ -198,7 +220,7 @@ card:
                           margin-left: 2px !important;
                         }
                       entities:
-                        - $weather_entity_feels_like$ # <- fill in the right sensor
+                        - $weather_entity_feels_like$
                       line_color: "#299ec2"
                       font_size: 80
                       hours_to_show: 12
@@ -263,13 +285,13 @@ card:
                     - type: horizontal-stack
                       cards:
                         - type: custom:button-card
-                          name: Forecast # <- translate the button name
+                          name: $Forecast$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#forecast"
                         - type: custom:button-card
-                          name: Rain # <- translate the button name
+                          name: $Rain$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
@@ -278,13 +300,13 @@ card:
                             name:
                               - color: var(--dwains-theme-accent)
                         - type: custom:button-card
-                          name: Temp # <- translate the button name
+                          name: $Temp$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#temperatuur"
                         - type: custom:button-card
-                          name: Stats # <- translate the button name
+                          name: $Stats$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
@@ -292,7 +314,7 @@ card:
                 - type: vertical-stack
                   cards:
                     - type: "custom:mini-graph-card"
-                      title: Last 24 hours # <- translate this line
+                      title: $Last_24_Hours$ # <- translate this line
                       icon: "ios:cloud-rain"
                       style: |
                         ha-card {
@@ -336,7 +358,7 @@ card:
                         average: true
 
                     - type: "custom:mini-graph-card"
-                      title: Last Hour # <- translate this line
+                      title: $Last_Hour$ # <- translate this line
                       icon: "ios:cloud-rain"
                       style: |
                         ha-card {
@@ -390,19 +412,19 @@ card:
                     - type: horizontal-stack
                       cards:
                         - type: custom:button-card
-                          name: Forecast # <- translate the button name
+                          name: $Forecast$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#forecast"
                         - type: custom:button-card
-                          name: Rain # <- translate the button name
+                          name: $Rain$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#neerslag"
                         - type: custom:button-card
-                          name: Temp # <- translate the button name
+                          name: $Temp$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
@@ -411,7 +433,7 @@ card:
                             name:
                               - color: var(--dwains-theme-accent)
                         - type: custom:button-card
-                          name: Stats # <- translate the button name
+                          name: $Stats$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
@@ -464,7 +486,7 @@ card:
                         extrema: true
                         average: true
                     - type: "custom:mini-graph-card"
-                      title: Feels Like # <- translate this line
+                      title: $Feels_Like$ # <- translate this line
                       icon: "ios:thermometer"
                       style: |
                         ha-card {
@@ -554,25 +576,25 @@ card:
                     - type: horizontal-stack
                       cards:
                         - type: custom:button-card
-                          name: Forecast # <- translate the button name
+                          name: $Forecast$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#forecast"
                         - type: custom:button-card
-                          name: Rain # <- translate the button name
+                          name: $Rain$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#neerslag"
                         - type: custom:button-card
-                          name: Temp # <- translate the button name
+                          name: $Temp$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#temperatuur"
                         - type: custom:button-card
-                          name: Stats # <- translate the button name
+                          name: $Stats$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
@@ -631,7 +653,7 @@ card:
                             
 
                     - type: entities
-                      title: Risks
+                      title: $Risks$
                       style: |
                         ha-card {
                           border-radius: 10px;
@@ -693,7 +715,7 @@ card:
                     - type: horizontal-stack
                       cards:
                         - type: custom:button-card
-                          name: Radar # <- translate the button name
+                          name: $Radar$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
@@ -702,19 +724,19 @@ card:
                             name:
                               - color: var(--dwains-theme-accent)
                         - type: custom:button-card
-                          name: Rain # <- translate the button name
+                          name: $Rain$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#neerslag"
                         - type: custom:button-card
-                          name: Temp # <- translate the button name
+                          name: $Temp$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#temperatuur"
                         - type: custom:button-card
-                          name: Wind # <- translate the button name
+                          name: $Wind$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
@@ -764,13 +786,13 @@ card:
                     - type: horizontal-stack
                       cards:
                         - type: custom:button-card
-                          name: Radar # <- translate the button name
+                          name: $Radar$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#forecast"
                         - type: custom:button-card
-                          name: Rain # <- translate the button name
+                          name: $Rain$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
@@ -779,19 +801,19 @@ card:
                             name:
                               - color: var(--dwains-theme-accent)
                         - type: custom:button-card
-                          name: Temp # <- translate the button name
+                          name: $Temp$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#temperatuur"
                         - type: custom:button-card
-                          name: Wind # <- translate the button name
+                          name: $Wind$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#wind"
                         - type: custom:button-card
-                          #name: Stats # <- DONT CHANGE THIS LINE
+                          #name: $Stats$ # <- DONT CHANGE THIS LINE
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
@@ -837,25 +859,25 @@ card:
                     - type: horizontal-stack
                       cards:
                         - type: custom:button-card
-                          name: Radar # <- translate the button name
+                          name: $Radar$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#forecast"
                         - type: custom:button-card
-                          name: Precipitation # <- translate the button name
+                          name: $Rain$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#neerslag"
                         - type: custom:button-card
-                          name: Temp # <- translate the button name
+                          name: $Temp$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#temperatuur"
                         - type: custom:button-card
-                          name: Wind # <- translate the button name
+                          name: $Wind$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
@@ -864,7 +886,7 @@ card:
                             name:
                               - color: var(--dwains-theme-accent)
                         - type: custom:button-card
-                          #name: Stats # <- DONT CHANGE THIS LINE
+                          #name: $Stats$ # <- DONT CHANGE THIS LINE
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
@@ -911,19 +933,19 @@ card:
                     - type: horizontal-stack
                       cards:
                         - type: custom:button-card
-                          name: Radar # <- translate the button name
+                          name: $Radar$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#forecast"
                         - type: custom:button-card
-                          name: Precipitation # <- translate the button name
+                          name: $Rain$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#neerslag"
                         - type: custom:button-card
-                          name: Temp # <- translate the button name
+                          name: $Temp$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
@@ -932,13 +954,13 @@ card:
                             name:
                               - color: var(--dwains-theme-accent)
                         - type: custom:button-card
-                          name: Wind # <- translate the button name
+                          name: $Wind$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#wind"
                         - type: custom:button-card
-                          #name: Stats # <- DONT CHANGE THIS LINE
+                          #name: $Stats$ # <- DONT CHANGE THIS LINE
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
@@ -985,31 +1007,31 @@ card:
                     - type: horizontal-stack
                       cards:
                         - type: custom:button-card
-                          name: Radar # <- translate the button name
+                          name: $Radar$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#forecast"
                         - type: custom:button-card
-                          name: Precipitation # <- translate the button name
+                          name: $Rain$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#neerslag"
                         - type: custom:button-card
-                          name: Temp # <- translate the button name
+                          name: $Temp$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#temperatuur"
                         - type: custom:button-card
-                          name: Wind # <- translate the button name
+                          name: $Wind$ # <- translate the button name
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate
                             navigation_path: "#wind"
                         - type: custom:button-card
-                          #name: Stats # <- DONT CHANGE THIS LINE
+                          #name: $Stats$ # <- DONT CHANGE THIS LINE
                           template: weather_dashboard_blueprint_heading
                           tap_action:
                             action: navigate

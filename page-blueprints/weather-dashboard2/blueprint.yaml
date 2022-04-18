@@ -10,6 +10,7 @@ blueprint:
     - fold-entity-row
     - multiple-entity-row
     - state-switch
+    - stack-in-card
   input:
     weather_entity:
       name: Weather entity

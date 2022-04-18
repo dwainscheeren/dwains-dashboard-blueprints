@@ -96,7 +96,7 @@ blueprint:
       name: Translate Rain/Precipitation
       description: Translate Precipitation
       type: text-field
-    Forcast:
+    Forecast:
       name: Translate Weather Forecast
       description: Translate weather Forecast
       type: text-field

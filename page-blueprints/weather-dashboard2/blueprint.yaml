@@ -106,7 +106,7 @@ blueprint:
       type: text-field
     Stats:
       name: Translate Statistics
-      description: Translate sttatistics
+      description: Translate statistics
       type: text-field
     Last_24_Hours:
       name: Translate the phrase Last 24 hours

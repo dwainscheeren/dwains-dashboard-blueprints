@@ -5,7 +5,7 @@ blueprint:
   input:
     name: null
   name: Replace Sensor Mushroom Chip Card
-  type: card
+  type: replace-card
   version: '1.0'
 card:
   chips:

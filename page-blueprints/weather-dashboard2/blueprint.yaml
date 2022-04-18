@@ -90,8 +90,8 @@ blueprint:
       name: Translate Radar
     Wind:
       name: Translate Wind
-    
-    
+    Weather_Alert:
+      name: Translate Weather alert
       
 card:
   type: custom:dwains-flexbox-card
@@ -164,7 +164,7 @@ card:
                               'display_title')|lower() -%} </font> {%- endif %} <br>{{ state_attr(
                               alert, 'display_message') }} {% if loop.last %} {% else %} <hr> {% endif
                               %} {% endfor %}
-                        title: Weather Alert
+                        title: $Weather_Alert$
                     - type: "custom:weather-card"
                       style: |
                         ha-card {
@@ -442,7 +442,7 @@ card:
                 - type: vertical-stack
                   cards:
                     - type: "custom:mini-graph-card"
-                      title: Outside Temp
+                      title: $Temp$
                       icon: "ios:thermometer"
                       style: |
                         ha-card {
@@ -605,7 +605,7 @@ card:
                 - type: vertical-stack
                   cards:
                     - type: entities
-                      title: Statistics
+                      title: $Stats$
                       style: |
                         ha-card {
                           border-radius: 10px;

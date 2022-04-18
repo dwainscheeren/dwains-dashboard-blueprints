@@ -57,12 +57,10 @@ Make sure you have following installed this can be done manually or directly via
 
 ## Make Home Assistant integration 
 ---
-:warning: Please reboot Home Assistant after config the sensors! :warning:
 
-### OpenWeatherMap
-- Make the Home Assistant integration with 
+### Determing Latitude and Longitude
 
-- Choose `latitude` and `longtiude` from the correct [weather station](https://www.google.com/maps/d/embed?mid=1NivHkTGQUOs0dwQTnTMZi8Uatj0&ll=52.92957401169076%2C5.184999999999995&z=7) 
+- Choose `latitude` and `longtiude` from  [Google Maps](https://support.google.com/maps/answer/18539?hl=en&co=GENIE.Platform=Desktop) 
 
 ### IQVIA 
 - Make the integration with [IQVIA](https://www.home-assistant.io/integrations/iqvia/)
@@ -79,6 +77,8 @@ Make sure you have following installed this can be done manually or directly via
 ![image](https://user-images.githubusercontent.com/77990847/117784741-28fb2500-b244-11eb-945a-19dc8f3c3ab0.png)
 
 ##Sensors 
+___
+:warning: Please reboot Home Assistant after config the sensors! :warning:
 ### nws_alerts 
 ```yaml
 - platform: nws_alerts

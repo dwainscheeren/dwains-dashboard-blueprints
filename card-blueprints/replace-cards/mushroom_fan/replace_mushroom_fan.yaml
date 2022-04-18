@@ -6,7 +6,7 @@ blueprint:
     name: null
   name: Replace Mushroom Fan Card
   type: replace-card
-  version: '1.0'
+  version: '1.1'
 card:
   entity: $replace_with_input_entity$
   show_oscillate_control: true
@@ -14,3 +14,4 @@ card:
   icon_animation: true
   hide_state: false
   type: custom:mushroom-fan-card
+  name: $replace_with_input_name$

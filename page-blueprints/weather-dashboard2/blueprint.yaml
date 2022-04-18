@@ -11,6 +11,7 @@ blueprint:
     - multiple-entity-row
     - state-switch
     - stack-in-card
+    - entity-attributes-card
   input:
     weather_entity:
       name: Weather entity
@@ -190,7 +191,8 @@ card:
                         - type: entities
                           title: $Weather_Alert$
                           show_header_toggle: false
-                          entities: sensor.nws_alerts
+                          entities:
+                            - entity: sensor.nws_alerts
                         - type: conditional
                           conditions:
                             - entity: sensor.nws_alerts
@@ -306,29 +308,7 @@ card:
                               {% else %}
                                 none
                               {% endif %}
-                        
-                        - type: entities
-                          title: NWS Alerts History
-                          show_header_toggle: false
-                          state_color: true
-                          entities:
-                            - variable.nws_alerts_event_ids
-                            - type: custom:entity-attributes-card
-                              heading_name: Name
-                              heading_state: State
-                              entity: variable.nws_alerts_event_ids
-                              filter:
-                                include:
-                                  - variable.nws_alerts_event_ids.history_1
-                                  - variable.nws_alerts_event_ids.history_2
-                                  - variable.nws_alerts_event_ids.history_3
-                                  - variable.nws_alerts_event_ids.history_4
-                                  - variable.nws_alerts_event_ids.history_5
-                                  - variable.nws_alerts_event_ids.history_6
-                                  - variable.nws_alerts_event_ids.history_7
-                                  - variable.nws_alerts_event_ids.history_8
-                                  - variable.nws_alerts_event_ids.history_9
-                                  - variable.nws_alerts_event_ids.history_10
+                      
                     - type: "custom:weather-card"
                       style: |
                         ha-card {

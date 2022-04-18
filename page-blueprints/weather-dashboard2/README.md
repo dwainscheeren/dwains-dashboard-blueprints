@@ -83,7 +83,7 @@ Make sure you have following installed this can be done manually or directly via
 ```yaml
 - platform: nws_alerts
   zone_id: 'PAC049,WVC031'
-
+```
 
 ## Installation of this Blueprint
 ---

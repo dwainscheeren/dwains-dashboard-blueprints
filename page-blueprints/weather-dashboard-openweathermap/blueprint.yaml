@@ -106,6 +106,14 @@ blueprint:
       name: Translate temperature
       description: translate temperature
       type: text-field
+    Humditiy:
+      name: Translate humidity
+      description: translate humidity
+      type: text-field
+    Barometric_Pressure:
+      name: Translate Barometric Pressure
+      description: translate barometric Pressure
+      type: text-field
     Stats:
       name: Translate Statistics
       description: Translate statistics
@@ -126,6 +134,13 @@ blueprint:
       name: Translate Wind
       description: Translate Wind
       type: text-field
+    Wind_speed:
+      name: Translate Wind Speed
+      description: Translate Wind Speed
+      type: text-field
+    Wind_direction:
+      name: Translate Wind Direction/Bearing
+      type: text-field
     Weather_Alert:
       name: Translate Weather alert
       description: Translate weather alert
@@ -133,6 +148,10 @@ blueprint:
     Learn_More:
       name: Translate Learn Learn_More
       description: Translate learn more
+      type: text-field
+    Risks:
+      name: Translate Health Risks
+      description: translate health Risks
       type: text-field
 
 card:
@@ -343,9 +362,8 @@ card:
                       forecast: true
                       hourly_forecast: false
                       number_of_forecasts: '5'
-                    - type: 'custom:mini-graph-card'
-                      title: $Feels_Like$ # <- translate this line
-                      icon: 'ios:thermometer'
+                    - type: entities
+                      title: $Stats$
                       style: |
                         ha-card {
                           border-radius: 10px;
@@ -369,24 +387,27 @@ card:
                           margin-left: 2px !important;
                         }
                       entities:
-                        - $weather_entity_feels_like$
-                      line_color: "#299ec2"
-                      font_size: 80
-                      hours_to_show: 12
-                      line_width: 2
-                      hour24: true
-                      points_per_hour: 2
-                      decimals: 1
-                      show:
-                        animate: true
-                        fill: true
-                        icon: true
-                        labels: true
-                        legend: true
-                        name: true
-                        graph: line
-                        extrema: true
-                        average: true
+                        - entity: $weather_entity_feels_like$
+                          name: $Feels_Like$
+                        - entity: $wind_speed$
+                          name: $Wind_speed$
+                        - entity: $weather_entity_humidity$
+                          name: $Humditiy$
+                        - entity: $weather_entity_pressure$
+                          name: $Barometric_Pressure$
+                        - entity: $wind_bearing$
+                          name: $Wind_direction$
+                          icon: "mdi:compass"
+                        - type: custom:fold-entity-row
+                          head:
+                            type: section
+                            label: $Learn_More$
+                          entities:
+                            - entity: $allergy_index_today$
+                              name: Allergy Index
+                            - entity: $asthma_index_today$
+                              name: Asthma Index
+                            - entity: $current_ozone_level$
                     - type: "custom:ha-card-weather-conditions"
                       style: |
                         ha-card {

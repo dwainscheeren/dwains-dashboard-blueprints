@@ -17,8 +17,6 @@ Note: this blueprint is a ported addon from Dwains Dashboard Blueprints. This po
 
 
 
-
-
 ## Prerequisite
 ---
 Make sure you have following installed this can be done manually or directly via hacs
@@ -104,6 +102,6 @@ ___
 
 
 ---
-<!-- Enjoy the work from Leon van der Linden?
+Enjoy the work from Robert Wilson?
 
-[![coffee](https://www.buymeacoffee.com/assets/img/custom_images/black_img.png)](https://www.buymeacoffee.com/LRvdLinden) -->
+[![coffee](https://www.buymeacoffee.com/assets/img/custom_images/black_img.png)](https://www.buymeacoffee.com/rwilson131)

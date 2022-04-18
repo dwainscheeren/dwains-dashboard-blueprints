@@ -36,13 +36,13 @@ Make sure you have following installed this can be done manually or directly via
     - [stack-in-card](https://github.com/custom-cards/stack-in-card)
     - [entity-attributes-card](https://github.com/custom-cards/entity-attributes-card)
 - Integrations
-    - OpenWeatherMap [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start?domain=openweathermap)
+    - OpenWeatherMap, untested with other weather integrations [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start?domain=openweathermap)
     
     - OpenUV [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=openuv)
 
     - IQVIA [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=openuv)
 
-    - [nws_alerts](https://github.com/finity69x2/nws_alerts)) hard coded 
+    - [nws_alerts](https://github.com/finity69x2/nws_alerts) hard coded for now
     
     - Sun [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=sun)
 
@@ -104,6 +104,6 @@ ___
 
 
 ---
-Enjoy the work from Leon van der Linden?
+<!-- Enjoy the work from Leon van der Linden?
 
-[![coffee](https://www.buymeacoffee.com/assets/img/custom_images/black_img.png)](https://www.buymeacoffee.com/LRvdLinden)
+[![coffee](https://www.buymeacoffee.com/assets/img/custom_images/black_img.png)](https://www.buymeacoffee.com/LRvdLinden) -->

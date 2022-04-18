@@ -1,7 +1,7 @@
 blueprint:
   name: Weather dashboard page Blueprint
   description: An weather dashboard page by Robert Wilson based on orginial page by Leon van der Linden
-  version: "1.5"
+  version: "2.0"
   type: page
   custom_cards:
     - button-card
@@ -184,27 +184,150 @@ card:
                             navigation_path: "#stats"
                 - type: vertical-stack
                   cards:
-                    - type: conditional
-                      conditions:
-                        - entity: sensor.weatheralerts_1_alerts_are_active
-                          state: "Yes"
-                      card:
-                        type: markdown
-                        content: |-
-                          <hr>  {% set alerts = [
-                                "sensor.weatheralerts_1_alert_1",
-                                "sensor.weatheralerts_1_alert_2",
-                                "sensor.weatheralerts_1_alert_3",
-                                "sensor.weatheralerts_1_alert_4",
-                                "sensor.weatheralerts_1_alert_5"] %}
-                              {% for alert in alerts if is_state(alert, 'on') %} {% if 'warning' or
-                              'severe' in state_attr( alert, 'display_title')|lower() %} <font
-                              color="red">  {% endif %} <b>{{ state_attr( alert, 'display_title')
-                              }}</b>  {%- if 'warning' or 'severe' in state_attr( alert,
-                              'display_title')|lower() -%} </font> {%- endif %} <br>{{ state_attr(
-                              alert, 'display_message') }} {% if loop.last %} {% else %} <hr> {% endif
-                              %} {% endfor %}
-                        title: $Weather_Alert$
+                    - type: custom:stack-in-card
+                      cards:
+                        - type: entities
+                          title: $Weather_Alert$
+                          show_header_toggle: false
+                          entities: sensor.nws_alerts
+                        - type: conditional
+                          conditions:
+                            - entity: sensor.nws_alerts
+                              state_not: '0'
+                          card:
+                            type: markdown
+                            content: >
+                              ---
+                              
+                              # NWS First Active Alert
+                                {% if state_attr('sensor.nws_alerts', 'title') != None and state_attr('sensor.nws_alerts', 'title').split(' - ')[0] is defined  %}
+                                  
+                              ## {{ states.sensor.nws_alerts.attributes.title.split(' - ')[0] }}
+
+                                {{ state_attr('sensor.nws_alerts', 'display_desc').split('\n\n-\n\n')[0] }}
+
+                                {% else %}
+                                  none
+                                {% endif %}
+                        - type: conditional
+                          conditions:
+                            - entity: sensor.nws_alerts
+                              state_not: "0"
+                            - entity: sensor.nws_alerts
+                              state_not: "1"
+                          card:
+                            type: markdown
+                            content: >
+                              ---
+                              
+                              # NWS Second Active Alert
+                              {% if state_attr('sensor.nws_alerts', 'title').split(' - ')[1] is defined %}
+                              
+                              ## {{ states.sensor.nws_alerts.attributes.title.split(' - ')[1] }}
+
+                                {{ state_attr('sensor.nws_alerts', 'display_desc').split('\n\n-\n\n')[1] }}
+
+                              {% else %}
+                                none
+                              {% endif %}
+                        - type: conditional
+                          conditions:
+                            - entity: sensor.nws_alerts
+                              state_not: "0"
+                            - entity: sensor.nws_alerts
+                              state_not: "1"
+                            - entity: sensor.nws_alerts
+                              state_not: "2"
+                          card:
+                            type: markdown
+                            content: >
+                              ---
+                              
+                              # NWS Third Active Alert
+                              {% if state_attr('sensor.nws_alerts', 'title').split(' - ')[2] is defined %}
+                              
+                              ## {{ states.sensor.nws_alerts.attributes.title.split(' - ')[2] }}
+
+                                {{ state_attr('sensor.nws_alerts', 'display_desc').split('\n\n-\n\n')[2] }}
+
+                              {% else %}
+                                none
+                              {% endif %}
+                        - type: conditional
+                          conditions:
+                            - entity: sensor.nws_alerts
+                              state_not: "0"
+                            - entity: sensor.nws_alerts
+                              state_not: "1"
+                            - entity: sensor.nws_alerts
+                              state_not: "2"
+                            - entity: sensor.nws_alerts
+                              state_not: "3"
+                          card:
+                            type: markdown
+                            content: >
+                              ---
+                              
+                              # NWS Fourth Active Alert
+                              {% if state_attr('sensor.nws_alerts', 'title').split(' - ')[3] is defined %}
+                              
+                              ## {{ states.sensor.nws_alerts.attributes.title.split(' - ')[3] }}
+
+                                {{ state_attr('sensor.nws_alerts', 'display_desc').split('\n\n-\n\n')[3] }}
+
+                              {% else %}
+                                none
+                              {% endif %}
+                        - type: conditional
+                          conditions:
+                            - entity: sensor.nws_alerts
+                              state_not: "0"
+                            - entity: sensor.nws_alerts
+                              state_not: "1"
+                            - entity: sensor.nws_alerts
+                              state_not: "2"
+                            - entity: sensor.nws_alerts
+                              state_not: "3"
+                            - entity: sensor.nws_alerts
+                              state_not: "4"
+                          card:
+                            type: markdown
+                            content: >
+                              ---
+                              
+                              # NWS Fifth Active Alert
+                              {% if state_attr('sensor.nws_alerts', 'title').split(' - ')[4] is defined %}
+                              
+                              ## {{ states.sensor.nws_alerts.attributes.title.split(' - ')[4] }}
+
+                                {{ state_attr('sensor.nws_alerts', 'display_desc').split('\n\n-\n\n')[4] }}
+
+                              {% else %}
+                                none
+                              {% endif %}
+                        
+                        - type: entities
+                          title: NWS Alerts History
+                          show_header_toggle: false
+                          state_color: true
+                          entities:
+                            - variable.nws_alerts_event_ids
+                            - type: custom:entity-attributes-card
+                              heading_name: Name
+                              heading_state: State
+                              entity: variable.nws_alerts_event_ids
+                              filter:
+                                include:
+                                  - variable.nws_alerts_event_ids.history_1
+                                  - variable.nws_alerts_event_ids.history_2
+                                  - variable.nws_alerts_event_ids.history_3
+                                  - variable.nws_alerts_event_ids.history_4
+                                  - variable.nws_alerts_event_ids.history_5
+                                  - variable.nws_alerts_event_ids.history_6
+                                  - variable.nws_alerts_event_ids.history_7
+                                  - variable.nws_alerts_event_ids.history_8
+                                  - variable.nws_alerts_event_ids.history_9
+                                  - variable.nws_alerts_event_ids.history_10
                     - type: "custom:weather-card"
                       style: |
                         ha-card {

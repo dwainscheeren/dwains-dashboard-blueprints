@@ -76,7 +76,7 @@ Make sure you have following installed this can be done manually or directly via
 
 ![image](https://user-images.githubusercontent.com/77990847/117784741-28fb2500-b244-11eb-945a-19dc8f3c3ab0.png)
 
-##Sensors 
+## Sensors 
 ___
 :warning: Please reboot Home Assistant after config the sensors! :warning:
 ### nws_alerts 

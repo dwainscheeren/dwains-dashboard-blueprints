@@ -2,8 +2,6 @@ blueprint:
   custom_cards:
   - mushroom-person-card
   description: replaces person card with mushroom person card by Bourner
-  input:
-    name: null
   name: Replace Mushroom Person Card
   type: replace-card
   version: '1.1'

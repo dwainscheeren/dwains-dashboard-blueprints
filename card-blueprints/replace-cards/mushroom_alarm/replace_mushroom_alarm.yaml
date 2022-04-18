@@ -2,8 +2,6 @@ blueprint:
   custom_cards:
   - mushroom-alarm-card
   description: replaces alarm card with mushroom alarm card by Bourner
-  input:
-    name: null
   name: Replace Mushroom Alarm Card
   type: replace-card
   version: '1.1'

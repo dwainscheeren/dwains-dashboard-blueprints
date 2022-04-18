@@ -2,8 +2,6 @@ blueprint:
   custom_cards:
   - mushroom-media-player-card
   description: replaces media player card with mushroom media player card by Bourner
-  input:
-    name: null
   name: Replace Mushroom Media Player Card
   type: replace-card
   version: '1.1'

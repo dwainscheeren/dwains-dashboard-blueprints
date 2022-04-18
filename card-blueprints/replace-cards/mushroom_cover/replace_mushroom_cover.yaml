@@ -2,8 +2,6 @@ blueprint:
   custom_cards:
   - mushroom-cover-card
   description: replaces cover card with mushroom cover card by Bourner
-  input:
-    name: null
   name: Replace Mushroom Cover Card
   type: replace-card
   version: '1.1'

@@ -2,8 +2,6 @@ blueprint:
   custom_cards:
   - mushroom-chips-card
   description: replaces motion/window/door sensors with mushroom chip card by Bourner
-  input:
-    name: null
   name: Replace Sensor Mushroom Chip Card
   type: replace-card
   version: '1.0'

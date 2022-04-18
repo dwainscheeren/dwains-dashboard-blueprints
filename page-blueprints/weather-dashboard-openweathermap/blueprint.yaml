@@ -188,11 +188,16 @@ card:
                   cards:
                     - type: custom:stack-in-card
                       cards:
-                        - type: entities
-                          title: $Weather_Alert$
-                          show_header_toggle: false
-                          entities:
+                        - type: conditional
+                          conditions:
                             - entity: sensor.nws_alerts
+                              state_not: '0'
+                          card:
+                            type: entities
+                            title: $Weather_Alert$
+                            show_header_toggle: false
+                            entities:
+                              - entity: sensor.nws_alerts
                         - type: conditional
                           conditions:
                             - entity: sensor.nws_alerts

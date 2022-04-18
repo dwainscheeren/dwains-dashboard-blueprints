@@ -8,7 +8,7 @@ blueprint:
       name: 'Select Name'
       type: text-field  
   name: Replace Mushroom Vacuum Card
-  type: card
+  type: replace-card
   version: '1.0'
 card:
   type: custom:mushroom-vacuum-card

@@ -6,7 +6,7 @@ blueprint:
     name: null
   name: Replace Mushroom Light Card
   type: replace-card
-  version: '1.0'
+  version: '1.1'
 card:
   entity: $replace_with_input_entity$
   hide_state: false
@@ -15,3 +15,4 @@ card:
   show_color_temp_control: true
   type: custom:mushroom-light-card
   use_light_color: true
+  name: $replace_with_input_name$

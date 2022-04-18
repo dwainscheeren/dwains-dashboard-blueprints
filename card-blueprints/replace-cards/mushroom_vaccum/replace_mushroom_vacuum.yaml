@@ -9,10 +9,11 @@ blueprint:
       type: text-field  
   name: Replace Mushroom Vacuum Card
   type: replace-card
-  version: '1.0'
+  version: '1.1'
 card:
   type: custom:mushroom-vacuum-card
   entity: $replace_with_input_entity$
+  name: $replace_with_input_name$
   name: $name$
   hide_state: false
   commands:

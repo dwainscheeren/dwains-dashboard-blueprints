@@ -6,12 +6,13 @@ blueprint:
     name: null
   name: Replace Mushroom Media Player Card
   type: replace-card
-  version: '1.0'
+  version: '1.1'
 card:
   type: custom:mushroom-media-player-card
   use_media_info: true
   use_media_artwork: true
   entity: $replace_with_input_entity$
+  name: $replace_with_input_name$
   volume_controls:
     - volume_mute
     - volume_buttons

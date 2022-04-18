@@ -23,16 +23,18 @@ Note: this blueprint is a ported addon from Dwains Dashboard Blueprints. This po
 ---
 Make sure you have following installed this can be done manually or directly via hacs
 - Cards
-    - [state-switch](https://github.com/thomasloven/lovelace-state-switch), 
-    - [mini-graph-card](https://github.com/kalkih/mini-graph-card), 
-    - [auto-reload-card](https://github.com/ben8p/lovelace-auto-reload-card), 
-    - [Weather Card](https://github.com/bramkragten/weather-card), 
-    - [fontawesome icons](https://github.com/thomasloven/hass-fontawesome), 
-    - [Cupertino Icons](https://github.com/menahishayan/HomeAssistant-Cupertino-Icons), 
-    - [Button Card](https://github.com/custom-cards/button-card), 
-    - [HA card Weather Conditions](https://github.com/r-renato/ha-card-weather-conditions), 
-    - [fold-entity-row](https://github.com/thomasloven/lovelace-fold-entity-row), 
-    - [multiple-entity-row](https://github.com/benct/lovelace-multiple-entity-row) and the 
+    - [state-switch](https://github.com/thomasloven/lovelace-state-switch)
+    - [mini-graph-card](https://github.com/kalkih/mini-graph-card)
+    - [auto-reload-card](https://github.com/ben8p/lovelace-auto-reload-card)
+    - [Weather Card](https://github.com/bramkragten/weather-card)
+    - [fontawesome icons](https://github.com/thomasloven/hass-fontawesome)
+    - [Cupertino Icons](https://github.com/menahishayan/HomeAssistant-Cupertino-Icons)
+    - [Button Card](https://github.com/custom-cards/button-card)
+    - [HA card Weather Conditions](https://github.com/r-renato/ha-card-weather-conditions)
+    - [fold-entity-row](https://github.com/thomasloven/lovelace-fold-entity-row)
+    - [multiple-entity-row](https://github.com/benct/lovelace-multiple-entity-row)
+    - [stack-in-card](https://github.com/custom-cards/stack-in-card)
+    - [entity-attributes-card](https://github.com/custom-cards/entity-attributes-card)
 - Integrations
     - OpenWeatherMap [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start?domain=openweathermap)
     
@@ -40,7 +42,7 @@ Make sure you have following installed this can be done manually or directly via
 
     - IQVIA [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=openuv)
 
-    - Weatheralerts: may switch to 'nws_alerts' in progress due to weatheralerts no longer maintained
+    - [nws_alerts](https://github.com/finity69x2/nws_alerts)) hard coded 
     
     - Sun [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=sun)
 
@@ -59,46 +61,8 @@ Make sure you have following installed this can be done manually or directly via
 
 ### OpenWeatherMap
 - Make the Home Assistant integration with 
-- [OpenUV](https://github.com/LRvdLinden/weather_dd_addon/blob/main/README.md#openuv)
+
 - Choose `latitude` and `longtiude` from the correct [weather station](https://www.google.com/maps/d/embed?mid=1NivHkTGQUOs0dwQTnTMZi8Uatj0&ll=52.92957401169076%2C5.184999999999995&z=7) 
-
-
-### Weather Card based on Dark Sky or OpenWeather Map
-![weather](https://user-images.githubusercontent.com/77990847/118349028-687c8680-b54e-11eb-991d-38cdfe02ae69.gif)
-
-```yaml
-                  - type: vertical-stack
-                    cards:
-                      - type: 'custom:weather-card'
-                        style: |
-                          ha-card {
-                            border-radius: 10px;
-                            padding-bottom: 10px;
-                            background-color: var(--dwains-theme-primary)
-                          }
-                          :host {
-                            --paper-item-icon-color: var(--dwains-theme-accent) !important;
-                          }
-                          .card-header {
-                            padding: 5px 16px;
-                            font-size: 15px;
-                            font-weight: 700 !important;
-                          }
-                          #states {
-                            padding-top: 0px !important;
-                            padding-bottom: 0px !important;
-                          }
-                          .secondary {
-                            color: darkgray !important;
-                            margin-left: 2px !important;
-                          }
-                        entity: weather.openweathermap
-                        current: true
-                        details: true
-                        forecast: true
-                        hourly_forecast: false
-                        number_of_forecasts: '5'
-```
 
 ### IQVIA 
 - Make the integration with [IQVIA](https://www.home-assistant.io/integrations/iqvia/)
@@ -108,34 +72,18 @@ Make sure you have following installed this can be done manually or directly via
 ### OpenUV
 - To get the UV index card into the weather dashboard, make sure you have created a [API](https://www.openuv.io/) at [OpenUV](https://www.openuv.io/)
 - After creating the API, install the [OpenUV](https://www.openuv.io/) integartion by clikking on the button below.
+- [OpenUV](https://github.com/LRvdLinden/weather_dd_addon/blob/main/README.md#openuv)
 
 [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=openuv)
 
 ![image](https://user-images.githubusercontent.com/77990847/117784741-28fb2500-b244-11eb-945a-19dc8f3c3ab0.png)
 
 ##Sensors 
-```
-
-### Moon sensor
-- Make the integration with [Moon](https://www.home-assistant.io/integrations/moon/)
+### nws_alerts 
 ```yaml
-sensor: 
-  - platform: moon   
-```
+- platform: nws_alerts
+  zone_id: 'PAC049,WVC031'
 
-### Season sensor
-- Make the integration with [Season](https://www.home-assistant.io/integrations/season/)
-```yaml
-sensor: 
-  - platform: season  
-```
-
-### Sun integration
-- Make the integration with [Sun](https://www.home-assistant.io/integrations/sun/)
-```yaml
-# Example configuration.yaml entry
-sun:
-```
 
 ## Installation of this Blueprint
 ---

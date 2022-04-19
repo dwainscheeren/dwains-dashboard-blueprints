@@ -1,6 +1,6 @@
 blueprint:
   custom_cards:
-  - mushroom-alarm-card
+  - mushroom-alarm-control-panel-card
   description: replaces alarm card with mushroom alarm card by Bourner
   name: Replace Mushroom Alarm Card
   type: replace-card

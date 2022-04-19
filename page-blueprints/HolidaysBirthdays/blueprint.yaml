@@ -1,0 +1,87 @@
+blueprint:
+  name: BirthdaysHolidaysBlueprint
+  description: Birthdays and Holidays blueprint by Michel Jourdain
+  version: "1.0"
+  type: page
+
+  custom_cards:
+    - button-card
+    - atomic-calendar-revive
+    
+  input:
+  
+    10_translate_events:
+      name: Events in your language
+      description: Translate Events in your language
+      type: text-field
+    11_birthdays_calendar:
+      name: Google birthdays calendar 
+      description: Birthdays calendar from Google
+      type: entity-picker
+    12_holidays_calendar:
+      name: Google holidays calendar 
+      description: Holidays calendar from Google
+      type: entity-picker
+    13_number_of_days_calendar:
+      name: Number of days to show
+      description: Number of days to show in calendar 
+      type: text-field
+    14_calendar_fullDayEventText:
+      name: Calendar full day event text
+      description: Calendar full day event text in your language Ex Jour entier
+      type: text-field
+    15_calendar_language:
+      name: Calendar Language
+      description: Calendar Language da/de/en/et/fr/nb/sl/sv      
+      type: text-field 
+
+card:
+
+  type: custom:dwains-flexbox-card
+  items_classes: 'col-xs-12'
+  cards: 
+    - type: custom:dwains-flexbox-card
+      items_classes: 'col-xs-12 col-sm-6 col-sm-6'
+      cards:
+        - type: custom:dwains-flexbox-card
+          items_classes: 'col-xs-12 col-md-12'
+          cards:
+            - type: markdown
+              content: >
+                ![Image](https://upload.wikimedia.org/wikipedia/commons/a/ab/Fireworks_cholmes75.JPG)
+      
+        - type: custom:dwains-flexbox-card
+          items_classes: 'col-xs-12 col-md-12'
+          cards:
+            - type: 'custom:button-card'
+              name: $10_translate_events$
+              styles:
+                card:
+                  - text-transform: uppercase
+                  - font-size: 125%
+                  - border-radius: 0%
+                  - font-weight: 100
+                  - letter-spacing: 10px
+                  - height: 15px
+
+            - type: custom:atomic-calendar-revive
+              style: |
+                ha-card {
+                  border-radius: 5px;
+                  background-color: var(--dwains-theme-primary);
+                }
+                .cal-titleContainer {
+                  display: none;
+                }
+              lamguage: $15_calendar_language$
+              showProgressBar: true
+              fullDayEventText: '$14_calendar_fullDayEventText$'
+              maxDaysToShow: $13_number_of_days_calendar$
+              showMonth: true
+              showWeekDay: false
+              entities:
+                - entity: $11_birthdays_calendar$
+                - entity: $12_holidays_calendar$
+                
+                
+                

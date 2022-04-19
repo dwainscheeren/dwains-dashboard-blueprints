@@ -9,6 +9,7 @@ card:
   chips:
   - chip:
       content_info: name
+      name: $replace_with_input_name$
       entity: $replace_with_input_entity$
       type: entity
     conditions:

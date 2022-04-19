@@ -527,49 +527,6 @@ card:
                         extrema: true
                         average: true
 
-                    - type: "custom:mini-graph-card"
-                      title: $Last_Hour$ # <- translate this line
-                      icon: "ios:cloud-rain"
-                      style: |
-                        ha-card {
-                          border-radius: 10px;
-                          padding-bottom: 10px;
-                          background-color: var(--dwains-theme-primary)
-                        }
-                        :host {
-                          --paper-item-icon-color: var(--dwains-theme-accent) !important;
-                        }
-                        .card-header {
-                          padding: 5px 16px;
-                          font-size: 15px;
-                          font-weight: 700 !important;
-                        }
-                        #states {
-                          padding-top: 0px !important;
-                          padding-bottom: 0px !important;
-                        }
-                        .secondary {
-                          color: darkgray !important;
-                          margin-left: 2px !important;
-                        }
-                      entities:
-                        - $rain_last_hour$
-                      line_color: "#299ec2"
-                      hours_to_show: 12
-                      line_width: 1
-                      hour24: true
-                      points_per_hour: 2
-                      decimals: 0
-                      show:
-                        animate: true
-                        fill: true
-                        icon: true
-                        labels: false
-                        legend: false
-                        name: true
-                        graph: bar
-                        extrema: true
-                        average: true
 
             #TEMP VIEW
             temperatuur:

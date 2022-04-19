@@ -1,4 +1,4 @@
-# Birthdays and Holodays Blueprint
+# Birthdays and Holidays Blueprint
 
 ## Installation of this Blueprint
 - Install atomic-calendar-revive from [HACS]

@@ -23,7 +23,11 @@
 ### Screenshots
 **Light theme:**<br>
 
+![image](https://user-images.githubusercontent.com/83040228/164001839-2803895c-c838-4fe9-982a-f73f619585f2.jpeg)
+
 **Dark theme:**<br>
+
+![image](https://user-images.githubusercontent.com/83040228/164001877-0a5fcedc-9cef-4ffd-94ec-c9805ad08ba2.jpeg)
 
 ### Changelog
 #### 1.0

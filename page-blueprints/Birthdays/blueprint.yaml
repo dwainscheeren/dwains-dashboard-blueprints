@@ -24,7 +24,7 @@ blueprint:
       type: text-field
     13_calendar_fullDayEventText:
       name: Calendar full day event text for next days
-      description: Calendar full day event text for next days in your language Ex Jour entier
+      description: Calendar full day event text in your language Ex Jour entier
       type: text-field
     14_calendar_language:
       name: Calendar Language

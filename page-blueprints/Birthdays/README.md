@@ -16,7 +16,7 @@ This Blueprint is a blueprint version of the birthdays page created by [LRvdLind
  - Translate Birthdays in your language
  - Birthdays calendar from Google calendar 
  - Number of days to show in calendar 
- - Calendar full day event text for next days in your language Ex Jour entier
+ - Calendar full day event text in your language Ex Jour entier
  - Calendar Language da/de/en/et/fr/nb/sl/sv   
 
 ### Screenshots

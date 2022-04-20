@@ -70,6 +70,14 @@ blueprint:
       name: Ozone level Sensor
       description: Ozone Level Sensor
       type: entity-picker
+    forecast_rain:
+      name: Forecast Precipitation Sensor
+      description: Forecast for Precipitation
+      type: entity-picker
+    forecast_rain_chance:
+      name: Forecast Precipitation Percentage
+      description: Forecast for Precipitation Percentage
+      type: entity-picker
 #Rain Sensor
     rain_last_24_hours:
       name: Rain Last 24 Hours
@@ -121,10 +129,6 @@ blueprint:
     Last_24_Hours:
       name: Translate the phrase Last 24 hours
       description: Translate the phrase last 24 hours
-      type: text-field
-    Last_Hour:
-      name: Translate the phrase Last hour
-      description: Translate the phrase last hour
       type: text-field
     Radar:
       name: Translate Radar
@@ -526,7 +530,35 @@ card:
                         graph: bar
                         extrema: true
                         average: true
-
+                    - type: entities
+                      title: $Forecast$ $Rain$
+                      style: |
+                        ha-card {
+                          border-radius: 10px;
+                          padding-bottom: 10px;
+                          background-color: var(--dwains-theme-primary)
+                        }
+                        :host {
+                          --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                        }
+                        .card-header {
+                          padding: 5px 16px;
+                          font-size: 15px;
+                          font-weight: 700 !important;
+                        }
+                        #states {
+                          padding-top: 0px !important;
+                          padding-bottom: 0px !important;
+                        }
+                        .secondary {
+                          color: darkgray !important;
+                          margin-left: 2px !important;
+                        }
+                      entities:
+                        - entity: $forecast_rain_chance$
+                          name: $Forecast$ $Rain$ %
+                        - entity: $forecast_rain$
+                          name: $Forecast$ $Rain$
 
             #TEMP VIEW
             temperatuur:

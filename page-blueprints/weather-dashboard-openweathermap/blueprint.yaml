@@ -794,20 +794,20 @@ card:
                         - entity: $allergy_index_today$
                         - entity: $current_ozone_level$
                         - entity: $weather_entity_humidity$
+                          name: $Humidity$
                         - entity: $weather_entity_pressure$
+                          name: $Barometric_Pressure$
                         - type: custom:fold-entity-row
                           head:
                             type: section
                             label: $Learn_More$
                           entities:
                             - entity: $allergy_index_today$
-                              name: Allergy Index
                             - entity: $asthma_index_today$
-                              name: Asthma Index
                             - entity: $wind_speed$
-                              name: Wind Speed
+                              name: $Wind_speed$
                             - entity: $wind_bearing$
-                              name: Wind Direction
+                              name: $Wind_direction$
                               icon: "mdi:compass"
                             
                     - type: entities

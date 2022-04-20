@@ -11,7 +11,7 @@ Note: this blueprint is a ported addon from Dwains Dashboard Blueprints. This po
 
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/77990847/118019312-21797000-b359-11eb-8723-c4c2e49f4e7b.png" />
+  <img src="https://user-images.githubusercontent.com/94947459/164122793-0dc32ac2-4bba-4c3f-9439-409262f70689.png" />
 </p>
 
 
@@ -47,10 +47,6 @@ Make sure you have following installed this can be done manually or directly via
     - Moon [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=moon)
 
     - Seasons [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=seasons)
-
-
-<img width="618" alt="image" src="https://user-images.githubusercontent.com/77990847/114733529-b6ca1a00-9d43-11eb-876a-6f4beda466ec.png">
-
 
 
 ## Make Home Assistant integration 
@@ -90,13 +86,12 @@ ___
 
 ## Result
 ---
-![image](https://user-images.githubusercontent.com/77990847/117791717-e426bc80-b24a-11eb-8bab-d0a70fbab8f3.png)
+![image](https://user-images.githubusercontent.com/94947459/164122542-65a8cb16-40db-4343-89b1-c7c4ab23369d.png)
+![image](https://user-images.githubusercontent.com/94947459/164125101-e6d862b8-36ec-47c2-941f-825b1ba716b6.png)
+![image](https://user-images.githubusercontent.com/94947459/164125116-1cf54354-fe51-4793-b704-613ae9b550bf.png)
+![image](https://user-images.githubusercontent.com/94947459/164125158-5fedbfa0-32b2-42b2-a570-60cfd2e2bad1.png)
+![image](https://user-images.githubusercontent.com/94947459/164125169-62122b07-8837-44ea-91d4-b89b1780c4ac.png)
 
-![image](https://user-images.githubusercontent.com/77990847/117780215-b720dc80-b23f-11eb-9158-36574841576c.png)
-
-![image](https://user-images.githubusercontent.com/77990847/117789187-5ba71c80-b248-11eb-8ddc-45f8029a4936.png)
-
-![image](https://user-images.githubusercontent.com/77990847/117780368-d91a5f00-b23f-11eb-88b8-741e067910aa.png)
 
 
 

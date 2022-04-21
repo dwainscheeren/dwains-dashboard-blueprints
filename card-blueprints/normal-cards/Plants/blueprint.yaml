@@ -1,0 +1,179 @@
+blueprint:
+  name: Plants card Blueprint
+  description: Plants card by Michel Jourdain
+  version: "1.0"
+  type: card
+  
+  custom_cards:
+    - flower-card
+    - mini-graph-card
+    - card-mod
+    
+  input:
+  
+    01_plant_entity:
+       name: Plant entity
+       description: Plant entity
+       type: entity-picker
+       
+    02_plants_species:
+       name: Plant species
+       description: Plant species
+       type: text-field
+       
+    03_translate_temprerature:
+       name: Translate temperature
+       description: Translate temperature in your language
+       type: text-field
+       
+    04_plant_entity_temprerature:
+       name: Plant entity temprerature
+       description: Plant entity temprerature
+       type: entity-picker
+
+    05_translate_moisture:
+       name: Translate moisture
+       description: Translate moisture in your language
+       type: text-field
+       
+    06_plant_entity_moisture:
+       name: Plant entity moisture
+       description: Plant entity moisture
+       type: entity-picker       
+
+    07_translate_illuminance:
+       name: Translate illuminance
+       description: Translate illuminance in your language
+       type: text-field
+       
+    08_plant_entity_illuminance:
+       name: Plant entity illuminance
+       description: Plant entity illuminance
+       type: entity-picker       
+        
+    09_translate_conductivity:
+       name: Translate conductivity
+       description: Translate conductivity in your language
+       type: text-field
+       
+    10_plant_entity_iconductivity:
+       name: Plant entity conductivity
+       description: Plant entity conductivity
+       type: entity-picker     
+
+    11_plant_entity_battery:
+       name: Plant entity battery
+       description: Plant entity battery
+       type: entity-picker
+       
+card:
+
+  type: custom:dwains-flexbox-card
+  items_classes: 'col-xs-12'
+  cards:
+    - type: custom:dwains-flexbox-card
+      items_classes: 'col-xs-12 col-sm-12 col-sm-12'
+      padding: true
+      cards:
+        - type: custom:flower-card
+          entity: $01_plant_entity$
+          species: $02_plants_species$
+
+        - type: custom:mini-graph-card
+          item_classes: 'col-xs-6 col-md-3'
+          entities:
+            - entity: $04_plant_entity_temprerature$
+          name: $03_translate_temprerature$   
+          icon: mdi:thermometer
+          align_header: right
+          font_size: 70
+          hours_to_show: 24
+          hour24: true
+          points_per_hour: 1
+          smoothing: true
+          show:
+            name: true
+            points: hover
+            graph: line
+            extrema: true
+
+        - type: custom:mini-graph-card
+          item_classes: 'col-xs-6 col-md-3'
+          entities:
+            - entity: $06_plant_entity_moisture$
+          name: $05_translate_moisture$   
+          icon: mdi:water-percent
+          align_header: right
+          font_size: 70
+          hours_to_show: 24
+          hour24: true
+          points_per_hour: 1
+          smoothing: true
+          show:
+            name: true
+            points: hover
+            graph: line
+            extrema: true
+
+        - type: custom:mini-graph-card
+          item_classes: 'col-xs-6 col-md-3'
+          entities:
+            - entity: $08_plant_entity_illuminance$
+          name: $07_translate_illuminance$   
+          icon: mdi:white-balance-sunny
+          align_header: right
+          font_size: 70
+          hours_to_show: 24
+          hour24: true
+          points_per_hour: 1
+          smoothing: true
+          show:
+            name: true
+            points: hover
+            graph: line
+            extrema: true
+            
+        - type: custom:mini-graph-card
+          item_classes: 'col-xs-6 col-md-3'
+          entities:
+            - entity: $10_plant_entity_iconductivity$
+          name: $09_translate_conductivity$   
+          icon: mdi:leaf
+          align_header: right
+          font_size: 70
+          hours_to_show: 24
+          hour24: true
+          points_per_hour: 1
+          smoothing: true
+          show:
+            name: true
+            points: hover
+            graph: line
+            extrema: true
+            
+        - type: custom:bar-card
+          item_classes: 'col-xs-12'
+          style: |-
+            bar-card-value {
+              margin-right: auto;
+              font-size: 13px;
+              font-weight: bold;
+              text-shadow: 1px 1px #0005;
+            }
+          entities:
+           - entity: $11_plant_entity_battery$
+             icon: mdi:battery
+          positions:
+            indicator: 'off'
+            name: 'off'
+          severity:
+            - color: Red
+              from: 0
+              to: 25
+            - color: Orange
+              from: 26
+              to: 50
+            - color: Green
+              from: 51
+              to: 100
+

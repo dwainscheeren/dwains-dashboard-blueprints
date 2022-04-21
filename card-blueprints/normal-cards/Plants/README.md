@@ -11,7 +11,7 @@ This Blueprint is a blueprint version of the plants addon created by [Klumpke](h
 
 - Copy the content of the blueprint file `blueprint.yaml` into the Blueprint YAML code.
 
- ## Fields to define for each panel.
+ ## Fields to defines.
  - Plant entity
  - Plant species
  - Translate temperature in your language
@@ -27,9 +27,11 @@ This Blueprint is a blueprint version of the plants addon created by [Klumpke](h
 ### Screenshots
 **Light theme:**<br>
 
+![image](https://user-images.githubusercontent.com/83040228/164532180-cfd913f5-f806-486e-a6ed-671f41209bf7.jpeg)
 
 **Dark theme:**<br>
 
+![image](https://user-images.githubusercontent.com/83040228/164532207-768c1f6b-5ba6-42b1-820b-b4a45eabf546.jpeg)
 
 ### Changelog
 #### 1.0

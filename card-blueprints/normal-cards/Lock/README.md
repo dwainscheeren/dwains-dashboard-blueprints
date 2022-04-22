@@ -46,9 +46,23 @@
 ### Screenshots
 **Light theme:**<br>
 
+**Card**
+
+![image](https://user-images.githubusercontent.com/83040228/164761936-cae5fdbf-eec4-447e-b7e9-8cb6519fc824.jpeg)
+
+**Pop-Up**
+
+![image](https://user-images.githubusercontent.com/83040228/164761983-c3a5b43b-f7b3-4896-a0e6-49cc7d65ba20.jpeg)
 
 **Dark theme:**<br>
 
+**Card**
+
+![image](https://user-images.githubusercontent.com/83040228/164762044-a297c503-a574-47bc-bfc9-00336d8e25e4.jpeg)
+
+**Pop-Up**
+
+![image](https://user-images.githubusercontent.com/83040228/164762097-b923b91f-d5f4-4988-b057-bf2166956ab6.jpeg)
 
 ### Changelog
 #### 1.0

@@ -15,14 +15,16 @@
  - Additional sensor name
  - Additional sensor entity
 
-1 These parameters are used only if the control buttons are displayed.
+(1) These parameters are used only if the control buttons are displayed.
 
 ### Screenshots
 **Light theme:**<br>
 
+![image](https://user-images.githubusercontent.com/83040228/164934551-4d9b84ae-c46a-4ab6-b6a1-b24f397f2da5.jpeg)
 
 **Dark theme:**<br>
 
+![image](https://user-images.githubusercontent.com/83040228/164934556-4ca11a87-bd4b-4e32-b307-41315969a1ad.jpeg)
 
 ### Changelog
 #### 1.0

@@ -10,40 +10,40 @@
 
 # ISS Sensors
           
-  - platform: template
-    sensors:
-      international_space_station_peoples_in:
-        friendly_name: "Iss Peoples"
-        icon_template: mdi:account-group
-        value_template: "{{ state_attr('binary_sensor.iss', 'number_of_people_in_space' ) }}"
+      - platform: template
+        sensors:
+          international_space_station_peoples_in:
+            friendly_name: "Iss Peoples"
+            icon_template: mdi:account-group
+            value_template: "{{ state_attr('binary_sensor.iss', 'number_of_people_in_space' ) }}"
         
-  - platform: template
-    sensors:
-      international_space_station_next_rise:
-        friendly_name: "Iss next rise"
-        icon_template: mdi:waves-arrow-up
+      - platform: template
+        sensors:
+          international_space_station_next_rise:
+            friendly_name: "Iss next rise"
+            icon_template: mdi:waves-arrow-up
         value_template: "{{ state_attr('binary_sensor.iss', 'next_rise' ) }}"
         
-  - platform: template
-    sensors:
-      international_space_station_longitude:
-        friendly_name: "Iss longitude"
-        icon_template: mdi:longitude
-        value_template: "{{ state_attr('binary_sensor.iss', 'longitude' ) }}"
+      - platform: template
+        sensors:
+          international_space_station_longitude:
+            friendly_name: "Iss longitude"
+            icon_template: mdi:longitude
+            value_template: "{{ state_attr('binary_sensor.iss', 'longitude' ) }}"
         
-  - platform: template
-    sensors:
-      international_space_station_latitude:
-        friendly_name: "Iss latitude"
-        icon_template: mdi:latitude
-        value_template: "{{ state_attr('binary_sensor.iss', 'latitude' ) }}"
+      - platform: template
+        sensors:
+          international_space_station_latitude:
+            friendly_name: "Iss latitude"
+            icon_template: mdi:latitude
+           value_template: "{{ state_attr('binary_sensor.iss', 'latitude' ) }}"
 
 
 - Restart Home Assistant
 
-Make sure you have following installed this can be done manually or directly via hacs
-- Cards
-    - [state-switch](https://my.home-assistant.io/redirect/config_flow_start?domain=iss)
+Make sure you have following integration installed
+
+- [ISS](https://www.home-assistant.io/integrations/iss/)
 
 - Copy the content of the blueprint file `blueprint.yaml` into the Blueprint YAML code.
 
@@ -58,9 +58,11 @@ Make sure you have following installed this can be done manually or directly via
 ### Screenshots
 **Light theme:**<br>
 
-**Card**
+![image](https://user-images.githubusercontent.com/83040228/165317639-b96d0f0b-f3f3-43a8-990b-3890c00b9fe1.jpeg)
 
 **Dark theme:**<br>
+
+![image](https://user-images.githubusercontent.com/83040228/165317675-fc45b237-3017-442a-baa0-46ecfa611905.jpeg)
 
 
 ### Changelog

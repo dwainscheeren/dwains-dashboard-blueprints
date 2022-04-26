@@ -16,6 +16,7 @@
  - Tracker entity of the person
  - Battery charging entity of the person
  - Battery level entity of the person
+ - Disable dark mode for map
 
 ### Screenshots
 **Light theme:**<br>
@@ -33,3 +34,8 @@
 ### Changelog
 #### 1.0
 - First release
+
+#### 1.3
+
+- Add ability to disable dark mode for map
+

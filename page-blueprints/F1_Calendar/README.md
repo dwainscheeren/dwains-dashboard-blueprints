@@ -3,7 +3,7 @@
 This Blueprint is a Blueprint version of F1_calendar page created by [Wolk9](https://github.com/dwainscheeren/dwains-dashboard-addons/tree/for-dd-2.0/more_page/f1_calendar).
 
 ### Prerequisite
-- Make sure you have the [Google Calendar](https://www.home-assistant.io/integrations/calendar.google/) integration
+- Make sure you have the [Google Calendar](https://www.home-assistant.io/integrations/google) integration
 
 ### Installation
 

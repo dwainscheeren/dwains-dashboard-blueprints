@@ -3,14 +3,13 @@
 This Blueprint is a Blueprint version of F1_calendar page created by [Wolk9](https://github.com/dwainscheeren/dwains-dashboard-addons/tree/for-dd-2.0/more_page/f1_calendar).
 
 ### Prerequisite
-- Make sure you have the [Google Calendar Event](https://www.home-assistant.io/integrations/calendar.google/) integration
+- Make sure you have the [Google Calendar](https://www.home-assistant.io/integrations/calendar.google/) integration
 
 ### Installation
 
 - Install button-card from [HACS]
 
 - Add the [F1 2022 Calendar by Racefans](https://www.racefans.net/contact/f1-fanatic-calendar/) to your Google Calendar
-- If you don't have the [Google Calendar](https://www.home-assistant.io/integrations/google/) integration setup yet, make sure to do so. If you already have, please ignore this step.
 - Restart home-assistant and open `google_calendars.yaml`, this file should be in the root folder (this is also where your configuration.yaml and secrets.yaml should be located)
 - Find the calendar with device id `formula_1_calendar_by_racefans_net`, it should look like this;
 ```yaml
@@ -56,31 +55,25 @@ Replace it with the following;
 
 - Copy the content of the blueprint file `blueprint.yaml` into the Blueprint YAML code.
 
- ## Fields to define for each panel.
- - The name of the panel
- - The panel main entity 
- - The panel icon
- - The panel second entity
- - The Panel second entity name
- - The panel third entity
- - The Panel third entity name
-
-### Additional options
-You can translate the page by editing the following lines;
-- Line 18
-- Line 57
-- Line 121, 122, 123, 124 and 125
+ ## Fields to define.
+ - Translate Location in your language
+ - Translate Circuit in your language
+ - Translate Free practice 1 in your language
+ - Translate Free practice 2 in your language
+ - Translate Free practice 3 in your language
+ - Translate Qualifying in your language
+ - Translate Race in your language
 
 You can translate the dates as well, instead of using the English `formula1.yaml` sensor file, use the Dutch `formula1-translated.yaml` and change the second parameter in the `replace()` filters on lines 17, 21, 25, 29 and 33.
 
 ### Screenshots
 **Light theme:**<br>
 
-
+![image](https://user-images.githubusercontent.com/83040228/165640441-eab40711-c78f-4868-a630-dc6cd6f113d6.png)
 
 **Dark theme:**<br>
 
-
+![image](https://user-images.githubusercontent.com/83040228/165640456-73fa68d0-e5f7-4897-acd2-6e685e1bac44.png)
 
 ### Changelog
 #### 1.0

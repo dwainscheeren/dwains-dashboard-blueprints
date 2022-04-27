@@ -1,6 +1,6 @@
 blueprint:
   name: Formula One page Blueprint
-  description: Formula One page page by Michel Jourdain
+  description: Formula One page by Michel Jourdain
   version: "1.0"
   type: page
   

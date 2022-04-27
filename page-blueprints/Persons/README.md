@@ -39,3 +39,7 @@
 
 - Add ability to disable dark mode for map
 
+#### 1.4
+
+- Remove ability to set dark mode for map
+

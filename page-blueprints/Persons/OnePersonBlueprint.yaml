@@ -1,7 +1,7 @@
 blueprint:
   name: OnePersonsBlueprint
   description: One persons bleuprint by Michel Jourdain
-  version: "1.3"
+  version: "1.4"
   type: page
   
   custom_cards:
@@ -31,11 +31,6 @@ blueprint:
       name: Battery level person one
       description: Battery level entity of person one
       type: entity-picker
-
-    50_disable_dark_mode:
-       name: Disable dark mode
-       description: Disable dark mode for map
-       type: checkbox
 
 card:
 
@@ -117,5 +112,5 @@ card:
               entities:
                  - entity: $13_tracker_entity$
               hours_to_show: 24
-              dark_mode: $50_disable_dark_mode$
+              dark_mode: false
               default_zoom: 12

@@ -1,0 +1,183 @@
+blueprint:
+  name: Formula One page Blueprint
+  description: Formula One page by Michel Jourdain
+  version: "1.0"
+  type: page
+  
+  custom_cards:
+    - button-card
+
+  input:
+  
+    01_translate_location:
+       name: Translate Location
+       description: Translate Location in your language
+       type: text-field
+       
+    02_translate_circuit:
+       name: Translate Circuit
+       description: Translate Circuit in your language
+       type: text-field
+       
+    03_translate_free_practice_1:
+       name: Translate Free practice 1
+       description: Translate Free practice 1 in your language
+       type: text-field
+       
+    04_translate_free_practice_2:
+       name: Translate Free practice 2
+       description: Translate Free practice 2 in your language
+       type: text-field
+       
+    05_translate_free_practice_3:
+       name: Translate Free practice 3
+       description: Translate Free practice 3 in your language
+       type: text-field
+       
+    06_translate_qualifying:
+       name: Translate Qualifying
+       description: Translate Qualifying in your language
+       type: text-field
+       
+    07_translate_race:
+       name: Translate Race
+       description: Translate Race in your language
+       type: text-field
+       
+card:
+
+  type: custom:dwains-flexbox-card
+  items_classes: 'col-xs-12'
+  cards: 
+    - type: custom:dwains-flexbox-card
+      items_classes: 'col-xs-12 col-sm-12'
+      cards:
+        - type: custom:dwains-flexbox-card
+          items_classes: 'col-xs-12 col-md-12'
+          cards:
+            - type: markdown
+              content: >
+                ![Image](https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/F1.svg/1280px-F1.svg.png)
+
+        - type: custom:dwains-flexbox-card
+          items_classes: 'col-xs-12 col-md-12'
+          cards:
+            - type: 'custom:button-card'
+              name: $01_translate_location$
+              styles:
+                card:
+                  - --mdc-ripple-press-opacity: 0
+                  - cursor: initial
+                  - padding: 15px
+                  - font-size: 12pt
+                name: 
+                  - text-transform: uppercase
+                  - font-size: 125%
+                  - letter-spacing: 10px
+                  - padding: 5px
+                  - border-bottom: 2px solid rgba(225, 225, 225, 0.60)
+                  - width: 90vw
+                grid:
+                  - grid-template-areas: '"n n" "race_label race_content" "circuit_label circuit_content"'
+                  - grid-template-columns: min-content 1fr 
+                custom_fields:
+                  race_label:
+                    - text-align: left
+                    - padding-top: 10px
+                  race_content:
+                    - text-align: right
+                    - padding-top: 10px
+                  circuit_label:
+                    - text-align: left
+                    - padding-top: 10px
+                  circuit_content:
+                    - text-align: right
+                    - padding-top: 10px
+              custom_fields:
+                race_label: Grand prix
+                circuit_label: $02_translate_circuit$
+                race_content: >
+                  [[[ return `${states['sensor.formula_1'].attributes.race_name}` ]]]
+                circuit_content: >
+                  [[[ return `${states['sensor.formula_1'].attributes.race_track}` ]]]
+
+            - type: 'custom:button-card'
+              name: $07_translate_race$
+              styles:
+                card:
+                  - --mdc-ripple-press-opacity: 0
+                  - cursor: initial
+                  - padding: 15px
+                  - font-size: 12pt
+                name: 
+                  - text-transform: uppercase
+                  - font-size: 125%
+                  - letter-spacing: 10px
+                  - padding: 5px
+                  - border-bottom: 2px solid rgba(225, 225, 225, 0.60)
+                  - width: 90vw
+                grid:
+                  - grid-template-areas: '"n n" "fp1_label fp1_content" "fp2_label fp2_content" "fp3_label fp3_content" "qualify_label qualify_content" "race_label race_content"'
+                  - grid-template-columns: min-content 1fr 
+                custom_fields:
+                  fp1_label:
+                    - text-align: left
+                    - padding-top: 10px
+                    - min-height: 45px
+                  fp2_label:
+                    - text-align: left
+                    - padding-top: 10px
+                    - min-height: 45px
+                  fp3_label:
+                    - text-align: left
+                    - padding-top: 10px
+                    - min-height: 45px
+                  qualify_label:
+                    - text-align: left
+                    - padding-top: 10px
+                    - min-height: 45px
+                  race_label:
+                    - text-align: left
+                    - padding-top: 10px
+                    - min-height: 45px
+                  fp1_content:
+                    - text-align: right
+                    - padding-top: 10px
+                    - min-height: 45px
+                    - text-transform: capitalize
+                  fp2_content:
+                    - text-align: right
+                    - padding-top: 10px
+                    - min-height: 45px
+                    - text-transform: capitalize
+                  fp3_content:
+                    - text-align: right
+                    - padding-top: 10px
+                    - min-height: 45px
+                    - text-transform: capitalize
+                  qualify_content:
+                    - text-align: right
+                    - padding-top: 10px
+                    - min-height: 45px
+                    - text-transform: capitalize
+                  race_content:
+                    - text-align: right
+                    - padding-top: 10px
+                    - min-height: 45px
+                    - text-transform: capitalize
+              custom_fields:
+                fp1_label: $03_translate_free_practice_1$
+                fp2_label: $04_translate_free_practice_2$
+                fp3_label: $05_translate_free_practice_3$
+                qualify_label: $06_translate_qualifying$
+                race_label: $07_translate_race$
+                fp1_content: >
+                  [[[ return `<span>${states['sensor.formula_1'].attributes.free_practice_1_day}</span> <br /> <span style="opacity: 0.60">${states['sensor.formula_1'].attributes.free_practice_1_time}</span>` ]]]
+                fp2_content: >
+                  [[[ return `<span>${states['sensor.formula_1'].attributes.free_practice_2_day}</span>  <br /> <span style="opacity: 0.60">${states['sensor.formula_1'].attributes.free_practice_2_time}</span>` ]]]
+                fp3_content: >
+                  [[[ return `<span>${states['sensor.formula_1'].attributes.free_practice_3_day}</span> <br /> <span style="opacity: 0.60">${states['sensor.formula_1'].attributes.free_practice_3_time}</span>` ]]]
+                qualify_content: >
+                  [[[ return `<span>${states['sensor.formula_1'].attributes.qualifying_day}</span> <br /> <span style="opacity: 0.60">${states['sensor.formula_1'].attributes.qualifying_time}</span>` ]]]
+                race_content: >
+                  [[[ return `<span>${states['sensor.formula_1'].attributes.race_day}</span> <br /> <span style="opacity: 0.60">${states['sensor.formula_1'].attributes.race_time}</span>` ]]]

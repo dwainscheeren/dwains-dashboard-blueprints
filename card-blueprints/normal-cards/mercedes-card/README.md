@@ -6,7 +6,7 @@
 ### HACS components
 
 - Install [Mercedes Me](https://github.com/ReneNulschDE/mbapi2020) from [HACS](https://hacs.xyz).
-- Install [Car Wah Sensor](https://github.com/Limych/ha-car_wash) from [HACS](https://hacs.xyz).
+- Install [Car Wash Sensor](https://github.com/Limych/ha-car_wash) from [HACS](https://hacs.xyz).
 
 ### Configuration
 

@@ -11,7 +11,7 @@ blueprint:
   
     01_alert_name:
        name: Alert name
-       description: The Alert name
+       description: The alert name
        type: text-field
   
     02_alert_entity:

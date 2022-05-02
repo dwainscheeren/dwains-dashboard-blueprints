@@ -15,7 +15,7 @@
 ### Screenshots
 **Light theme:**<br>
 
-![image](https://user-images.githubusercontent.com/83040228/166334903-b22a6b0a-fb88-4408-bdf5-37365bdfa21a.jpeg)
+![image](https://user-images.githubusercontent.com/83040228/166335319-8313f3a8-5437-491e-996b-4bb583d05fcf.jpeg)
 
 ![image](https://user-images.githubusercontent.com/83040228/166334915-f93da6de-874c-4571-b91a-6bccf031ed6d.jpeg)
 

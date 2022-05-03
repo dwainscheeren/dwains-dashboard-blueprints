@@ -1,32 +1,36 @@
 blueprint:
-  name: BirthdaysBlueprint
-  description: Birthdays bleuprint by Michel Jourdain
+  name: BirthdaysHolidaysBlueprint
+  description: Birthdays and Holidays blueprint by Michel Jourdain
   version: "1.0"
   type: page
-  
+
   custom_cards:
     - button-card
     - atomic-calendar-revive
     
   input:
   
-    10_translate_birthdays:
-      name: Birthdays in your language
-      description: Translate Birthdays in your language
+    10_translate_events:
+      name: Events in your language
+      description: Translate Events in your language
       type: text-field
     11_birthdays_calendar:
       name: Google birthdays calendar 
-      description: Birthdays from Google calendar 
+      description: Birthdays calendar from Google
       type: entity-picker
-    12_number_of_days_calendar:
+    12_holidays_calendar:
+      name: Google holidays calendar 
+      description: Holidays calendar from Google
+      type: entity-picker
+    13_number_of_days_calendar:
       name: Number of days to show
       description: Number of days to show in calendar 
       type: text-field
-    13_calendar_fullDayEventText:
-      name: Calendar full day event text for next days
+    14_calendar_fullDayEventText:
+      name: Calendar full day event text
       description: Calendar full day event text in your language Ex Jour entier
       type: text-field
-    14_calendar_language:
+    15_calendar_language:
       name: Calendar Language
       description: Calendar Language da/de/en/et/fr/nb/sl/sv      
       type: text-field 
@@ -44,13 +48,13 @@ card:
           cards:
             - type: markdown
               content: >
-                ![Image](https://www.iphonelife.com/sites/iphonelife.com/files/memoji_0.jpg)
+                ![Image](https://upload.wikimedia.org/wikipedia/commons/a/ab/Fireworks_cholmes75.JPG)
       
         - type: custom:dwains-flexbox-card
           items_classes: 'col-xs-12 col-md-12'
           cards:
             - type: 'custom:button-card'
-              name: $10_translate_birthdays$
+              name: $10_translate_events$
               styles:
                 card:
                   - text-transform: uppercase
@@ -69,14 +73,15 @@ card:
                 .cal-titleContainer {
                   display: none;
                 }
-              lamguage: $14_calendar_language$
+              lamguage: $15_calendar_language$
               showProgressBar: true
-              fullDayEventText: '$13_calendar_fullDayEventText$'
-              maxDaysToShow: $12_number_of_days_calendar$
+              fullDayEventText: '$14_calendar_fullDayEventText$'
+              maxDaysToShow: $13_number_of_days_calendar$
               showMonth: true
               showWeekDay: false
               entities:
                 - entity: $11_birthdays_calendar$
+                - entity: $12_holidays_calendar$
                 
                 
                 

@@ -1,0 +1,141 @@
+blueprint:
+  custom_cards:
+  - mushroom-title-card
+  - mini-graph-card 
+  - bar-card
+  description: Systemmonitor page by Bourner
+  name: Systemmonitor Page Blueprint
+  type: page
+  version: '1.0'
+card:
+  cards:
+    - cards: []
+      item_classes: col-lg-3
+      type: custom:stack-in-card
+    - cards:
+        - subtitle: Speedtest
+          type: custom:mushroom-title-card
+        - entities:
+            - sensor.speedtest_ping
+          font_size: 70
+          height: 30
+          hours_to_show: 168
+          icon: mdi:pulse
+          line_color: var(--primary-color)
+          line_width: 2
+          name: Ping
+          points_per_hour: 1
+          show:
+            fill: true
+            graph: bar
+          type: custom:mini-graph-card
+        - cards:
+            - entities:
+                - entity: sensor.speedtest_download
+                  show_points: false
+              font_size: 70
+              hours_to_show: 168
+              icon: mdi:arrow-down-bold
+              line_color: var(--primary-color)
+              line_width: 2
+              name: Download
+              show:
+                extrema: true
+                labels: false
+              type: custom:mini-graph-card
+            - entities:
+                - entity: sensor.speedtest_upload
+                  show_points: false
+              font_size: 70
+              hours_to_show: 168
+              icon: mdi:arrow-up-bold
+              line_color: var(--primary-color)
+              line_width: 2
+              name: Upload
+              show:
+                extrema: true
+                labels: false
+              type: custom:mini-graph-card
+          type: horizontal-stack
+        - subtitle: System
+          type: custom:mushroom-title-card
+        - cards:
+            - entity: sensor.ipv4_address_eth0
+              name: IP Adress
+              type: custom:mushroom-entity-card
+            - entity: sensor.last_boot
+              type: custom:mushroom-entity-card
+          type: horizontal-stack          
+        - cards:
+            - bar_style:
+                border-radius: 5px
+                padding-left: 4px
+                text-align: left
+              columns: 2
+              entities:
+                - entity: sensor.processor_use
+                - entity: sensor.memory_use_percent
+                - entity: sensor.processor_temperature
+                  icon: mdi:thermometer
+                - entity: sensor.disk_use_percent
+              positions:
+                indicator: inside
+                name: 'off'
+              severity:
+                - color: Green
+                  from: 0
+                  to: 60
+                - color: Orange
+                  from: 61
+                  to: 80
+                - color: Red
+                  from: 81
+                  to: 100
+              style: |
+                ha-card {
+                  border-radius: 5px;
+                }
+                bar-card-backgroundbar, bar-card-currentbar {
+                  border-radius: 5px;
+                }
+                bar-card-value {
+                  font-weight: bold;
+                }
+                bar-card-iconbar {
+                  height: 20px;
+                }      
+              type: custom:bar-card
+          type: horizontal-stack
+        - cards:
+            - entities:
+                - sensor.network_in_eth0
+              font_size: 70
+              hours_to_show: 96
+              icon: mdi:arrow-down-bold
+              line_color: var(--primary-color)
+              line_width: 3
+              name: In
+              show:
+                graph: bar
+                labels: false
+              type: custom:mini-graph-card
+            - entities:
+                - sensor.network_out_eth0
+              font_size: 70
+              hours_to_show: 96
+              icon: mdi:arrow-up-bold
+              line_color: var(--primary-color)
+              line_width: 3
+              name: Out
+              show:
+                graph: bar
+                labels: false
+              type: custom:mini-graph-card
+          type: horizontal-stack
+      item_classes: col-lg-6
+      type: vertical-stack
+    - cards: []
+      item_classes: col-lg-3
+      type: vertical-stack
+  items_classes: col-xs-12
+  type: custom:dwains-flexbox-card

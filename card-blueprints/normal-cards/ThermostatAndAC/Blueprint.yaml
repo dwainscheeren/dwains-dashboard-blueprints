@@ -1,0 +1,71 @@
+blueprint:
+  name: Thermostat and A/C card Blueprint
+  description: Thermostat and A/C card by Michel Jourdain
+  version: "1.0"
+  type: card
+  
+  custom_cards:
+    - simple-thermostat
+
+  input:
+  
+    01_Thermostat_name:
+       name: Thermostat name
+       description: The Thermostat name
+       type: text-field
+  
+    02_thermostat_entity:
+       name: Thermostat entity
+       description: The thermostat entity
+       type: entity-picker
+       
+    03_thermostat_controls_buttons_hide_show:
+       name: Controls buttons
+       description: Show or hide Controls buttons
+       type: checkbox
+       
+    04_thermostat_controls_names_hide_show:
+       name: Controls names
+       description: Show or hide Controls names
+       type: checkbox
+       
+    05_thermostat_controls_icons_hide_show:
+       name: Controls icons hide show
+       description: Show or hide Controls icons
+       type: checkbox
+       
+    06_additional_sensor_name:
+       name: Additional Sensor name
+       description: Additional sensor name
+       type: text-field
+       
+    07_additional_sensor_entity:
+       name: Additional Sensor entity
+       description: Additional sensor entity
+       type: entity-picker
+       
+card:
+
+  type: custom:dwains-flexbox-card
+  items_classes: 'col-xs-12'
+  cards:
+
+    - type: custom:simple-thermostat
+      entity: $02_thermostat_entity$
+      header:
+        name:  $01_Thermostat_name$
+      control: $03_thermostat_controls_buttons_hide_show$
+      layout:
+        step: column
+        mode:
+          names: $04_thermostat_controls_names_hide_show$
+          icons: $05_thermostat_controls_icons_hide_show$
+          headings: false
+        sensors:
+          labels: true
+      hide:
+        temperature: false
+        state: false
+      sensors:
+        - entity: $07_additional_sensor_entity$
+          name: $06_additional_sensor_name$

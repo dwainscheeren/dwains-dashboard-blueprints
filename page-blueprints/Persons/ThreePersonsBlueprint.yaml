@@ -1,7 +1,7 @@
 blueprint:
   name: ThreePersonsBlueprint
   description: Three persons bleuprint by Michel Jourdain
-  version: "1.2"
+  version: "1.4"
   type: page
   
   custom_cards:
@@ -369,6 +369,7 @@ card:
                     entities:
                       - entity: $13_tracker_entity$
                     hours_to_show: 24
+                    dark_mode: false
                     default_zoom: 12
                     
               page02:
@@ -388,6 +389,7 @@ card:
                     entities:
                       - entity: $23_tracker_entity$
                     hours_to_show: 24
+                    dark_mode: false
                     default_zoom: 12
                     
               page03:
@@ -407,4 +409,5 @@ card:
                     entities:
                       - entity: $33_tracker_entity$
                     hours_to_show: 24
+                    dark_mode: false
                     default_zoom: 12

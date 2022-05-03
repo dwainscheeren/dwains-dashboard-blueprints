@@ -1,0 +1,154 @@
+blueprint:
+  custom_cards:
+  - mushroom-template-card
+  - mini-graph-card
+  description: Pi-Hole page by Bourner
+  name: Pi-Hole Page Blueprint
+  type: page
+  version: '1.0'
+card:
+  cards:
+  - cards: []
+    item_classes: col-lg-3
+    type: vertical-stack
+  - cards:
+    - entity: switch.pi_hole
+      icon: mdi:pi-hole
+      icon_color: "            {% if is_state(entity, 'on') %}\n              #0c0\n\
+        \            {% else %}\n              red\n            {% endif %}"
+      layout: vertical
+      primary: "            {% if is_state(entity, 'on') %}\n              Turn off\
+        \ Pi-Hole\n            {% else %}\n              Turn on Pi-Hole\n       \
+        \     {% endif %}"
+      secondary: "            {% if is_state(entity, 'on') %}\n             Pi-Hole\
+        \ is running\n            {% else %}\n              Pi-Hole is disabled\n\
+        \            {% endif %}"
+      tap_action:
+        action: toggle
+      type: custom:mushroom-template-card
+    - cards:
+      - entity: sensor.pi_hole_domains_blocked
+        icon: mdi:cancel
+        layout: vertical
+        multiline_secondary: true
+        primary: Blocked
+        secondary: Total:{{"\n"}} {{states(entity)}}
+        tap_action:
+          action: more-info
+        type: custom:mushroom-template-card
+      - entity: sensor.pi_hole_ads_percentage_blocked_today
+        icon: mdi:close-octagon-outline
+        layout: vertical
+        multiline_secondary: true
+        primary: Blocked
+        secondary: Today:{{"\n"}} {{states(entity)}}%
+        tap_action:
+          action: more-info
+        type: custom:mushroom-template-card
+      - entity: sensor.pi_hole_dns_unique_clients
+        icon: mdi:devices
+        layout: vertical
+        multiline_secondary: true
+        primary: Unique Clients
+        secondary: Total:{{"\n"}} {{states(entity)}}
+        tap_action:
+          action: more-info
+        type: custom:mushroom-template-card
+      - entity: sensor.pi_hole_seen_clients
+        icon: mdi:monitor-cellphone-star
+        layout: vertical
+        multiline_secondary: true
+        primary: Seen Clients
+        secondary: Total:{{"\n"}} {{states(entity)}}
+        tap_action:
+          action: more-info
+        type: custom:mushroom-template-card
+      type: horizontal-stack
+    - cards:
+      - aggregate_func: avg
+        entities:
+        - color: '#f205b3'
+          entity: sensor.pi_hole_ads_blocked_today
+        font_size: 65
+        font_size_header: 9
+        height: 35
+        hours_to_show: 24
+        icon: mdi:account-cancel-outline
+        line_width: 1
+        name: Pi-Hole Ads Blocked Today
+        points_per_hour: 3600
+        show:
+          average: true
+          extrema: true
+          graph: bar
+        smoothing: false
+        style: "ha-card {\n  background: var(--paper-card-background-color);\n  border-radius:\
+          \ 10px;\n  box-shadow: 10px;\n  font-weight: bold;\n  opacity: 0.8;\n}\n"
+        tap_action: none
+        type: custom:mini-graph-card
+        update_interval: 10
+      items_classes: col-lg-12 col-md-12 col-sm-12 col-xs-12
+      padding: true
+      type: custom:dwains-flexbox-card
+    - cards:
+      - cards:
+        - aggregate_func: avg
+          entities:
+          - color: '#05f248'
+            entity: sensor.pi_hole_dns_queries_cached
+          font_size: 65
+          font_size_header: 9
+          height: 40
+          hours_to_show: 24
+          icon: mdi:download-network-outline
+          line_width: 1
+          name: Queries Cached
+          points_per_hour: 3600
+          show:
+            average: true
+            extrema: true
+            graph: bar
+          smoothing: false
+          style: "ha-card {\n  background: var(--paper-card-background-color);\n \
+            \ border-radius: 10px;\n  box-shadow: 10px;\n  font-weight: bold;\n  opacity:\
+            \ 0.8;\n}\n"
+          tap_action: none
+          type: custom:mini-graph-card
+          update_interval: 10
+        type: horizontal-stack
+      - cards:
+        - aggregate_func: avg
+          entities:
+          - color: '#0293fa'
+            entity: sensor.pi_hole_dns_queries_forwarded
+          font_size: 65
+          font_size_header: 9
+          height: 40
+          hours_to_show: 24
+          icon: mdi:upload-network-outline
+          line_width: 1
+          name: Queries Forwarded
+          points_per_hour: 3600
+          show:
+            average: true
+            extrema: true
+            graph: bar
+          smoothing: false
+          style: "ha-card {\n  background: var(--paper-card-background-color);\n \
+            \ border-radius: 10px;\n  box-shadow: 10px;\n  font-weight: bold;\n  opacity:\
+            \ 0.8;\n}\n"
+          tap_action: none
+          type: custom:mini-graph-card
+          update_interval: 10
+        type: horizontal-stack
+      items_classes: col-lg-6 col-md-6 col-sm-12 col-xs-12
+      padding: true
+      type: custom:dwains-flexbox-card
+    item_classes: col-lg-6 col-xs-12
+    type: vertical-stack
+  - cards: []
+    item_classes: col-lg-3
+    type: vertical-stack
+  items_classes: col-xs-12
+  padding: true
+  type: custom:dwains-flexbox-card

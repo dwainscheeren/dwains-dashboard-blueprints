@@ -1,7 +1,7 @@
 blueprint:
   name: FourPersonsBlueprint
   description: Four persons bleuprint by Michel Jourdain
-  version: "1.2"
+  version: "1.4"
   type: page
   
   custom_cards:
@@ -95,7 +95,7 @@ blueprint:
       name: Battery level person four
       description: Battery level entity of person four
       type: entity-picker
-
+      
 card:
 
 # Persons
@@ -506,6 +506,7 @@ card:
                     entities:
                       - entity: $13_tracker_entity$
                     hours_to_show: 24
+                    dark_mode: false
                     default_zoom: 12
                     
               page02:
@@ -525,6 +526,7 @@ card:
                     entities:
                       - entity: $23_tracker_entity$
                     hours_to_show: 24
+                    dark_mode: false
                     default_zoom: 12
                     
               page03:
@@ -544,6 +546,7 @@ card:
                     entities:
                       - entity: $33_tracker_entity$
                     hours_to_show: 24
+                    dark_mode: false
                     default_zoom: 12
                     
               page04:
@@ -563,4 +566,5 @@ card:
                     entities:
                       - entity: $43_tracker_entity$
                     hours_to_show: 24
+                    dark_mode: false
                     default_zoom: 12

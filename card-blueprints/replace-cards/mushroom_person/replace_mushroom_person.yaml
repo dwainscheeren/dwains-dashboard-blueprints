@@ -7,8 +7,8 @@ blueprint:
   version: '1.1'
 card:
   entity: $replace_with_input_entity$
+  name: $replace_with_input_name$
   use_entity_picture: true
   hide_state: false
   hide_name: false  
   type: custom:mushroom-person-card
-  name: $replace_with_input_name$

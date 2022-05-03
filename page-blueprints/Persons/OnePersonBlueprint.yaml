@@ -1,7 +1,7 @@
 blueprint:
   name: OnePersonsBlueprint
   description: One persons bleuprint by Michel Jourdain
-  version: "1.2"
+  version: "1.4"
   type: page
   
   custom_cards:
@@ -112,4 +112,5 @@ card:
               entities:
                  - entity: $13_tracker_entity$
               hours_to_show: 24
+              dark_mode: false
               default_zoom: 12

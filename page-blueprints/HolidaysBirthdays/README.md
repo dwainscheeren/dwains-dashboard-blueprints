@@ -1,6 +1,4 @@
-# Birthdays Blueprint
-
-This Blueprint is a blueprint version of the birthdays page created by [LRvdLinden](https://github.com/dwainscheeren/dwains-dashboard-addons/tree/for-dd-2.0/more_page/birthdays).
+# Birthdays and Holidays Blueprint
 
 ## Installation of this Blueprint
 - Install atomic-calendar-revive from [HACS]
@@ -10,11 +8,14 @@ This Blueprint is a blueprint version of the birthdays page created by [LRvdLind
 
 - Make a calendar in Google with all the birthdays and sync the calendar with Home Assistant
 
+- Add a calendar in Google with the holidays and sync the calendar with Home Assistant
+
 - Copy the content of the blueprint file `blueprint.yaml` into the Blueprint YAML code.
 
  ## Fields to define for each panel.
- - Translate Birthdays in your language
- - Birthdays calendar from Google calendar 
+ - Translate Events in your language
+ - Birthdays calendar from Google 
+ - Holidays calendar from Google
  - Number of days to show in calendar 
  - Calendar full day event text in your language Ex Jour entier
  - Calendar Language da/de/en/et/fr/nb/sl/sv   
@@ -22,11 +23,11 @@ This Blueprint is a blueprint version of the birthdays page created by [LRvdLind
 ### Screenshots
 **Light theme:**<br>
 
-![image](https://user-images.githubusercontent.com/83040228/162754689-a985a791-07d9-4f6a-9170-4149cd1d33fc.png)
+![image](https://user-images.githubusercontent.com/83040228/164001839-2803895c-c838-4fe9-982a-f73f619585f2.jpeg)
 
 **Dark theme:**<br>
 
-![image](https://user-images.githubusercontent.com/83040228/162754747-9316813c-ba86-43b2-9e5e-2d1c6d08c766.png)
+![image](https://user-images.githubusercontent.com/83040228/164001877-0a5fcedc-9cef-4ffd-94ec-c9805ad08ba2.jpeg)
 
 ### Changelog
 #### 1.0

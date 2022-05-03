@@ -28,7 +28,6 @@ blueprint:
        name: Alert icon on
        description: The alert icon when is ON
        type: icon-picker
-       
 card:
 
         type: custom:button-card

@@ -32,7 +32,7 @@ blueprint:
     05_alert_state:
        name: Alert state
        description: The alert state, off, locked...
-       type: icon-picker
+       type: text-field
 card:
 
         type: custom:button-card

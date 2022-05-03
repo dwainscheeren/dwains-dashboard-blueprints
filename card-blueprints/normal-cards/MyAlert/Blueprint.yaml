@@ -20,13 +20,18 @@ blueprint:
        type: entity-picker
        
     03_alert_icon_off:
-       name: Alert icon off
+       name: Alert icon off, locked..
        description: The alert icon when is OFF
        type: icon-picker
        
     04_alert_icon_on:
-       name: Alert icon on
+       name: Alert icon on, unlocked...
        description: The alert icon when is ON
+       type: icon-picker
+
+    05_alert_state:
+       name: Alert state
+       description: The alert state, off, locked...
        type: icon-picker
 card:
 
@@ -55,7 +60,7 @@ card:
             - text-overflow: unset
             - white-space: unset
             - word-break: break-word
-          value: 'off'
+          value: '$05_alert_state$'
         - color: white
           icon: $04_alert_icon_on$
           operator: default

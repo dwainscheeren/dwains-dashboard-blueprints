@@ -11,6 +11,7 @@
  - The alert entity
  - The alert icon when is OFF
  - The alert icon when is ON
+ - The alert state, off, locked...
 
 ### Screenshots
 **Light theme:**<br>

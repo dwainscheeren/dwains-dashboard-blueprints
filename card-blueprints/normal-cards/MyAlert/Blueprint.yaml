@@ -1,0 +1,82 @@
+blueprint:
+  name: My Alert card Blueprint
+  description:  My Alert card by Michel Jourdain
+  version: "1.0"
+  type: card
+  
+  custom_cards:
+    - button-card 
+
+  input:
+  
+    01_alert_name:
+       name: Alert name
+       description: The alert name
+       type: text-field
+  
+    02_alert_entity:
+       name: Alert entity
+       description: The alert entity
+       type: entity-picker
+       
+    03_alert_icon_off:
+       name: Alert icon off, locked..
+       description: The alert icon when is OFF
+       type: icon-picker
+       
+    04_alert_icon_on:
+       name: Alert icon on, unlocked...
+       description: The alert icon when is ON
+       type: icon-picker
+
+    05_alert_state:
+       name: Alert state
+       description: The alert state, off, locked...
+       type: text-field
+card:
+
+        type: custom:button-card
+        entity: $02_alert_entity$
+        extra_styles: '@keyframes mymove {
+
+          50% {box-shadow: 0 0 20px red;}
+
+          }
+
+          '
+        name: $01_alert_name$
+        state:
+        - icon: $03_alert_icon_off$
+          styles:
+            card:
+            - height: 100px
+            icon:
+            - width: 45%
+            - opacity: 0.5
+            - padding-top: 10px
+            name:
+            - padding: 10px
+            - font-size: 12px
+            - text-overflow: unset
+            - white-space: unset
+            - word-break: break-word
+          value: '$05_alert_state$'
+        - color: white
+          icon: $04_alert_icon_on$
+          operator: default
+          styles:
+            card:
+            - height: 100px
+            - animation: mymove 2s infinite
+            icon:
+            - width: 45%
+            - padding-top: 10px
+            - color: rgba(255, 0, 0, 0.6)
+            name:
+            - padding: 10px
+            - color: red
+            - font-weight: bold
+            - font-size: 12px
+            - text-overflow: unset
+            - white-space: unset
+            - word-break: break-word

@@ -1,7 +1,7 @@
 # Recently Added / Upcoming Media Card
 
 ## Requirements
-- Install Upcoming Media Card from [HACS] [Upcoming Media Card] (https://github.com/custom-cards/upcoming-media-card)
+- Install Upcoming Media Card from [Upcoming Media Card] (https://github.com/custom-cards/upcoming-media-card)
 - Install Radarr Upcoming Media from [Radarr Upcoming Media] (https://github.com/custom-components/sensor.radarr_upcoming_media)
 - Install Plex Recently Added from [Plex Recently Added] (https://github.com/custom-components/sensor.plex_recently_added)
 - Install Sonarr Recently Added from [Sonarr Upcoming Media] (https://github.com/custom-components/sensor.sonarr_upcoming_media)
@@ -48,5 +48,7 @@
 ### Changelog
 #### 1.0.0
 - First release
-
+#### 1.0.1
+- Update Instructions
+- Remove Horizontal Stack dependency
 ---

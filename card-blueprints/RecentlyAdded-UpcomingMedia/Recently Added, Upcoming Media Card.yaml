@@ -1,11 +1,10 @@
 blueprint:
   name: Recently Added Media  / Upcoming Media Card
   description: Display recently added media or upcoming media, support for Plex, Radarr and Sonarr
-  version: "1.0"
+  version: "1.1"
   type: card
   custom_cards:
     - upcoming-media-card
-    - horizontal-stack
   input:
     heading_title:
       name: Heading title

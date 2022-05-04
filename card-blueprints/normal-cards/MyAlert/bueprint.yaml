@@ -1,7 +1,7 @@
 blueprint:
   name: My Alert card Blueprint
   description:  My Alert card by Michel Jourdain
-  version: "1.0"
+  version: "1.1"
   type: card
   
   custom_cards:
@@ -32,6 +32,11 @@ blueprint:
     05_alert_state:
        name: Alert state
        description: The alert state, off, locked...
+       type: text-field
+       
+    06_alert_start_blink:
+       name: Alert start blinking after n seconds
+       description: The alert start blinking after n seconds
        type: text-field
 card:
 
@@ -67,7 +72,7 @@ card:
           styles:
             card:
             - height: 100px
-            - animation: mymove 2s infinite
+            - animation: mymove 2s $06_alert_start_blink$s infinite
             icon:
             - width: 45%
             - padding-top: 10px

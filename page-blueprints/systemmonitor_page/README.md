@@ -18,6 +18,7 @@ Enable systemmonitor in your configuration.yaml.
 You need at least these arguments:
 
 ```
+sensor:
 - platform: systemmonitor
   resources:
     - type: disk_use_percent

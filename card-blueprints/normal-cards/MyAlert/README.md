@@ -12,6 +12,7 @@
  - The alert icon when is OFF
  - The alert icon when is ON
  - The alert state, off, locked...
+ - The alert start blinking after n seconds
 
 ### Screenshots
 **Light theme:**<br>
@@ -33,3 +34,6 @@
 ### Changelog
 #### 1.0
 - First release
+
+#### 1.1
+- Add possibility to set a time in seconds before the map starts blinking

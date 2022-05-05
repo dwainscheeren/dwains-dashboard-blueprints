@@ -1,0 +1,350 @@
+blueprint:
+  name: Three Energy Imput
+  description: Three Energy Imput page by Michel Jourdain
+  version: "1.0"
+  type: page
+  custom_cards:
+    - button-card
+  input:
+
+    01_24_hours_box_title:
+       name: 24 hours box title
+       description: Title of 24 hours box section
+       type: text-field
+       
+    02_24_hours_first_entity_name:
+       name: 24 hours first entity name
+       description: First entity name of 24 hours section
+       type: text-field
+ 
+    03_24_hours_first_entity_icon:
+       name: 24 hours first entity icon
+       description: First icon entity of 24 hours section
+       type: icon-picker
+ 
+    04_24_hours_first_entity:
+       name: 24 hours First entity
+       description: First entity of 24 hours section
+       type: entity-picker
+    
+    05_24_hours_second_entity_name:
+       name: 24 hours second entity name
+       description: Second entity name of 24 hours section
+       type: text-field
+ 
+    06_24_hours_second_entity_icon:
+       name: 24 hours second entity icon
+       description: Second icon entity of 24 hours section
+       type: icon-picker
+ 
+    07_24_hours_second_entity:
+       name: 24 hours second entity
+       description: Second entity of 24 hours section
+       type: entity-picker
+       
+    08_24_hours_third_entity_name:
+       name: 24 hours third entity name
+       description: Third entity name of 24 hours section
+       type: text-field
+ 
+    09_24_hours_third_entity_icon:
+       name: 24 hours third entity icon
+       description: Third icon entity of 24 hours section
+       type: icon-picker
+ 
+    10_24_hours_third_entity:
+       name: 24 hours third entity
+       description: Third entity of 24 hours section
+       type: entity-picker
+
+
+    11_30_days_box_title:
+       name: 30 days box title
+       description: Title of 30 days box section
+       type: text-field
+       
+    12_30_days_first_entity_name:
+       name: 30 days first entity name
+       description: First entity name of 30 days section
+       type: text-field
+ 
+    13_30_days_first_entity_icon:
+       name: 30 days first entity icon
+       description: First icon entity of 30 days section
+       type: icon-picker
+ 
+    14_30_days_first_entity:
+       name: 30 days First entity
+       description: First entity of 30 days section
+       type: entity-picker
+    
+    15_30_days_second_entity_name:
+       name: 30 days second entity name
+       description: Second entity name of 30 days section
+       type: text-field
+ 
+    16_30_days_second_entity_icon:
+       name: 30 days second entity icon
+       description: Second icon entity of 30 days section
+       type: icon-picker
+ 
+    17_30_days_second_entity:
+       name: 30 days second entity
+       description: Second entity of 30 days section
+       type: entity-picker
+       
+    18_30_days_third_entity_name:
+       name: 30 days third entity name
+       description: Third entity name of 30 days section
+       type: text-field
+ 
+    19_30_days_third_entity_icon:
+       name: 30 days third entity icon
+       description: Third icon entity of 30 days section
+       type: icon-picker
+ 
+    20_30_days_third_entity:
+       name: 30 days third entity
+       description: Third entity of 30 days section
+       type: entity-picker
+       
+       
+    21_graphic_name:
+       name: Name of the graphic
+       description: Name of the graphic
+       type: text-field
+       
+    22_graphic_first_entity_name:
+       name: Graphic first entity name
+       description: First entity name of graphic
+       type: text-field
+ 
+    23_graphic_first_entity:
+       name:  Graphic first entity
+       description:  First entity of graphic
+       type: entity-picker
+       
+    24_graphic_second_entity_name:
+       name: Graphic second entity name
+       description: Second entity name of graphic
+       type: text-field
+ 
+    25_graphic_second_entity:
+       name:  Graphic second entity
+       description:  Second entity of graphic
+       type: entity-picker
+       
+    26_graphic_third_entity_name:
+       name: Graphic third entity name
+       description: Third entity name of graphic
+       type: text-field
+ 
+    27_graphic_third_entity:
+       name:  Graphic third entity
+       description: Third entity of graphic
+       type: entity-picker
+       
+    28_graphic_days_to_show:
+       name:  Graphic days to show
+       description: Number of days to show in graphic
+       type: text-field
+       
+card:
+
+  type: custom:dwains-flexbox-card
+  items_classes: 'col-xs-12'
+  cards:
+  
+    - type: vertical-stack
+      item_classes: 'col-xs-12 col-sm-4'
+      cards:        
+  
+        - type: 'custom:button-card'     
+          name: $01_24_hours_box_title$
+          styles:
+            card:
+              - text-transform: uppercase
+              - color: 'var(--dwains-theme-accent)'
+              - font-size: 125%
+              - border-radius: 0%
+              - font-weight: 100
+              - letter-spacing: 10px
+              - height: 70px
+                        
+        - type: horizontal-stack
+          cards:
+                          
+            - type: 'custom:button-card'
+              aspect_ratio: 1/1.41
+              color: 'rgb(41, 158, 200)'
+              name: $02_24_hours_first_entity_name$
+              icon: '$03_24_hours_first_entity_icon$'
+              entity: $04_24_hours_first_entity$
+              show_state: true
+              size: 40%
+              state:
+                - color: 'var(--disabled-text-color)'
+                  value: 'off'
+                - color: 'rgb(41, 158, 194)'
+                  value: 'on'
+              styles:
+                name:
+                  - text-transform: uppercase
+                  - font-size: 10px
+                state:
+                  - text-transform: uppercase
+                  - font-size: 15px
+                  - font: bold
+                            
+            - type: 'custom:button-card'
+              aspect_ratio: 1/1.41
+              color: 'rgb(41, 158, 200)'
+              name: $05_24_hours_second_entity_name$
+              icon: '$06_24_hours_second_entity_icon$'
+              entity: $07_24_hours_second_entity$
+              show_state: true
+              size: 40%
+              state:
+                - color: 'var(--disabled-text-color)'
+                  value: 'off'
+                - color: 'rgb(41, 158, 194)'
+                  value: 'on'
+              styles:
+                name:
+                  - text-transform: uppercase
+                  - font-size: 10px
+                state:
+                  - text-transform: uppercase
+                  - font-size: 15px
+                  - font: bold
+                                  
+            - type: 'custom:button-card'
+              aspect_ratio: 1/1.41
+              color: 'rgb(41, 158, 200)'
+              name: $08_24_hours_third_entity_name$
+              icon: '$09_24_hours_third_entity_icon$'
+              entity: $10_24_hours_third_entity$
+              show_state: true
+              size: 40%
+              state:
+                - color: 'var(--disabled-text-color)'
+                  value: 'off'
+                - color: 'rgb(41, 158, 194)'
+                  value: 'on'
+              styles:
+                name:
+                  - text-transform: uppercase
+                  - font-size: 10px
+                state:
+                  - text-transform: uppercase
+                  - font-size: 15px
+                  - font: bold
+               
+        - type: 'custom:button-card'     
+          name: $11_30_days_box_title$
+          styles:
+            card:
+              - text-transform: uppercase
+              - color: 'var(--dwains-theme-accent)'
+              - font-size: 125%
+              - border-radius: 0%
+              - font-weight: 100
+              - letter-spacing: 10px
+              - height: 70px
+                        
+        - type: horizontal-stack
+          cards:
+                          
+            - type: 'custom:button-card'
+              aspect_ratio: 1/1.41
+              color: 'rgb(41, 158, 200)'
+              name: $12_30_days_first_entity_name$
+              icon: '$13_30_days_first_entity_icon$'
+              entity: $14_30_days_first_entity$
+              show_state: true
+              size: 40%
+              state:
+                - color: 'var(--disabled-text-color)'
+                  value: 'off'
+                - color: 'rgb(41, 158, 194)'
+                  value: 'on'
+              styles:
+                name:
+                  - text-transform: uppercase
+                  - font-size: 10px
+                state:
+                  - text-transform: uppercase
+                  - font-size: 15px
+                  - font: bold
+                            
+            - type: 'custom:button-card'
+              aspect_ratio: 1/1.41
+              color: 'rgb(41, 158, 200)'
+              name: $15_30_days_second_entity_name$
+              icon: '$16_30_days_second_entity_icon$'
+              entity: $17_30_days_second_entity$
+              show_state: true
+              size: 40%
+              state:
+                - color: 'var(--disabled-text-color)'
+                  value: 'off'
+                - color: 'rgb(41, 158, 194)'
+                  value: 'on'
+              styles:
+                name:
+                  - text-transform: uppercase
+                  - font-size: 10px
+                state:
+                  - text-transform: uppercase
+                  - font-size: 15px
+                  - font: bold
+                                  
+            - type: 'custom:button-card'
+              aspect_ratio: 1/1.41
+              color: 'rgb(41, 158, 200)'
+              name: $18_30_days_third_entity_name$
+              icon: '$19_30_days_third_entity_icon$'
+              entity: $20_30_days_third_entity$
+              show_state: true
+              size: 40%
+              state:
+                - color: 'var(--disabled-text-color)'
+                  value: 'off'
+                - color: 'rgb(41, 158, 194)'
+                  value: 'on'
+              styles:
+                 name:
+                   - text-transform: uppercase
+                   - font-size: 10px
+                 state:
+                   - text-transform: uppercase
+                   - font-size: 15px
+                   - font: bold
+                            
+    - type: vertical-stack
+      item_classes: 'col-xs-12 col-sm-8'
+      cards:      
+      
+        - type: 'custom:button-card'     
+          name: $21_graphic_name$
+          styles:
+            card:
+              - text-transform: uppercase
+              - color: 'var(--dwains-theme-accent)'
+              - font-size: 125%
+              - border-radius: 0%
+              - font-weight: 100
+              - letter-spacing: 10px
+              - height: 50px
+ 
+        - type: statistics-graph
+          entities:
+            - entity: $23_graphic_first_entity$
+              name: "$22_graphic_first_entity_name$"
+            - entity: $25_graphic_second_entity$
+              name: "$24_graphic_second_entity_name$"
+            - entity: $27_graphic_third_entity$
+              name: "$26_graphic_third_entity_name$"
+          days_to_show: $28_graphic_days_to_show$    
+      
+      

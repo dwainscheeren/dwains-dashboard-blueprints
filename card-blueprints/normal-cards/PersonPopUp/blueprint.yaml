@@ -1,8 +1,8 @@
 blueprint:
-  name: OnePersonsBlueprint
-  description: One persons bleuprint by Michel Jourdain
-  version: "1.4"
-  type: page
+  name: PersonsPopUpBlueprint
+  description: Person Pop-Up bleuprint by Michel Jourdain
+  version: "1.3"
+  type: card
   
   custom_cards:
     - mini-graph-card
@@ -31,6 +31,10 @@ blueprint:
       name: Battery level person one
       description: Battery level entity of person one
       type: entity-picker
+    50_disable_dark_mode:
+       name: Disable dark mode
+       description: Disable dark mode for map
+       type: checkbox
 
 card:
 
@@ -40,7 +44,6 @@ card:
   items_classes: 'col-xs-12'
   cards:
     - type: vertical-stack
-      item_classes: 'col-xs-12 col-sm-7'
       cards:         
          
         - type: custom:mushroom-person-card
@@ -92,25 +95,13 @@ card:
             extrema: false
             average: false   
                           
-    - type: vertical-stack
-      item_classes: 'col-xs-12 col-sm-5'
-      cards:         
-      
-        - type: vertical-stack
-          cards:
-                
-            - type: 'custom:button-card'
-              color_type: blank-card
-              styles:
-                card:
-                  - height: 59px
-                       
-            - type: custom:dwains-heading-card
-              title: Map
+        - type: custom:dwains-heading-card
+          title: Map
         
-            - type: map
-              entities:
-                 - entity: $13_tracker_entity$
-              hours_to_show: 24
-              dark_mode: false
-              default_zoom: 12
+        - type: map
+          entities:
+            - entity: $13_tracker_entity$
+          aspect_ratio: 50%
+          dark_mode: $50_disable_dark_mode$
+          hours_to_show: 24
+          default_zoom: 12

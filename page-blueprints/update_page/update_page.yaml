@@ -1,0 +1,26 @@
+blueprint:
+  custom_cards:
+  - mushroom-update-card
+  - auto-entities
+  description: Update page by Bourner
+  name: Update Page Blueprint
+  type: page
+  version: '1.0'
+card:
+  cards:
+    - card:
+        items_classes: col-xs-12 col-sm-6 col-md-3 col-lg-3
+        type: custom:dwains-flexbox-card
+      filter:
+        include:
+          - domain: update
+            options:
+              type: custom:mushroom-update-card
+              show_buttons_control: true
+              use_entity_picture: true
+      sort:
+        exclude: []
+        method: state
+        numeric: true
+      type: custom:auto-entities
+  type: vertical-stack

@@ -1,13 +1,14 @@
 blueprint:
   name: FourPersonsBlueprint
   description: Four persons bleuprint by Michel Jourdain
-  version: "1.0"
+  version: "1.4"
   type: page
   
   custom_cards:
     - mini-graph-card
     - state-switch
     - button-card
+    - mushroom-person-card
     
   input:
   
@@ -16,8 +17,8 @@ blueprint:
       description: Name of the person one
       type: text-field
     12_person_entity:
-      name: Entity person one
-      description: The entity of person one
+      name: Person one entity
+      description: Person one entity
       type: entity-picker
     13_tracker_entity:
       name: Tracker entity person one
@@ -37,8 +38,8 @@ blueprint:
       description: Name of the person two
       type: text-field
     22_person_entity:
-      name: Entity person two
-      description: The entity of person two
+      name: Person two entity
+      description: Person two entity
       type: entity-picker
     23_tracker_entity:
       name: Tracker entity person two
@@ -58,8 +59,8 @@ blueprint:
       description: Name of the person three
       type: text-field
     32_person_entity:
-      name: Entity person three
-      description: The entity of person three
+      name: Person three entity
+      description: Person three entity
       type: entity-picker
     33_tracker_entity:
       name: Tracker entity person three
@@ -79,8 +80,8 @@ blueprint:
       description: Name of the person four
       type: text-field
     42_person_entity:
-      name: Entity person four
-      description: The entity of person four
+      name: Person four entity
+      description: Person four entity
       type: entity-picker
     43_tracker_entity:
       name: Tracker entity person four
@@ -94,7 +95,7 @@ blueprint:
       name: Battery level person four
       description: Battery level entity of person four
       type: entity-picker
-
+      
 card:
 
 # Persons
@@ -153,14 +154,14 @@ card:
                               card:
                                  - width: 80px
                
-                  - type: custom:dwains-heading-card
-                    title: $11_person_name$
+                  - type: custom:mushroom-person-card
+                    entity: $12_person_entity$
+                    name: $11_person_name$
+                    icon: mdi:account-plus
+                    hide_name: false
+                    use_entity_picture: true
+                    hide_state: false
 
-                  - type: entities
-                    entities:
-                      - entity: $12_person_entity$
-                    state_color: true
-                    
                   - type: custom:dwains-heading-card
                     title: Displacements for 24 hours
                     
@@ -244,14 +245,14 @@ card:
                             styles:
                               card:
                                  - width: 80px
-
-                  - type: custom:dwains-heading-card
-                    title: $21_person_name$
-
-                  - type: entities
-                    entities:
-                      - entity: $22_person_entity$
-                    state_color: true
+                    
+                  - type: custom:mushroom-person-card
+                    entity: $22_person_entity$
+                    name: $21_person_name$
+                    icon: mdi:account-plus
+                    hide_name: false
+                    use_entity_picture: true
+                    hide_state: false
                     
                   - type: custom:dwains-heading-card
                     title: Displacements for 24 hours
@@ -337,13 +338,13 @@ card:
                               card:
                                  - width: 80px
                                  
-                  - type: custom:dwains-heading-card
-                    title: $31_person_name$
-
-                  - type: entities
-                    entities:
-                      - entity: $32_person_entity$
-                    state_color: true
+                  - type: custom:mushroom-person-card
+                    entity: $32_person_entity$
+                    name: $31_person_name$
+                    icon: mdi:account-plus
+                    hide_name: false
+                    use_entity_picture: true
+                    hide_state: false
                     
                   - type: custom:dwains-heading-card
                     title: Displacements for 24 hours
@@ -429,14 +430,14 @@ card:
                               name:
                                  - color: lightgreen
                                  
-                  - type: custom:dwains-heading-card
-                    title: $41_person_name$
+                  - type: custom:mushroom-person-card
+                    entity: $42_person_entity$
+                    name: $41_person_name$
+                    icon: mdi:account-plus
+                    hide_name: false
+                    use_entity_picture: true
+                    hide_state: false                    
 
-                  - type: entities
-                    entities:
-                      - entity: $42_person_entity$
-                    state_color: true
-                    
                   - type: custom:dwains-heading-card
                     title: Displacements for 24 hours
                 
@@ -505,6 +506,7 @@ card:
                     entities:
                       - entity: $13_tracker_entity$
                     hours_to_show: 24
+                    dark_mode: false
                     default_zoom: 12
                     
               page02:
@@ -524,6 +526,7 @@ card:
                     entities:
                       - entity: $23_tracker_entity$
                     hours_to_show: 24
+                    dark_mode: false
                     default_zoom: 12
                     
               page03:
@@ -543,6 +546,7 @@ card:
                     entities:
                       - entity: $33_tracker_entity$
                     hours_to_show: 24
+                    dark_mode: false
                     default_zoom: 12
                     
               page04:
@@ -562,4 +566,5 @@ card:
                     entities:
                       - entity: $43_tracker_entity$
                     hours_to_show: 24
+                    dark_mode: false
                     default_zoom: 12

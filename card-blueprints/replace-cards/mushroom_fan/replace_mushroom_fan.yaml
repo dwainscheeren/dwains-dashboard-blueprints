@@ -1,0 +1,15 @@
+blueprint:
+  custom_cards:
+  - mushroom-fan-card
+  description: replaces fan card with mushroom fan card by Bourner
+  name: Replace Mushroom Fan Card
+  type: replace-card
+  version: '1.1'
+card:
+  entity: $replace_with_input_entity$
+  name: $replace_with_input_name$
+  show_oscillate_control: true
+  show_percentage_control: true
+  icon_animation: true
+  hide_state: false
+  type: custom:mushroom-fan-card

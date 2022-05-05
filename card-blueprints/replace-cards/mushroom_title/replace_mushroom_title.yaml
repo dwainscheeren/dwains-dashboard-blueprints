@@ -1,0 +1,16 @@
+blueprint:
+  custom_cards:
+  - mushroom-light-card
+  description: replaces light card with mushroom light card by Bourner
+  input:
+    title: 
+      name: title
+    subtitle: 
+      name: title    
+  name: Replace Mushroom Light Card
+  type: card
+  version: '1.0'
+card:
+  type: custom:mushroom-title-card
+  title: $title$
+  subtitle: $title$

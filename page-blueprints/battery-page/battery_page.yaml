@@ -1,0 +1,192 @@
+blueprint:
+  custom_cards:
+  - button-card
+  - auto-entities
+  description: Battery page by Bourner
+  name: Battery Page Blueprint
+  type: page
+  version: '1.0'
+card:
+  cards:
+  - card:
+      items_classes: col-xs-12 col-sm-6 col-md-3 col-lg-3
+      padding: true
+      type: custom:dwains-flexbox-card
+    filter:
+      include:
+      - attributes:
+          device_class: battery
+        domain: sensor
+        options:
+          color: var(--primary-color)
+          show_icon: true
+          show_label: false
+          show_last_changed: false
+          show_name: true
+          show_state: true
+          state:
+          - icon: mdi:battery
+            operator: '>='
+            value: 90
+          - icon: mdi:battery-90
+            operator: '>='
+            value: 80
+          - icon: mdi:battery-80
+            operator: '>='
+            value: 70
+          - icon: mdi:battery-70
+            operator: '>='
+            value: 60
+          - icon: mdi:battery-60
+            operator: '>='
+            value: 50
+          - color: yellow
+            icon: mdi:battery-50
+            operator: '>='
+            value: 40
+          - color: orange
+            icon: mdi:battery-40
+            operator: '>='
+            value: 30
+          - color: orange
+            icon: mdi:battery-30
+            operator: '>='
+            value: 20
+          - color: red
+            icon: mdi:battery-20
+            operator: '>='
+            value: 10
+          - color: red
+            icon: mdi:battery-10
+            operator: '>='
+            value: 0
+          styles:
+            card:
+            - border-radius: 12px
+            - margin-bottom: 0px
+            - padding-top: 14px
+            - padding-bottom: 14px
+            grid:
+            - grid-template-areas: '"i s""i n"'
+            - grid-template-columns: 30% 70%
+            - grid-template-rows: min-content
+            icon:
+            - width: 55%
+            img_cell:
+            - width: 45px
+            - height: 45px
+            - background: var(--secondary-background-color)
+            - border-radius: 100%
+            label:
+            - justify-self: start
+            - align-self: left
+            - font-size: 12px
+            - color: var(--disabled-text-color)
+            name:
+            - justify-self: start
+            - align-self: left
+            - font-size: 13px
+            - color: var(--primary-text-color)
+            state:
+            - color: var(--disabled-text-color)
+            - justify-self: start
+            - font-size: 15px
+            - align-self: center
+          type: custom:button-card
+    sort:
+      exclude: []
+      method: state
+      numeric: true
+    type: custom:auto-entities
+  - card:
+      items_classes: col-xs-12 col-sm-6 col-md-3 col-lg-3
+      padding: true
+      type: custom:dwains-flexbox-card
+    filter:
+      include:
+      - attributes:
+          device_class: battery
+        domain: binary_sensor
+        options:
+          color: var(--primary-color)
+          show_icon: true
+          show_label: false
+          show_last_changed: false
+          show_name: true
+          show_state: true
+          state:
+          - icon: mdi:battery
+            operator: '>='
+            value: 90
+          - icon: mdi:battery-90
+            operator: '>='
+            value: 80
+          - icon: mdi:battery-80
+            operator: '>='
+            value: 70
+          - icon: mdi:battery-70
+            operator: '>='
+            value: 60
+          - icon: mdi:battery-60
+            operator: '>='
+            value: 50
+          - color: yellow
+            icon: mdi:battery-50
+            operator: '>='
+            value: 40
+          - color: orange
+            icon: mdi:battery-40
+            operator: '>='
+            value: 30
+          - color: orange
+            icon: mdi:battery-30
+            operator: '>='
+            value: 20
+          - color: red
+            icon: mdi:battery-20
+            operator: '>='
+            value: 10
+          - color: red
+            icon: mdi:battery-10
+            operator: '>='
+            value: 0
+          styles:
+            card:
+            - border-radius: 12px
+            - margin-bottom: 0px
+            - padding-top: 14px
+            - padding-bottom: 14px
+            grid:
+            - grid-template-areas: '"i s""i n"'
+            - grid-template-columns: 30% 70%
+            - grid-template-rows: min-content
+            icon:
+            - width: 55%
+            - color: var(--primary-color)
+            img_cell:
+            - width: 45px
+            - height: 45px
+            - background: var(--secondary-background-color)
+            - border-radius: 100%
+            label:
+            - justify-self: start
+            - align-self: left
+            - font-size: 12px
+            - color: var(--disabled-text-color)
+            name:
+            - justify-self: start
+            - align-self: left
+            - font-size: 13px
+            - color: var(--primary-text-color)
+            state:
+            - color: var(--disabled-text-color)
+            - justify-self: start
+            - font-size: 15px
+            - align-self: center
+          type: custom:button-card
+    sort:
+      exclude: []
+      method: state
+      numeric: true
+    type: custom:auto-entities
+  type: vertical-stack

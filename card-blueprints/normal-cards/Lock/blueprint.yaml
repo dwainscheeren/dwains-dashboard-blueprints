@@ -1,0 +1,107 @@
+blueprint:
+  name: Lock card Blueprint
+  description: Lock card by Michel Jourdain
+  version: "1.0"
+  type: card
+  
+  custom_cards:
+    - vertical-stack-in-card
+    - mushroom-lock-card
+    
+  input:
+  
+    01_translate_locked:
+       name: Translate locked
+       description: Translate locked in your language
+       type: text-field
+    02_translate_unlocked:
+       name: Translate unlocked
+       description: Translate unlocked in your language
+       type: text-field
+    03_lock_entity:
+       name: Lock entity
+       description: The lock entity
+       type: entity-picker
+
+    04_translate_lock_state:
+       name: Translate lock state
+       description: Translate lock state in your language
+       type: text-field
+       
+    05_translate_door_state:
+       name: Translate door state
+       description: Translate door state in your language
+       type: text-field
+    06_door_state_entity:
+       name: Door state entity 
+       description: The door state entity
+       type: entity-picker
+       
+    07_translate_operator:
+       name: Translate operator
+       description: Translate operator in your language
+       type: text-field
+    08_lock_operator_entity:
+       name: Lock operator entity
+       description: The lock operator entity
+       type: entity-picker
+ 
+    09_translate_battery:
+       name: Translate battery
+       description: Translate battery in your language
+       type: text-field 
+    10_lock_battery:
+       name: Lock battery entity
+       description: The lock battery entity
+       type: entity-picker
+       
+card:
+
+  type: custom:dwains-flexbox-card
+  items_classes: 'col-xs-12'
+  cards:
+
+    - type: custom:vertical-stack-in-card
+      cards:
+ 
+        - type: horizontal-stack
+          cards:
+      
+            - type: custom:mushroom-lock-card
+              entity: $03_lock_entity$
+              name: $01_translate_locked$
+              icon_color: green
+              hide_state: true
+              tap_action:
+                action: call-service
+                service: lock.lock
+                service_data: {}
+                target: null
+              device_id: $03_lock_entity$
+          
+            - type: custom:mushroom-lock-card
+              entity: $03_lock_entity$
+              name: $02_translate_unlocked$
+              icon: mdi:lock-open-variant
+              icon_color: red
+              hide_state: true
+              tap_action:
+                action: call-service
+                service: lock.unlock
+                data: {}
+                target: null
+              device_id: $03_lock_entity$
+  
+        - type: entities
+          entities:
+            - entity: sensor.lock_translate_state
+              name: $04_translate_lock_state$
+            - entity: $06_door_state_entity$
+              name: $05_translate_door_state$
+            - entity: $08_lock_operator_entity$
+              name: $07_translate_operator$
+            - entity: $10_lock_battery$
+              name: $09_translate_battery$
+ 
+          show_header_toggle: false
+          state_color: true

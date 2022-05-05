@@ -38,20 +38,14 @@
        client_id: YOUR_CLIENT_ID
        client_secret: YOUR_CLIENT_SECRET
 ```
-- Add the [F1 2021 Calendar by Racefans](https://www.racefans.net/contact/f1-fanatic-calendar/) to your Google Calendar and the [Track Image calendar](https://calendar.google.com/calendar/ical/vj31lmvf0g2inn2r5494imm3dc%40group.calendar.google.com/public/basic.ics) to your [Google Calendar](https://marksie1988.github.io/atomic-calendar-revive/options/main-options.html) and sync the calendar with Home Assistant
+- Add the [F1 2021 Calendar by Racefans](https://www.racefans.net/contact/f1-fanatic-calendar/) to your Google Calendar to your [Google Calendar](https://marksie1988.github.io/atomic-calendar-revive/options/main-options.html) and sync the calendar with Home Assistant
 - Make sure you have installed [atomic-calendar-revive](https://marksie1988.github.io/atomic-calendar-revive/options/main-options.html). This can be done manually or directly via hacs.
 - Make sure you have installed [Home Assistant Formula One API](https://github.com/delzear/hass-formulaoneapi). This can be done manually or directly via hacs.
 
 
-## Create sensors 🔧
----
-- Copy and place the `f1.yaml`file from the folder `sensor` in to your `/config/sensor` directory or `configuration.yaml`
-- Reboot Home Assistant
-
-
 ## Installation Add-on ⚙️
 ---
-- Copy the `blueprint` code in to  `DD3`.
+- Copy the `blueprint` code into  `DD3`.
 - Install the blueprint
 - Use the blueprint
 

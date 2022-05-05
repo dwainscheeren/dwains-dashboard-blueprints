@@ -1,0 +1,19 @@
+blueprint:
+  custom_cards:
+  - mushroom-chips-card
+  description: replaces motion/window/door sensors with mushroom chip card by Bourner
+  name: Replace Sensor Mushroom Chip Card
+  type: replace-card
+  version: '1.0'
+card:
+  chips:
+  - chip:
+      content_info: name
+      name: $replace_with_input_name$
+      entity: $replace_with_input_entity$
+      type: entity
+    conditions:
+    - entity: $replace_with_input_entity$
+      state_not: 'off'
+    type: conditional
+  type: custom:mushroom-chips-card

@@ -1,0 +1,14 @@
+blueprint:
+  custom_cards:
+  - mushroom-cover-card
+  description: replaces cover card with mushroom cover card by Bourner
+  name: Replace Mushroom Cover Card
+  type: replace-card
+  version: '1.1'
+card:
+  entity: $replace_with_input_entity$
+  name: $replace_with_input_name$
+  hide_state: false
+  show_buttons_control: true
+  show_position_control: true
+  type: custom:mushroom-cover-card

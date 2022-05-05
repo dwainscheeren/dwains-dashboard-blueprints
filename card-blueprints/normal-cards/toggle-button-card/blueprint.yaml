@@ -38,7 +38,7 @@ card:
     - value: 'on'
       icon: $on_icon$
     - value: 'off'
-      icon: $on_icon$
+      icon: $off_icon$
       styles:
         icon: 
           - color: '#6c6c75'

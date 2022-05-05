@@ -1,0 +1,35 @@
+blueprint:
+  name: Boilerplate page
+  description: Boilerplate page example
+  version: "1.0"
+  type: page
+  input:
+    name_input:
+      type: text-field
+    entity_input:
+      type: entity-picker
+
+card:
+  type: vertical-stack
+  cards:
+    - type: markdown
+      content: $name_input$
+    - type: custom:button-card
+      template: page_boilerplate_template_example
+      entity: $entity_input$
+
+
+button_card_templates:
+  page_boilerplate_template_example:
+    show_icon: false
+    styles:
+      card:
+        - box-shadow: none
+        - padding: 6px 0 0 0
+        - background: transparent
+        - width: 90px
+      name:
+        - font-weight: bold
+        - justify-self: start
+        - font-size: 16px
+        - padding-left: 1px

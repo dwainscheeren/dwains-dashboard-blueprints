@@ -1,0 +1,144 @@
+blueprint:
+  name: SevenInkPrinterCartridges
+  description: Seven Ink Printer Cartridges bleuprint by Michel Jourdain
+  version: "1.0"
+  type: card
+  
+  custom_cards:
+    - button-card
+
+  input:
+  
+    10_Cartridge_1_name:
+      name: Name first Cartridge
+      description: Name of the first Cartridge
+      type: text-field
+    11_Cartridge_1_color:
+      name: Color first Cartridge
+      description: Color of the first Cartridge ---- IN ENGLISH ----
+      type: text-field
+    12_Cartridge_1_entity:
+      name: Entity first Cartridge
+      description: Entity of the first Cartridge
+      type: entity-picker
+      
+    20_Cartridge_2_name:
+      name: Name second Cartridge
+      description: Name of the second Cartridge
+      type: text-field
+    21_Cartridge_2_color:
+      name: Color second Cartridge
+      description: Color of the second Cartridge ---- IN ENGLISH ----
+      type: text-field
+    22_Cartridge_2_entity:
+      name: Entity second Cartridge
+      description: Entity of the second Cartridge
+      type: entity-picker
+      
+    30_Cartridge_3_name:
+      name: Name third Cartridge
+      description: Name of the third Cartridge
+      type: text-field
+    31_Cartridge_3_color:
+      name: Color third Cartridge
+      description: Color of the third Cartridge ---- IN ENGLISH ----
+      type: text-field
+    32_Cartridge_3_entity:
+      name: Entity third Cartridge
+      description: Entity of the third Cartridge
+      type: entity-picker
+      
+    40_Cartridge_4_name:
+      name: Name fourth Cartridge
+      description: Name of the fourth Cartridge
+      type: text-field
+    41_Cartridge_4_color:
+      name: Color fourth Cartridge
+      description: Color of the fourth Cartridge ---- IN ENGLISH ----
+      type: text-field
+    42_Cartridge_4_entity:
+      name: Entity fourth Cartridge
+      description: Entity of the fourth Cartridge
+      type: entity-picker
+      
+    50_Cartridge_5_name:
+      name: Name fifth Cartridge
+      description: Name of the fifth Cartridge
+      type: text-field
+    51_Cartridge_5_color:
+      name: Color fifth Cartridge
+      description: Color of the fifth Cartridge ---- IN ENGLISH ----
+      type: text-field
+    52_Cartridge_5_entity:
+      name: Entity fifth Cartridge
+      description: Entity of the fifth Cartridge
+      type: entity-picker
+ 
+    60_Cartridge_6_name:
+      name: Name sixth Cartridge
+      description: Name of the sixth Cartridge
+      type: text-field
+    61_Cartridge_6_color:
+      name: Color sixth Cartridge
+      description: Color of the sixth Cartridge ---- IN ENGLISH ----
+      type: text-field
+    62_Cartridge_6_entity:
+      name: Entity sixth Cartridge
+      description: Entity of the sixth Cartridge
+      type: entity-picker
+      
+    70_Cartridge_7_name:
+      name: Name seventh Cartridge
+      description: Name of the seventh Cartridge
+      type: text-field
+    71_Cartridge_7_color:
+      name: Color seventh Cartridge
+      description: Color of the seventh Cartridge ---- IN ENGLISH ----
+      type: text-field
+    72_Cartridge_7_entity:
+      name: Entity seventh Cartridge
+      description: Entity of the seventh Cartridge
+      type: entity-picker
+      
+card:
+
+  type: custom:dwains-flexbox-card
+  items_classes: 'col-xs-12'
+  cards: 
+
+    - type: custom:bar-card
+      direction: up
+      height: 200px
+      position: bottom
+      positions:
+        icon: inside
+        indicator: outside
+        name: outside
+        value: outside
+      unit_of_measurement: '%'
+      width: 100%
+      stack: horizontal
+      target: 10
+
+      entities:
+        - color: $11_Cartridge_1_color$
+          entity: $12_Cartridge_1_entity$
+          name: $10_Cartridge_1_name$
+        - color: $21_Cartridge_2_color$
+          entity: $22_Cartridge_2_entity$
+          name: $20_Cartridge_2_name$
+        - color: $31_Cartridge_3_color$
+          entity: $32_Cartridge_3_entity$
+          name: $30_Cartridge_3_name$
+        - color: $41_Cartridge_4_color$
+          entity: $42_Cartridge_4_entity$
+          name: $40_Cartridge_4_name$
+        - color: $51_Cartridge_5_color$
+          entity: $52_Cartridge_5_entity$
+          name: $50_Cartridge_5_name$
+        - color: $61_Cartridge_6_color$
+          entity: $62_Cartridge_6_entity$
+          name: $60_Cartridge_6_name$
+        - color: $71_Cartridge_7_color$
+          entity: $72_Cartridge_7_entity$
+          name: $70_Cartridge_7_name$

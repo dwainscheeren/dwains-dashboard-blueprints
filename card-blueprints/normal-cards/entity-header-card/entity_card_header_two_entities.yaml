@@ -1,0 +1,124 @@
+blueprint:
+  custom_cards:
+  - button-card
+  - card-mod
+  description: Entitiy Card with Header for two Entities by Bourner
+  name: Entity Card with Header for two Entities
+  input:
+    title:
+      description: 'This is the title of the card'
+      name: 'Select Title'
+      type: text-field  
+    entity1:
+      description: 'This is the first entity'
+      name: 'Select 1st Entity'
+      type: text-field 	  
+    entity_name1:
+      description: 'This is the name of the first entity'
+      name: 'Select 1st Entity Name'
+      type: text-field 	
+    entity2:
+      description: 'This is the second entity'
+      name: 'Select 2nd Entity'
+      type: text-field 	  
+    entity_name2:
+      description: 'This is the name of the second entity'
+      name: 'Select 2nd Entity Name'
+      type: text-field 		  
+  type: card
+  version: '1.0'
+card:
+  cards:
+  - card_mod:
+      style: ":host {\n  color: var(--secondary-text-color); \n }\n"
+    title: $title$
+    type: custom:dwains-heading-card
+  - cards:
+    - double_tap_action:
+        action: more-info
+      entity: $entity1$
+      hold_action:
+        action: more-info
+      icon: mdi:door-closed-lock
+      name: $entity_name1$
+      styles:
+        card:
+        - border-radius: 12px
+        - margin-bottom: 0px
+        - padding-top: 14px
+        - padding-bottom: 14px
+        grid:
+        - grid-template-areas: '"i n""i s"'
+        - grid-template-columns: 30% 70%
+        - grid-template-rows: min-content
+        icon:
+        - width: 55%
+        - color: var(--primary-text-color)
+        img_cell:
+        - width: 45px
+        - height: 45px
+        - border-radius: 100%
+        - background: var(--secondary-background-color)
+        label:
+        - justify-self: start
+        - align-self: left
+        - font-size: 12px
+        - color: var(--disabled-text-color)
+        name:
+        - color: var(--primary-text-color)
+        - justify-self: start
+        - font-size: 15px
+        - align-self: center
+        state:
+        - justify-self: start
+        - align-self: left
+        - font-size: 13px
+        - color: var(--disabled-text-color)
+      tap_action:
+        action: toggle
+      type: custom:button-card
+    - double_tap_action:
+        action: more-info
+      entity: $entity2$
+      hold_action:
+        action: more-info
+      name: $entity_name2$
+      styles:
+        card:
+        - border-radius: 12px
+        - margin-bottom: 0px
+        - padding-top: 14px
+        - padding-bottom: 14px
+        grid:
+        - grid-template-areas: '"i n""i s"'
+        - grid-template-columns: 30% 70%
+        - grid-template-rows: min-content
+        icon:
+        - width: 55%
+        - color: var(--primary-text-color)
+        img_cell:
+        - width: 45px
+        - height: 45px
+        - border-radius: 100%
+        - background: var(--secondary-background-color)
+        label:
+        - justify-self: start
+        - align-self: left
+        - font-size: 12px
+        - color: var(--disabled-text-color)
+        name:
+        - color: var(--primary-text-color)
+        - justify-self: start
+        - font-size: 15px
+        - align-self: center
+        state:
+        - justify-self: start
+        - align-self: left
+        - font-size: 13px
+        - color: var(--disabled-text-color)
+      tap_action:
+        action: toggle
+      type: custom:button-card
+    items_classes: col-xs-12 col-lg-6
+    type: custom:dwains-flexbox-card
+  type: vertical-stack

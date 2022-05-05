@@ -1,9 +1,10 @@
 # Persons Blueprint
 
 ## Installation of this Blueprint
-- Install mini-graph-card from [HACS]
-- Install state-switch from [HACS]
-- Install button-card from [HACS]
+- Install mini-graph-card from HACS
+- Install state-switch from HACS
+- Install button-card from HACS
+- Install mushroom-person-card from HACS
 
 - There are four blueprints depending on how many people you want to display.  There is a blueprint for one person, two persons, three persons and four persons.
 
@@ -11,10 +12,11 @@
 
  ## Fields to define for each person.
  - Name of the person
- - Entity of the person
+ - Person entity
  - Tracker entity of the person
  - Battery charging entity of the person
  - Battery level entity of the person
+ - Disable dark mode for map
 
 ### Screenshots
 **Light theme:**<br>
@@ -32,3 +34,12 @@
 ### Changelog
 #### 1.0
 - First release
+
+#### 1.3
+
+- Add ability to disable dark mode for map
+
+#### 1.4
+
+- Remove ability to set dark mode for map
+

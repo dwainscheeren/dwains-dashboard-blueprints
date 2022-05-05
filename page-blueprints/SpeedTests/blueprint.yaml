@@ -1,0 +1,74 @@
+blueprint:
+  name: SpeedTest
+  description: SpeedTest Blueprint by Michel Jourdain
+  version: "1.0"
+  type: page
+  
+  custom_cards:
+    - mini-graph-card
+    
+  input:
+  
+    01_translate_download:
+       name: translate downloade
+       description: Translate download in your language
+       type: text-field
+       
+    02_translate_upload:
+       name: translate upload
+       description: Translate upload in your language
+       type: text-field
+       
+    03_hours_to_show:
+       name: Hours to show
+       description: Number of hours to show in graphics.
+       type: text-field
+       
+card:
+
+  type: custom:dwains-flexbox-card
+  items_classes: 'col-xs-12 col-sm-6 col-sm-6 col-md-4'
+  cards:
+
+    - type: custom:mini-graph-card
+      entities:
+        - sensor.speedtest_download
+      name: $01_translate_download$
+      hours_to_show: $03_hours_to_show$
+      hour24: true
+      points_per_hour: 1
+      smoothing: true
+      show:
+        points: true
+        graph: line
+        extrema: true
+
+    - type: custom:mini-graph-card
+      entities:
+        - sensor.speedtest_upload
+      name: $02_translate_upload$
+      hours_to_show: $03_hours_to_show$
+      hour24: true
+      points_per_hour: 1
+      smoothing: true
+      show:
+        points: true
+        graph: line
+        extrema: true
+        
+    - type: custom:mini-graph-card
+      entities:
+        - sensor.speedtest_ping
+      name: Ping
+      hours_to_show: $03_hours_to_show$
+      hour24: true
+      points_per_hour: 1
+      smoothing: true
+      show:
+        points: true
+        graph: line
+        extrema: true
+
+            
+            
+            

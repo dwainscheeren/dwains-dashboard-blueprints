@@ -14,3 +14,5 @@ card:
   show_color_temp_control: true
   type: custom:mushroom-light-card
   use_light_color: true
+  collapsible_controls: true
+  fill_container: false

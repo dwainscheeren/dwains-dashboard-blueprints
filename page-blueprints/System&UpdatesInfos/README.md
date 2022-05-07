@@ -16,7 +16,7 @@ This blueprint is partly an assembly of two Blueprints created by  [xBoumer](htt
 You need at least these arguments:
 
 ```
-sensor:
+sensors:
 - platform: systemmonitor
   resources:
     - type: disk_use_percent
@@ -27,10 +27,10 @@ sensor:
     - type: last_boot
     - type: ipv4_address
       arg: eth0
-    - type: network_in
-      arg: eth0     
-    - type: network_out
-      arg: eth0       
+    - type: throughput_network_in
+      arg: eth0
+    - type: throughput_network_out
+      arg: eth0
 ```      
 - Copy the content of the blueprint file `blueprint.yaml` into the Blueprint YAML code.
 

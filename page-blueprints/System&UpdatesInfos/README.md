@@ -11,8 +11,7 @@ This blueprint is partly an assembly of two Blueprints created by  [xBoumer](htt
 - Install auto-entities from [HACS]
 - Install card-mod from [HACS]
 
-- Install Speedtest Integration in Home Assistant. 
-- Enable systemmonitor in your configuration.yaml.
+- Install this Integration in Home Assistant. [Speedtest](https://www.home-assistant.io/integrations/speedtestdotnet/)
 
 You need at least these arguments:
 
@@ -48,7 +47,15 @@ sensor:
 ### Screenshots
 **Light theme:**<br>
 
+![image](https://user-images.githubusercontent.com/83040228/167269455-f3830b7c-f521-437b-bc17-3ece13571599.png)
+
+![image](https://user-images.githubusercontent.com/83040228/167269456-718e7176-f220-4461-9e2f-2292f0e78cff.png)
+
 **Dark theme:**<br>
+
+![image](https://user-images.githubusercontent.com/83040228/167269465-766add73-346e-4938-9690-298fcfb898c6.png)
+
+![image](https://user-images.githubusercontent.com/83040228/167269467-fa0f4184-ce64-406e-92aa-13e5e161e853.png)
 
 ### Changelog
 #### 1.0

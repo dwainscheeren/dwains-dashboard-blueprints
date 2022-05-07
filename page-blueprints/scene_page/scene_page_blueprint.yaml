@@ -1,0 +1,263 @@
+blueprint:
+  custom_cards:
+  - auto-entities
+  - mushroom-title-card
+  - mushroom-entity-card
+  description: Scene page by Bourner
+  input:
+    area0:
+      name: Name of Area 0
+      type: text-field
+    area1:
+      name: Name of Area 1
+      type: text-field
+    area2:
+      name: Name of Area 2
+      type: text-field
+    area3:
+      name: Name of Area 3
+      type: text-field
+    area4:
+      name: Name of Area 4
+      type: text-field
+    area5:
+      name: Name of Area 5
+      type: text-field
+    area6:
+      name: Name of Area 6
+      type: text-field
+    area7:
+      name: Name of Area 7
+      type: text-field
+    area8:
+      name: Name of Area 8
+      type: text-field
+    area9:
+      name: Name of Area 9
+      type: text-field
+  name: Scene Page Blueprint
+  type: page
+  version: '1.0'
+card:
+  cards:
+  - title: $area0$
+    type: custom:mushroom-title-card
+  - card:
+      items_classes: col-xs-12 col-sm-6 col-md-3 col-lg-3
+      type: custom:dwains-flexbox-card
+    filter:
+      include:
+      - area: $area0$
+        domain: scene
+        options:
+          color: var(--primary-color)
+          show_icon: true
+          show_label: false
+          show_last_changed: false
+          show_name: true
+          show_state: true
+          type: custom:mushroom-entity-card
+    sort:
+      exclude: []
+      method: state
+      numeric: true
+    type: custom:auto-entities
+  - title: $area1$
+    type: custom:mushroom-title-card
+  - card:
+      items_classes: col-xs-12 col-sm-6 col-md-3 col-lg-3
+      type: custom:dwains-flexbox-card
+    filter:
+      include:
+      - area: $area1$
+        domain: scene
+        options:
+          color: var(--primary-color)
+          show_icon: true
+          show_label: false
+          show_last_changed: false
+          show_name: true
+          show_state: true
+          type: custom:mushroom-entity-card
+    sort:
+      exclude: []
+      method: state
+      numeric: true
+    type: custom:auto-entities
+  - title: $area2$
+    type: custom:mushroom-title-card
+  - card:
+      items_classes: col-xs-12 col-sm-6 col-md-3 col-lg-3
+      type: custom:dwains-flexbox-card
+    filter:
+      include:
+      - area: $area2$
+        domain: scene
+        options:
+          color: var(--primary-color)
+          show_icon: true
+          show_label: false
+          show_last_changed: false
+          show_name: true
+          show_state: true
+          type: custom:mushroom-entity-card
+    sort:
+      exclude: []
+      method: state
+      numeric: true
+    type: custom:auto-entities
+  - title: $area3$
+    type: custom:mushroom-title-card
+  - card:
+      items_classes: col-xs-12 col-sm-6 col-md-3 col-lg-3
+      type: custom:dwains-flexbox-card
+    filter:
+      include:
+      - area: $area3$
+        domain: scene
+        options:
+          color: var(--primary-color)
+          show_icon: true
+          show_label: false
+          show_last_changed: false
+          show_name: true
+          show_state: true
+          type: custom:mushroom-entity-card
+    sort:
+      exclude: []
+      method: state
+      numeric: true
+    type: custom:auto-entities
+  - title: $area4$
+    type: custom:mushroom-title-card
+  - card:
+      items_classes: col-xs-12 col-sm-6 col-md-3 col-lg-3
+      type: custom:dwains-flexbox-card
+    filter:
+      include:
+      - area: $area4$
+        domain: scene
+        options:
+          color: var(--primary-color)
+          show_icon: true
+          show_label: false
+          show_last_changed: false
+          show_name: true
+          show_state: true
+          type: custom:mushroom-entity-card
+    sort:
+      exclude: []
+      method: state
+      numeric: true
+    type: custom:auto-entities
+  - title: $area5$
+    type: custom:mushroom-title-card
+  - card:
+      items_classes: col-xs-12 col-sm-6 col-md-3 col-lg-3
+      type: custom:dwains-flexbox-card
+    filter:
+      include:
+      - area: $area5$
+        domain: scene
+        options:
+          color: var(--primary-color)
+          show_icon: true
+          show_label: false
+          show_last_changed: false
+          show_name: true
+          show_state: true
+          type: custom:mushroom-entity-card
+    sort:
+      exclude: []
+      method: state
+      numeric: true
+    type: custom:auto-entities
+  - title: $area6$
+    type: custom:mushroom-title-card
+  - card:
+      items_classes: col-xs-12 col-sm-6 col-md-3 col-lg-3
+      type: custom:dwains-flexbox-card
+    filter:
+      include:
+      - area: $area6$
+        domain: scene
+        options:
+          color: var(--primary-color)
+          show_icon: true
+          show_label: false
+          show_last_changed: false
+          show_name: true
+          show_state: true
+          type: custom:mushroom-entity-card
+    sort:
+      exclude: []
+      method: state
+      numeric: true
+    type: custom:auto-entities
+  - title: $area7$
+    type: custom:mushroom-title-card
+  - card:
+      items_classes: col-xs-12 col-sm-6 col-md-3 col-lg-3
+      type: custom:dwains-flexbox-card
+    filter:
+      include:
+      - area: $area7$
+        domain: scene
+        options:
+          color: var(--primary-color)
+          show_icon: true
+          show_label: false
+          show_last_changed: false
+          show_name: true
+          show_state: true
+          type: custom:mushroom-entity-card
+    sort:
+      exclude: []
+      method: state
+      numeric: true
+    type: custom:auto-entities
+  - title: $area8$
+    type: custom:mushroom-title-card
+  - card:
+      items_classes: col-xs-12 col-sm-6 col-md-3 col-lg-3
+      type: custom:dwains-flexbox-card
+    filter:
+      include:
+      - area: $area8$
+        domain: scene
+        options:
+          color: var(--primary-color)
+          show_icon: true
+          show_label: false
+          show_last_changed: false
+          show_name: true
+          show_state: true
+          type: custom:mushroom-entity-card
+    sort:
+      exclude: []
+      method: state
+      numeric: true
+    type: custom:auto-entities
+  - title: $area9$
+    type: custom:mushroom-title-card
+  - card:
+      items_classes: col-xs-12 col-sm-6 col-md-3 col-lg-3
+      type: custom:dwains-flexbox-card
+    filter:
+      include:
+      - area: $area9$
+        domain: scene
+        options:
+          color: var(--primary-color)
+          show_icon: true
+          show_label: false
+          show_last_changed: false
+          show_name: true
+          show_state: true
+          type: custom:mushroom-entity-card
+    sort:
+      exclude: []
+      method: state
+      numeric: true
+    type: custom:auto-entities
+  type: vertical-stack

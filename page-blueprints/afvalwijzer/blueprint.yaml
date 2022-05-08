@@ -1,8 +1,8 @@
 blueprint:
   name: Afvalwijzer page Blueprint
   description: An afvalwijzer blueprint page by Jeroen Klompen
-  version: "1.0"
-  type: card
+  version: "1.1"
+  type: page
   custom_cards:
     - auto-entities
   input:

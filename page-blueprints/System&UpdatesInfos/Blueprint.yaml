@@ -1,0 +1,243 @@
+blueprint:
+
+  description: System And Update Info page by Michel Jourdain
+  name: System And Update Info Page Blueprint
+  type: page
+  version: '1.0'
+  
+  custom_cards:
+  
+  - mushroom-title-card
+  - mushroom-entity-card
+  - mini-graph-card
+  - bar-card
+  - mushroom-update-card
+  - auto-entities
+  - card-mod
+  
+  input:
+  
+    01_translate_speedtest:
+       name: Translate speedtest
+       description: Translate speedtest in your language
+       type: text-field
+  
+    02_translate_download:
+       name: Translate downloade
+       description: Translate download in your language
+       type: text-field
+       
+    03_translate_upload:
+       name: Translate upload
+       description: Translate upload in your language
+       type: text-field
+       
+    04_translate_system:
+       name: Translate system
+       description: Translate system in your language
+       type: text-field
+       
+    05_translate_ip_adress:
+       name: Translate ip adress
+       description: Translate ip adress in your language
+       type: text-field
+       
+    06_translate_last_boot:
+       name: Translate last boot 
+       description: Translate last boot in your language
+       type: text-field
+
+    07_translate_throughput_in:
+       name: Translate Throughput in
+       description: Translate Throughput in in your language
+       type: text-field
+       
+    08_translate_throughput_out:
+       name: Translate Throughput out
+       description: Translate Throughput out your language
+       type: text-field
+       
+    09_translate_update:
+       name: Translate update
+       description: Translate update in your language
+       type: text-field
+       
+    10_show_buttons_controls:
+       name: Show buttons controls
+       description: Show or hide buttons controls
+       type: checkbox
+       default_value: true
+
+card:
+
+  type: custom:dwains-flexbox-card
+  items_classes: 'col-xs-12'
+  cards:
+ 
+        - type: vertical-stack
+          item_classes: 'col-xs-12 col-sm-6'
+          cards:
+          
+            - type: custom:mushroom-title-card
+              title: $01_translate_speedtest$
+                  
+            - type: custom:mini-graph-card
+              entities:
+                - sensor.speedtest_ping
+              font_size: 70
+              height: 30
+              hours_to_show: 168
+              icon: mdi:pulse
+              line_color: var(--primary-color)
+              line_width: 2
+              name: Ping
+              points_per_hour: 1
+              show:
+               fill: true
+               graph: bar
+               
+            - type: horizontal-stack
+              cards:
+               
+                - type: custom:mini-graph-card              
+                  entities:
+                    - entity: sensor.speedtest_download
+                      show_points: false
+                  font_size: 70
+                  hours_to_show: 168
+                  icon: mdi:arrow-down-bold
+                  line_color: var(--primary-color)
+                  line_width: 2
+                  name: $02_translate_download$
+                  show:
+                    extrema: true
+                    labels: false
+              
+                - type: custom:mini-graph-card              
+                  entities:
+                    - entity: sensor.speedtest_upload
+                      show_points: false
+                  font_size: 70
+                  hours_to_show: 168
+                  icon: mdi:arrow-up-bold
+                  line_color: var(--primary-color)
+                  line_width: 2
+                  name: $03_translate_upload$
+                  show:
+                    extrema: true
+                    labels: false
+ 
+        - type: vertical-stack
+          item_classes: 'col-xs-12 col-sm-6'
+          cards:
+          
+            - type: custom:mushroom-title-card
+              title: $04_translate_system$
+              
+            - type: horizontal-stack
+              cards:
+               
+                - type: custom:mushroom-entity-card
+                  entity: sensor.ipv4_address_eth0
+                  name: $05_translate_ip_adress$
+                  
+                - type: custom:mushroom-entity-card
+                  entity: sensor.last_boot
+                  name: $06_translate_last_boot$
+              
+            - type: custom:bar-card
+              bar_style:
+                border-radius: 5px
+                padding-left: 4px
+                text-align: left
+              columns: 2
+              entities:
+                - entity: sensor.processor_use
+                - entity: sensor.memory_use_percent
+                - entity: sensor.processor_temperature
+                  icon: mdi:thermometer
+                - entity: sensor.disk_use_percent
+              positions:
+                indicator: inside
+                name: 'off'
+              severity:
+                - color: Green
+                  from: 0
+                  to: 60
+                - color: Orange
+                  from: 61
+                  to: 80
+                - color: Red
+                  from: 81
+                  to: 100
+              style: |
+                ha-card {
+                  border-radius: 5px;
+                }
+                bar-card-backgroundbar, bar-card-currentbar {
+                  border-radius: 5px;
+                }
+                bar-card-value {
+                  font-weight: bold;
+                }
+                bar-card-iconbar {
+                  height: 20px;
+                }      
+                
+            - type: horizontal-stack
+              cards:
+ 
+                - type: custom:mini-graph-card
+                  entities:
+                    - sensor.network_throughput_in_eth0
+                  font_size: 75
+                  hours_to_show: 24
+                  points_per_hour: 5
+                  icon: mdi:arrow-down-bold
+                  line_color: var(--primary-color)
+                  line_width: 2
+                  icon_adaptive_color: true
+                  height: 130
+                  name: $07_translate_throughput_in$
+                  show:
+                    labels: false
+            
+                - type: custom:mini-graph-card
+                  entities:
+                    - sensor.network_throughput_out_eth0
+                  font_size: 75
+                  hours_to_show: 24
+                  points_per_hour: 5
+                  icon: mdi:arrow-up-bold
+                  height: 130
+                  line_color: var(--primary-color)
+                  line_width: 2
+                  name: $08_translate_throughput_out$
+                  show:
+                    labels: false
+               
+        - type: vertical-stack
+          cards:    
+          
+            - type: custom:mushroom-title-card
+              title: $09_translate_update$
+
+            - type: horizontal-stack
+              cards:
+                - type: custom:auto-entities
+                  card:
+                    items_classes: col-xs-12 col-sm-6 col-md-3 col-lg-3
+                    type: custom:dwains-flexbox-card
+                  filter:
+                    include:
+                      - domain: update
+                        options:
+                          type: custom:mushroom-update-card
+                          show_buttons_control: $10_show_buttons_controls$
+                          use_entity_picture: true
+                  sort:
+                    exclude: []
+                    method: state
+                    numeric: true
+ 
+   

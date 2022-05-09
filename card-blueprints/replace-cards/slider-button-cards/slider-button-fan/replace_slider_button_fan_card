@@ -1,0 +1,22 @@
+blueprint:
+  custom_cards:
+  - slider-button-card
+  description: replaces fan card with slider-button fan card by Gessink
+  name: Replace Slider Button Fan Card
+  type: replace-card
+  version: '1.0'
+card:
+  entity: $replace_with_input_entity$
+  name: $replace_with_input_name$
+  type: custom:slider-button-card
+  slider:
+    direction: left-right
+    background: triangle
+    show_track: true
+  icon:
+    tap_action:
+      action: toggle
+  action_button:
+    tap_action:
+      action: toggle
+    mode: custom

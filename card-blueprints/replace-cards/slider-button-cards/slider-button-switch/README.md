@@ -30,6 +30,7 @@ This will replace the switch card of DD3 with the slider-button switch Card.
 
 
 ### Screenshots:
+![image](https://raw.githubusercontent.com/mattieha/slider-button-card/main/assets/preview.gif)
 ![image](https://raw.githubusercontent.com/mattieha/slider-button-card/main/assets/preview-2.gif)
 
 

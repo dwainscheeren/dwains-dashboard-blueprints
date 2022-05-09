@@ -1,0 +1,23 @@
+blueprint:
+  custom_cards:
+  - slider-button-card
+  description: replaces switch card with slider-button cover switch by Gessink
+  name: Replace Slider Button Switch Card
+  type: replace-card
+  version: '1.0'
+card:
+  entity: $replace_with_input_entity$
+  name: $replace_with_input_name$
+  type: custom:slider-button-card
+  slider:
+    direction: left-right
+    background: custom
+    toggle_on_click: true
+  icon:
+    use_state_color: true
+    tap_action:
+      action: more-info
+  action_button:
+    tap_action:
+      action: toggle
+    mode: custom

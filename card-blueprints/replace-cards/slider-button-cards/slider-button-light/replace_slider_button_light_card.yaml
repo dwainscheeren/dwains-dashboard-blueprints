@@ -1,0 +1,36 @@
+blueprint:
+  custom_cards:
+  - slider-button-card
+  description: replaces light card with slider-button light card by Gessink
+  name: Replace Slider Button Light Card
+  type: replace-card
+  version: '1.0'
+card:
+  entity: $replace_with_input_entity$
+  name: $replace_with_input_name$
+  type: custom:slider-button-card
+  action_button:
+    icon: mdi:power
+    mode: custom
+    show: true
+    show_spinner: true
+    tap_action:
+      action: toggle
+  compact: false
+  icon:
+    icon: ''
+    show: true
+    tap_action:
+      action: toggle
+    use_state_color: true
+  input_entity: light.dimmable_light_11
+  show_name: true
+  show_state: true
+  slider:
+    background: gradient
+    direction: left-right
+    force_square: false
+    show_track: true
+    toggle_on_click: false
+    use_percentage_bg_opacity: true
+    use_state_color: true

@@ -31,6 +31,8 @@ This will replace the light card of DD3 with the slider-button Light Card.
 
 ### Screenshots:
 ![image](https://user-images.githubusercontent.com/72649119/167399660-f7a538ef-1272-4920-8ab3-2f05f216fc7c.png)
+
+![image](https://raw.githubusercontent.com/mattieha/slider-button-card/main/assets/preview.gif)
 ![image](https://raw.githubusercontent.com/mattieha/slider-button-card/main/assets/preview-2.gif)
 
 

@@ -38,4 +38,4 @@
 
 #### 1.4
 
-- Add ability to Add to translate the card
+- Add ability to translate the card

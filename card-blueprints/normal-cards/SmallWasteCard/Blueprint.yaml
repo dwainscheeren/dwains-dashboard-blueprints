@@ -1,0 +1,68 @@
+blueprint:
+  name: Small Waste Card Blueprint
+  description:  Small Waste Card by Michel Jourdain
+  version: "1.0"
+  type: card
+  
+  custom_cards:
+    - garbage-collection-card
+
+  input:
+  
+    01_waste_entity:
+       name: Sensor entity
+       description: The sensor entity
+       type: entity-picker
+    02_icon_color:
+       name: Icon color
+       description: icon color. Accepts both color names and RGB values.
+       type: text-field 
+    03_due_1_icon_color:
+       name: Icon color the day before due date
+       description: Icon color on the day before due date. Accepts both color names and RGB values.
+       type: text-field
+    04_due_icon_color:
+       name: Due date icon color
+       description: Icon color on due date. Accepts both color names and RGB values
+       type: text-field
+    05_due_txt:
+       name: Due text
+       description: For today/tomorrow pick-ups use 'today' or 'tomorrow'.
+       type: checkbox
+       default_value: false
+    06_hide_icon:
+       name: Hide icon
+       description: Hide icon
+       type: checkbox
+       default_value: false
+    07_hide_on_click:
+       name: Hide card upon click
+       description: Hide the card upon click when due date is today or tomorrow.
+       type: checkbox
+       default_value: false
+    08_hide_title:
+       name: Hide title
+       description: Hide title
+       type: checkbox
+       default_value: false
+       
+card:
+
+  type: custom:dwains-flexbox-card
+  items_classes: 'col-xs-12'
+  cards:
+
+    - type: custom:garbage-collection-card
+      entity: $01_waste_entity$
+      icon_color: $02_icon_color$
+      due_1_color: $03_due_1_icon_color$
+      due_color: $04_due_icon_color$
+      due_txt: $05_due_txt$
+      hide_icon: $06_hide_icon$
+      hide_on_click: $07_hide_on_click$
+      hide_title: $08_hide_title$
+      title_size: 20px
+      details_size: 15px
+      icon_size: 40px
+
+  

@@ -1,7 +1,7 @@
 blueprint:
   name: FourPersonsBlueprint
   description: Four persons bleuprint by Michel Jourdain
-  version: "1.4"
+  version: "1.5"
   type: page
   
   custom_cards:
@@ -30,7 +30,7 @@ blueprint:
       type: entity-picker
     15_battery_level_entity:
       name: Battery level person one
-      description: Battery level entity of person one
+      description: Battery level entity person one
       type: entity-picker
       
     21_person_name:
@@ -96,6 +96,29 @@ blueprint:
       description: Battery level entity of person four
       type: entity-picker
       
+    50_translate_displacements_last_24_hours:
+      name: Translate displacements last 24 hours
+      description: Translate displacements last 24 hours in your language
+      type: text-field 
+    51_translate_battery_charge_level:
+      name: Translate Battery charge level
+      description: Translate Battery charge level in your language
+      type: text-field  
+    52_translate_battery_charging:
+      name: Translate Battery charging
+      description: Translate Battery charging in your language
+      type: text-field    
+    53_translate_map:
+      name: Translate Map
+      description: Translate Map in your language
+      type: text-field    
+ 
+    60_dark_mode:
+       name: Dark mode map
+       description: Dark mode for map
+       type: checkbox
+       default_value: false
+       
 card:
 
 # Persons
@@ -119,40 +142,34 @@ card:
                     cards:
                       - type: horizontal-stack
                         cards:
+                                 
                           - type: custom:button-card
                             name: $11_person_name$
+                            template: button_card_templates_persons_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#page01"
                             styles:
-                              card:
-                                 - width: 80px
                               name:
                                  - color: lightgreen
                           - type: custom:button-card
                             name: $21_person_name$
+                            template: button_card_templates_persons_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#page02"
-                            styles:
-                              card:
-                                 - width: 80px
                           - type: custom:button-card
                             name: $31_person_name$
+                            template: button_card_templates_persons_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#page03"
-                            styles:
-                              card:
-                                 - width: 80px
                           - type: custom:button-card
                             name: $41_person_name$
+                            template: button_card_templates_persons_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#page04"
-                            styles:
-                              card:
-                                 - width: 80px
                
                   - type: custom:mushroom-person-card
                     entity: $12_person_entity$
@@ -163,7 +180,7 @@ card:
                     hide_state: false
 
                   - type: custom:dwains-heading-card
-                    title: Displacements for 24 hours
+                    title: $50_translate_displacements_last_24_hours$
                     
                   - type: history-graph
                     entities:
@@ -172,7 +189,7 @@ card:
                     refresh_interval: 0
                     
                   - type: custom:dwains-heading-card
-                    title: Battery charging
+                    title: $52_translate_battery_charging$
 
                   - type: history-graph
                     entities:
@@ -181,7 +198,7 @@ card:
                     refresh_interval: 0
                     
                   - type: custom:dwains-heading-card
-                    title: Battery charge level
+                    title: $51_translate_battery_charge_level$
           
                   - type: 'custom:mini-graph-card'
                     entities: 
@@ -211,40 +228,34 @@ card:
                     cards:
                       - type: horizontal-stack
                         cards:
+                                 
                           - type: custom:button-card
                             name: $11_person_name$
+                            template: button_card_templates_persons_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#page01"
-                            styles:
-                              card:
-                                 - width: 80px
                           - type: custom:button-card
                             name: $21_person_name$
+                            template: button_card_templates_persons_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#page02"
                             styles:
-                              card:
-                                 - width: 80px
                               name:
                                  - color: lightgreen
                           - type: custom:button-card
                             name: $31_person_name$
+                            template: button_card_templates_persons_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#page03"
-                            styles:
-                              card:
-                                 - width: 80px
                           - type: custom:button-card
                             name: $41_person_name$
+                            template: button_card_templates_persons_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#page04"
-                            styles:
-                              card:
-                                 - width: 80px
                     
                   - type: custom:mushroom-person-card
                     entity: $22_person_entity$
@@ -255,7 +266,7 @@ card:
                     hide_state: false
                     
                   - type: custom:dwains-heading-card
-                    title: Displacements for 24 hours
+                    title: $50_translate_displacements_last_24_hours$
                 
                   - type: history-graph
                     entities:
@@ -264,7 +275,7 @@ card:
                     refresh_interval: 0
                     
                   - type: custom:dwains-heading-card
-                    title: Battery charging
+                    title: $52_translate_battery_charging$
 
                   - type: history-graph
                     entities:
@@ -273,7 +284,7 @@ card:
                     refresh_interval: 0
 
                   - type: custom:dwains-heading-card
-                    title: Battery charge level
+                    title: $51_translate_battery_charge_level$
           
                   - type: 'custom:mini-graph-card'
                     entities: 
@@ -305,38 +316,31 @@ card:
                         cards:
                           - type: custom:button-card
                             name: $11_person_name$
+                            template: button_card_templates_persons_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#page01"
-                            styles:
-                              card:
-                                 - width: 80px
                           - type: custom:button-card
                             name: $21_person_name$
+                            template: button_card_templates_persons_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#page02"
-                            styles:
-                              card:
-                                 - width: 80px
                           - type: custom:button-card
                             name: $31_person_name$
+                            template: button_card_templates_persons_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#page03"
                             styles:
-                              card:
-                                 - width: 80px
                               name:
                                  - color: lightgreen
                           - type: custom:button-card
                             name: $41_person_name$
+                            template: button_card_templates_persons_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#page04"
-                            styles:
-                              card:
-                                 - width: 80px
                                  
                   - type: custom:mushroom-person-card
                     entity: $32_person_entity$
@@ -347,7 +351,7 @@ card:
                     hide_state: false
                     
                   - type: custom:dwains-heading-card
-                    title: Displacements for 24 hours
+                    title: $50_translate_displacements_last_24_hours$
                 
                   - type: history-graph
                     entities:
@@ -356,7 +360,7 @@ card:
                     refresh_interval: 0
                     
                   - type: custom:dwains-heading-card
-                    title: Battery charging
+                    title: $52_translate_battery_charging$
 
                   - type: history-graph
                     entities:
@@ -365,7 +369,7 @@ card:
                     refresh_interval: 0
 
                   - type: custom:dwains-heading-card
-                    title: Battery charge level
+                    title: $51_translate_battery_charge_level$
           
                   - type: 'custom:mini-graph-card'
                     entities: 
@@ -397,36 +401,29 @@ card:
                         cards:
                           - type: custom:button-card
                             name: $11_person_name$
+                            template: button_card_templates_persons_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#page01"
-                            styles:
-                              card:
-                                 - width: 80px
                           - type: custom:button-card
                             name: $21_person_name$
+                            template: button_card_templates_persons_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#page02"
-                            styles:
-                              card:
-                                 - width: 80px
                           - type: custom:button-card
                             name: $31_person_name$
+                            template: button_card_templates_persons_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#page03"
-                            styles:
-                              card:
-                                 - width: 80px
                           - type: custom:button-card
                             name: $41_person_name$
+                            template: button_card_templates_persons_heading
                             tap_action: 
                               action: navigate
                               navigation_path: "#page04"
                             styles:
-                              card:
-                                 - width: 80px
                               name:
                                  - color: lightgreen
                                  
@@ -439,7 +436,7 @@ card:
                     hide_state: false                    
 
                   - type: custom:dwains-heading-card
-                    title: Displacements for 24 hours
+                    title: $50_translate_displacements_last_24_hours$
                 
                   - type: history-graph
                     entities:
@@ -448,7 +445,7 @@ card:
                     refresh_interval: 0
                     
                   - type: custom:dwains-heading-card
-                    title: Battery charging
+                    title: $52_translate_battery_charging$
 
                   - type: history-graph
                     entities:
@@ -457,7 +454,7 @@ card:
                     refresh_interval: 0
 
                   - type: custom:dwains-heading-card
-                    title: Battery charge level
+                    title: $51_translate_battery_charge_level$
           
                   - type: 'custom:mini-graph-card'
                     entities: 
@@ -494,19 +491,16 @@ card:
                 
                   - type: 'custom:button-card'
                     color_type: blank-card
-                    styles:
-                     card:
-                       - width: 120px
-                       - height: 59px
+                    template: button_card_templates_persons_space
                        
                   - type: custom:dwains-heading-card
-                    title: Map
+                    title: $53_translate_map$
         
                   - type: map
                     entities:
                       - entity: $13_tracker_entity$
                     hours_to_show: 24
-                    dark_mode: false
+                    dark_mode: $60_dark_mode$
                     default_zoom: 12
                     
               page02:
@@ -514,19 +508,16 @@ card:
                 cards:
                   - type: 'custom:button-card'
                     color_type: blank-card
-                    styles:
-                     card:
-                       - width: 120px
-                       - height: 59px
+                    template: button_card_templates_persons_space
                        
                   - type: custom:dwains-heading-card
-                    title: Map
+                    title: $53_translate_map$
         
                   - type: map
                     entities:
                       - entity: $23_tracker_entity$
                     hours_to_show: 24
-                    dark_mode: false
+                    dark_mode: $60_dark_mode$
                     default_zoom: 12
                     
               page03:
@@ -534,19 +525,16 @@ card:
                 cards:
                   - type: 'custom:button-card'
                     color_type: blank-card
-                    styles:
-                     card:
-                       - width: 120px
-                       - height: 59px
+                    template: button_card_templates_persons_space
                        
                   - type: custom:dwains-heading-card
-                    title: Map
+                    title: $53_translate_map$
         
                   - type: map
                     entities:
                       - entity: $33_tracker_entity$
                     hours_to_show: 24
-                    dark_mode: false
+                    dark_mode: $60_dark_mode$
                     default_zoom: 12
                     
               page04:
@@ -554,17 +542,50 @@ card:
                 cards:
                   - type: 'custom:button-card'
                     color_type: blank-card
-                    styles:
-                     card:
-                       - width: 120px
-                       - height: 59px
+                    template: button_card_templates_persons_space
                        
                   - type: custom:dwains-heading-card
-                    title: Map
+                    title: $53_translate_map$
         
                   - type: map
                     entities:
                       - entity: $43_tracker_entity$
                     hours_to_show: 24
-                    dark_mode: false
+                    dark_mode: $60_dark_mode$
                     default_zoom: 12
+
+button_card_templates:
+  button_card_templates_persons_heading:
+    show_icon: false
+    styles:
+      card:
+      - box-shadow: none
+      - padding: 6px 0 0 0
+      - background: transparent
+      - width: 90px
+      name:
+      - font-weight: bold
+      - justify-self: start
+      - font-size: 16px
+      - padding-left: 1px
+
+  button_card_templates_persons_space:
+    show_icon: false
+    styles:
+      card:
+      - box-shadow: none
+      - padding: 6px 0 0 0
+      - background: transparent
+      - height: 59px
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        

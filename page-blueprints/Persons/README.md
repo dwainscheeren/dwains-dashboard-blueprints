@@ -1,6 +1,9 @@
 # Persons Blueprint
 
 ## Installation of this Blueprint
+
+- This Blueprint works best with Dwains Dashboard version 3.1.0 or newer.
+
 - Install mini-graph-card from HACS
 - Install state-switch from HACS
 - Install button-card from HACS
@@ -16,6 +19,10 @@
  - Tracker entity of the person
  - Battery charging entity of the person
  - Battery level entity of the person
+ - Translate displacements last 24 hours in your language
+ - Translate Battery charge level in your language
+ - Translate Battery charging in your language
+ - Translate Map in your language
  - Disable dark mode for map
 
 ### Screenshots
@@ -43,3 +50,6 @@
 
 - Remove ability to set dark mode for map
 
+### 1.5
+
+- Add ability to disable dark mode for map. Add translation for card.

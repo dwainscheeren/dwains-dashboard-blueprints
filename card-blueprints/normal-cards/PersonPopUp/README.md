@@ -13,6 +13,10 @@
  - Tracker entity of the person
  - Battery charging entity of the person
  - Battery level entity of the person
+ - Translate displacements last 24 hours in your language
+ - Translate Battery charge level in your language
+ - Translate Battery charging in your language
+ - Translate Map in your language
  - Disable dark mode for map
 
 ### Screenshots
@@ -31,3 +35,7 @@
 #### 1.3
 
 - Add ability to disable dark mode for map
+
+#### 1.4
+
+- Add ability to Add to translate the card

@@ -15,7 +15,7 @@
 
 - Install [Mosquitto addon](https://github.com/home-assistant/addons/tree/master/mosquitto)  in HA, 
 - Install [Unraid-API](https://hub.docker.com/r/electricbrainuk/unraidapi) from [Docker Apps](https://hub.docker.com/)
-- Install [Glances](https://hub.docker.com/r/nicolargo/glances/) from [Docker Apps](https://hub.docker.com/)
+- Install [Glances](https://hub.docker.com/r/nicolargo/glances/) from [Docker Apps](https://hub.docker.com/) After install edit the docker container and and this to your repository nicolargo/glances:3.2.4.2-full latest version doesn't seem to work. 
 
 ### Installation: 
   

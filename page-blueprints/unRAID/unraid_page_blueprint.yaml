@@ -963,14 +963,14 @@ card:
                     opacity: 0.8;
                   }
                 content: |
-                  Cache & Inassigned Devices
+                  Cache & Unassigned Devices
           
               - type: horizontal-stack
                 cards: 
 
                   # USB Boot Device
                   - type: custom:bar-card
-                    name: Cache & Inassigned Devices
+                    name: Cache & Unassigned Devices
                     style: |
                       :host {
                         --ha-card-background: var(--paper-card-background-color);

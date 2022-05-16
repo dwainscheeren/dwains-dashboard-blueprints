@@ -2,6 +2,8 @@
 
 ## Installation of this Blueprint
 
+- This Blueprint works best with Dwains Dashboard version 3.1.0 or newer.
+
 - Install simple-thermostat from HACS
 
 - Copy the content of the Blueprint.yaml file into the Blueprint YAML code.
@@ -10,10 +12,12 @@
  - The Thermostat\AC name
  - The thermostat\Ac entity
  - Show or hide Controls buttons
- - Show or hide Controls names (1)
- - Show or hide Controls icons (1)
- - Additional sensor name
- - Additional sensor entity
+ - If Controls are activated name hide
+ - If Controls are activated icon hide
+ - If Controls are activated heading hide
+ - Hide temperature
+ - Hide state
+ - If the sensors are activated hide sensors label
 
 (1) These parameters are used only if the control buttons are displayed.
 
@@ -29,3 +33,6 @@
 ### Changelog
 #### 1.0
 - First release
+
+#### 1.1
+- Add the ability to choose what to show on the card.

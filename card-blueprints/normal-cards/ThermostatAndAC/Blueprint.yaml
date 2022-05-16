@@ -1,7 +1,7 @@
 blueprint:
   name: Thermostat and A/C card Blueprint
   description: Thermostat and A/C card by Michel Jourdain
-  version: "1.0"
+  version: "1.1"
   type: card
   
   custom_cards:
@@ -11,7 +11,7 @@ blueprint:
   
     01_Thermostat_name:
        name: Thermostat name
-       description: The Thermostat name
+       description: Thermostat name
        type: text-field
   
     02_thermostat_entity:
@@ -20,30 +20,47 @@ blueprint:
        type: entity-picker
        
     03_thermostat_controls_buttons_hide_show:
-       name: Controls buttons
-       description: Show or hide Controls buttons
+       name: Controls hide
+       description: Controls hide
        type: checkbox
+       default_value: false
        
     04_thermostat_controls_names_hide_show:
-       name: Controls names
-       description: Show or hide Controls names
+       name: If Controls are activated name hide
+       description: If Controls are activated name hide
        type: checkbox
+       default_value: false
        
     05_thermostat_controls_icons_hide_show:
-       name: Controls icons hide show
-       description: Show or hide Controls icons
+       name: If Controls are activated icon hide
+       description: If Controls are activated icon hide
        type: checkbox
+       default_value: false
        
-    06_additional_sensor_name:
-       name: Additional Sensor name
-       description: Additional sensor name
-       type: text-field
+    06_thermostat_controls_heading_hide_show:
+       name: If Controls are activated heading hide
+       description: If Controls are activated heading hide
+       type: checkbox
+       default_value: false
        
-    07_additional_sensor_entity:
-       name: Additional Sensor entity
-       description: Additional sensor entity
-       type: entity-picker
+    07_thermostat_temperature_hide_show:
+       name: Temperature hide
+       description: Hide temperature
+       type: checkbox
+       default_value: false
+
+    08_thermostat_state_hide_show:
+       name: State hide
+       description: Hide state
+       type: checkbox
+       default_value: false
        
+    09_thermostat_sensors_label_hide_show:
+       name: If sensors are activated hide label
+       description: If the sensors are activated hide sensors label
+       type: checkbox
+       default_value: false
+
 card:
 
   type: custom:dwains-flexbox-card
@@ -60,12 +77,13 @@ card:
         mode:
           names: $04_thermostat_controls_names_hide_show$
           icons: $05_thermostat_controls_icons_hide_show$
-          headings: false
+          headings: $06_thermostat_controls_heading_hide_show$
         sensors:
-          labels: true
+          labels: $09_thermostat_sensors_label_hide_show$
       hide:
-        temperature: false
-        state: false
-      sensors:
-        - entity: $07_additional_sensor_entity$
-          name: $06_additional_sensor_name$
+        temperature: $07_thermostat_temperature_hide_show$
+        state: $08_thermostat_state_hide_show$
+        
+        
+        
+        

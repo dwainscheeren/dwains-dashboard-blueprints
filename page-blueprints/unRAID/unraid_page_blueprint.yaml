@@ -1,0 +1,1027 @@
+# UnRAID Server Montitoring for Dwains-Theme
+blueprint:
+  name: UnRAID Server Montitoring page Blueprint
+  description: UnRAID Server Montitoring page by Michiel Holewijn
+  version: "1.0"
+  type: page
+
+  custom_cards:
+    - button-card
+    - bar-card
+    - mini-graph-card
+    - swipe-card
+    - card-mod
+
+card: 
+  type: custom:dwains-flexbox-card
+  items_classes: 'col-xs-12'
+  cards:
+    - type: custom:dwains-flexbox-card
+      padding: true
+      items_classes: 'col-lg-6 col-md-6 col-sm-12 col-xs-12'
+      cards:
+        - type: horizontal-stack
+          cards:
+
+            # UnRAID Docker Containers
+            - type: "custom:button-card"
+              style: |
+                ha-card {
+                  border-radius: 10px;
+                  box-shadow: 10px;
+                  background-position: center;
+              entity: sensor.unraid_containers_active
+              name: Containers
+              show_state: true
+              show_name: false
+              show_label: true
+              show_icon: true
+              styles:
+                card:
+                  - background-size: contain
+                  - background-repeat: no-repeat
+                  - background-position: center
+                icon:
+                  - width: 27%
+                  - margin-top: 1%
+            # UnRAID Version Card
+            - type: "custom:button-card"
+              style: |
+                ha-card {
+                  border-radius: 10px;
+                  box-shadow: 10px;
+              entity: sensor.unraid_version
+              icon: mdi:package-up
+              show_state: true
+              show_name: false
+              show_label: true
+              show_icon: true
+              styles:
+                card:
+                  - background-size: contain
+                  - background-repeat: no-repeat
+                  - background-position: center
+                icon:
+                  - width: 27%
+                  - margin-top: 1%
+            # UnRAID Power Button
+            - type: "custom:button-card"
+              style: |
+                ha-card {
+                  border-radius: 10px;
+                  box-shadow: 10px;
+                  background-position: center;
+              entity: switch.tower_power_off
+              show_state: false
+              show_name: true
+              show_label: true
+              show_icon: true
+              styles:
+                card:
+                  - background-size: contain
+                  - background-repeat: no-repeat
+                  - background-position: center
+                icon:
+                  - width: 27%
+                  - margin-top: 1%
+
+        - type: vertical-stack
+          cards:
+            - type: horizontal-stack
+              cards:
+
+                # UnRAID Reboot Button
+                - type: "custom:button-card"
+                  style: |
+                    ha-card {
+                      border-radius: 10px;
+                      box-shadow: 10px;
+                  entity: switch.tower_reboot
+                  icon: mdi:power-off
+                  show_state: false
+                  show_name: true
+                  show_label: true
+                  show_icon: true
+                  styles:
+                    card:
+                      - background-size: contain
+                      - background-repeat: no-repeat
+                      - background-position: center
+                    icon:
+                      - width: 27%
+                      - margin-top: 1%
+
+                # UnRAID Mover 
+                - type: "custom:button-card"
+                  style: |
+                     ha-card {
+                       border-radius: 10px;
+                       box-shadow: 10px;
+                  entity: switch.tower_mover
+                  icon: mdi:inbox-arrow-down
+                  name: Move Data
+                  show_state: false
+                  show_name: true
+                  show_label: false
+                  show_icon: true
+                  styles:
+                    card:
+                      - background-size: contain
+                      - background-repeat: no-repeat
+                      - background-position: center
+                    icon:
+                      - width: 27%
+                      - margin-top: 1%
+
+                # UnRAID Parity Check
+                - type: "custom:button-card"
+                  style: |
+                    ha-card {
+                      border-radius: 10px;
+                      box-shadow: 10px;
+                  entity: switch.tower_partitycheck
+                  icon: mdi:harddisk-remove
+                  name: Parity Check
+                  show_state: false
+                  show_name: true
+                  show_label: false
+                  show_icon: true
+                  styles:
+                    card:
+                      - background-size: contain
+                      - background-repeat: no-repeat
+                      - background-position: center
+                    icon:
+                      - width: 27%
+                      - margin-top: 1%
+    - type: custom:dwains-flexbox-card
+      padding: true
+      items_classes: 'col-lg-6 col-md-6 col-sm-12 col-xs-12'
+      cards:
+        - type: horizontal-stack
+          cards:
+
+            # UnRAID Array Status
+            - type: custom:bar-card
+              item_classes: 'col-lg-3 col-md-3'
+              style: |-
+                :host {
+                  --ha-card-background: var(--dwains-theme-primary);
+                  --ha-card-border-radius: 10px;
+                  --ha-card-box-shadow: 10px;
+                  --ha-card-opacity: 0.8;
+                  card-backgroundbar: 0px;
+                }
+                bar-card-title {
+                  margin-bottom: 0px;
+                }
+                bar-card-divider {
+                  display: none;
+                }
+                bar-card-value {
+                  margin-right: auto;
+                  margin-left: 20px;
+                  margin-bottom: auto;
+                  margin-top: 0px;
+                }
+                bar-card-title {
+                  margin-bottom: 3px;
+                  margin-top: 3px;
+                }
+              entities: 
+                - entity: sensor.unraid_array_status_numerical
+                  name: Array Status
+                  icon: mdi:code-array
+                - entity: sensor.unraid_array_protection_numerical
+                  name: Array Protection
+                  icon: mdi:harddisk-plus
+              show_icon: true
+              positions:
+                name: inside
+                value: 'off'
+                icon: inside
+              severity:
+                - color: Green
+                  from: 0
+                  to: 1
+                - color: Red
+                  from: 1
+                  to: 0
+              direction: right
+              stack: horizontal
+              columns: 1
+              max: 1
+              min: 0
+              tap_action: none
+
+        - type: vertical-stack
+          cards:
+            - type: horizontal-stack
+              cards:
+
+                # UnRAID Array Total Space
+                - type: custom:bar-card
+                  item_classes: 'col-lg-3 col-md-3'
+                  style: |
+                    :host {
+                      --ha-card-background: var(--dwains-theme-primary);
+                      --ha-card-border-radius: 10px;
+                      --ha-card-box-shadow: 10px;
+                      --ha-card-font-weight: bold;
+                      --ha-card-opacity: 0.8;
+                    }
+                    ha-card {
+                      font-size: 10px;                 
+                    }
+                    bar-card-value {
+                      font-size: 10px;
+                    }
+                  entity: sensor.unraid_array_space
+                  icon: mdi:database-settings
+                  show_icon: true
+                  positions:
+                    name: inside
+                    value: inside
+                    icon: inside
+                  severity:
+                    - color: '#3cff00'
+                      from: 0
+                      to: 30
+                    - color: '#ccff00'
+                      from: 31
+                      to: 40
+                    - color: '#d9d21c'
+                      from: 41
+                      to: 50
+                    - color: '#f7da00'
+                      from: 51
+                      to: 60
+                    - color: '#edac09'
+                      from: 61
+                      to: 70
+                    - color: '#ffa408'
+                      from: 71
+                      to: 80
+                    - color: '#ff5e08'
+                      from: 81
+                      to: 90
+                    - color: '#ed0909'
+                      from: 91
+                      to: 100
+                  direction: right
+                  columns: 1
+                  max: 100
+                  min: 0
+                  tap_action: none
+
+    - type: custom:dwains-flexbox-card
+      padding: true
+      items_classes: 'col-lg-6 col-md-6 col-sm-12 col-xs-12'
+      cards:
+        - type: horizontal-stack
+          cards:
+
+            # Plex Container
+            - type: "custom:button-card"
+              style: |
+                ha-card {
+                  background: url('/local/images/unraid-container-images/plex.png');
+                  border-radius: 10px;
+                  box-shadow: 10px;
+              entity: switch.tower_docker_binhex_plex
+              show_state: false
+              show_name: false
+              show_label: false
+              show_icon: false
+              styles:
+                card:
+                  - background-size: contain
+                  - background-repeat: no-repeat
+                  - background-position: center
+              state:
+                - value: 'off'
+                  styles:
+                    card:
+                      - filter: grayscale(100%)
+              custom_fields:
+                switch: >
+                  [[[
+                    return `<ha-icon
+                      style="width: 36px; height: 68px;">
+                      </ha-icon>`
+                  ]]]
+              double_tap_action:
+                action: call-service
+                service: switch.toggle
+                service_data:
+                  entity_id: switch.tower_docker_binhex_plex
+            # Sonarr Container
+            - type: "custom:button-card"
+              style: |
+                ha-card {
+                  background: url('/local/images/unraid-container-images/sonarr.png');
+                  border-radius: 10px;
+                  box-shadow: 10px;
+              entity: switch.tower_docker_binhex_sonarr
+              show_state: false
+              show_name: false
+              show_label: false
+              show_icon: false
+              styles:
+                card:
+                  - background-size: contain
+                  - background-repeat: no-repeat
+                  - background-position: center
+              state:
+                - value: 'off'
+                  styles:
+                    card:
+                      - filter: grayscale(100%)
+              custom_fields:
+                switch: >
+                  [[[
+                    return `<ha-icon
+                      style="width: 36px; height: 68px;">
+                      </ha-icon>`
+                  ]]]
+              double_tap_action:
+                action: call-service
+                service: switch.toggle
+                service_data:
+                  entity_id: switch.tower_docker_binhex_sonarr
+            # Radarr Container
+            - type: "custom:button-card"
+              style: |
+                ha-card {
+                  background: url('/local/images/unraid-container-images/radarr.png');
+                  border-radius: 10px;
+                  box-shadow: 10px;
+              entity: switch.tower_docker_binhex_radarr
+              show_state: false
+              show_name: false
+              show_label: false
+              show_icon: false
+              styles:
+                card:
+                  - background-size: contain
+                  - background-repeat: no-repeat
+                  - background-position: center
+              state:
+                - value: 'off'
+                  styles:
+                    card:
+                      - filter: grayscale(100%)
+              custom_fields:
+                switch: >
+                  [[[
+                    return `<ha-icon
+                      style="width: 36px; height: 68px;">
+                      </ha-icon>`
+                  ]]]
+              double_tap_action:
+                action: call-service
+                service: switch.toggle
+                service_data:
+                  entity_id: switch.tower_docker_binhex_radarr
+            # NZBGet Container
+            - type: "custom:button-card"
+              style: |
+                ha-card {
+                  background: url('/local/images/unraid-container-images/nzbget.png');
+                  border-radius: 10px;
+                  box-shadow: 10px;
+              entity: switch.tower_docker_nzbget
+              show_state: false
+              show_name: false
+              show_label: false
+              show_icon: false
+              styles:
+                card:
+                  - background-size: contain
+                  - background-repeat: no-repeat
+                  - background-position: center
+              state:
+                - value: 'off'
+                  styles:
+                    card:
+                      - filter: grayscale(100%)
+              custom_fields:
+                switch: >
+                  [[[
+                    return `<ha-icon
+                      style="width: 36px; height: 68px;">
+                      </ha-icon>`
+                  ]]]
+              double_tap_action:
+                action: call-service
+                service: switch.toggle
+                service_data:
+                  entity_id: switch.tower_docker_nzbget
+            # Overseerr Container
+            - type: "custom:button-card"
+              style: |
+                ha-card {
+                  background: url('/local/images/unraid-container-images/overseerr.png');
+                  border-radius: 10px;
+                  box-shadow: 10px;
+              entity: switch.tower_docker_overseerr
+              show_state: false
+              show_name: false
+              show_label: false
+              show_icon: false
+              styles:
+                card:
+                  - background-size: contain
+                  - background-repeat: no-repeat
+                  - background-position: center
+              state:
+                - value: 'off'
+                  styles:
+                    card:
+                      - filter: grayscale(100%)
+              custom_fields:
+                switch: >
+                  [[[
+                    return `<ha-icon
+                      style="width: 36px; height: 68px;">
+                      </ha-icon>`
+                  ]]]
+              double_tap_action:
+                action: call-service
+                service: switch.toggle
+                service_data:
+                  entity_id: switch.tower_docker_overseerr
+            # Requestrr Container
+            - type: "custom:button-card"
+              style: |
+                ha-card {
+                  background: url('/local/images/unraid-container-images/requestrr.png');
+                  border-radius: 10px;
+                  box-shadow: 10px;
+              entity: switch.tower_docker_requestrr
+              show_state: false
+              show_name: false
+              show_label: false
+              show_icon: false
+              styles:
+                card:
+                  - background-size: contain
+                  - background-repeat: no-repeat
+                  - background-position: center
+              state:
+                - value: 'off'
+                  styles:
+                    card:
+                      - filter: grayscale(100%)
+              custom_fields:
+                switch: >
+                  [[[
+                    return `<ha-icon
+                      style="width: 36px; height: 68px;">
+                      </ha-icon>`
+                  ]]]
+              double_tap_action:
+                action: call-service
+                service: switch.toggle
+                service_data:
+                  entity_id: switch.tower_docker_requestrr
+            # Bazarr Container
+            - type: "custom:button-card"
+              style: |
+                ha-card {
+                  background: url('/local/images/unraid-container-images/bazarr.png');
+                  border-radius: 10px;
+                  box-shadow: 10px;
+              entity: switch.tower_docker_bazarr
+              show_state: false
+              show_name: false
+              show_label: false
+              show_icon: false
+              styles:
+                card:
+                  - background-size: contain
+                  - background-repeat: no-repeat
+                  - background-position: center
+              state:
+                - value: 'off'
+                  styles:
+                    card:
+                      - filter: grayscale(100%)
+              custom_fields:
+                switch: >
+                  [[[
+                    return `<ha-icon
+                      style="width: 36px; height: 68px;">
+                      </ha-icon>`
+                  ]]]
+              double_tap_action:
+                action: call-service
+                service: switch.toggle
+                service_data:
+                  entity_id: switch.tower_docker_bazarr
+            # Tautulli Container
+            - type: "custom:button-card"
+              style: |
+                ha-card {
+                  background: url('/local/images/unraid-container-images/tautulli.png');
+                  border-radius: 10px;
+                  box-shadow: 10px;
+              entity: switch.tower_docker_tautulli
+              show_state: false
+              show_name: false
+              show_label: false
+              show_icon: false
+              styles:
+                card:
+                  - background-size: contain
+                  - background-repeat: no-repeat
+                  - background-position: center
+              state:
+                - value: 'off'
+                  styles:
+                    card:
+                      - filter: grayscale(100%)
+              custom_fields:
+                switch: >
+                  [[[
+                    return `<ha-icon
+                      style="width: 36px; height: 68px;">
+                      </ha-icon>`
+                  ]]]
+              double_tap_action:
+                action: call-service
+                service: switch.toggle
+                service_data:
+                  entity_id: switch.tower_docker_tautulli  
+            # Unraid API Container
+            - type: "custom:button-card"
+              style: |
+                ha-card {
+                  background: url('/local/images/unraid-container-images/unraid-api.png');
+                  border-radius: 10px;
+                  box-shadow: 10px;
+              entity: switch.tower_docker_unraid_api
+              show_state: false
+              show_name: false
+              show_label: false
+              show_icon: false
+              styles:
+                card:
+                  - background-size: contain
+                  - background-repeat: no-repeat
+                  - background-position: center
+              state:
+                - value: 'off'
+                  styles:
+                    card:
+                      - filter: grayscale(100%)
+              custom_fields:
+                switch: >
+                  [[[
+                    return `<ha-icon
+                      style="width: 36px; height: 68px;">
+                      </ha-icon>`
+                  ]]]
+              double_tap_action:
+                action: call-service
+                service: switch.toggle
+                service_data:
+                  entity_id: switch.tower_docker_unraid_api 
+            # Deconz Container
+            - type: "custom:button-card"
+              style: |
+                ha-card {
+                  background: url('/local/images/unraid-container-images/deconz.png');
+                  border-radius: 10px;
+                  box-shadow: 10px;
+              entity: switch.tower_docker_deconz
+              show_state: false
+              show_name: false
+              show_label: false
+              show_icon: false
+              styles:
+                card:
+                  - background-size: contain
+                  - background-repeat: no-repeat
+                  - background-position: center
+              state:
+                - value: 'off'
+                  styles:
+                    card:
+                      - filter: grayscale(100%)
+              custom_fields:
+                switch: >
+                  [[[
+                    return `<ha-icon
+                      style="width: 36px; height: 68px;">
+                      </ha-icon>`
+                  ]]]
+              double_tap_action:
+                action: call-service
+                service: switch.toggle
+                service_data:
+                  entity_id: switch.tower_docker_deconz 
+            # Glances Container
+            - type: "custom:button-card"
+              style: |
+                ha-card {
+                  background: url('/local/images/unraid-container-images/glances.png');
+                  border-radius: 10px;
+                  box-shadow: 10px;
+              entity: switch.tower_docker_glances
+              show_state: false
+              show_name: false
+              show_label: false
+              show_icon: false
+              styles:
+                card:
+                  - background-size: contain
+                  - background-repeat: no-repeat
+                  - background-position: center
+              state:
+                - value: 'off'
+                  styles:
+                    card:
+                      - filter: grayscale(100%)
+              custom_fields:
+                switch: >
+                  [[[
+                    return `<ha-icon
+                      style="width: 36px; height: 68px;">
+                      </ha-icon>`
+                  ]]]
+              double_tap_action:
+                action: call-service
+                service: switch.toggle
+                service_data:
+                  entity_id: switch.tower_docker_glances                         
+    - type: vertical-stack
+      cards:
+        - type: custom:dwains-flexbox-card
+          padding: true
+          items_classes: 'col-lg-6 col-md-6 col-sm-12 col-xs-12'
+          cards:
+            - type: horizontal-stack
+              cards:
+
+                # CPU Usage
+                - type: custom:mini-graph-card
+                  style: |
+                    ha-card {
+                      background: var(--paper-card-background-color);
+                      border-radius: 10px;
+                      box-shadow: 10px;
+                      font-weight: bold;
+                      opacity: 0.8;
+                    }
+                  entities:
+                    - entity: sensor.unraid_cpu_used
+                      name: CPU Used
+                      color: '#14ff8d' # Light Green
+                    - entity: sensor.unraid_containers_cpu_used
+                      name: Containers CPU Used
+                      color: '#0293fa' # Sky Blue
+                  name: CPU Usage
+                  icon: mdi:cpu-64-bit
+                  height: 200
+                  hours_to_show: 7
+                  points_per_hour: 60
+                  update_interval: 10
+                  aggregate_func: max
+                  line_width: 2
+                  smoothing: false
+                  font_size: 65
+                  font_size_header: 9
+                  show:
+                    average: true
+                    extrema: true
+                  tap_action: none
+
+                # Ram Usage
+                - type: custom:mini-graph-card
+                  style: |
+                    ha-card {
+                      background: var(--paper-card-background-color);
+                      border-radius: 10px;
+                      box-shadow: 10px;
+                      font-weight: bold;
+                      opacity: 0.8;
+                    }
+                  entities:
+                    - entity: sensor.unraid_containers_ram_used
+                      name: sensor.unraid_ram_used
+                      color: '#14ff8d' # Light Green
+                    - entity: sensor.unraid_containers_ram_used
+                      name: Container Ram Usage
+                      color: '#0293fa' # Sky Blue
+                  name: RAM Usage
+                  height: 200
+                  hours_to_show: 7
+                  points_per_hour: 60
+                  update_interval: 10
+                  aggregate_func: max
+                  line_width: 2
+                  smoothing: false
+                  font_size: 65
+                  font_size_header: 9
+                  show:
+                    average: true
+                    extrema: true
+                  tap_action: none
+                # Disk Temps
+                - type: custom:mini-graph-card
+                  item_classes: 'col-lg-6 col-md-6'
+                  style: |
+                    ha-card {
+                      background: var(--paper-card-background-color);
+                      border-radius: 10px;
+                      box-shadow: 10px;
+                      font-weight: bold;
+                      opacity: 0.8;
+                    }
+                  entities:
+                    - entity: sensor.unraid_disk1_temperature
+                      name: UnRAID DISK1 Temperature
+                      color: '#f20505' # Red
+                    - entity: sensor.unraid_disk2_temperature
+                      name: UnRAID DISK1 Temperature
+                      color: '#05f248' # Green
+                    - entity: sensor.unraid_disk3_temperature
+                      name: UnRAID DISK1 Temperature
+                      color: '#e9fa02' # Yellow
+                    - entity: sensor.unraid_disk4_temperature
+                      name: UnRAID DISK1 Temperature
+                      color: '#0293fa' # Sky Blue
+                    - entity: sensor.unraid_disk5_temperature
+                      name: UnRAID DISK1 Temperature
+                      color: '#e3830e' # Orange
+                    - entity: sensor.unraid_disk6_temperature
+                      name: UnRAID DISK1 Temperature
+                      color: '#750ee3' # Purple
+                  name: UnRAID Disk Temps
+                  icon: mdi:thermometer-lines
+                  hours_to_show: 7
+                  points_per_hour: 60
+                  update_interval: 10
+                  line_width: 1
+                  smoothing: true
+                  font_size: 65
+                  font_size_header: 9
+                  show:
+                    graph: line
+                    average: true
+                    extrema: true
+                  tap_action: none
+    - type: vertical-stack
+      cards:
+        - type: custom:dwains-flexbox-card
+          padding: true
+          items_classes: 'col-lg-6 col-md-6 col-sm-12 col-xs-12'
+          cards:
+            - type: horizontal-stack
+              cards:
+
+                - type: vertical-stack
+                  cards:
+
+                  # Markdown Title Card
+                   - type: markdown
+                     style: |
+                       ha-card {
+                         background: var(--paper-card-background-color);
+                         border-radius: 10px;
+                         box-shadow: 10px;
+                         font-weight: bold;
+                         opacity: 0.8;
+                       }
+                     content: |
+                       Parity Array
+
+                   # Disk Space Used Card
+                   - type: custom:swipe-card
+                     parameters:
+                       spaceBetween: 8
+                       touchEventsTarget: 'container'
+                       pagination:
+                         type: 'bullets'
+                         dynamicBullets: true
+
+                     cards:
+
+                      - type: vertical-stack
+                        cards:
+                          - type: horizontal-stack
+                            cards: 
+
+                              # Disk 1 Used %
+                              - type: custom:bar-card
+                                style: |
+                                  :host {
+                                    --ha-card-background: var(--paper-card-background-color);
+                                    --ha-card-border-radius: 10px;
+                                    --ha-card-box-shadow: 10px;
+                                    --ha-card-font-weight: bold;
+                                    --ha-card-opacity: 0.8;
+                                  }
+                                  ha-card {
+                                    font-size: 10px;                 
+                                  }
+                                  bar-card-value {
+                                    font-size: 10px;
+                                  }
+                                entities: 
+                                  - entity: sensor.unraid_mnt_disk1_used_percent
+                                    name: Disk 1 Used
+                                  - entity: sensor.unraid_mnt_disk2_used_percent
+                                    name: Disk 2 Used
+                                  - entity: sensor.unraid_mnt_disk3_used_percent
+                                    name: Disk 3 Used
+                                  - entity: sensor.unraid_mnt_disk4_used_percent
+                                    name: Disk 4 Used
+                                  - entity: sensor.unraid_mnt_disk5_used_percent
+                                    name: Disk 5 Used
+                                  - entity: sensor.unraid_mnt_disk6_used_percent
+                                    name: Disk 6 Used
+                                show_icon: true
+                                height: 180px
+                                stack: horizontal
+                                positions:
+                                  name: inside
+                                  value: inside
+                                  icon: inside
+                                severity:
+                                  - color: '#3cff00'
+                                    from: 0
+                                    to: 30
+                                  - color: '#ccff00'
+                                    from: 30
+                                    to: 40
+                                  - color: '#f1f505'
+                                    from: 40
+                                    to: 50
+                                  - color: '#f7da00'
+                                    from: 50
+                                    to: 60
+                                  - color: '#edac09'
+                                    from: 60
+                                    to: 70
+                                  - color: '#ffa408'
+                                    from: 70
+                                    to: 80
+                                  - color: '#ff5e08'
+                                    from: 80
+                                    to: 90
+                                  - color: '#ed0909'
+                                    from: 90
+                                    to: 100
+                                direction: up
+                                columns: 1
+                                max: 100
+                                min: 0
+                                tap_action: none
+                      - type: vertical-stack
+                        cards:
+                          - type: horizontal-stack
+                            cards: 
+    
+                              # Disks Space Free 
+                              - type: custom:bar-card
+                                style: |
+                                  :host {
+                                     --ha-card-background: var(--paper-card-background-color);
+                                     --ha-card-border-radius: 10px;
+                                     --ha-card-box-shadow: 10px;
+                                     --ha-card-font-weight: bold;
+                                     --ha-card-opacity: 0.8;
+                                  }
+                                  ha-card {
+                                     font-size: 10px;                 
+                                  }
+                                  bar-card-value {
+                                    font-size: 10px;
+                                  }
+                                entities: 
+                                  - entity: sensor.unraid_mnt_disk1_free
+                                    name: Disk 1 Free
+                                    min: 0
+                                    max: 3630
+                                  - entity: sensor.unraid_mnt_disk2_free
+                                    name: Disk 2 Free
+                                    min: 0
+                                    max: 3630
+                                  - entity: sensor.unraid_mnt_disk3_free
+                                    name: Disk 3 Free
+                                    min: 0
+                                    max: 3630
+                                  - entity: sensor.unraid_mnt_disk4_free
+                                    name: Disk 4 Free
+                                    min: 0
+                                    max: 3630
+                                  - entity: sensor.unraid_mnt_disk5_free
+                                    name: Disk 5 Free
+                                    min: 0
+                                    max: 3630
+                                  - entity: sensor.unraid_mnt_disk6_free
+                                    name: Disk 6 Free
+                                    min: 0
+                                    max: 3630
+                                show_icon: true
+                                height: 180px
+                                stack: horizontal
+                                positions:
+                                  name: inside
+                                  value: inside
+                                  icon: inside
+                                severity:
+                                  - color: '#fa0505'
+                                    from: 0
+                                    to: 700
+                                  - color: '#de4314'
+                                    from: 700
+                                    to: 800
+                                  - color: '#d1861d'
+                                    from: 800
+                                    to: 900
+                                  - color: '#d4c11c'
+                                    from: 900
+                                    to: 1000
+                                  - color: '#64c91c'
+                                    from: 1001
+                                    to: 5560
+                                direction: up
+                                tap_action: none           
+            - type: vertical-stack
+              cards:
+              # Markdown Title Card
+              - type: markdown
+                style: |
+                  ha-card {
+                    background: var(--paper-card-background-color);
+                    border-radius: 10px;
+                    box-shadow: 10px;
+                    font-weight: bold;
+                    opacity: 0.8;
+                  }
+                content: |
+                  Cache & Unassigned Devices
+          
+              - type: horizontal-stack
+                cards: 
+
+                  # USB Boot Device
+                  - type: custom:bar-card
+                    name: Cache & Unassigned Devices
+                    style: |
+                      :host {
+                        --ha-card-background: var(--paper-card-background-color);
+                        --ha-card-border-radius: 10px;
+                        --ha-card-box-shadow: 10px;
+                        --ha-card-font-weight: bold;
+                        --ha-card-opacity: 0.8;
+                      }
+                      ha-card {
+                        font-size: 10px;                 
+                      }
+                      bar-card-value {
+                        font-size: 10px;
+                      }
+                    entities: 
+                      - entity: sensor.unraid_etc_resolv_conf_used_percent
+                        name: Boot Drive
+                      - entity: sensor.unraid_mnt_cache_used_percent
+                        name: Cache SSD
+
+                    show_icon: true
+                    height: 180px
+                    stack: horizontal
+                    positions:
+                      name: inside
+                      value: inside
+                      icon: inside
+                    severity:
+                      - color: '#3cff00'
+                        from: 0
+                        to: 30
+                      - color: '#ccff00'
+                        from: 31
+                        to: 40
+                      - color: '#d9d21c'
+                        from: 41
+                        to: 50
+                      - color: '#f7da00'
+                        from: 51
+                        to: 60
+                      - color: '#edac09'
+                        from: 61
+                        to: 70
+                      - color: '#ffa408'
+                        from: 71
+                        to: 80
+                      - color: '#ff5e08'
+                        from: 81
+                        to: 90
+                      - color: '#ed0909'
+                        from: 91
+                        to: 100
+                    direction: up
+                    tap_action: none                     

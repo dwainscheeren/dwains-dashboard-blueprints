@@ -31,6 +31,29 @@ blueprint:
       name: Battery level person one
       description: Battery level entity of person one
       type: entity-picker
+      
+    50_translate_displacements_last_24_hours:
+      name: Translate displacements last 24 hours
+      description: Translate displacements last 24 hours in your language
+      type: text-field 
+    51_translate_battery_charge_level:
+      name: Translate Battery charge level
+      description: Translate Battery charge level in your language
+      type: text-field  
+    52_translate_battery_charging:
+      name: Translate Battery charging
+      description: Translate Battery charging in your language
+      type: text-field    
+    53_translate_map:
+      name: Translate Map
+      description: Translate Map in your language
+      type: text-field    
+ 
+    60_dark_mode:
+       name: Dark mode map
+       description: Dark mode for map
+       type: checkbox
+       default_value: false
 
 card:
 
@@ -52,7 +75,7 @@ card:
           hide_state: false
 
         - type: custom:dwains-heading-card
-          title: Displacements for 24 hours
+          title: $50_translate_displacements_last_24_hours$
                     
         - type: history-graph
           entities:
@@ -61,7 +84,7 @@ card:
           refresh_interval: 0
                     
         - type: custom:dwains-heading-card
-          title: Battery charging
+          title: $52_translate_battery_charging$
 
         - type: history-graph
           entities:
@@ -70,7 +93,7 @@ card:
           refresh_interval: 0
                     
         - type: custom:dwains-heading-card
-          title: Battery charge level
+          title: $51_translate_battery_charge_level$
           
         - type: 'custom:mini-graph-card'
           entities: 
@@ -106,11 +129,11 @@ card:
                   - height: 59px
                        
             - type: custom:dwains-heading-card
-              title: Map
+              title: $53_translate_map$
         
             - type: map
               entities:
                  - entity: $13_tracker_entity$
               hours_to_show: 24
-              dark_mode: false
+              dark_mode: $60_dark_mode$
               default_zoom: 12

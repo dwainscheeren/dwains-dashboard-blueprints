@@ -11,6 +11,7 @@
 - Install [Bar Card](https://github.com/custom-cards/bar-card) from [HACS](https://hacs.xyz).
 - Install [Fold Enitity Row](https://github.com/thomasloven/lovelace-fold-entity-row) from [HACS](https://hacs.xyz). 
 - Install [Stack in Card](https://github.com/custom-cards/stack-in-card) from [HACS](https://hacs.xyz). 
+- Install [Restriction Card](https://github.com/iantrich/restriction-card) from [HACS](https://hacs.xyz). 
 
 ### Configuration
 
@@ -67,6 +68,7 @@ This will automatically show your system and speedtest in a dd3 page.
 - First release
 #### 2.0.0
 - Added Shortcuts & Systemcontrols for 2022.5
-
+#### 2.1.0
+- Added a Restriction card on Restarting HA
 
 

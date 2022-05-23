@@ -1,0 +1,26 @@
+blueprint:
+  custom_cards:
+  - logbook-card
+  description: Replaces entity popup card with window status history by Jeroen Klompen
+  name: Replace entity popup window card
+  type: replace-card
+  version: '1.0.0'
+card:
+  cards:
+  - entity: $replace_with_input_entity$
+    max_items: 6
+    separator_style:
+      color: var(--divider-color)
+      style: dashed
+    show:
+      end_date: false
+      start_date: true
+      separator: true
+    state_map:
+    - value: 'on'
+    - value: 'off'
+    - value: unavailable
+    style: "ha-card {\n  box-shadow: none;\n}\n"
+    title: ' '
+    type: custom:logbook-card
+  type: vertical-stack

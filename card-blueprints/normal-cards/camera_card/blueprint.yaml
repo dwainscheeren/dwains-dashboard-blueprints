@@ -1,10 +1,10 @@
 blueprint:
-  name: Camera card Blueprint
-  description: An button card camera card by Jeroen Klompen
-  version: "1.0"
-  type: card
   custom_cards:
-    - button-card
+  - button-card
+  description: An button card camera card by Jeroen Klompen
+  name: Camera card
+  type: card
+  version: '1.0.0'
   input:
     camera_entity:
       name: Camera entity

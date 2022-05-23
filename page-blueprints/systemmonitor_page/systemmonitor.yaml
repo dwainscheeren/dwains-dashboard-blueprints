@@ -7,10 +7,11 @@ blueprint:
   - bar-card
   - stack-in-card
   - fold-entity-row
+  - restriction-card
   description: Systemmonitor page by Bourner
   name: Systemmonitor Page Blueprint
   type: page
-  version: '2.0'
+  version: '2.1'
 card:
   cards:
     - cards:
@@ -26,16 +27,21 @@ card:
             service: dwains_dashboard.reload
             service_data: {}
             target: {}
-        - primary: Restart Home Assistant
-          type: custom:mushroom-template-card
-          icon: mdi:home-assistant
-          icon_color: blue
-          entity: ''
-          tap_action:
-            action: call-service
-            service: homeassistant.restart
-            service_data: {}
-            target: {}
+        - type: custom:restriction-card
+          locked_icon: mdi:lock-outline
+          unlocked_icon: mdi:lock-open-variant-outline
+          action: hold
+          card:
+            primary: Restart Home Assistant
+            type: custom:mushroom-template-card
+            icon: mdi:home-assistant
+            icon_color: blue
+            entity: ''
+            tap_action:
+              action: call-service
+              service: homeassistant.restart
+              service_data: {}
+              target: {}
         - primary: Logs
           type: custom:mushroom-template-card
           icon: mdi:math-log

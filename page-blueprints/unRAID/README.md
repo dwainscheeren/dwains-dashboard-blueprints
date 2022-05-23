@@ -45,3 +45,7 @@ This will automatically pull all your docker's, harddisk's & ssd and more stats 
 ### Changelog
 #### 1.0.0
 - First release
+#### 1.1.0
+- Added right side view
+- Added Disk Array Temperature
+- Dockers arranged from left to right. 

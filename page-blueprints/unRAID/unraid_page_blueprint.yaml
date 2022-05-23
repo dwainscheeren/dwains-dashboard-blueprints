@@ -1,6 +1,6 @@
 # UnRAID Server Montitoring for Dwains-Theme
 blueprint:
-  name: UnRAID Server Montitoring page Blueprint
+  name: UnRAID page Blueprint
   description: UnRAID Server Montitoring page by Michiel Holewijn
   version: "1.1"
   type: page

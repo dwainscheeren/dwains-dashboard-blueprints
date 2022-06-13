@@ -1,7 +1,7 @@
 blueprint:
   name: Weather dashboard page Blueprint
   description: An weather dashboard page by Robert Wilson based on orginial page by Leon van der Linden
-  version: "2.0"
+  version: "3.0"
   type: page
   custom_cards:
     - button-card
@@ -40,6 +40,10 @@ blueprint:
     wind_bearing:
       name: Wind Direction
       description: Wind direction sensor (e.g. sensor.openweathermap_wind_bearing )
+      type: entity-picker
+    weather_alert_entity:
+      name: Weather Alert entity
+      description: Currently this is only tested with nws_alerts
       type: entity-picker
 # Medical Alerts
     allergy_index_today:
@@ -213,17 +217,17 @@ card:
                       cards:
                         - type: conditional
                           conditions:
-                            - entity: sensor.nws_alerts
+                            - entity: $weather_alert_entity$
                               state_not: '0'
                           card:
                             type: entities
                             title: $Weather_Alert$
                             show_header_toggle: false
                             entities:
-                              - entity: sensor.nws_alerts
+                              - entity: $weather_alert_entity$
                         - type: conditional
                           conditions:
-                            - entity: sensor.nws_alerts
+                            - entity: $weather_alert_entity$
                               state_not: '0'
                           card:
                             type: markdown
@@ -231,20 +235,20 @@ card:
                               ---
                               
                               # NWS First Active Alert
-                                {% if state_attr('sensor.nws_alerts', 'title') != None and state_attr('sensor.nws_alerts', 'title').split(' - ')[0] is defined  %}
+                                {% if state_attr('$weather_alert_entity$', 'title') != None and state_attr('$weather_alert_entity$', 'title').split(' - ')[0] is defined  %}
                                   
-                              ## {{ states.sensor.nws_alerts.attributes.title.split(' - ')[0] }}
+                              ## {{ states.$weather_alert_entity$.attributes.title.split(' - ')[0] }}
 
-                                {{ state_attr('sensor.nws_alerts', 'display_desc').split('\n\n-\n\n')[0] }}
+                                {{ state_attr('$weather_alert_entity$', 'display_desc').split('\n\n-\n\n')[0] }}
 
                                 {% else %}
                                   none
                                 {% endif %}
                         - type: conditional
                           conditions:
-                            - entity: sensor.nws_alerts
+                            - entity: $weather_alert_entity$
                               state_not: "0"
-                            - entity: sensor.nws_alerts
+                            - entity: $weather_alert_entity$
                               state_not: "1"
                           card:
                             type: markdown
@@ -252,22 +256,22 @@ card:
                               ---
                               
                               # NWS Second Active Alert
-                              {% if state_attr('sensor.nws_alerts', 'title').split(' - ')[1] is defined %}
+                              {% if state_attr('$weather_alert_entity$', 'title').split(' - ')[1] is defined %}
                               
-                              ## {{ states.sensor.nws_alerts.attributes.title.split(' - ')[1] }}
+                              ## {{ states.$weather_alert_entity$.attributes.title.split(' - ')[1] }}
 
-                                {{ state_attr('sensor.nws_alerts', 'display_desc').split('\n\n-\n\n')[1] }}
+                                {{ state_attr('$weather_alert_entity$', 'display_desc').split('\n\n-\n\n')[1] }}
 
                               {% else %}
                                 none
                               {% endif %}
                         - type: conditional
                           conditions:
-                            - entity: sensor.nws_alerts
+                            - entity: $weather_alert_entity$
                               state_not: "0"
-                            - entity: sensor.nws_alerts
+                            - entity: $weather_alert_entity$
                               state_not: "1"
-                            - entity: sensor.nws_alerts
+                            - entity: $weather_alert_entity$
                               state_not: "2"
                           card:
                             type: markdown
@@ -275,24 +279,24 @@ card:
                               ---
                               
                               # NWS Third Active Alert
-                              {% if state_attr('sensor.nws_alerts', 'title').split(' - ')[2] is defined %}
+                              {% if state_attr('$weather_alert_entity$', 'title').split(' - ')[2] is defined %}
                               
-                              ## {{ states.sensor.nws_alerts.attributes.title.split(' - ')[2] }}
+                              ## {{ states.$weather_alert_entity$.attributes.title.split(' - ')[2] }}
 
-                                {{ state_attr('sensor.nws_alerts', 'display_desc').split('\n\n-\n\n')[2] }}
+                                {{ state_attr('$weather_alert_entity$', 'display_desc').split('\n\n-\n\n')[2] }}
 
                               {% else %}
                                 none
                               {% endif %}
                         - type: conditional
                           conditions:
-                            - entity: sensor.nws_alerts
+                            - entity: $weather_alert_entity$
                               state_not: "0"
-                            - entity: sensor.nws_alerts
+                            - entity: $weather_alert_entity$
                               state_not: "1"
-                            - entity: sensor.nws_alerts
+                            - entity: $weather_alert_entity$
                               state_not: "2"
-                            - entity: sensor.nws_alerts
+                            - entity: $weather_alert_entity$
                               state_not: "3"
                           card:
                             type: markdown
@@ -300,26 +304,26 @@ card:
                               ---
                               
                               # NWS Fourth Active Alert
-                              {% if state_attr('sensor.nws_alerts', 'title').split(' - ')[3] is defined %}
+                              {% if state_attr('$weather_alert_entity$', 'title').split(' - ')[3] is defined %}
                               
-                              ## {{ states.sensor.nws_alerts.attributes.title.split(' - ')[3] }}
+                              ## {{ states.$weather_alert_entity$.attributes.title.split(' - ')[3] }}
 
-                                {{ state_attr('sensor.nws_alerts', 'display_desc').split('\n\n-\n\n')[3] }}
+                                {{ state_attr('$weather_alert_entity$', 'display_desc').split('\n\n-\n\n')[3] }}
 
                               {% else %}
                                 none
                               {% endif %}
                         - type: conditional
                           conditions:
-                            - entity: sensor.nws_alerts
+                            - entity: $weather_alert_entity$
                               state_not: "0"
-                            - entity: sensor.nws_alerts
+                            - entity: $weather_alert_entity$
                               state_not: "1"
-                            - entity: sensor.nws_alerts
+                            - entity: $weather_alert_entity$
                               state_not: "2"
-                            - entity: sensor.nws_alerts
+                            - entity: $weather_alert_entity$
                               state_not: "3"
-                            - entity: sensor.nws_alerts
+                            - entity: $weather_alert_entity$
                               state_not: "4"
                           card:
                             type: markdown
@@ -327,11 +331,11 @@ card:
                               ---
                               
                               # NWS Fifth Active Alert
-                              {% if state_attr('sensor.nws_alerts', 'title').split(' - ')[4] is defined %}
+                              {% if state_attr('$weather_alert_entity$', 'title').split(' - ')[4] is defined %}
                               
-                              ## {{ states.sensor.nws_alerts.attributes.title.split(' - ')[4] }}
+                              ## {{ states.$weather_alert_entity$.attributes.title.split(' - ')[4] }}
 
-                                {{ state_attr('sensor.nws_alerts', 'display_desc').split('\n\n-\n\n')[4] }}
+                                {{ state_attr('$weather_alert_entity$', 'display_desc').split('\n\n-\n\n')[4] }}
 
                               {% else %}
                                 none

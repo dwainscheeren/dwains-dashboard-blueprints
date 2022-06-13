@@ -1,7 +1,7 @@
 blueprint:
   name: Weather dashboard page Blueprint
   description: An weather dashboard page by Robert Wilson based on orginial page by Leon van der Linden
-  version: "3.0"
+  version: "3.1"
   type: page
   custom_cards:
     - button-card
@@ -795,24 +795,15 @@ card:
                         - entity: sensor.season
                         - entity: sensor.moon
                         - entity: sun.sun
-                        - entity: $allergy_index_today$
-                        - entity: $current_ozone_level$
                         - entity: $weather_entity_humidity$
                           name: $Humidity$
                         - entity: $weather_entity_pressure$
                           name: $Barometric_Pressure$
-                        - type: custom:fold-entity-row
-                          head:
-                            type: section
-                            label: $Learn_More$
-                          entities:
-                            - entity: $allergy_index_today$
-                            - entity: $asthma_index_today$
-                            - entity: $wind_speed$
-                              name: $Wind_speed$
-                            - entity: $wind_bearing$
-                              name: $Wind_direction$
-                              icon: "mdi:compass"
+                        - entity: $wind_speed$
+                          name: $Wind_speed$
+                        - entity: $wind_bearing$
+                          name: $Wind_direction$
+                          icon: "mdi:compass"
                             
                     - type: entities
                       title: $Risks$
@@ -838,23 +829,34 @@ card:
                           color: darkgray !important;
                           margin-left: 2px !important;
                         }
-                      entities:
+                      entities: 
+                        - entity: $allergy_index_today$
                         - entity: $allergy_index_forecasted_average$
-                          #type: "custom:multiple-entity-row"
-                          #entities:
-                            #- entity: sensor.allergy_index_today
-                              #name: false
+                        - type: custom:entity-attributes-card
+                          entity: $allergy_index_forecasted_average$
+                          filter:
+                            include:
+                              - $allergy_index_forecasted_average$.season
+                              - $allergy_index_forecasted_average$.rating
+                              - $allergy_index_forecasted_average$.trend
+                              - $allergy_index_forecasted_average$.outlook
+                        - entity: $current_ozone_level$
+                        - entity: $asthma_index_today$
                         - entity: $asthma_index_forecasted_average$
-                          #type: "custom:multiple-entity-row"
-                          #entities:
-                           # - entity: sensor.asthma_index_today
-                            #  name: false
+                        - type: custom:entity-attributes-card
+                          entity: $asthma_index_forecasted_average$
+                          filter:
+                            include:
+                              - $asthma_index_forecasted_average$.rating
+                              - $asthma_index_forecasted_average$.trend
+                        - entity: $cold_flu_index_today$
                         - entity: $cold_flu_forecasted_average$
-                          icon: mdi:nature
-                          #type: "custom:multiple-entity-row"
-                          ##entities:
-                           # - entity: sensor.cold_flu_index_today
-                             # name: false
+                        - type: custom:entity-attributes-card
+                          entity: $cold_flu_forecasted_average$
+                          filter:
+                            include:
+                              - $cold_flu_forecasted_average$.rating
+                              - $cold_flu_forecasted_average$.trend
 
     #RADAR VIEWS
 

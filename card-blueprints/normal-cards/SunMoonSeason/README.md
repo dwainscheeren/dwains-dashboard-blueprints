@@ -35,61 +35,7 @@ To enable the season sensor, add the following lines to your configuration.yaml 
     sensor:
        - platform: season
 
- ## Sun sensors, add the following sensors lines to your configuration.yaml or your sensors file:
-
-     sensor:
-       - platform: sun2
-         entity_namespace: sun2
-         monitored_conditions:
-           - solar_midnight
-           - astronomical_dawn
-           - dawn
-           - solar_noon
-           - dusk
-           - astronomical_dusk
-           - daylight
-           - civil_daylight
-           - astronomical_daylight
-           - night
-           - civil_night
-           - astronomical_night
-           - elevation
-           - min_elevation
-           - max_elevation
- 
-       - platform: sun2
-         entity_namespace: sun2
-         latitude: xx.xxxxxxxx     # Your latitude
-         longitude: -xx.xxxxxxx    # Your longitude
-         time_zone: time zone      # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-         elevation: 116
-         monitored_conditions:
-           - sunrise
-           - sunset
-           
-       - platform: template
-         sensors:
-           solar_angle:
-             friendly_name: "Altitude"
-             unit_of_measurement: "°"
-             value_template: "{{ state_attr('sun.sun', 'elevation') }}"
-        
-       - platform: template
-         sensors:
-           solar_azimut:
-             friendly_name: "Azimut"
-             unit_of_measurement: "°"
-             value_template: "{{ state_attr('sun.sun', 'azimuth') }}"
-      
-     binary_sensor:
-       - platform: sun2
-         entity_namespace: sun2
-         monitored_conditions:
-           - elevation
-           - elevation: 3
-           - elevation:
-               above: -6
-               name: "Above the civil dawn"
+ ## Sun 2 sensors, Install and configure the [Sun 2 card](https://github.com/pnbruckner/ha-sun2)
 
 # Sun image for compass
 
@@ -99,9 +45,9 @@ To enable the season sensor, add the following lines to your configuration.yaml 
 
  ## Fields to define for each card.
 
- - Translate Sun in your language   EX : Soleil
- - Translate Moon in your language   EX : Lune
- - Translate Season in your language   EX : Saison
+ - Translate Sun in your language
+ - Translate Moon in your language 
+ - Translate Season in your language 
  - Language  Suported lamguages da, de, en, es, fr, hu, it, nl, pl, ru, sl
  - Time format 12 hour, 24 hour
 

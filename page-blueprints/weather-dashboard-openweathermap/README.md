@@ -40,7 +40,7 @@ Make sure you have following installed this can be done manually or directly via
 
     - IQVIA [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=openuv)
 
-    - [nws_alerts](https://github.com/finity69x2/nws_alerts) hard coded for now
+    - [nws_alerts](https://github.com/finity69x2/nws_alerts) no longer hard coded, but still requires for this to work properly
     
     - Sun [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=sun)
 

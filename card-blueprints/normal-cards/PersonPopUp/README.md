@@ -39,3 +39,7 @@
 #### 1.4
 
 - Add ability to translate the card
+
+#### 1.5
+
+- Add Blank Name Attribut for history-graph

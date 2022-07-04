@@ -1,7 +1,7 @@
 blueprint:
   name: TwoPersonsBlueprint
   description: Two persons bleuprint by Michel Jourdain
-  version: "1.5"
+  version: "1.6"
   type: page
   
   custom_cards:
@@ -131,6 +131,7 @@ card:
                   - type: history-graph
                     entities:
                       - entity: $13_tracker_entity$
+                        name: ' '
                     hours_to_show: 24
                     refresh_interval: 0
                     
@@ -140,6 +141,7 @@ card:
                   - type: history-graph
                     entities:
                       - entity: $14_battery_charging_entity$
+                        name: ' '
                     hours_to_show: 24
                     refresh_interval: 0
                     
@@ -205,6 +207,7 @@ card:
                   - type: history-graph
                     entities:
                       - entity: $23_tracker_entity$
+                        name: ' '
                     hours_to_show: 24
                     refresh_interval: 0
                     
@@ -214,6 +217,7 @@ card:
                   - type: history-graph
                     entities:
                       - entity: $24_battery_charging_entity$
+                        name: ' '
                     hours_to_show: 24
                     refresh_interval: 0
 

@@ -50,6 +50,10 @@
 
 - Remove ability to set dark mode for map
 
-### 1.5
+#### 1.5
 
 - Add ability to disable dark mode for map. Add translation for card.
+
+#### 1.6
+
+- Add Blank Name Attribut for history-graph

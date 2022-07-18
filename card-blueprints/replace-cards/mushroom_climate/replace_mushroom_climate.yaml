@@ -5,18 +5,18 @@ blueprint:
     name: Replace Mushroom Climate Card
     type: replace-card
     version: '1.0'
-  card:
-    type: custom:mushroom-climate-card
-    entity: $replace_with_input_entity$
-    name: $replace_with_input_name$
-    fill_container: false
-    icon_type: icon
-    hvac_modes:
-      - auto
-      - heat_cool
-      - heat
-      - cool
-      - dry
-      - fan_only
-      - 'off'
-    show_temperature_control: true    
+card:
+  type: custom:mushroom-climate-card
+  entity: $replace_with_input_entity$
+  name: $replace_with_input_name$
+  fill_container: false
+  icon_type: icon
+  hvac_modes:
+    - auto
+    - heat_cool
+    - heat
+    - cool
+    - dry
+    - fan_only
+    - 'off'
+  show_temperature_control: true    

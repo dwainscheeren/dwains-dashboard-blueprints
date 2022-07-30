@@ -23,7 +23,6 @@
 
 #### Chips whith Content
 
-![image](https://user-images.githubusercontent.com/83040228/181994440-296a42c2-3b79-49b3-b663-5e58eda57eaa.jpeg)
 
 #### Chips only whith icon
 

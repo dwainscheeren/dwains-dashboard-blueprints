@@ -1,7 +1,7 @@
 blueprint:
   name: PersonsPopUpBlueprint
   description: Person Pop-Up bleuprint by Michel Jourdain
-  version: "1.5"
+  version: "1.6"
   type: card
   
   custom_cards:

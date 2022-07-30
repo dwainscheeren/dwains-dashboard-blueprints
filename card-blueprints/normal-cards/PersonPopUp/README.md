@@ -43,3 +43,7 @@
 #### 1.5
 
 - Add Blank Name Attribut for history-graph
+
+#### 1.6
+
+- Add Blank Name Attribut for history-graph

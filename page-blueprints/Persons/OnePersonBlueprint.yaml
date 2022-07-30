@@ -1,7 +1,7 @@
 blueprint:
   name: OnePersonsBlueprint
   description: One persons bleuprint by Michel Jourdain
-  version: "1.5"
+  version: "1.6"
   type: page
   
   custom_cards:

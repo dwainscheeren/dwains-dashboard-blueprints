@@ -1,0 +1,77 @@
+blueprint:
+  name: Mushroom Alert Chips Content Card Blueprint
+  description:  Mushroom Alert Chips Content card by Michel Jourdain
+  version: "1.0"
+  type: card
+  
+  custom_cards:
+    - mushroom-chips-card
+    - mushroom-template-card
+    - card-mod
+
+  input:
+  
+    01_alert_name:
+       name: Alert name
+       description: The alert name
+       type: text-field
+  
+    02_alert_entity:
+       name: Alert entity
+       description: The alert entity
+       type: entity-picker
+       
+    03_alert_icon_off:
+       name: Alert icon off, locked...
+       description: The alert icon when is OFF
+       type: icon-picker
+       
+    04_alert_icon_on:
+       name: Alert icon on, unlocked...
+       description: The alert icon when is ON
+       type: icon-picker
+
+    05_normal_state:
+       name: Normale state
+       description: The normal state, off, locked...
+       type: text-field
+
+    06_alert_state:
+       name: Alert state
+       description: The alert state, on, unlocked...
+       type: text-field
+       
+card:
+
+  type: custom:mushroom-chips-card
+  chips:
+    - type: template
+      content: $01_alert_name$
+      icon: |-
+        {% if is_state('$02_alert_entity$', '$05_normal_state$') %}
+            $03_alert_icon_off$
+        {% elif is_state('$02_alert_entity$', '$06_alert_state$') %}
+            $04_alert_icon_on$
+        {% else %}
+           mdi:alert-circle-outline
+        {% endif %}
+      icon_color: |-
+        {% if is_state('$02_alert_entity$', '$05_normal_state$') %}
+            green
+        {% elif is_state('$02_alert_entity$', '$06_alert_state$') %}
+            red
+        {% else %}
+            yellow
+        {% endif %}
+      card_mod:
+        style: |
+          {% if is_state('$02_alert_entity$', '$06_alert_state$') %}
+             ha-card {
+             animation: borderPulse 2s ease-out infinite;
+          }
+            @keyframes borderPulse {
+            50% {
+            box-shadow: 0 0 20px red;
+            }
+          }
+          {% endif %}

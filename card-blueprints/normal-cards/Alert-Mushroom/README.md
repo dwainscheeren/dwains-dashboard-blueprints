@@ -21,10 +21,10 @@
 ### Screenshots
 **Light theme:**<br>
 
-#### Chips whith Content
+#### Chips icon Content
 
 
-#### Chips only whith icon
+#### Chips icon only
 
 
 #### Template
@@ -34,11 +34,11 @@
 
 **Dark theme:**<br>
 
-#### Chips whith Content
+#### Chips icon Content
 
 
 
-#### Chips only whith icon
+#### Chips icon only
 
 
 

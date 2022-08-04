@@ -1,7 +1,7 @@
 blueprint:
   name: TV Card Blueprint
   description: A TV Card to control samsung TVs.  Navigation is hardcoded and set up identically on each TV inorder for this to work.  SVG for youtubekids is not perfect and when new one available I will update
-  version: "1.1"
+  version: "1.2"
   type: card
   custom_cards:
     - tv-card
@@ -67,32 +67,36 @@ card:
       service_data:
         media_content_type: send_key
         media_content_id: KEY_HOME+KEY_RIGHT+KEY_RIGHT+KEY_RIGHT+KEY_ENTER
-        entity_id: media_player.den_tv_2
+        entity_id: $TV_entity$
     prime:
       icon: si:primevideo
+      service: media_player.play_media
       service_data:
         media_content_type: send_key
         media_content_id: KEY_HOME+KEY_RIGHT+KEY_RIGHT+KEY_RIGHT+KEY_RIGHT+KEY_ENTER
-        entity_id: media_player.den_tv_2
+        entity_id: $TV_entity$
     youtube:
       icon: si:youtube
+      service: media_player.play_media
       service_data:
         media_content_type: send_key
         media_content_id: KEY_HOME+KEY_RIGHT+KEY_RIGHT+KEY_RIGHT+KEY_ENTER
-        entity_id: media_player.den_tv_2
+        entity_id: $TV_entity$
     youtubekids:
       icon: youtubekids
+      service: media_player.play_media
       service_data:
         media_content_type: send_key
         media_content_id: KEY_HOME+KEY_RIGHT+KEY_RIGHT+KEY_RIGHT+KEY_ENTER
-        entity_id: media_player.den_tv_2
+        entity_id: $TV_entity$
     AppleTV:
       icon: si:appletv
+      service: media_player.play_media
       service_data:
         media_content_type: send_key
         media_content_id: KEY_HOME+KEY_RIGHT+KEY_RIGHT+KEY_RIGHT+KEY_RIGHT+KEY_RIGHT+KEY_ENTER
-        entity_id: media_player.den_tv_2
-  entity: media_player.den_tv_2
+        entity_id: $TV_entity$
+  entity: $TV_entity$
   power_row:
     - power
   channel_row:

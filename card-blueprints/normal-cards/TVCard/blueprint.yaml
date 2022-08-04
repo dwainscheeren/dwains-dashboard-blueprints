@@ -80,21 +80,21 @@ card:
       service: media_player.play_media
       service_data:
         media_content_type: send_key
-        media_content_id: KEY_HOME+KEY_RIGHT+KEY_RIGHT+KEY_RIGHT+KEY_ENTER
+        media_content_id: KEY_HOME+KEY_RIGHT+KEY_RIGHT+KEY_ENTER
         entity_id: $TV_entity$
     youtubekids:
       icon: youtubekids
       service: media_player.play_media
       service_data:
         media_content_type: send_key
-        media_content_id: KEY_HOME+KEY_RIGHT+KEY_RIGHT+KEY_RIGHT+KEY_ENTER
+        media_content_id: KEY_HOME+KEY_RIGHT+KEY_ENTER
         entity_id: $TV_entity$
     AppleTV:
       icon: si:appletv
       service: media_player.play_media
       service_data:
         media_content_type: send_key
-        media_content_id: KEY_HOME+KEY_RIGHT+KEY_RIGHT+KEY_RIGHT+KEY_RIGHT+KEY_RIGHT+KEY_ENTER
+        media_content_id: ST_HDMI1
         entity_id: $TV_entity$
   entity: $TV_entity$
   power_row:

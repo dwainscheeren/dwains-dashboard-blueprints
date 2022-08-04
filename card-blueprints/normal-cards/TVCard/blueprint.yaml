@@ -1,7 +1,7 @@
 blueprint:
   name: TV Card Blueprint
   description: A TV Card to control samsung TVs.  Navigation is hardcoded and set up identically on each TV inorder for this to work.  SVG for youtubekids is not perfect and when new one available I will update
-  version: "1.0"
+  version: "1.1"
   type: page
   custom_cards:
     - tv-card

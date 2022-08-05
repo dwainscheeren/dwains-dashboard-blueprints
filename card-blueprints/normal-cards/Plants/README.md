@@ -37,3 +37,6 @@
 
 #### 1.1
 - Adapt the Blueprint to the new version of Bluetooth for the Home Assistant Core version 2022.8
+
+#### 1.1.1
+- Correction to illuminance graph

@@ -20,6 +20,11 @@ All of the following can be found on HACS
 - Copy the `blueprint.yaml` content into the Blueprint installation codeblock.
 
 ## Result
-
+___
 !![image](https://github.com/rwilson131/dwains-dashboard-blueprints/blob/main/card-blueprints/normal-cards/TVCard/TVCardScreenShot.png)
 
+___
+---
+Enjoy the work from Robert Wilson?
+
+[![coffee](https://www.buymeacoffee.com/assets/img/custom_images/black_img.png)](https://www.buymeacoffee.com/rwilson131)

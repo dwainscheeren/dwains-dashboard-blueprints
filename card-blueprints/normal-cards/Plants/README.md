@@ -1,19 +1,17 @@
 # Plants Blueprint
 
-This Blueprint is a blueprint version of the plants addon created by [Klumpke](https://github.com/dwainscheeren/dwains-dashboard-addons/tree/for-dd-2.0/rooms/plant).
-
 ## Installation of this Blueprint
-- Install flower-card from [HACS]
+- Install button-card from [HACS]
 - Install mini-graph-card from [HACS]
 - Install card-mod from [HACS]
+- Install bar-card from [HACS]
 
-- Follow the [Lovelace Flower Card instructions](https://github.com/thomasloven/lovelace-flower-card#instructions) to create the `data.js` file and get flower images.
+- Add image plant.jpeg in /local/images/plant.jpeg
 
 - Copy the content of the blueprint file `blueprint.yaml` into the Blueprint YAML code.
 
  ## Fields to defines.
- - Plant entity
- - Plant species
+ - Plant variety entity
  - Translate temperature in your language
  - Plant entity temprerature
  - Translate moisture in your language 
@@ -22,17 +20,23 @@ This Blueprint is a blueprint version of the plants addon created by [Klumpke](h
  - Plant entity illuminance
  - Translate conductivity in your language
  - Plant entity conductivity
- - Plant entity battery
+ - Plant entity signal strength
 
 ### Screenshots
 **Light theme:**<br>
 
-![image](https://user-images.githubusercontent.com/83040228/164532180-cfd913f5-f806-486e-a6ed-671f41209bf7.jpeg)
+![image](https://user-images.githubusercontent.com/83040228/182883162-8f174d60-0ca7-44af-9846-6005e548ea45.jpeg)
 
 **Dark theme:**<br>
 
-![image](https://user-images.githubusercontent.com/83040228/164532207-768c1f6b-5ba6-42b1-820b-b4a45eabf546.jpeg)
+![image](https://user-images.githubusercontent.com/83040228/182883190-1f293f1f-9298-49f7-8dcd-aab847fc1ebd.jpeg)
 
 ### Changelog
 #### 1.0
 - First release
+
+#### 1.1
+- Adapt the Blueprint to the new version of Bluetooth for the Home Assistant Core version 2022.8
+
+#### 1.1.1
+- Correction to illuminance graph

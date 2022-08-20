@@ -1,5 +1,5 @@
 # This is how to add TV Card Dwains Dashboard Blueprint
-This is a custom blueprint for my case which include a house full of samsung tvs.  This has hardcoded references due to the fact that I set up all of my TV with the exact same apps in the first 4 locations on that Apps Bar on the Home menu on the TVs. 
+This is a custom blueprint for my case which include a house full of samsung tvs.  This has hardcoded references due to the fact that I set up all of my TVs with the exact same apps in the first 4 locations on that Apps Bar on the Home menu. 
 
 I have switched to buttons instead of track pad and I have it as the pop up card for my TV entities 
 
@@ -24,7 +24,6 @@ ___
 !![image](https://github.com/rwilson131/dwains-dashboard-blueprints/blob/main/card-blueprints/normal-cards/TVCard/TVCardScreenShot.png)
 
 ___
----
 Enjoy the work from Robert Wilson?
 
 [![coffee](https://www.buymeacoffee.com/assets/img/custom_images/black_img.png)](https://www.buymeacoffee.com/rwilson131)

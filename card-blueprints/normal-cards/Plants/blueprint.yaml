@@ -14,7 +14,7 @@ blueprint:
   
     01_plant_variety:
        name: Plant variety
-       description: The ariety of the plant
+       description: The variety of the plant
        type: text-field
   
     02_translate_temprerature:
@@ -61,6 +61,11 @@ blueprint:
        name: Plant signal strength
        description: Plant signal strength
        type: entity-picker
+
+    11_plant_entity_picture:
+       name: Plant picture path
+       description: Plant image path (/local/images/plant.jpg)
+       type: text-field
        
 card:
 
@@ -89,7 +94,7 @@ card:
               tap_action: none
               hold_action: none
               double_tap_action: none
-              entity_picture: /local/images/plant.jpeg
+              entity_picture: $11_plant_entity_picture$
 
             - type: custom:bar-card
               item_classes: 'col-xs-12 col-sm-4'

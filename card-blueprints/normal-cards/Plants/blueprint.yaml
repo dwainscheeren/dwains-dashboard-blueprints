@@ -1,7 +1,7 @@
 blueprint:
   name: Plants card Blueprint
   description: Plants card by Michel Jourdain
-  version: "1.1.1"
+  version: "1.1.2"
   type: card
   
   custom_cards:

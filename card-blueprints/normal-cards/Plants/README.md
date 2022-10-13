@@ -10,7 +10,7 @@
 
 - Copy the content of the blueprint file `blueprint.yaml` into the Blueprint YAML code.
 
- ## Fields to defines.
+ ## Fields to define.
  - Plant variety entity
  - Translate temperature in your language
  - Plant entity temprerature
@@ -21,6 +21,7 @@
  - Translate conductivity in your language
  - Plant entity conductivity
  - Plant entity signal strength
+ - Plant entity picture path
 
 ### Screenshots
 **Light theme:**<br>
@@ -40,3 +41,6 @@
 
 #### 1.1.1
 - Correction to illuminance graph
+
+#### 1.1.2
+- Added image path

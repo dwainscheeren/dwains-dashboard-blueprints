@@ -21,8 +21,8 @@
 **Light theme:**<br>
 
 ![8C270DF4-E065-4A92-8223-56AF51E8788A](https://user-images.githubusercontent.com/83040228/195901004-5437a8c7-d4ec-4cb9-a4ad-498c7c301bb5.png)
-![F4E941A3-7FC9-47AB-96ED-E57D591D7D82](https://user-images.githubusercontent.com/83040228/195901013-3214ea88-0ac3-4e1a-a663-24404e2a6a18.png)
 ![C5E0EEE0-418D-40BB-82C5-27C7E15C9EAE](https://user-images.githubusercontent.com/83040228/195901017-c787e782-8e97-400e-b30c-bd8336b0fa9d.png)
+![F4E941A3-7FC9-47AB-96ED-E57D591D7D82](https://user-images.githubusercontent.com/83040228/195901013-3214ea88-0ac3-4e1a-a663-24404e2a6a18.png)
 
 
 **Dark theme:**<br>

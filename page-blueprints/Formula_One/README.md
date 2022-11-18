@@ -3,6 +3,7 @@
 ### Installation
 
 - Install button-card from [HACS]
+- Install state-switch from [HACS]
 - Install [formulaone api](https://github.com/delzear/hass-formulaoneapi/).
 - Install [formulaone card](https://github.com/marcokreeft87/formulaone-card/). 
 - Copy the content of the blueprint file `blueprint.yaml` into the Blueprint YAML code.

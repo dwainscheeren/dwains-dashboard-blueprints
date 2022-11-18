@@ -9,6 +9,7 @@ blueprint:
 
     - button-card
     - formulaone-card
+    - state-switch
 
   input:
   

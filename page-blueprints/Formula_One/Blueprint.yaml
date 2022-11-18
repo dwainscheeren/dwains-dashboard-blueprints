@@ -1,7 +1,7 @@
 blueprint:
   name: Formula One Blueprint
-  description: Formula One Blueprint by Michel Jourdain
-  version: "1.0"
+  description: Formula One Blueprint by Michel Jourdain 
+  version: "2.0"
   
   type: page
   
@@ -9,12 +9,13 @@ blueprint:
 
     - button-card
     - formulaone-card
+    - state-switch
 
   input:
   
-    10_translate_race:
-      name: Race un your language
-      description: Translate race in your language
+    10_translate_last:
+      name: Race in your language
+      description: Translate last (from last race) in your language
       type: text-field
       
     11_translate_next_race:
@@ -38,12 +39,12 @@ blueprint:
       type: text-field
       
     22_translate_constructors_standings:
-      name:  Constructors standings un your language
+      name:  Constructors standings in your language
       description: Translate constructor standings in your language
       type: text-field
       
     30_translate_schedule:
-      name: Schedule un your language
+      name: Schedule in your language
       description: Translate schedule in your language
       type: text-field
       
@@ -55,193 +56,175 @@ blueprint:
 card:
 
   type: custom:dwains-flexbox-card
-  items_classes: 'col-xs-12'
+  items_classes: col-xs-12
   cards:
-    - type: vertical-stack
-      item_classes: 'col-xs-12 col-sm-6'
-      cards:         
-         
-          - type: custom:state-switch
-            entity: hash
-            default: page01
-            states:
-              page01:
-                type: vertical-stack
-                cards:
-                  - type: custom:dwains-flexbox-card
-                    padding: true
-                    cards:
-                      - type: horizontal-stack
-                        cards:
-                                 
-                          - type: custom:button-card
-                            name: $10_translate_race$
-                            template: button_card_templates_race_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page01"
-                            styles:
-                              name:
-                                 - color: lightgreen
-                          - type: custom:button-card
-                            name: $20_translate_stand$
-                            template: button_card_templates_race_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page02"
-                          - type: custom:button-card
-                            name: $30_translate_schedule$
-                            template: button_card_templates_race_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page03"
+  - type: vertical-stack
+    item_classes: "col-xs-12 col-sm-5"
+    cards:
 
-                  - type: custom:formulaone-card
-                    card_type: next_race
-                    sensor: sensor.formula_one_sensor_races
-                    title: $11_translate_next_race$
-                    date_locale: $40_local_contry$
-                    image_clickable: false
- 
-              page02:
-                type: vertical-stack
-                cards:
-                  - type: custom:dwains-flexbox-card
-                    padding: true
-                    cards:
-                      - type: horizontal-stack
-                        cards:
-                                 
-                          - type: custom:button-card
-                            name: $10_translate_race$
-                            template: button_card_templates_race_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page01"
-                          - type: custom:button-card
-                            name: $20_translate_stand$
-                            template: button_card_templates_race_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page02"
-                            styles:
-                              name:
-                                 - color: lightgreen
-                          - type: custom:button-card
-                            name: $30_translate_schedule$
-                            template: button_card_templates_race_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page03"
-                
-                  - type: custom:formulaone-card
-                    card_type: driver_standings
-                    sensor: sensor.formula_one_sensor_drivers
-                    title: $21_translate_drivers_standings$
-                          
-              page03:
-                type: vertical-stack
-                cards:
-                  - type: custom:dwains-flexbox-card
-                    padding: true
-                    cards:
-                      - type: horizontal-stack
-                        cards:
-                          - type: custom:button-card
-                            name: $10_translate_race$
-                            template: button_card_templates_race_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page01"
-                          - type: custom:button-card
-                            name: $20_translate_stand$
-                            template: button_card_templates_race_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page02"
-                          - type: custom:button-card
-                            name: $30_translate_schedule$
-                            template: button_card_templates_race_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page03"
-                            styles:
-                              name:
-                                 - color: lightgreen
-                                 
-                  - type: markdown
-                    content: >
-                     ![Image](https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/F1.svg/1280px-F1.svg.png)
-                          
-    - type: vertical-stack
-      item_classes: 'col-xs-12 col-sm-6'
-      cards:         
- 
-          - type: custom:state-switch
-            entity: hash
-            default: page01
-            states:
-            
-              page01:
-                type: vertical-stack
-                cards:
-                
-                  - type: 'custom:button-card'
-                    color_type: blank-card
-                    template: button_card_templates_race_space
-                       
-                  - type: custom:formulaone-card
-                    card_type: last_result
-                    sensor: sensor.formula_one_sensor_last_result
-                    title: $12_translate_last_result$
+      - type: markdown
+        content: "![Image](https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/F1.svg/1280px-F1.svg.png)"
 
-                    
-              page02:
-                type: vertical-stack
-                cards:
-                  - type: 'custom:button-card'
-                    color_type: blank-card
-                    template: button_card_templates_race_space
-                       
-                  - type: custom:formulaone-card
-                    card_type: constructor_standings
-                    sensor: sensor.formula_one_sensor_constructors
-                    title: $22_translate_constructors_standings$
-                    
-              page03:
-                type: vertical-stack
-                cards:
-                  - type: 'custom:button-card'
-                    color_type: blank-card
-                    template: button_card_templates_race_space
-                                 
-                  - type: custom:formulaone-card
-                    card_type: schedule
-                    sensor: sensor.formula_one_sensor_races
-                    title: $30_translate_schedule$
-                    date_locale: $40_local_contry$
+      - card_type: next_race
+        date_locale: $40_local_contry$
+        image_clickable: false
+        sensor: sensor.formula_one_sensor_races
+        title: $11_translate_next_race$
+        type: custom:formulaone-card
 
+  - type: vertical-stack
+    item_classes: "col-xs-12 col-sm-7"
+    cards:
 
-button_card_templates:
-  button_card_templates_race_heading:
-    show_icon: false
-    styles:
-      card:
-      - box-shadow: none
-      - padding: 6px 0 0 0
-      - background: transparent
-      - width: 100px
-      name:
-      - font-weight: bold
-      - justify-self: start
-      - font-size: 16px
-      - padding-left: 1px
+        - type: custom:state-switch
+          default: last_race
+          entity: hash
+          states:
+            last_race:
+              type: vertical-stack
+              cards:
+                - type: custom:dwains-flexbox-card
+                  padding: true
+                  cards:
+                    - type: horizontal-stack
+                      cards:
+                        - name: $10_translate_last$
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#last_race'
+                          type: custom:button-card
+                          styles:
+                            card:
+                              - height: 30px
+                              - width: 115px                              
+                            name:
+                              - color: lightblue
+                              - font-weight: bold
+                              - font-size: 16px
+                        - name: $20_translate_stand$
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#stands'
+                          type: custom:button-card
+                          styles:
+                            card:
+                              - height: 30px
+                              - width: 115px                              
+                            name:
+                              - font-size: 16px                          
+                        - name: $30_translate_schedule$
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#kalender'
+                          type: custom:button-card
+                          styles:
+                            card:
+                              - height: 30px
+                              - width: 115px                              
+                            name:
+                              - font-size: 16px                             
+                - card_type: last_result
+                  sensor: sensor.formula_one_sensor_last_result
+                  title: $12_translate_last_result$
+                  type: custom:formulaone-card
 
-  button_card_templates_race_space:
-    show_icon: false
-    styles:
-      card:
-      - box-shadow: none
-      - padding: 6px 0 0 0
-      - background: transparent
-      - height: 59px
+            stands:
+              type: vertical-stack
+              cards:
+                - type: custom:dwains-flexbox-card
+                  padding: true
+                  cards:
+                    - type: horizontal-stack
+                      cards:
+                        - name: $10_translate_last$
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#last_race'
+                          type: custom:button-card
+                          styles:
+                            card:
+                              - height: 30px
+                              - width: 115px                              
+                            name:
+                              - font-size: 16px                             
+                        - name: $20_translate_stand$
+                          styles:
+                            card:
+                              - height: 30px
+                              - width: 115px                              
+                            name:
+                              - color: lightblue
+                              - font-weight: bold
+                              - font-size: 16px
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#stands'
+                          type: custom:button-card
+                        - name: $30_translate_schedule$
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#kalender'
+                          type: custom:button-card
+                          styles:
+                            card:
+                              - height: 30px
+                              - width: 115px                              
+                            name:
+                              - font-size: 16px                             
+                - card_type: driver_standings
+                  sensor: sensor.formula_one_sensor_drivers
+                  title: $21_translate_drivers_standings$
+                  type: custom:formulaone-card
+                - card_type: constructor_standings
+                  sensor: sensor.formula_one_sensor_constructors
+                  title: $22_translate_constructors_standings$
+                  type: custom:formulaone-card
+
+            kalender:
+              type: vertical-stack
+              cards:
+                - type: custom:dwains-flexbox-card
+                  padding: true
+                  cards:
+                    - type: horizontal-stack
+                      cards:
+                        - name: $10_translate_last$
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#last_race'
+                          type: custom:button-card
+                          styles:
+                            card:
+                              - height: 30px
+                              - width: 115px                              
+                            name:
+                              - font-size: 16px                             
+                        - name: $20_translate_stand$
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#stands'
+                          type: custom:button-card
+                          styles:
+                            card:
+                              - height: 30px
+                              - width: 115px                              
+                            name:
+                              - font-size: 16px                             
+                        - name: $30_translate_schedule$
+                          styles:
+                            card:
+                              - height: 30px
+                              - width: 115px                              
+                            name:
+                              - color: lightblue
+                              - font-weight: bold
+                              - font-size: 16px
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#kalender'
+                          type: custom:button-card
+                - card_type: schedule
+                  date_locale: $40_local_contry$
+                  sensor: sensor.formula_one_sensor_races
+                  title: $30_translate_schedule$
+                  type: custom:formulaone-card     

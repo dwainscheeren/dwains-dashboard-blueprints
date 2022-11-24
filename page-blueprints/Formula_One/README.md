@@ -45,3 +45,6 @@
 
 #### 2.0
 - Update code and layout by Dutch_Deadpoo. Thanks
+
+#### 2.1
+- Add flag and team to the driver standings

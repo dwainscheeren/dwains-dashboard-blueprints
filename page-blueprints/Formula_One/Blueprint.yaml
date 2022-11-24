@@ -1,7 +1,7 @@
 blueprint:
   name: Formula One Blueprint
   description: Formula One Blueprint by Michel Jourdain 
-  version: "2.0"
+  version: "2.1"
   
   type: page
   
@@ -174,6 +174,9 @@ card:
                 - card_type: driver_standings
                   sensor: sensor.formula_one_sensor_drivers
                   title: $21_translate_drivers_standings$
+                  standings:
+                    show_flag: true
+                    show_team: true
                   type: custom:formulaone-card
                 - card_type: constructor_standings
                   sensor: sensor.formula_one_sensor_constructors

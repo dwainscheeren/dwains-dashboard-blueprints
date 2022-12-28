@@ -5,17 +5,33 @@
 - Install button-card from [HACS]
 - Install state-switch from [HACS]
 - Install [formulaone api](https://github.com/delzear/hass-formulaoneapi/).
-- Install [formulaone card](https://github.com/marcokreeft87/formulaone-card/). 
+- Install formulaone-card from [HACS]. 
 - Copy the content of the blueprint file `blueprint.yaml` into the Blueprint YAML code.
 
  ## Fields to defines.
- - Translate race in your language
- - Translate next race in your language
- - Translate last result in your language
- - Translate stand in your language
- - Translate drivers standings in your language
- - Translate constructor standings in your language
+ - Translate Race in your language
+ - Translate Next race in your language
+ - Translate Last result in your language
+ - Translate Date in your language
+ - Translate Practice in your language
+ - Translate Race name in your language
+ - Translate Circuit name in your language
+ - Translate Location in your language
+ - Translate Sprint in your language
+ - Translate Qualifying in your language
+ - Translate Stand in your language
+ - Translate Drivers standings in your language
+ - Translate Constructor standings in your language
+ - Translate End of season in your language
+ - Translate Points in your language
+ - Translate Driver in your language
+ - Translate Grid in your language
+ - Translate Status in your language
+ - Translate Wins in your language
+ - Translate Team in your language
  - Translate schedule in your language
+ - Translate Constructor in your language
+ - Translate Time in your language
  - Your contry for the race time. Ex, fr, ca, nl..
 
 ### Screenshots
@@ -40,11 +56,19 @@
 ![8F42BCFE-A69C-4891-8F76-E69AF5E82A8E](https://user-images.githubusercontent.com/83040228/202733145-2643985f-a936-40e0-9331-7f60b7f641ff.png)
 
 ### Changelog
-#### 1.0
-- First release
 
-#### 2.0
-- Update code and layout by Dutch_Deadpoo. Thanks
+#### 3.0
+- Add new translation possibilities.
 
 #### 2.1
 - Add flag and team to the driver standings
+
+#### 2.0
+- Update code and layout by Dutch_Deadpool. Thanks
+
+#### 1.0
+- First release
+
+
+
+

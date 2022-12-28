@@ -168,7 +168,6 @@ card:
   - type: vertical-stack
     item_classes: "col-xs-12 col-sm-7"
     cards:
-
         - type: custom:state-switch
           default: last_race
           entity: hash

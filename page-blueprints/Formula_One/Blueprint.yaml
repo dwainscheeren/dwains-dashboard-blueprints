@@ -12,6 +12,11 @@ blueprint:
     - state-switch
 
   input:
+ 
+    09_translate_last:
+      name: Last in your language
+      description: Translate Last Race in your language
+      type: text-field 
   
     10_translate_race:
       name: Race in your language
@@ -168,6 +173,7 @@ card:
   - type: vertical-stack
     item_classes: "col-xs-12 col-sm-7"
     cards:
+
         - type: custom:state-switch
           default: last_race
           entity: hash
@@ -180,7 +186,7 @@ card:
                   cards:
                     - type: horizontal-stack
                       cards:
-                        - name: $10_translate_race$
+                        - name: $09_translate_last$
                           tap_action:
                             action: navigate
                             navigation_path: '#last_race'
@@ -233,7 +239,7 @@ card:
                   cards:
                     - type: horizontal-stack
                       cards:
-                        - name: $10_translate_race$
+                        - name: $09_translate_last$
                           tap_action:
                             action: navigate
                             navigation_path: '#last_race'
@@ -297,7 +303,7 @@ card:
                   cards:
                     - type: horizontal-stack
                       cards:
-                        - name: $10_translate_race$
+                        - name: $09_translate_last$
                           tap_action:
                             action: navigate
                             navigation_path: '#last_race'
@@ -342,4 +348,4 @@ card:
                     'location' : '$17_translate_location$$'
                     'endofseason' : '$23_translate_endofseason$ !'
                     'time' : '$32_translate_time$'
-                  type: custom:formulaone-card
+                  type: custom:formulaone-card 

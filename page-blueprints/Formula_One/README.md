@@ -9,6 +9,8 @@
 - Copy the content of the blueprint file `blueprint.yaml` into the Blueprint YAML code.
 
  ## Fields to defines.
+ 
+ - Translate Last in your language
  - Translate Race in your language
  - Translate Next race in your language
  - Translate Last result in your language

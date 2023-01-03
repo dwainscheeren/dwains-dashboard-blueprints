@@ -345,7 +345,7 @@ card:
                   translations: 
                     'date' : '$13_translate_date$'
                     'race' : '$10_translate_race$'
-                    'location' : '$17_translate_location$$'
+                    'location' : '$17_translate_location$'
                     'endofseason' : '$23_translate_endofseason$ !'
                     'time' : '$32_translate_time$'
                   type: custom:formulaone-card 

@@ -19,6 +19,7 @@
  - Translate Race name in your language
  - Translate Circuit name in your language
  - Translate Location in your language
+ - Translate City in your language
  - Translate Sprint in your language
  - Translate Qualifying in your language
  - Translate Stand in your language

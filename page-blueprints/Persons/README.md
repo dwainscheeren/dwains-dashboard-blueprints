@@ -9,7 +9,7 @@
 - Install button-card from HACS
 - Install mushroom-person-card from HACS
 
-- There are four blueprints depending on how many people you want to display.  There is a blueprint for one person, two persons, three persons and four persons.
+- There are five blueprints depending on how many people you want to display.  There is a blueprint for one person, two persons, three persons, four persons and five persons.
 
 - Copy the content of the blueprint file `xxxxPersonsBlueprint.yaml` into the Blueprint YAML code.
 

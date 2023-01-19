@@ -202,7 +202,6 @@ card:
         - card_type: next_race
           date_locale: $40_local_contry$
           image_clickable: false
-          sensor: sensor.formula_one_sensor_races
           title: $03_translate_next_race$
           translations:
             "date": "$05_translate_date$"
@@ -329,7 +328,6 @@ card:
                             name:
                               - font-size: 16px
                 - card_type: driver_standings
-                  sensor: sensor.formula_one_sensor_drivers
                   title: $14_translate_drivers_standings$
                   standings:
                     show_flag: true

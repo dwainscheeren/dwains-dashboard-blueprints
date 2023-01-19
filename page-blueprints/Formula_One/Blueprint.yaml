@@ -339,7 +339,6 @@ card:
                     "driver": "$18_translate_driver$"
                   type: custom:formulaone-card
                 - card_type: constructor_standings
-                  sensor: sensor.formula_one_sensor_constructors
                   title: $15_translate_constructors_standings$
                   translations:
                     "constructor": "$24_translate_constructor$"
@@ -392,7 +391,6 @@ card:
                           type: custom:button-card
                 - card_type: schedule
                   date_locale: $40_local_contry$
-                  sensor: sensor.formula_one_sensor_races
                   title: $23_translate_schedule$
                   translations:
                     "date": "$05_translate_date$"

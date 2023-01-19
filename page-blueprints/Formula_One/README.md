@@ -4,7 +4,6 @@
 
 - Install button-card from [HACS]
 - Install state-switch from [HACS]
-- Install [formulaone api](https://github.com/delzear/hass-formulaoneapi/).
 - Install formulaone-card from [HACS]. 
 - Copy the content of the blueprint file `blueprint.yaml` into the Blueprint YAML code.
 
@@ -35,6 +34,10 @@
  - Translate schedule in your language
  - Translate Constructor in your language
  - Translate Time in your language
+ - Translate Day abbreviation in your language Ex - d, j
+ - Translate Hour abbreviation in your language Ex - h
+ - Translate minute abbreviation in your language Ex - m
+ - Translate second abbreviation in your language Ex - s
  - Your contry for the race time. Ex, fr, ca, nl..
 
 ### Screenshots
@@ -59,6 +62,11 @@
 ![8F42BCFE-A69C-4891-8F76-E69AF5E82A8E](https://user-images.githubusercontent.com/83040228/202733145-2643985f-a936-40e0-9331-7f60b7f641ff.png)
 
 ### Changelog
+
+#### 4.0
+- Remove Formula One Api as a prerequisite. The card no longer uses it
+- Add countdown card
+- Add translations for countdown card.
 
 #### 3.0
 - Add new translation possibilities.

@@ -1,7 +1,7 @@
 blueprint:
   name: Formula One Blueprint
   description: Formula One Blueprint by Michel Jourdain
-  version: 5.0
+  version: "5.0"
 
   type: page
 

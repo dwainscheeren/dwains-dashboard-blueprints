@@ -6,7 +6,6 @@ blueprint:
   type: page
 
   custom_cards:
-    - button-card
     - formulaone-card
     - tabbed-card
 

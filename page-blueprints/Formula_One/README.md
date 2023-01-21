@@ -68,6 +68,7 @@
 
 #### 5.0
 - Replace state-switch card by tabbed-card card.
+- Review layout.
 
 #### 4.0
 - Remove Formula One Api as a prerequisite. The card no longer uses it.

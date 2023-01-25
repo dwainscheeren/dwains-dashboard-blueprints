@@ -2,8 +2,6 @@
 
 ## Installation of this Blueprint
 
-- This Blueprint works best with Dwains Dashboard version 3.1.0 or newer.
-
 - Install mini-graph-card from HACS
 - Install tabbed-card from HACS
 - Install mushroom-person-card from HACS

@@ -85,8 +85,7 @@ card:
     isMinWidthIndicator: true
     stacked: false
   styles:
-    --mdc-theme-primary: orange
-    --mdc-tab-text-label-color-default: lightblue
+    --mdc-theme-primary: red
   options: {}
   tabs:
 

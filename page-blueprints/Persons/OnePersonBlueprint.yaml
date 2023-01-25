@@ -1,12 +1,12 @@
 blueprint:
   name: OnePersonsBlueprint
   description: One persons bleuprint by Michel Jourdain
-  version: "1.6"
+  version: "2.0"
   type: page
   
   custom_cards:
+    - tabbed-card
     - mini-graph-card
-    - button-card
     - mushroom-person-card
     
   input:
@@ -29,27 +29,27 @@ blueprint:
       type: entity-picker
     15_battery_level_entity:
       name: Battery level person one
-      description: Battery level entity of person one
+      description: Battery level entity person one
       type: entity-picker
-      
-    50_translate_displacements_last_24_hours:
+
+    60_translate_displacements_last_24_hours:
       name: Translate displacements last 24 hours
       description: Translate displacements last 24 hours in your language
       type: text-field 
-    51_translate_battery_charge_level:
+    61_translate_battery_charge_level:
       name: Translate Battery charge level
       description: Translate Battery charge level in your language
       type: text-field  
-    52_translate_battery_charging:
+    62_translate_battery_charging:
       name: Translate Battery charging
       description: Translate Battery charging in your language
       type: text-field    
-    53_translate_map:
+    63_translate_map:
       name: Translate Map
       description: Translate Map in your language
       type: text-field    
  
-    60_dark_mode:
+    70_dark_mode:
        name: Dark mode map
        description: Dark mode for map
        type: checkbox
@@ -57,85 +57,92 @@ blueprint:
 
 card:
 
-# Persons
+  type: custom:tabbed-card
+  attributes:
+    isFadingIndicator: false
+    minWidth: true
+    isMinWidthIndicator: true
+    stacked: false
+  styles:
+    --mdc-theme-primary: orange
+    --mdc-tab-text-label-color-default: lightblue
+  options: {}
+  tabs:
 
-  type: custom:dwains-flexbox-card
-  items_classes: 'col-xs-12'
-  cards:
-    - type: vertical-stack
-      item_classes: 'col-xs-12 col-sm-7'
-      cards:         
-         
-        - type: custom:mushroom-person-card
-          entity: $12_person_entity$
-          name: $11_person_name$
-          icon: mdi:account-plus
-          hide_name: false
-          use_entity_picture: true
-          hide_state: false
+    - card:
+            
+         type: custom:dwains-flexbox-card
+         items_classes: col-xs-12
+         cards:
 
-        - type: custom:dwains-heading-card
-          title: $50_translate_displacements_last_24_hours$
-                    
-        - type: history-graph
-          entities:
-            - entity: $13_tracker_entity$
-              name: ' '
-          hours_to_show: 24
-          refresh_interval: 0
-                    
-        - type: custom:dwains-heading-card
-          title: $52_translate_battery_charging$
+               - type: vertical-stack
+                 item_classes: col-xs-12 col-sm-7
+                 cards:            
+            
+                  - type: custom:mushroom-person-card
+                    entity: $12_person_entity$
+                    name: $11_person_name$
+                    icon: mdi:account-plus
+                    hide_name: false
+                    use_entity_picture: true
+                    hide_state: false
 
-        - type: history-graph
-          entities:
-            - entity: $14_battery_charging_entity$
-              name: ' '
-          hours_to_show: 24
-          refresh_interval: 0
+                  - type: custom:dwains-heading-card
+                    title: $60_translate_displacements_last_24_hours$
                     
-        - type: custom:dwains-heading-card
-          title: $51_translate_battery_charge_level$
+                  - type: history-graph
+                    entities:
+                      - entity: $13_tracker_entity$
+                        name: ' '
+                    hours_to_show: 24
+                    refresh_interval: 0
+                    
+                  - type: custom:dwains-heading-card
+                    title: $62_translate_battery_charging$
+
+                  - type: history-graph
+                    entities:
+                      - entity: $14_battery_charging_entity$
+                        name: ' '
+                    hours_to_show: 24
+                    refresh_interval: 0
+                    
+                  - type: custom:dwains-heading-card
+                    title: $61_translate_battery_charge_level$
           
-        - type: 'custom:mini-graph-card'
-          entities: 
-            - entity: $15_battery_level_entity$
-          line_color: green
-          hours_to_show: 24
-          line_width: 2
-          hour24: true
-          points_per_hour: 2
-          decimals: 0
-          show:
-            animate: true
-            fill: true
-            icon: false
-            labels: false
-            legend: false
-            name: false
-            graph: bar
-            extrema: false
-            average: false   
-                          
-    - type: vertical-stack
-      item_classes: 'col-xs-12 col-sm-5'
-      cards:         
-      
-        - type: vertical-stack
-          cards:
-                
-            - type: 'custom:button-card'
-              color_type: blank-card
-              styles:
-                card:
-                  - height: 59px
-                       
-            - type: custom:dwains-heading-card
-              title: $53_translate_map$
+                  - type: 'custom:mini-graph-card'
+                    entities: 
+                      - entity: $15_battery_level_entity$
+                    line_color: green
+                    hours_to_show: 24
+                    line_width: 2
+                    hour24: true
+                    points_per_hour: 2
+                    decimals: 0
+                    show:
+                      animate: true
+                      fill: true
+                      icon: false
+                      labels: false
+                      legend: false
+                      name: false
+                      graph: bar
+                      extrema: false
+                      average: false
+                      
+               - type: vertical-stack
+                 item_classes: col-xs-12 col-sm-5
+                 cards:     
+                 
+                  - type: custom:dwains-heading-card
+                    title: $63_translate_map$
         
-            - type: map
-              entities:
-                 - entity: $13_tracker_entity$
-              hours_to_show: 24
-              dark_mode: $60_dark_mode$
-              default_zoom: 12
+                  - type: map
+                    entities:
+                      - entity: $13_tracker_entity$
+                    hours_to_show: 24
+                    dark_mode: $70_dark_mode$
+                    default_zoom: 12
+      attributes:
+          label: $11_person_name$
+          icon: mdi:card-account-details

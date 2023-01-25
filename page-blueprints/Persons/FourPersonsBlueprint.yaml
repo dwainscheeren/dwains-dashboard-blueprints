@@ -1,13 +1,12 @@
 blueprint:
   name: FourPersonsBlueprint
   description: Four persons bleuprint by Michel Jourdain
-  version: "1.6"
+  version: "2.0"
   type: page
   
   custom_cards:
+    - tabbed-card
     - mini-graph-card
-    - state-switch
-    - button-card
     - mushroom-person-card
     
   input:
@@ -96,81 +95,53 @@ blueprint:
       description: Battery level entity of person four
       type: entity-picker
       
-    50_translate_displacements_last_24_hours:
+    60_translate_displacements_last_24_hours:
       name: Translate displacements last 24 hours
       description: Translate displacements last 24 hours in your language
       type: text-field 
-    51_translate_battery_charge_level:
+    61_translate_battery_charge_level:
       name: Translate Battery charge level
       description: Translate Battery charge level in your language
       type: text-field  
-    52_translate_battery_charging:
+    62_translate_battery_charging:
       name: Translate Battery charging
       description: Translate Battery charging in your language
       type: text-field    
-    53_translate_map:
+    63_translate_map:
       name: Translate Map
       description: Translate Map in your language
       type: text-field    
  
-    60_dark_mode:
+    70_dark_mode:
        name: Dark mode map
        description: Dark mode for map
        type: checkbox
        default_value: false
-       
+
 card:
 
-# Persons
+  type: custom:tabbed-card
+  attributes:
+    isFadingIndicator: false
+    minWidth: true
+    isMinWidthIndicator: true
+    stacked: false
+  styles:
+    --mdc-theme-primary: orange
+    --mdc-tab-text-label-color-default: lightblue
+  options: {}
+  tabs:
 
-  type: custom:dwains-flexbox-card
-  items_classes: 'col-xs-12'
-  cards:
-    - type: vertical-stack
-      item_classes: 'col-xs-12 col-sm-7'
-      cards:         
-         
-          - type: custom:state-switch
-            entity: hash
-            default: page01
-            states:
-              page01:
-                type: vertical-stack
-                cards:
-                  - type: custom:dwains-flexbox-card
-                    padding: true
-                    cards:
-                      - type: horizontal-stack
-                        cards:
-                                 
-                          - type: custom:button-card
-                            name: $11_person_name$
-                            template: button_card_templates_persons_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page01"
-                            styles:
-                              name:
-                                 - color: lightgreen
-                          - type: custom:button-card
-                            name: $21_person_name$
-                            template: button_card_templates_persons_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page02"
-                          - type: custom:button-card
-                            name: $31_person_name$
-                            template: button_card_templates_persons_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page03"
-                          - type: custom:button-card
-                            name: $41_person_name$
-                            template: button_card_templates_persons_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page04"
-               
+    - card:
+            
+         type: custom:dwains-flexbox-card
+         items_classes: col-xs-12
+         cards:
+
+               - type: vertical-stack
+                 item_classes: col-xs-12 col-sm-7
+                 cards:            
+            
                   - type: custom:mushroom-person-card
                     entity: $12_person_entity$
                     name: $11_person_name$
@@ -180,7 +151,7 @@ card:
                     hide_state: false
 
                   - type: custom:dwains-heading-card
-                    title: $50_translate_displacements_last_24_hours$
+                    title: $60_translate_displacements_last_24_hours$
                     
                   - type: history-graph
                     entities:
@@ -190,7 +161,7 @@ card:
                     refresh_interval: 0
                     
                   - type: custom:dwains-heading-card
-                    title: $52_translate_battery_charging$
+                    title: $62_translate_battery_charging$
 
                   - type: history-graph
                     entities:
@@ -200,7 +171,7 @@ card:
                     refresh_interval: 0
                     
                   - type: custom:dwains-heading-card
-                    title: $51_translate_battery_charge_level$
+                    title: $61_translate_battery_charge_level$
           
                   - type: 'custom:mini-graph-card'
                     entities: 
@@ -220,45 +191,35 @@ card:
                       name: false
                       graph: bar
                       extrema: false
-                      average: false   
+                      average: false
+                      
+               - type: vertical-stack
+                 item_classes: col-xs-12 col-sm-5
+                 cards:     
+                 
+                  - type: custom:dwains-heading-card
+                    title: $63_translate_map$
+        
+                  - type: map
+                    entities:
+                      - entity: $13_tracker_entity$
+                    hours_to_show: 24
+                    dark_mode: $70_dark_mode$
+                    default_zoom: 12
+      attributes:
+          label: $11_person_name$
+          icon: mdi:card-account-details
+          
+    - card:
+            
+         type: custom:dwains-flexbox-card
+         items_classes: col-xs-12
+         cards:
 
-              page02:
-                type: vertical-stack
-                cards:
-                  - type: custom:dwains-flexbox-card
-                    padding: true
-                    cards:
-                      - type: horizontal-stack
-                        cards:
-                                 
-                          - type: custom:button-card
-                            name: $11_person_name$
-                            template: button_card_templates_persons_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page01"
-                          - type: custom:button-card
-                            name: $21_person_name$
-                            template: button_card_templates_persons_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page02"
-                            styles:
-                              name:
-                                 - color: lightgreen
-                          - type: custom:button-card
-                            name: $31_person_name$
-                            template: button_card_templates_persons_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page03"
-                          - type: custom:button-card
-                            name: $41_person_name$
-                            template: button_card_templates_persons_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page04"
-                    
+               - type: vertical-stack
+                 item_classes: col-xs-12 col-sm-7
+                 cards:            
+            
                   - type: custom:mushroom-person-card
                     entity: $22_person_entity$
                     name: $21_person_name$
@@ -266,10 +227,10 @@ card:
                     hide_name: false
                     use_entity_picture: true
                     hide_state: false
-                    
+
                   - type: custom:dwains-heading-card
-                    title: $50_translate_displacements_last_24_hours$
-                
+                    title: $60_translate_displacements_last_24_hours$
+                    
                   - type: history-graph
                     entities:
                       - entity: $23_tracker_entity$
@@ -278,7 +239,7 @@ card:
                     refresh_interval: 0
                     
                   - type: custom:dwains-heading-card
-                    title: $52_translate_battery_charging$
+                    title: $62_translate_battery_charging$
 
                   - type: history-graph
                     entities:
@@ -286,9 +247,9 @@ card:
                         name: ' '
                     hours_to_show: 24
                     refresh_interval: 0
-
+                    
                   - type: custom:dwains-heading-card
-                    title: $51_translate_battery_charge_level$
+                    title: $61_translate_battery_charge_level$
           
                   - type: 'custom:mini-graph-card'
                     entities: 
@@ -308,44 +269,35 @@ card:
                       name: false
                       graph: bar
                       extrema: false
-                      average: false   
-                          
-              page03:
-                type: vertical-stack
-                cards:
-                  - type: custom:dwains-flexbox-card
-                    padding: true
-                    cards:
-                      - type: horizontal-stack
-                        cards:
-                          - type: custom:button-card
-                            name: $11_person_name$
-                            template: button_card_templates_persons_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page01"
-                          - type: custom:button-card
-                            name: $21_person_name$
-                            template: button_card_templates_persons_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page02"
-                          - type: custom:button-card
-                            name: $31_person_name$
-                            template: button_card_templates_persons_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page03"
-                            styles:
-                              name:
-                                 - color: lightgreen
-                          - type: custom:button-card
-                            name: $41_person_name$
-                            template: button_card_templates_persons_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page04"
-                                 
+                      average: false
+                      
+               - type: vertical-stack
+                 item_classes: col-xs-12 col-sm-5
+                 cards:     
+                 
+                  - type: custom:dwains-heading-card
+                    title: $63_translate_map$
+        
+                  - type: map
+                    entities:
+                      - entity: $23_tracker_entity$
+                    hours_to_show: 24
+                    dark_mode: $70_dark_mode$
+                    default_zoom: 12
+      attributes:
+          label: $21_person_name$
+          icon: mdi:card-account-details
+          
+    - card:
+            
+         type: custom:dwains-flexbox-card
+         items_classes: col-xs-12
+         cards:
+
+               - type: vertical-stack
+                 item_classes: col-xs-12 col-sm-7
+                 cards:            
+            
                   - type: custom:mushroom-person-card
                     entity: $32_person_entity$
                     name: $31_person_name$
@@ -353,10 +305,10 @@ card:
                     hide_name: false
                     use_entity_picture: true
                     hide_state: false
-                    
+
                   - type: custom:dwains-heading-card
-                    title: $50_translate_displacements_last_24_hours$
-                
+                    title: $60_translate_displacements_last_24_hours$
+                    
                   - type: history-graph
                     entities:
                       - entity: $33_tracker_entity$
@@ -365,7 +317,7 @@ card:
                     refresh_interval: 0
                     
                   - type: custom:dwains-heading-card
-                    title: $52_translate_battery_charging$
+                    title: $62_translate_battery_charging$
 
                   - type: history-graph
                     entities:
@@ -373,9 +325,9 @@ card:
                         name: ' '
                     hours_to_show: 24
                     refresh_interval: 0
-
+                    
                   - type: custom:dwains-heading-card
-                    title: $51_translate_battery_charge_level$
+                    title: $61_translate_battery_charge_level$
           
                   - type: 'custom:mini-graph-card'
                     entities: 
@@ -395,55 +347,46 @@ card:
                       name: false
                       graph: bar
                       extrema: false
-                      average: false   
-                          
-              page04:
-                type: vertical-stack
-                cards:
-                  - type: custom:dwains-flexbox-card
-                    padding: true
-                    cards:
-                      - type: horizontal-stack
-                        cards:
-                          - type: custom:button-card
-                            name: $11_person_name$
-                            template: button_card_templates_persons_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page01"
-                          - type: custom:button-card
-                            name: $21_person_name$
-                            template: button_card_templates_persons_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page02"
-                          - type: custom:button-card
-                            name: $31_person_name$
-                            template: button_card_templates_persons_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page03"
-                          - type: custom:button-card
-                            name: $41_person_name$
-                            template: button_card_templates_persons_heading
-                            tap_action: 
-                              action: navigate
-                              navigation_path: "#page04"
-                            styles:
-                              name:
-                                 - color: lightgreen
-                                 
+                      average: false
+                      
+               - type: vertical-stack
+                 item_classes: col-xs-12 col-sm-5
+                 cards:     
+                 
+                  - type: custom:dwains-heading-card
+                    title: $63_translate_map$
+        
+                  - type: map
+                    entities:
+                      - entity: $33_tracker_entity$
+                    hours_to_show: 24
+                    dark_mode: $70_dark_mode$
+                    default_zoom: 12
+      attributes:
+          label: $31_person_name$
+          icon: mdi:card-account-details
+          
+    - card:
+            
+         type: custom:dwains-flexbox-card
+         items_classes: col-xs-12
+         cards:
+
+               - type: vertical-stack
+                 item_classes: col-xs-12 col-sm-7
+                 cards:            
+            
                   - type: custom:mushroom-person-card
                     entity: $42_person_entity$
                     name: $41_person_name$
                     icon: mdi:account-plus
                     hide_name: false
                     use_entity_picture: true
-                    hide_state: false                    
+                    hide_state: false
 
                   - type: custom:dwains-heading-card
-                    title: $50_translate_displacements_last_24_hours$
-                
+                    title: $60_translate_displacements_last_24_hours$
+                    
                   - type: history-graph
                     entities:
                       - entity: $43_tracker_entity$
@@ -452,7 +395,7 @@ card:
                     refresh_interval: 0
                     
                   - type: custom:dwains-heading-card
-                    title: $52_translate_battery_charging$
+                    title: $62_translate_battery_charging$
 
                   - type: history-graph
                     entities:
@@ -460,9 +403,9 @@ card:
                         name: ' '
                     hours_to_show: 24
                     refresh_interval: 0
-
+                    
                   - type: custom:dwains-heading-card
-                    title: $51_translate_battery_charge_level$
+                    title: $61_translate_battery_charge_level$
           
                   - type: 'custom:mini-graph-card'
                     entities: 
@@ -482,118 +425,22 @@ card:
                       name: false
                       graph: bar
                       extrema: false
-                      average: false   
-
-    - type: vertical-stack
-      item_classes: 'col-xs-12 col-sm-5'
-      cards:         
- 
-          - type: custom:state-switch
-            entity: hash
-            default: page01
-            states:
-            
-              page01:
-                type: vertical-stack
-                cards:
-                
-                  - type: 'custom:button-card'
-                    color_type: blank-card
-                    template: button_card_templates_persons_space
-                       
+                      average: false
+                      
+               - type: vertical-stack
+                 item_classes: col-xs-12 col-sm-5
+                 cards:     
+                 
                   - type: custom:dwains-heading-card
-                    title: $53_translate_map$
-        
-                  - type: map
-                    entities:
-                      - entity: $13_tracker_entity$
-                    hours_to_show: 24
-                    dark_mode: $60_dark_mode$
-                    default_zoom: 12
-                    
-              page02:
-                type: vertical-stack
-                cards:
-                  - type: 'custom:button-card'
-                    color_type: blank-card
-                    template: button_card_templates_persons_space
-                       
-                  - type: custom:dwains-heading-card
-                    title: $53_translate_map$
-        
-                  - type: map
-                    entities:
-                      - entity: $23_tracker_entity$
-                    hours_to_show: 24
-                    dark_mode: $60_dark_mode$
-                    default_zoom: 12
-                    
-              page03:
-                type: vertical-stack
-                cards:
-                  - type: 'custom:button-card'
-                    color_type: blank-card
-                    template: button_card_templates_persons_space
-                       
-                  - type: custom:dwains-heading-card
-                    title: $53_translate_map$
-        
-                  - type: map
-                    entities:
-                      - entity: $33_tracker_entity$
-                    hours_to_show: 24
-                    dark_mode: $60_dark_mode$
-                    default_zoom: 12
-                    
-              page04:
-                type: vertical-stack
-                cards:
-                  - type: 'custom:button-card'
-                    color_type: blank-card
-                    template: button_card_templates_persons_space
-                       
-                  - type: custom:dwains-heading-card
-                    title: $53_translate_map$
+                    title: $63_translate_map$
         
                   - type: map
                     entities:
                       - entity: $43_tracker_entity$
                     hours_to_show: 24
-                    dark_mode: $60_dark_mode$
+                    dark_mode: $70_dark_mode$
                     default_zoom: 12
-
-button_card_templates:
-  button_card_templates_persons_heading:
-    show_icon: false
-    styles:
-      card:
-      - box-shadow: none
-      - padding: 6px 0 0 0
-      - background: transparent
-      - width: 90px
-      name:
-      - font-weight: bold
-      - justify-self: start
-      - font-size: 16px
-      - padding-left: 1px
-
-  button_card_templates_persons_space:
-    show_icon: false
-    styles:
-      card:
-      - box-shadow: none
-      - padding: 6px 0 0 0
-      - background: transparent
-      - height: 59px
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+      attributes:
+          label: $41_person_name$
+          icon: mdi:card-account-details
+          

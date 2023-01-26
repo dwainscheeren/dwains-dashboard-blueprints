@@ -66,7 +66,7 @@
 ### Changelog
 
 #### 5.1
-- Merge contdown and last_result card
+- Merge countdown and last_result card
 
 #### 5.0
 - Replace state-switch card by tabbed-card card.

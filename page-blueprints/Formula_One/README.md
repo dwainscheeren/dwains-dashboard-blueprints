@@ -45,26 +45,28 @@
 ### Screenshots
 **Light theme:**<br>
 
-![image](https://user-images.githubusercontent.com/83040228/213882116-7c60c3c1-b0ce-4ed2-b73d-061ab9331ab9.png)
+![image](https://user-images.githubusercontent.com/83040228/214930523-2f69913e-94b3-4796-9d3a-71d47359b3fd.jpeg)
 
-![image](https://user-images.githubusercontent.com/83040228/213882122-7c4b1937-fed6-4fbe-8930-d313ef238e92.png)
+![image](https://user-images.githubusercontent.com/83040228/214930550-0b70ca35-bc6e-468d-8e66-a8b2c064b6dd.jpeg)
 
-![image](https://user-images.githubusercontent.com/83040228/213882128-097d0245-fd76-4443-a8a4-8948db3bffd8.png)
+![image](https://user-images.githubusercontent.com/83040228/214930589-a50bea90-a6cb-43d6-b1c0-6b44a2254689.jpeg)
 
-![image](https://user-images.githubusercontent.com/83040228/213882132-7e7d05cf-b581-4f34-aaaf-4fa07da93ef5.png)
-
+![image](https://user-images.githubusercontent.com/83040228/214930612-b00d1e00-0170-4807-bc5d-340950c7254a.jpeg)
 
 **Dark theme:**<br>
 
-![image](https://user-images.githubusercontent.com/83040228/213882093-fc9f279f-8c4a-43fc-ae3d-b41dc4ac0efb.png)
+![image](https://user-images.githubusercontent.com/83040228/214930337-b54f41d3-0605-42d0-ba80-44109bedfc77.jpeg)
 
-![image](https://user-images.githubusercontent.com/83040228/213882097-90c68fc5-bf50-436e-9a5a-0b1ab38a4306.png)
+![image](https://user-images.githubusercontent.com/83040228/214930377-664eb686-3379-4798-b486-a37901c3b069.jpeg)
 
-![image](https://user-images.githubusercontent.com/83040228/213882100-34025ed2-ea60-4faa-b14a-0e5ebf7a3f09.png)
+![image](https://user-images.githubusercontent.com/83040228/214930448-e45d54c0-183c-4df2-b4ab-c73f10204698.jpeg)
 
-![image](https://user-images.githubusercontent.com/83040228/213882106-38fb6869-bee4-427f-8a14-fb36065607e6.png)
+![image](https://user-images.githubusercontent.com/83040228/214930478-4767d24e-9eed-40f9-8c6d-305d8a44a322.jpeg)
 
 ### Changelog
+
+#### 5.1
+- Merge countdown and last_result card
 
 #### 5.0
 - Replace state-switch card by tabbed-card card.

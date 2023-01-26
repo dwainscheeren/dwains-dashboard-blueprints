@@ -1,7 +1,7 @@
 blueprint:
   name: Formula One Blueprint
   description: Formula One Blueprint by Michel Jourdain
-  version: "5.0"
+  version: 5.1
 
   type: page
 
@@ -181,25 +181,17 @@ card:
       item_classes: col-xs-12 col-sm-6
       cards:
       
-        - type: horizontal-stack
-          cards:
-          
-            - type: markdown
-              content: "![Image](https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/F1.svg/1280px-F1.svg.png)"
+        - type: markdown
+          content: "![Image](https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/F1.svg/1280px-F1.svg.png)"
 
-            - type: custom:formulaone-card
-              card_type: countdown
-              translations:
-                days: $26_translate_day_abbreviation$
-                hours': $27_translate_hour_abbreviation$
-                minutes': $28_translate_minute_abbreviation$
-                seconds': $29_translate_second_abbreviation$
-
-        - card_type: next_race
-          date_locale: $40_local_contry$
-          image_clickable: false
-          title: $03_translate_next_race$
+        - type: custom:formulaone-card
+          card_type: countdown
+          show_raceinfo: true
           translations:
+            days: $26_translate_day_abbreviation$
+            hours': $27_translate_hour_abbreviation$
+            minutes': $28_translate_minute_abbreviation$
+            seconds': $29_translate_second_abbreviation$
             date: $05_translate_date$
             practice1: $06_translate_practice$ 1
             practice2: $06_translate_practice$ 2
@@ -212,8 +204,7 @@ card:
             racetime: $02_translate_race$
             sprint: $11_translate_sprint$
             qualifying: $12_translate_qualifying$
-            endofseason: $16_translate_endofseason$ !
-          type: custom:formulaone-card
+            endofseason: $16_translate_endofseason$ 
 
     - type: vertical-stack
       item_classes: col-xs-12 col-sm-6
@@ -263,6 +254,7 @@ card:
                 standings:
                   show_flag: true
                   show_team: true
+                  show_teamlogo: true
                 translations:
                   points: $17_translate_points$
                   wins: $21_translate_wins$
@@ -275,9 +267,12 @@ card:
                 type: custom:formulaone-card
                 card_type: constructor_standings
                 title: $15_translate_constructors_standings$
+                standings:
+                  show_teamlogo: true
                 translations:
                   constructor: $24_translate_constructor$
                   points: $17_translate_points$
                   wins: $21_translate_wins$
               attributes:
                 icon: mdi:microsoft-teams
+                

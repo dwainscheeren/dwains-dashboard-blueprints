@@ -66,6 +66,10 @@
 ### Changelog
 
 #### 5.1
+- Added qualifying results cards
+- Added show_flag, show_team and show_teamlogo to schedule, results and qualifying results cards 
+
+#### 5.1
 - Merge countdown and last_result card
 
 #### 5.0

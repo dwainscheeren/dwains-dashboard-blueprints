@@ -4,6 +4,7 @@
 
 - Add mushroom-template-card from HACS
 - Add Garbage Collection integration from HACS
+- Define sensors with **Verbose** mode. **Important!**
 - Download images in the config/www/images/containors/ directory.
 - Copy the content of the Blueprint.yaml file into the Blueprint YAML code.
 

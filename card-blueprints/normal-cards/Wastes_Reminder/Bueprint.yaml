@@ -1,0 +1,97 @@
+blueprint:
+  name: Waste
+  description: Waste card by Michel Jourdain
+  version: "1.0"
+  type: card
+
+  custom_cards:
+    - mushroom-template-card
+
+  input:
+  
+    01_translate_waste:
+      name: Translate Waste
+      description: Translate Waste in your language
+      type: text-field
+
+    02_waste_entity:
+      name: Waste entity
+      description: The Waste Sensor
+      type: entity-picker
+
+    10_translate_recycling:
+      name: Translate Recycling
+      description: Translate Recycling in your language
+      type: text-field
+
+    11_recycling_entity:
+      name: Recycling entity
+      description: The Recycling Sensor
+      type: entity-picker
+
+    20_translate_organic:
+      name: Translate Organic
+      description: Translate Organic in your language
+      type: text-field
+
+    21_organic_entity:
+      name: Organic entity
+      description: The Organic Sensor
+      type: entity-picker
+
+card:
+
+  type: custom:dwains-flexbox-card
+  items_classes: col-xs-12 col-md-4
+  cards:
+  
+    - type: custom:mushroom-template-card
+      primary: $01_translate_waste$
+      secondary: "{{states('$02_waste_entity$')}}"
+      fill_container: true
+      multiline_secondary: true
+      layout: vertical
+      picture: >
+        {% set dayp = as_timestamp(state_attr('$02_waste_entity$', 'next_date') ) | timestamp_custom('%j' ) | int  %}
+        {% set daya = now().strftime('%j') | int %}
+        {% if dayp == daya %}
+          local/images/containors/waste_today.png
+        {% elif dayp == (daya + 1) %}
+          local/images/containors/waste_tomorow.png
+        {% else %}
+          local/images/containors/waste.png
+        {% endif %}
+
+    - type: custom:mushroom-template-card
+      primary: $10_translate_recycling$
+      secondary: "{{states('$11_recycling_entity$')}}"
+      fill_container: true
+      multiline_secondary: true
+      layout: vertical
+      picture: >
+        {% set dayp = as_timestamp(state_attr('$11_recycling_entity$', 'next_date') ) | timestamp_custom('%j' ) | int  %}
+        {% set daya = now().strftime('%j') | int %}
+        {% if dayp == daya %}
+          local/images/containors/recycling_today.png
+        {% elif dayp == (daya + 1) %}
+          local/images/containors/recycling_tomorow.png
+        {% else %}
+          local/images/containors/recycling.png
+        {% endif %}
+
+    - type: custom:mushroom-template-card
+      primary: $20_translate_organic$
+      secondary: "{{states('$21_organic_entity$')}}"
+      fill_container: true
+      multiline_secondary: true
+      layout: vertical
+      picture: >
+        {% set dayp = as_timestamp(state_attr('$21_organic_entity$', 'next_date') ) | timestamp_custom('%j' ) | int  %}
+        {% set daya = now().strftime('%j') | int %}
+        {% if dayp == daya %}
+          local/images/containors/organic_today.png
+        {% elif dayp == (daya + 1) %}
+          local/images/containors/organic_tomorow.png
+        {% else %}
+          local/images/containors/organic.png
+        {% endif %}

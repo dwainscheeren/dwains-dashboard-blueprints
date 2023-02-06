@@ -2,7 +2,7 @@
 
 ## Installation of this Blueprint
 
-- mushroom-template-card from HACS
+- Add mushroom-template-card from HACS
 - Download images in the config/www/images/containors/ directory.
 - Copy the content of the Blueprint.yaml file into the Blueprint YAML code.
 
@@ -32,6 +32,7 @@
 
 ![image](https://user-images.githubusercontent.com/83040228/217059356-409aaa90-2930-46b3-a0ef-43c2e5476f4b.jpeg)
 
+**Today:**<br>
 
 ### Changelog
 #### 1.0

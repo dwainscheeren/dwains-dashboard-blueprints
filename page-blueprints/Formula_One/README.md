@@ -65,7 +65,10 @@
 
 ### Changelog
 
-#### 5.1
+#### 5.3
+- Add tab icons on results card
+
+#### 5.2
 - Added qualifying results cards
 - Added show_flag, show_team and show_teamlogo to schedule, results and qualifying results cards 
 

@@ -45,7 +45,7 @@
 ### Screenshots
 **Light theme:**<br>
 
-![image](https://user-images.githubusercontent.com/83040228/214930523-2f69913e-94b3-4796-9d3a-71d47359b3fd.jpeg)
+![image](https://user-images.githubusercontent.com/83040228/217048473-ad12fc2a-8a0e-4c24-b6be-cbbe46f0492b.jpeg)
 
 ![image](https://user-images.githubusercontent.com/83040228/214930550-0b70ca35-bc6e-468d-8e66-a8b2c064b6dd.jpeg)
 
@@ -55,7 +55,7 @@
 
 **Dark theme:**<br>
 
-![image](https://user-images.githubusercontent.com/83040228/214930337-b54f41d3-0605-42d0-ba80-44109bedfc77.jpeg)
+![image](https://user-images.githubusercontent.com/83040228/217048514-394ae70b-9b48-4c37-b658-6619242f2661.jpeg)
 
 ![image](https://user-images.githubusercontent.com/83040228/214930377-664eb686-3379-4798-b486-a37901c3b069.jpeg)
 

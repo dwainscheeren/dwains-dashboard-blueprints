@@ -1,7 +1,7 @@
 blueprint:
   name: Formula One Blueprint
   description: Formula One Blueprint by Michel Jourdain
-  version: 5.2
+  version: 5.3
 
   type: page
 
@@ -166,6 +166,11 @@ blueprint:
       description: Translate Please select a race thats already been run in your language
       type: text-field
 
+    34_translate_nosprint:
+      name: No sprint race results available in your language
+      description: Translate No sprint race results available in your language
+      type: text-field
+
     40_local_contry:
       name: Local contry
       description: Your contry for the race time. Ex, fr, ca, nl..
@@ -216,32 +221,16 @@ card:
             --mdc-theme-primary: lightblue
           options: {}
           tabs:
-            - card:          
-            
-                type: custom:formulaone-card
-                card_type: qualifying_results
-                title: $12_translate_qualifying$
-                f1_font: true
-                standings:
-                  show_flag: true
-                  show_team: true
-                  show_teamlogo: true
-                translations:
-                  raceheader: $02_translate_race$
-                  seasonheader: $30_translate_season$
-                  selectseason: $31_translate_select_season$
-                  selectrace: $32_translate_select_race$
-                  noresults: $33_translate_past_race$
-                  driver: $18_translate_driver$
-                  team: $22_translate_team$
-              attributes:
-                icon: mdi:flag-checkered
- 
+
             - card:
                 type: custom:formulaone-card
                 card_type: results
                 title: $04_translate_last_result$
                 f1_font: true
+                icons:
+                  results: mdi:trophy
+                  qualifying: mdi:timer-outline
+                  sprint: mdi:flag-checkered
                 standings:
                   show_flag: true
                   show_team: true
@@ -257,8 +246,9 @@ card:
                   grid: $19_translate_grid$
                   status: $20_translate_status$
                   point: $17_translate_points$
+                  nosprint: $34_translate_nosprint$
               attributes:
-                icon: icon: mdi:view-list
+                icon: mdi:flag-checkered
 
             - card:
                 type: custom:formulaone-card
@@ -309,4 +299,3 @@ card:
                   show_flag: true
                   show_team: true
                   show_teamlogo: true
- 

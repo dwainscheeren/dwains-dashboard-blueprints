@@ -3,6 +3,7 @@
 ## Installation of this Blueprint
 
 - Add mushroom-template-card from HACS
+- Add Garbage Collection integration from HACS
 - Download images in the config/www/images/containors/ directory.
 - Copy the content of the Blueprint.yaml file into the Blueprint YAML code.
 

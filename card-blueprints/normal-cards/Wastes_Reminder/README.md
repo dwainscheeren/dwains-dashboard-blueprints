@@ -36,7 +36,7 @@
 
 **Today:**<br>
 
-![image](https://user-images.githubusercontent.com/83040228/217245955-3a32813e-5717-4d29-b2b3-8afa8b30b038.jpeg)
+![image](https://user-images.githubusercontent.com/83040228/217246701-01d8e2eb-08cc-4f4f-bee4-0b260438c8be.jpeg)
 
 
 ### Changelog

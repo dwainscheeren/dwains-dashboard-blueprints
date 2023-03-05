@@ -1,6 +1,6 @@
 blueprint:
-  name: ThreePersonsBlueprint
-  description: Three persons bleuprint by Michel Jourdain
+  name: FivePersonsBlueprint
+  description: Five persons bleuprint by Michel Jourdain
   version: "2.0"
   type: page
   
@@ -72,6 +72,48 @@ blueprint:
     35_battery_level_entity:
       name: Battery level person three
       description: Battery level entity of person three
+      type: entity-picker
+      
+    41_person_name:
+      name: Name person four
+      description: Name of the person four
+      type: text-field
+    42_person_entity:
+      name: Person four entity
+      description: Person four entity
+      type: entity-picker
+    43_tracker_entity:
+      name: Tracker entity person four
+      description: Tracker entity of person four
+      type: entity-picker
+    44_battery_charging_entity:
+      name: Battery charging person four
+      description: Battery charging entity of person four
+      type: entity-picker
+    45_battery_level_entity:
+      name: Battery level person four
+      description: Battery level entity of person four
+      type: entity-picker
+      
+    51_person_name:
+      name: Name person five
+      description: Name of the person five
+      type: text-field
+    52_person_entity:
+      name: Person five entity
+      description: Person five entity
+      type: entity-picker
+    53_tracker_entity:
+      name: Tracker entity person five
+      description: Tracker entity of person five
+      type: entity-picker
+    54_battery_charging_entity:
+      name: Battery charging person five
+      description: Battery charging entity of person five
+      type: entity-picker
+    55_battery_level_entity:
+      name: Battery level person five
+      description: Battery level entity of person five
       type: entity-picker
       
     60_translate_displacements_last_24_hours:
@@ -342,4 +384,160 @@ card:
                     default_zoom: 12
       attributes:
           label: $31_person_name$
+          icon: mdi:card-account-details
+          
+    - card:
+            
+         type: custom:dwains-flexbox-card
+         items_classes: col-xs-12
+         cards:
+
+               - type: vertical-stack
+                 item_classes: col-xs-12 col-sm-7
+                 cards:            
+            
+                  - type: custom:mushroom-person-card
+                    entity: $42_person_entity$
+                    name: $41_person_name$
+                    icon: mdi:account-plus
+                    hide_name: false
+                    use_entity_picture: true
+                    hide_state: false
+
+                  - type: custom:dwains-heading-card
+                    title: $60_translate_displacements_last_24_hours$
+                    
+                  - type: history-graph
+                    entities:
+                      - entity: $43_tracker_entity$
+                        name: ' '
+                    hours_to_show: 24
+                    refresh_interval: 0
+                    
+                  - type: custom:dwains-heading-card
+                    title: $62_translate_battery_charging$
+
+                  - type: history-graph
+                    entities:
+                      - entity: $44_battery_charging_entity$
+                        name: ' '
+                    hours_to_show: 24
+                    refresh_interval: 0
+                    
+                  - type: custom:dwains-heading-card
+                    title: $61_translate_battery_charge_level$
+          
+                  - type: 'custom:mini-graph-card'
+                    entities: 
+                      - entity: $45_battery_level_entity$
+                    line_color: green
+                    hours_to_show: 24
+                    line_width: 2
+                    hour24: true
+                    points_per_hour: 2
+                    decimals: 0
+                    show:
+                      animate: true
+                      fill: true
+                      icon: false
+                      labels: false
+                      legend: false
+                      name: false
+                      graph: bar
+                      extrema: false
+                      average: false
+                      
+               - type: vertical-stack
+                 item_classes: col-xs-12 col-sm-5
+                 cards:     
+                 
+                  - type: custom:dwains-heading-card
+                    title: $63_translate_map$
+        
+                  - type: map
+                    entities:
+                      - entity: $43_tracker_entity$
+                    hours_to_show: 24
+                    dark_mode: $70_dark_mode$
+                    default_zoom: 12
+      attributes:
+          label: $41_person_name$
+          icon: mdi:card-account-details
+          
+    - card:
+            
+         type: custom:dwains-flexbox-card
+         items_classes: col-xs-12
+         cards:
+
+               - type: vertical-stack
+                 item_classes: col-xs-12 col-sm-7
+                 cards:            
+            
+                  - type: custom:mushroom-person-card
+                    entity: $52_person_entity$
+                    name: $51_person_name$
+                    icon: mdi:account-plus
+                    hide_name: false
+                    use_entity_picture: true
+                    hide_state: false
+
+                  - type: custom:dwains-heading-card
+                    title: $60_translate_displacements_last_24_hours$
+                    
+                  - type: history-graph
+                    entities:
+                      - entity: $53_tracker_entity$
+                        name: ' '
+                    hours_to_show: 24
+                    refresh_interval: 0
+                    
+                  - type: custom:dwains-heading-card
+                    title: $62_translate_battery_charging$
+
+                  - type: history-graph
+                    entities:
+                      - entity: $54_battery_charging_entity$
+                        name: ' '
+                    hours_to_show: 24
+                    refresh_interval: 0
+                    
+                  - type: custom:dwains-heading-card
+                    title: $61_translate_battery_charge_level$
+          
+                  - type: 'custom:mini-graph-card'
+                    entities: 
+                      - entity: $55_battery_level_entity$
+                    line_color: green
+                    hours_to_show: 24
+                    line_width: 2
+                    hour24: true
+                    points_per_hour: 2
+                    decimals: 0
+                    show:
+                      animate: true
+                      fill: true
+                      icon: false
+                      labels: false
+                      legend: false
+                      name: false
+                      graph: bar
+                      extrema: false
+                      average: false
+                      
+               - type: vertical-stack
+                 item_classes: col-xs-12 col-sm-5
+                 cards:     
+                 
+                  - type: custom:dwains-heading-card
+                    title: $63_translate_map$
+        
+                  - type: map
+                    entities:
+                      - entity: $53_tracker_entity$
+                    hours_to_show: 24
+                    dark_mode: $70_dark_mode$
+                    default_zoom: 12
+      attributes:
+          label: $51_person_name$
           icon: mdi:card-account-details

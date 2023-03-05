@@ -2,10 +2,8 @@
 
 ## Installation of this Blueprint
 
-- This Blueprint works best with Dwains Dashboard version 3.1.0 or newer.
-
+- Install garbage_collection Integration from HACS
 - Install garbage-collection-card from HACS
-
 - Copy the content of the blueprint file `Blueprint.yaml` into the Blueprint YAML code.
 
  ## Fields to define for each cartridge.

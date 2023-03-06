@@ -1,6 +1,7 @@
 <h1 align="center">Weather Dashboard - Dwains Dashboard Blueprint (more_page)</h1> 
 
 Note: this blueprint is a ported addon from Dwains Dashboard Blueprints. This port is done by Robert Wilson. The original creator of this addon is Leon van der Linden.
+Recent updates to include Mushroom Chips: [Nate Harris](https://github.com/nwithan8/configs/blob/main/home_assistant/panels/weather.yaml)
 
 
 <p align="center">Weather Dashboard in Home Assistant Dwains Dashboard.</p>

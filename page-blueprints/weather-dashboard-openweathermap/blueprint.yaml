@@ -344,7 +344,7 @@ card:
                                 none
                               {% endif %}
                       
-                    - type: "custom:weather-card"
+                    - type: custom:weather-card
                       style: |
                         ha-card {
                           border-radius: 10px;
@@ -419,7 +419,7 @@ card:
                             - entity: $asthma_index_today$
                               name: Asthma Index
                             - entity: $current_ozone_level$
-                    - type: "custom:ha-card-weather-conditions"
+                    - type: custom:ha-card-weather-conditions
                       style: |
                         ha-card {
                           border-radius: 10px;
@@ -497,10 +497,40 @@ card:
                             navigation_path: '#stats'
                           hold_action:
                             action: none
+                    - type: entities
+                      title: $Forecast$ $Rain$
+                      style: |
+                        ha-card {
+                          border-radius: 10px;
+                          padding-bottom: 10px;
+                          background-color: var(--dwains-theme-primary)
+                        }
+                        :host {
+                          --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                        }
+                        .card-header {
+                          padding: 5px 16px;
+                          font-size: 15px;
+                          font-weight: 700 !important;
+                        }
+                        #states {
+                          padding-top: 0px !important;
+                          padding-bottom: 0px !important;
+                        }
+                        .secondary {
+                          color: darkgray !important;
+                          margin-left: 2px !important;
+                        }
+                      entities:
+                        - entity: $forecast_rain_chance$
+                          name: $Forecast$ $Rain$ %
+                        - entity: $forecast_rain$
+                          name: $Forecast$ $Rain$
                 - type: vertical-stack
                   cards:
                     - type: custom:mini-graph-card
                       title: $Last_24_Hours$ # <- translate this line
+                      name: $Last_24_Hours$ # <- translate this line 
                       icon: ios:cloud-rain
                       style: |
                         ha-card {
@@ -543,35 +573,6 @@ card:
                         graph: bar
                         extrema: true
                         average: true
-                    - type: entities
-                      title: $Forecast$ $Rain$
-                      style: |
-                        ha-card {
-                          border-radius: 10px;
-                          padding-bottom: 10px;
-                          background-color: var(--dwains-theme-primary)
-                        }
-                        :host {
-                          --paper-item-icon-color: var(--dwains-theme-accent) !important;
-                        }
-                        .card-header {
-                          padding: 5px 16px;
-                          font-size: 15px;
-                          font-weight: 700 !important;
-                        }
-                        #states {
-                          padding-top: 0px !important;
-                          padding-bottom: 0px !important;
-                        }
-                        .secondary {
-                          color: darkgray !important;
-                          margin-left: 2px !important;
-                        }
-                      entities:
-                        - entity: $forecast_rain_chance$
-                          name: $Forecast$ $Rain$ %
-                        - entity: $forecast_rain$
-                          name: $Forecast$ $Rain$
 
             #TEMP VIEW
             temperature:

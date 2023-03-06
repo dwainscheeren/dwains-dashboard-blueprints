@@ -4,7 +4,6 @@ blueprint:
   version: "3.2"
   type: page
   custom_cards:
-    - button-card
     - weather-card
     - mini-graph-card
     - fold-entity-row

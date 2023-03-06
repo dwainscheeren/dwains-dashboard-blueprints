@@ -28,7 +28,6 @@ Make sure you have following installed this can be done manually or directly via
     - [Weather Card](https://github.com/bramkragten/weather-card)
     - [fontawesome icons](https://github.com/thomasloven/hass-fontawesome)
     - [Cupertino Icons](https://github.com/menahishayan/HomeAssistant-Cupertino-Icons)
-    - [Button Card](https://github.com/custom-cards/button-card)
     - [HA card Weather Conditions](https://github.com/r-renato/ha-card-weather-conditions)
     - [fold-entity-row](https://github.com/thomasloven/lovelace-fold-entity-row)
     - [multiple-entity-row](https://github.com/benct/lovelace-multiple-entity-row)

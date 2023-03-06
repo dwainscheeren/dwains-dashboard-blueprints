@@ -30,7 +30,6 @@ Make sure you have following installed this can be done manually or directly via
     - [Cupertino Icons](https://github.com/menahishayan/HomeAssistant-Cupertino-Icons)
     - [HA card Weather Conditions](https://github.com/r-renato/ha-card-weather-conditions)
     - [fold-entity-row](https://github.com/thomasloven/lovelace-fold-entity-row)
-    - [multiple-entity-row](https://github.com/benct/lovelace-multiple-entity-row)
     - [stack-in-card](https://github.com/custom-cards/stack-in-card)
     - [entity-attributes-card](https://github.com/custom-cards/entity-attributes-card)
     - [mushroom-chips-card](https://github.com/piitaya/lovelace-mushroom)

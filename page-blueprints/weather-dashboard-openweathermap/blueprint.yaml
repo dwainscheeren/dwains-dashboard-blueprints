@@ -1,13 +1,12 @@
 blueprint:
   name: Weather dashboard page Blueprint
   description: An weather dashboard page by Robert Wilson based on orginial page by Leon van der Linden with upgrades from Nate Harris
-  version: "3.2"
+  version: "3.3"
   type: page
   custom_cards:
     - weather-card
     - mini-graph-card
     - fold-entity-row
-    - multiple-entity-row
     - state-switch
     - stack-in-card
     - entity-attributes-card
@@ -530,7 +529,7 @@ card:
                   cards:
                     - type: custom:mini-graph-card
                       title: $Last_24_Hours$ # <- translate this line
-                      name: $Last_24_Hours$ # <- translate this line 
+                      name: $Last_24_Hours$ # <- translate this line
                       icon: ios:cloud-rain
                       style: |
                         ha-card {

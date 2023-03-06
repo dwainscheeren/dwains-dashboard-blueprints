@@ -1,7 +1,7 @@
 blueprint:
   name: Weather dashboard page Blueprint
-  description: An weather dashboard page by Robert Wilson based on orginial page by Leon van der Linden
-  version: "3.1"
+  description: An weather dashboard page by Robert Wilson based on orginial page by Leon van der Linden with upgrades from Nate Harris
+  version: "3.2"
   type: page
   custom_cards:
     - button-card
@@ -12,6 +12,7 @@ blueprint:
     - state-switch
     - stack-in-card
     - entity-attributes-card
+    - mushroom-chips-card
   input:
     weather_entity:
       name: Weather entity
@@ -44,6 +45,14 @@ blueprint:
     weather_alert_entity:
       name: Weather Alert entity
       description: Currently this is only tested with nws_alerts
+      type: entity-picker
+    snow_sensor:
+      name: Snow Sensor
+      description: Snow accumulation sensor (e.g. sensor.openweathermap.snow)
+      type: entity-picker
+    rain_sensor:
+      name: Rain Sensor
+      description: Rain accumulation sensor (e.g. sensor.openweathermap.rain)
       type: entity-picker
 # Medical Alerts
     allergy_index_today:
@@ -82,21 +91,11 @@ blueprint:
       name: Forecast Precipitation Percentage
       description: Forecast for Precipitation Percentage
       type: entity-picker
-#Rain Sensor
-    rain_last_24_hours:
-      name: Rain Last 24 Hours
-      description: Sensor for rain totals last 24 hours
-      type: entity-picker
-    rain_last_hour:
-      name: Rain Last Hour
-      description: Sensor for rain total last hour
-      type: entity-picker
 #Lat and Long for the radar map
     long_home:
       name: Longitude for your home
       description: This is the longitude for your home
       type: text-field
-      
     lat_home:
       name: Latitude for your home
       description: This is the latitude for your home
@@ -118,7 +117,7 @@ blueprint:
       name: Translate temperature
       description: translate temperature
       type: text-field
-    Humditiy:
+    Humidity:
       name: Translate humidity
       description: translate humidity
       type: text-field
@@ -164,10 +163,10 @@ blueprint:
 
 card:
   type: custom:dwains-flexbox-card
-  items_classes: 'col-xs-12'
+  items_classes: col-xs-12
   cards:
     - type: vertical-stack
-      item_classes: 'col-xs-12 col-sm-4'
+      item_classes: col-xs-12 col-sm-4
       cards:
         #Start of rooms and devices
         - type: custom:state-switch
@@ -182,35 +181,40 @@ card:
                   padding: true
                   cards:
                     #heading
-                    - type: horizontal-stack
-                      cards:
-                        - type: custom:button-card
-                          name: $Forecast$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                    - type: custom:mushroom-chips-card
+                      chips:
+                        - type: template
+                          icon: mdi:weather-cloudy-clock
+                          content: $Forecast$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#forecast"
-                          styles:
-                            name:
-                              - color: var(--dwains-theme-accent)
-                        - type: custom:button-card
-                          name: $Rain$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#forecast'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:thermometer
+                          content: $Temp$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#neerslag"
-                        - type: custom:button-card
-                          name: $Temp$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#temperature'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:weather-pouring
+                          content: $Rain$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#temperatuur"
-                        - type: custom:button-card
-                          name: $Stats$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#rain'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:format-list-numbered
+                          content: $Stats$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#stats"
+                            navigation_path: '#stats'
+                          hold_action:
+                            action: none
                 - type: vertical-stack
                   cards:
                     - type: custom:stack-in-card
@@ -405,7 +409,7 @@ card:
                           name: $Barometric_Pressure$
                         - entity: $wind_bearing$
                           name: $Wind_direction$
-                          icon: "mdi:compass"
+                          icon: mdi:compass
                         - type: custom:fold-entity-row
                           head:
                             type: section
@@ -452,48 +456,53 @@ card:
                         set_skin_type_5: sensor.skin_type_5_safe_exposure_time
                         set_skin_type_6: sensor.skin_type_6_safe_exposure_time
 
-            #NEERSLAG VIEW
-            neerslag:
+            #rain VIEW
+            rain:
               type: vertical-stack
               cards:
                 - type: custom:dwains-flexbox-card
                   padding: true
                   cards:
                     #heading
-                    - type: horizontal-stack
-                      cards:
-                        - type: custom:button-card
-                          name: $Forecast$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                    - type: custom:mushroom-chips-card
+                      chips:
+                        - type: template
+                          icon: mdi:weather-cloudy-clock
+                          content: $Forecast$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#forecast"
-                        - type: custom:button-card
-                          name: $Rain$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#forecast'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:thermometer
+                          content: $Temp$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#neerslag"
-                          styles:
-                            name:
-                              - color: var(--dwains-theme-accent)
-                        - type: custom:button-card
-                          name: $Temp$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#temperature'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:weather-pouring
+                          content: $Rain$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#temperatuur"
-                        - type: custom:button-card
-                          name: $Stats$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#rain'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:format-list-numbered
+                          content: $Stats$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#stats"
+                            navigation_path: '#stats'
+                          hold_action:
+                            action: none
                 - type: vertical-stack
                   cards:
-                    - type: "custom:mini-graph-card"
+                    - type: custom:mini-graph-card
                       title: $Last_24_Hours$ # <- translate this line
-                      icon: "ios:cloud-rain"
+                      icon: ios:cloud-rain
                       style: |
                         ha-card {
                           border-radius: 10px;
@@ -517,7 +526,8 @@ card:
                           margin-left: 2px !important;
                         }
                       entities:
-                        - $rain_last_24_hours$ # <- fill in the right sensor
+                        - $rain_sensor$ # <- fill in the right sensor
+                        - $snow_sensor$ # <- fill in the right sensor
                       line_color: "#299ec2"
                       hours_to_show: 12
                       line_width: 1
@@ -565,48 +575,54 @@ card:
                           name: $Forecast$ $Rain$
 
             #TEMP VIEW
-            temperatuur:
+            temperature:
               type: vertical-stack
               cards:
                 - type: custom:dwains-flexbox-card
                   padding: true
                   cards:
                     #heading
-                    - type: horizontal-stack
-                      cards:
-                        - type: custom:button-card
-                          name: $Forecast$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                    - type: custom:mushroom-chips-card
+                      chips:
+                        - type: template
+                          icon: mdi:weather-cloudy-clock
+                          content: $Forecast$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#forecast"
-                        - type: custom:button-card
-                          name: $Rain$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#forecast'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:thermometer
+                          content: $Temp$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#neerslag"
-                        - type: custom:button-card
-                          name: $Temp$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#temperature'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:weather-pouring
+                          content: $Rain$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#temperatuur"
-                          styles:
-                            name:
-                              - color: var(--dwains-theme-accent)
-                        - type: custom:button-card
-                          name: $Stats$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#rain'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:format-list-numbered
+                          content: $Stats$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#stats"
+                            navigation_path: '#stats'
+                          hold_action:
+                            action: none
                 #TEMP VIEW
                 - type: vertical-stack
                   cards:
-                    - type: "custom:mini-graph-card"
+                    - type: custom:mini-graph-card
                       title: $Temp$
-                      icon: "ios:thermometer"
+                      name: $Temp$
+                      icon: ios:thermometer
                       style: |
                         ha-card {
                           border-radius: 10px;
@@ -648,9 +664,10 @@ card:
                         graph: line
                         extrema: true
                         average: true
-                    - type: "custom:mini-graph-card"
+                    - type: custom:mini-graph-card
                       title: $Feels_Like$ # <- translate this line
-                      icon: "ios:thermometer"
+                      name: $Feels_Like$ # <- trnaslate this line
+                      icon: ios:thermometer
                       style: |
                         ha-card {
                           border-radius: 10px;
@@ -692,7 +709,7 @@ card:
                         graph: line
                         extrema: true
                         average: true
-                    - type: "custom:ha-card-weather-conditions"
+                    - type: custom:ha-card-weather-conditions
                       style: |
                         ha-card {
                           border-radius: 10px;
@@ -736,35 +753,40 @@ card:
                   padding: true
                   cards:
                     #heading
-                    - type: horizontal-stack
-                      cards:
-                        - type: custom:button-card
-                          name: $Forecast$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                    - type: custom:mushroom-chips-card
+                      chips:
+                        - type: template
+                          icon: mdi:weather-cloudy-clock
+                          content: $Forecast$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#forecast"
-                        - type: custom:button-card
-                          name: $Rain$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#forecast'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:thermometer
+                          content: $Temp$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#neerslag"
-                        - type: custom:button-card
-                          name: $Temp$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#temperature'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:weather-pouring
+                          content: $Rain$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#temperatuur"
-                        - type: custom:button-card
-                          name: $Stats$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#rain'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:format-list-numbered
+                          content: $Stats$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#stats"
-                          styles:
-                            name:
-                              - color: var(--dwains-theme-accent)
+                            navigation_path: '#stats'
+                          hold_action:
+                            action: none
                 - type: vertical-stack
                   cards:
                     - type: entities
@@ -803,7 +825,7 @@ card:
                           name: $Wind_speed$
                         - entity: $wind_bearing$
                           name: $Wind_direction$
-                          icon: "mdi:compass"
+                          icon: mdi:compass
                             
                     - type: entities
                       title: $Risks$
@@ -861,7 +883,7 @@ card:
     #RADAR VIEWS
 
     - type: vertical-stack
-      item_classes: "col-xs-12 col-sm-8"
+      item_classes: col-xs-12 col-sm-8
       cards:
         #Start of rooms and devices
         - type: custom:state-switch
@@ -876,41 +898,40 @@ card:
                   padding: true
                   cards:
                     #heading
-                    - type: horizontal-stack
-                      cards:
-                        - type: custom:button-card
-                          name: $Radar$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                    - type: custom:mushroom-chips-card
+                      chips:
+                        - type: template
+                          icon: mdi:weather-cloudy-clock
+                          content: $Forecast$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#forecast"
-                          styles:
-                            name:
-                              - color: var(--dwains-theme-accent)
-                        - type: custom:button-card
-                          name: $Rain$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#forecast'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:thermometer
+                          content: $Temp$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#neerslag"
-                        - type: custom:button-card
-                          name: $Temp$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#temperature'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:weather-pouring
+                          content: $Rain$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#temperatuur"
-                        - type: custom:button-card
-                          name: $Wind$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#rain'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:format-list-numbered
+                          content: $Stats$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#wind"
-                        - type: custom:button-card
-                          #name: Stats # <- DONT CHANGE THIS LINE
-                          template: weather_dashboard_blueprint_heading
-                          tap_action:
-                            action: navigate
-                            navigation_path: "#stats"
+                            navigation_path: '#stats'
+                          hold_action:
+                            action: none
                 - type: iframe
                   style: |
                     ha-card {
@@ -940,48 +961,47 @@ card:
                   name: Windy.com
                   show_state: false
             #REGEN VIEW
-            neerslag:
+            rain:
               type: vertical-stack
               cards:
                 - type: custom:dwains-flexbox-card
                   padding: true
                   cards:
                     #heading
-                    - type: horizontal-stack
-                      cards:
-                        - type: custom:button-card
-                          name: $Radar$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                    - type: custom:mushroom-chips-card
+                      chips:
+                        - type: template
+                          icon: mdi:weather-cloudy-clock
+                          content: $Forecast$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#forecast"
-                        - type: custom:button-card
-                          name: $Rain$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#forecast'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:thermometer
+                          content: $Temp$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#neerslag"
-                          styles:
-                            name:
-                              - color: var(--dwains-theme-accent)
-                        - type: custom:button-card
-                          name: $Temp$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#temperature'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:weather-pouring
+                          content: $Rain$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#temperatuur"
-                        - type: custom:button-card
-                          name: $Wind$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#rain'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:format-list-numbered
+                          content: $Stats$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#wind"
-                        - type: custom:button-card
-                          #name: $Stats$ # <- DONT CHANGE THIS LINE
-                          template: weather_dashboard_blueprint_heading
-                          tap_action:
-                            action: navigate
-                            navigation_path: "#stats"
+                            navigation_path: '#stats'
+                          hold_action:
+                            action: none
                   #regen row 1
                 - type: iframe
                   style: |
@@ -1020,41 +1040,40 @@ card:
                   padding: true
                   cards:
                     #heading
-                    - type: horizontal-stack
-                      cards:
-                        - type: custom:button-card
-                          name: $Radar$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                    - type: custom:mushroom-chips-card
+                      chips:
+                        - type: template
+                          icon: mdi:weather-cloudy-clock
+                          content: $Forecast$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#forecast"
-                        - type: custom:button-card
-                          name: $Rain$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#forecast'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:thermometer
+                          content: $Temp$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#neerslag"
-                        - type: custom:button-card
-                          name: $Temp$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#temperature'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:weather-pouring
+                          content: $Rain$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#temperatuur"
-                        - type: custom:button-card
-                          name: $Wind$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#rain'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:format-list-numbered
+                          content: $Stats$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#wind"
-                          styles:
-                            name:
-                              - color: var(--dwains-theme-accent)
-                        - type: custom:button-card
-                          #name: $Stats$ # <- DONT CHANGE THIS LINE
-                          template: weather_dashboard_blueprint_heading
-                          tap_action:
-                            action: navigate
-                            navigation_path: "#stats"
+                            navigation_path: '#stats'
+                          hold_action:
+                            action: none
                   #wind row 1
                 - type: iframe
                   style: |
@@ -1094,41 +1113,40 @@ card:
                   padding: true
                   cards:
                     #heading
-                    - type: horizontal-stack
-                      cards:
-                        - type: custom:button-card
-                          name: $Radar$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                    - type: custom:mushroom-chips-card
+                      chips:
+                        - type: template
+                          icon: mdi:weather-cloudy-clock
+                          content: $Forecast$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#forecast"
-                        - type: custom:button-card
-                          name: $Rain$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#forecast'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:thermometer
+                          content: $Temp$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#neerslag"
-                        - type: custom:button-card
-                          name: $Temp$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#temperature'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:weather-pouring
+                          content: $Rain$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#temperatuur"
-                          styles:
-                            name:
-                              - color: var(--dwains-theme-accent)
-                        - type: custom:button-card
-                          name: $Wind$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#rain'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:format-list-numbered
+                          content: $Stats$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#wind"
-                        - type: custom:button-card
-                          #name: $Stats$ # <- DONT CHANGE THIS LINE
-                          template: weather_dashboard_blueprint_heading
-                          tap_action:
-                            action: navigate
-                            navigation_path: "#stats"
+                            navigation_path: '#stats'
+                          hold_action:
+                            action: none
                   #iFRAME TEMP
                 - type: iframe
                   style: |
@@ -1168,41 +1186,40 @@ card:
                   padding: true
                   cards:
                     #heading
-                    - type: horizontal-stack
-                      cards:
-                        - type: custom:button-card
-                          name: $Radar$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                    - type: custom:mushroom-chips-card
+                      chips:
+                        - type: template
+                          icon: mdi:weather-cloudy-clock
+                          content: $Forecast$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#forecast"
-                        - type: custom:button-card
-                          name: $Rain$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#forecast'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:thermometer
+                          content: $Temp$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#neerslag"
-                        - type: custom:button-card
-                          name: $Temp$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#temperature'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:weather-pouring
+                          content: $Rain$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#temperatuur"
-                        - type: custom:button-card
-                          name: $Wind$ # <- translate the button name
-                          template: weather_dashboard_blueprint_heading
+                            navigation_path: '#rain'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:format-list-numbered
+                          content: $Stats$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: "#wind"
-                        - type: custom:button-card
-                          #name: $Stats$ # <- DONT CHANGE THIS LINE
-                          template: weather_dashboard_blueprint_heading
-                          tap_action:
-                            action: navigate
-                            navigation_path: "#stats"
-                          styles:
-                            name:
-                              - color: var(--dwains-theme-accent)
+                            navigation_path: '#stats'
+                          hold_action:
+                            action: none
                 #iFRAME PRESSURE
                 - type: iframe
                   style: |
@@ -1245,6 +1262,6 @@ button_card_templates:
         - width: 90px
       name:
         - font-weight: bold
-        - justify-self: start
+        - justify-self: center
         - font-size: 16px
         - padding-left: 1px

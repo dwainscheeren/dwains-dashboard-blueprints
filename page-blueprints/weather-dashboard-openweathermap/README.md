@@ -33,6 +33,7 @@ Make sure you have following installed this can be done manually or directly via
     - [multiple-entity-row](https://github.com/benct/lovelace-multiple-entity-row)
     - [stack-in-card](https://github.com/custom-cards/stack-in-card)
     - [entity-attributes-card](https://github.com/custom-cards/entity-attributes-card)
+    - [mushroom-chips-card](https://github.com/piitaya/lovelace-mushroom)
 - Integrations
     - OpenWeatherMap, untested with other weather integrations [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start?domain=openweathermap)
     

@@ -1,6 +1,7 @@
 <h1 align="center">Weather Dashboard - Dwains Dashboard Blueprint (more_page)</h1> 
 
 Note: this blueprint is a ported addon from Dwains Dashboard Blueprints. This port is done by Robert Wilson. The original creator of this addon is Leon van der Linden.
+Recent updates to include Mushroom Chips: [Nate Harris](https://github.com/nwithan8/configs/blob/main/home_assistant/panels/weather.yaml)
 
 
 <p align="center">Weather Dashboard in Home Assistant Dwains Dashboard.</p>
@@ -27,12 +28,12 @@ Make sure you have following installed this can be done manually or directly via
     - [Weather Card](https://github.com/bramkragten/weather-card)
     - [fontawesome icons](https://github.com/thomasloven/hass-fontawesome)
     - [Cupertino Icons](https://github.com/menahishayan/HomeAssistant-Cupertino-Icons)
-    - [Button Card](https://github.com/custom-cards/button-card)
     - [HA card Weather Conditions](https://github.com/r-renato/ha-card-weather-conditions)
     - [fold-entity-row](https://github.com/thomasloven/lovelace-fold-entity-row)
     - [multiple-entity-row](https://github.com/benct/lovelace-multiple-entity-row)
     - [stack-in-card](https://github.com/custom-cards/stack-in-card)
     - [entity-attributes-card](https://github.com/custom-cards/entity-attributes-card)
+    - [mushroom-chips-card](https://github.com/piitaya/lovelace-mushroom)
 - Integrations
     - OpenWeatherMap, untested with other weather integrations [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start?domain=openweathermap)
     

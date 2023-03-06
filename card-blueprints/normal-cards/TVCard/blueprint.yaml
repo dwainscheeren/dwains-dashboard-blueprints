@@ -1,0 +1,123 @@
+blueprint:
+  name: TV Card Blueprint
+  description: A TV Card to control samsung TVs.  Navigation is hardcoded and set up identically on each TV inorder for this to work.  SVG for youtubekids is not perfect and when new one available I will update
+  version: "1.2"
+  type: card
+  custom_cards:
+    - tv-card
+  input:
+    TV_entity:
+      name: TV to Control
+      description: This is the TV that we would like to control
+      type: entity-picker
+card:
+  type: custom:tv-card
+  custom_icons:
+    youtubekids: >-
+      M 22.0168 1.14933 L 22.0299 1.14933 C 23.272 1.17333 24.2442 1.34133 25.4365
+      2.25067 C 26.3693 2.96267 26.8724 4.13067 27.1083 4.77333 C 27.4751 5.76533
+      28.2403 12.152 28.2587 13.5013 C 28.2718 14.528 28.4237 16.4747 27.635
+      17.952 C 26.9668 19.2053 25.3578 20.6427 22.1295 20.6427 C 22.1216 20.6427
+      22.1138 20.6427 22.1059 20.6427 C 22.0561 20.6427 22.0089 20.6427 21.9592
+      20.6427 C 12.3291 20.6427 10.5577 22.7547 6.85503 22.7547 C 6.49079 22.7547
+      6.10821 22.7333 5.69942 22.6907 C 4.19006 22.5253 3.27553 21.384 2.77765
+      19.896 C 2.32694 18.5493 1.42551 12.04 1.24208 10.0773 C 1.04031 7.912
+      1.28401 6.68 2.54443 5.41333 C 3.31746 4.63467 4.30536 4.02933 5.56578 3.56
+      C 7.23761 2.93067 21.0341 1.14933 22.0168 1.14933 L 22.0168 1.14933 Z M
+      22.0168 0.016 C 21.3931 0.016 17.3158 0.522667 13.9013 0.994667 C 10.4843
+      1.46667 6.19992 2.112 5.17796 2.49333 C 3.76817 3.02133 2.64925 3.712
+      1.76092 4.60533 C 0.12578 6.248 -0.0733719 7.95733 0.131021 10.184 C
+      0.290867 11.9093 1.20015 18.7067 1.72162 20.2613 C 2.42389 22.36 3.79175
+      23.6213 5.57626 23.816 C 6.01649 23.864 6.43576 23.888 6.85241 23.888 C
+      8.4168 23.888 9.65626 23.5493 11.0923 23.1573 C 13.3511 22.5413 16.1602
+      21.776 21.9592 21.776 L 22.1033 21.776 L 22.1295 21.776 C 23.5497 21.776
+      27.0271 21.456 28.6098 18.4933 C 29.4562 16.9093 29.4064 14.9867 29.3776
+      13.8373 C 29.375 13.7093 29.3723 13.592 29.3697 13.4853 C 29.3514 12.1147
+      28.581 5.54933 28.1486 4.37333 C 27.6481 3.016 26.9589 1.99733 26.102 1.344
+      C 24.7054 0.277333 23.5183 0.0453333 22.0535 0.016 L 22.043 0.016 L 22.0168
+      0.016 Z M 19.095 11.7413 C 19.0583 11.7627 19.0217 11.7867 18.9876 11.808 C
+      18.7046 12 18.4242 12.1947 18.1438 12.3893 C 17.4939 12.84 13.7101 15.4587
+      13.7101 15.4587 C 13.3877 15.7067 12.7824 16.096 12.5518 15.9733 C 12.3212
+      15.848 12.24 15.0027 12.185 14.592 L 12.1719 14.5013 C 12.1037 14.008
+      11.5587 9.30933 11.4958 8.792 C 11.4775 8.64533 11.3884 8.10933 11.5534
+      7.98667 C 11.729 7.856 12.1745 8.00533 12.3239 8.05333 C 13.1965 8.33333
+      17.5673 9.88267 18.9273 10.5787 C 18.9666 10.6 19.0112 10.6187 19.0557
+      10.6373 C 19.2496 10.72 19.5169 10.8347 19.5222 11.1653 C 19.5248 11.48
+      19.2863 11.624 19.095 11.7413 L 19.095 11.7413 Z M 12.1064 8.68 C 13.6236
+      9.2 17.135 10.4667 18.7884 11.2133 C 18.5893 11.3493 18.3901 11.488 18.191
+      11.6267 C 17.4206 12.16 12.9423 15.2613 12.9423 15.2613 L 12.9187 15.2773 L
+      12.8977 15.2933 C 12.8977 15.2933 12.8951 15.2933 12.8951 15.296 C 12.8899
+      15.2587 12.8872 15.2267 12.882 15.1973 L 12.8584 15.016 L 12.8427 14.904 C
+      12.785 14.488 12.4234 11.4 12.2086 9.55467 C 12.1692 9.21867 12.1352 8.91733
+      12.1064 8.68 L 12.1064 8.68 Z M 11.2573 7.28533 C 11.1604 7.28533 11.0739
+      7.30133 11.0136 7.34667 C 10.8171 7.49067 10.9245 8.128 10.9455 8.30133 C
+      11.0189 8.912 11.6661 14.48 11.7447 15.064 L 11.7578 15.1707 C 11.8234
+      15.6587 11.9177 16.6613 12.1928 16.808 C 12.2295 16.8267 12.2741 16.8373
+      12.3239 16.8373 C 12.6514 16.8373 13.2358 16.456 13.5659 16.2 C 13.5659 16.2
+      18.0469 13.0987 18.8173 12.5653 C 19.1501 12.3333 19.4829 12.104 19.8183
+      11.8773 C 19.8602 11.8507 19.9021 11.824 19.9467 11.7973 C 20.1746 11.6587
+      20.455 11.4853 20.4499 11.1147 C 20.4419 10.7253 20.1275 10.5893 19.8969
+      10.4907 C 19.8445 10.4693 19.7947 10.4453 19.7475 10.4213 C 18.1386 9.59733
+      12.9606 7.76267 11.9282 7.42933 C 11.7971 7.38667 11.4958 7.28533 11.2573
+      7.28533 L 11.2573 7.28533 Z
+  custom_keys:
+    netflix:
+      icon: si:netflix
+      service: media_player.play_media
+      service_data:
+        media_content_type: send_key
+        media_content_id: KEY_HOME+KEY_RIGHT+KEY_RIGHT+KEY_RIGHT+KEY_ENTER
+        entity_id: $TV_entity$
+    prime:
+      icon: si:primevideo
+      service: media_player.play_media
+      service_data:
+        media_content_type: send_key
+        media_content_id: KEY_HOME+KEY_RIGHT+KEY_RIGHT+KEY_RIGHT+KEY_RIGHT+KEY_ENTER
+        entity_id: $TV_entity$
+    youtube:
+      icon: si:youtube
+      service: media_player.play_media
+      service_data:
+        media_content_type: send_key
+        media_content_id: KEY_HOME+KEY_RIGHT+KEY_RIGHT+KEY_ENTER
+        entity_id: $TV_entity$
+    youtubekids:
+      icon: youtubekids
+      service: media_player.play_media
+      service_data:
+        media_content_type: send_key
+        media_content_id: KEY_HOME+KEY_RIGHT+KEY_ENTER
+        entity_id: $TV_entity$
+    AppleTV:
+      icon: si:appletv
+      service: media_player.play_media
+      service_data:
+        media_content_type: send_key
+        media_content_id: ST_HDMI1
+        entity_id: $TV_entity$
+  entity: $TV_entity$
+  power_row:
+    - power
+  channel_row:
+    - channel_up
+    - info
+    - channel_down
+  apps_row:
+    - youtubekids
+    - netflix
+    - youtube
+    - prime
+    - AppleTV
+  volume_row: slider
+  navigation_row: buttons
+  source_row:
+    - return
+    - home
+    - source
+  media_control_row:
+    - rewind
+    - play
+    - pause
+    - fast_forward
+

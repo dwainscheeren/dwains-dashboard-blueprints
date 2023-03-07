@@ -852,6 +852,7 @@ card:
                         }
                       entities: 
                         - entity: $allergy_index_today$
+                          icon: mdi-flower-pollen-outline
                         - entity: $allergy_index_forecasted_average$
                         - type: custom:entity-attributes-card
                           entity: $allergy_index_forecasted_average$
@@ -1249,7 +1250,7 @@ card:
                   name: Windy.com
                   show_state: false
                   show_name: false
-                  
+#Is this still necessary?  
 button_card_templates:
   weather_dashboard_blueprint_heading:
     show_icon: false

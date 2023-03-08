@@ -1028,7 +1028,7 @@ card:
                     }
                   aspect_ratio: 80%
                   url: >-
-                    https://embed.windy.com/embed2.html?lat=$lat_home$&lon=$long_home$&detailLat=$lat_home$0&detailLon=$long_home$&width=750&height=800&zoom=9&level=surface&overlay=rain&product=ecmwf&menu=&message=true&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&radarRange=-1
+                    https://embed.windy.com/embed2.html?lat=$lat_home$&lon=$long_home$&detailLat=$lat_home$&detailLon=$long_home$&width=750&height=800&zoom=9&level=surface&overlay=rain&product=ecmwf&menu=&message=true&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&radarRange=-1
                   name: Windy.com
                   show_state: false
                   show_name: false
@@ -1250,7 +1250,7 @@ card:
                   name: Windy.com
                   show_state: false
                   show_name: false
-#Is this still necessary?  
+#Is this still necessary?
 button_card_templates:
   weather_dashboard_blueprint_heading:
     show_icon: false

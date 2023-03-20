@@ -221,6 +221,81 @@ card:
                             navigation_path: '#risks'
                           hold_action:
                             action: none
+                    - type: custom:weather-card
+                      style: |
+                        ha-card {
+                          border-radius: 10px;
+                          padding-bottom: 10px;
+                          background-color: var(--dwains-theme-primary)
+                        }
+                        :host {
+                          --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                        }
+                        .card-header {
+                          padding: 5px 16px;
+                          font-size: 15px;
+                          font-weight: 700 !important;
+                        }
+                        #states {
+                          padding-top: 0px !important;
+                          padding-bottom: 0px !important;
+                        }
+                        .secondary {
+                          color: darkgray !important;
+                          margin-left: 2px !important;
+                        }
+                      entity: $weather_entity$
+                      current: true
+                      details: true
+                      forecast: true
+                      hourly_forecast: false
+                      number_of_forecasts: '5'
+                    - type: entities
+                      title: $Stats$
+                      style: |
+                        ha-card {
+                          border-radius: 10px;
+                          padding-bottom: 10px;
+                          background-color: var(--dwains-theme-primary)
+                        }
+                        :host {
+                          --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                        }
+                        .card-header {
+                          padding: 5px 16px;
+                          font-size: 15px;
+                          font-weight: 700 !important;
+                        }
+                        #states {
+                          padding-top: 0px !important;
+                          padding-bottom: 0px !important;
+                        }
+                        .secondary {
+                          color: darkgray !important;
+                          margin-left: 2px !important;
+                        }
+                      entities:
+                        - entity: $weather_entity_feels_like$
+                          name: $Feels_Like$
+                        - entity: $wind_speed$
+                          name: $Wind_speed$
+                        - entity: $weather_entity_humidity$
+                          name: $Humditiy$
+                        - entity: $weather_entity_pressure$
+                          name: $Barometric_Pressure$
+                        - entity: $wind_bearing$
+                          name: $Wind_direction$
+                          icon: mdi:compass
+                        - type: custom:fold-entity-row
+                          head:
+                            type: section
+                            label: $Learn_More$
+                          entities:
+                            - entity: $allergy_index_today$
+                              name: Allergy Index
+                            - entity: $asthma_index_today$
+                              name: Asthma Index
+                            - entity: $current_ozone_level$
                 - type: vertical-stack
                   cards:
                     - type: custom:stack-in-card
@@ -351,81 +426,7 @@ card:
                                 none
                               {% endif %}
                       
-                    - type: custom:weather-card
-                      style: |
-                        ha-card {
-                          border-radius: 10px;
-                          padding-bottom: 10px;
-                          background-color: var(--dwains-theme-primary)
-                        }
-                        :host {
-                          --paper-item-icon-color: var(--dwains-theme-accent) !important;
-                        }
-                        .card-header {
-                          padding: 5px 16px;
-                          font-size: 15px;
-                          font-weight: 700 !important;
-                        }
-                        #states {
-                          padding-top: 0px !important;
-                          padding-bottom: 0px !important;
-                        }
-                        .secondary {
-                          color: darkgray !important;
-                          margin-left: 2px !important;
-                        }
-                      entity: $weather_entity$
-                      current: true
-                      details: true
-                      forecast: true
-                      hourly_forecast: false
-                      number_of_forecasts: '5'
-                    - type: entities
-                      title: $Stats$
-                      style: |
-                        ha-card {
-                          border-radius: 10px;
-                          padding-bottom: 10px;
-                          background-color: var(--dwains-theme-primary)
-                        }
-                        :host {
-                          --paper-item-icon-color: var(--dwains-theme-accent) !important;
-                        }
-                        .card-header {
-                          padding: 5px 16px;
-                          font-size: 15px;
-                          font-weight: 700 !important;
-                        }
-                        #states {
-                          padding-top: 0px !important;
-                          padding-bottom: 0px !important;
-                        }
-                        .secondary {
-                          color: darkgray !important;
-                          margin-left: 2px !important;
-                        }
-                      entities:
-                        - entity: $weather_entity_feels_like$
-                          name: $Feels_Like$
-                        - entity: $wind_speed$
-                          name: $Wind_speed$
-                        - entity: $weather_entity_humidity$
-                          name: $Humditiy$
-                        - entity: $weather_entity_pressure$
-                          name: $Barometric_Pressure$
-                        - entity: $wind_bearing$
-                          name: $Wind_direction$
-                          icon: mdi:compass
-                        - type: custom:fold-entity-row
-                          head:
-                            type: section
-                            label: $Learn_More$
-                          entities:
-                            - entity: $allergy_index_today$
-                              name: Allergy Index
-                            - entity: $asthma_index_today$
-                              name: Asthma Index
-                            - entity: $current_ozone_level$
+
                     - type: custom:ha-card-weather-conditions
                       style: |
                         ha-card {

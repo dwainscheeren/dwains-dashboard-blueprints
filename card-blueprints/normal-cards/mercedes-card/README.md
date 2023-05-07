@@ -36,7 +36,7 @@ It's the same like in the Mercedes Integration.
       value_template: '{{ states.binary_sensor.$license$_tire_warning.attributes.tirepressureFrontRight }}'
     car_rangeliquid:
       friendly_name: Car liquid range
-      value_template: '{{ states.sensor.$license$_odometer.attributes.rangeliquid }}'
+      value_template: '{{ states.sensor.$license$_range_liquid }}'
     car_service_days:
       friendly_name: Car service days
       value_template: '{{ states.sensor.$license$_odometer.attributes.serviceintervaldays }}'
@@ -207,18 +207,18 @@ It's the same like in the Mercedes Integration.
           {% endif %}
           
     my_car_lock_status:
-        friendly_name: Vergrendelstatus
+        friendly_name: Car Lock
         value_template: >-
           {% if is_state('sensor.$license$_lock', '0') %}
             Open
           {% elif is_state('sensor.$license$_lock', '1') %}
-            Intern vergrendeld
+            Internally closed
           {% elif is_state('sensor.$license$_lock', '2') %}
-            Extern vergrendeld
+            Externally closed
           {% elif is_state('sensor.$license$_lock', '3') %}
-            Selectief ontgrendeld
+            Selection opened
           {% else %}
-            Onbekend
+            Unknown
           {% endif %}
         icon_template: >
           {% if is_state('sensor.$license$_lock', '0') %}

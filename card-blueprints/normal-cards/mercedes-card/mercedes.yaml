@@ -32,7 +32,7 @@ card:
           top: 17%
           transform: translate(-50%, -50%) scale(1.9, 1.9)
         type: state-label
-      - entity: sensor.car_rangeliquid
+      - entity: sensor.$license$_range_liquid
         prefix: ''
         style:
           color: lightgrey
@@ -48,7 +48,7 @@ card:
           top: 17%
           transform: translate(-50%, -50%) scale(1.3, 1.3)
         type: state-label
-      - entity: sensor.car_service_days
+      - entity: sensor.$license$_service_days
         prefix: ' '
         style:
           color: lightgrey
@@ -56,7 +56,7 @@ card:
           top: 6%
           transform: translate(-50%, -50%) scale(0.7, 0.7)
         type: state-label
-      - entity: sensor.car_window_sunroof
+      - entity: sensor.$license$_window_sunroof
         style:
           --paper-item-icon-color: null
           left: 57%
@@ -95,91 +95,91 @@ card:
           top: 8%
           transform: translate(-50%, -50%) scale(1.0, 1.0)
         type: state-icon
-      - entity: sensor.car_tire_pressure_front_right
+      - entity: sensor.$license$_tire_pressure_front_right
         style:
           color: lightgrey
           left: 38%
           top: 32%
           transform: translate(-50%, -50%) scale(1.1, 1.1)
         type: state-label
-      - entity: sensor.car_tire_pressure_rear_right
+      - entity: sensor.$license$_tire_pressure_rear_right
         style:
           color: lightgrey
           left: 84%
           top: 32%
           transform: translate(-50%, -50%) scale(1.1, 1.1)
         type: state-label
-      - entity: sensor.car_tire_pressure_front_left
+      - entity: sensor.$license$_tire_pressure_front_left
         style:
           color: lightgrey
           left: 38%
           top: 90%
           transform: translate(-50%, -50%) scale(1.1, 1.1)
         type: state-label
-      - entity: sensor.car_tire_pressure_rear_left
+      - entity: sensor.$license$_tire_pressure_rear_left
         style:
           color: lightgrey
           left: 84%
           top: 90%
           transform: translate(-50%, -50%) scale(1.1, 1.1)
         type: state-label
-      - entity: sensor.car_lock_front_right
+      - entity: sensor.$license$_lock_front_right
         style:
           --paper-item-icon-color: white
           left: 61%
           top: 38%
           transform: translate(-50%, -50%) scale(1.1, 1.1)
         type: state-icon
-      - entity: sensor.car_lock_rear_right
+      - entity: sensor.$license$_lock_rear_right
         style:
           --paper-item-icon-color: white
           left: 68%
           top: 38%
           transform: translate(-50%, -50%) scale(1.1, 1.1)
         type: state-icon
-      - entity: sensor.car_lock_front_left
+      - entity: sensor.$license$_lock_front_left
         style:
           --paper-item-icon-color: white
           left: 61%
           top: 83%
           transform: translate(-50%, -50%) scale(1.1, 1.1)
         type: state-icon
-      - entity: sensor.car_lock_rear_left
+      - entity: sensor.$license$_lock_rear_left
         style:
           --paper-item-icon-color: white
           left: 68%
           top: 83%
           transform: translate(-50%, -50%) scale(1.1, 1.1)
         type: state-icon
-      - entity: sensor.car_lock_trunk
+      - entity: sensor.$license$_lock_trunk
         style:
           --paper-item-icon-color: white
           left: 95%
           top: 60%
           transform: translate(-50%, -50%) scale(1.1, 1.1)
         type: state-icon
-      - entity: sensor.car_window_front_right
+      - entity: sensor.$license$_window_front_right
         style:
           --paper-item-icon-color: lightgrey
           left: 56%
           top: 31%
           transform: translate(-50%, -50%) scale(1.1, 1.1)
         type: state-icon
-      - entity: sensor.car_window_rear_right
+      - entity: sensor.$license$_window_rear_right
         style:
           --paper-item-icon-color: lightgrey
           left: 73%
           top: 31%
           transform: translate(-50%, -50%) scale(1.1, 1.1)
         type: state-icon
-      - entity: sensor.car_window_front_left
+      - entity: sensor.$license$_window_front_left
         style:
           --paper-item-icon-color: lightgrey
           left: 56%
           top: 90%
           transform: translate(-50%, -50%) scale(1.1, 1.1)
         type: state-icon
-      - entity: sensor.car_window_rear_left
+      - entity: sensor.$license$_window_rear_left
         style:
           --paper-item-icon-color: lightgrey
           left: 73%
@@ -202,7 +202,7 @@ card:
           top: 18.5%
           transform: translate(-50%, -50%) scale(1.0, 1.0)
         type: state-icon
-      - entity: sensor.my_car_lock_status
+      - entity: sensor.$license$_lock_status
         prefix: ''
         style:
           color: lightgrey
@@ -222,9 +222,9 @@ card:
       type: picture-elements
     type: vertical-stack
   - entities:
-    - entity: binary_sensor.autowassen
+    - entity: binary_sensor.wash_car
       icon: fapro:car-wash-duotone
-      name: Auto wassen?
+      name: Wash the car?
       secondary_info: last-updated
     state_color: true
     type: entities

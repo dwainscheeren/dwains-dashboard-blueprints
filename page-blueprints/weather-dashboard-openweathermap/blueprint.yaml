@@ -1,17 +1,17 @@
 blueprint:
   name: Weather dashboard page Blueprint
   description: An weather dashboard page by Robert Wilson based on orginial page by Leon van der Linden with upgrades from Nate Harris
-  version: "3.2"
+  version: "4.1"
   type: page
   custom_cards:
     - weather-card
     - mini-graph-card
     - fold-entity-row
-    - multiple-entity-row
     - state-switch
     - stack-in-card
     - entity-attributes-card
     - mushroom-chips-card
+    - ha-card-weather-conditions
   input:
     weather_entity:
       name: Weather entity
@@ -214,6 +214,89 @@ card:
                             navigation_path: '#stats'
                           hold_action:
                             action: none
+                        - type: template
+                          icon: mdi:flower-pollen-outline
+                          content: $Risks$ # <- translate the button name
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#risks'
+                          hold_action:
+                            action: none
+                    - type: custom:weather-card
+                      style: |
+                        ha-card {
+                          border-radius: 10px;
+                          padding-bottom: 10px;
+                          background-color: var(--dwains-theme-primary)
+                        }
+                        :host {
+                          --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                        }
+                        .card-header {
+                          padding: 5px 16px;
+                          font-size: 15px;
+                          font-weight: 700 !important;
+                        }
+                        #states {
+                          padding-top: 0px !important;
+                          padding-bottom: 0px !important;
+                        }
+                        .secondary {
+                          color: darkgray !important;
+                          margin-left: 2px !important;
+                        }
+                      entity: $weather_entity$
+                      current: true
+                      details: true
+                      forecast: true
+                      hourly_forecast: false
+                      number_of_forecasts: '5'
+                    - type: entities
+                      title: $Stats$
+                      style: |
+                        ha-card {
+                          border-radius: 10px;
+                          padding-bottom: 10px;
+                          background-color: var(--dwains-theme-primary)
+                        }
+                        :host {
+                          --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                        }
+                        .card-header {
+                          padding: 5px 16px;
+                          font-size: 15px;
+                          font-weight: 700 !important;
+                        }
+                        #states {
+                          padding-top: 0px !important;
+                          padding-bottom: 0px !important;
+                        }
+                        .secondary {
+                          color: darkgray !important;
+                          margin-left: 2px !important;
+                        }
+                      entities:
+                        - entity: $weather_entity_feels_like$
+                          name: $Feels_Like$
+                        - entity: $wind_speed$
+                          name: $Wind_speed$
+                        - entity: $weather_entity_humidity$
+                          name: $Humditiy$
+                        - entity: $weather_entity_pressure$
+                          name: $Barometric_Pressure$
+                        - entity: $wind_bearing$
+                          name: $Wind_direction$
+                          icon: mdi:compass
+                        - type: custom:fold-entity-row
+                          head:
+                            type: section
+                            label: $Learn_More$
+                          entities:
+                            - entity: $allergy_index_today$
+                              name: Allergy Index
+                            - entity: $asthma_index_today$
+                              name: Asthma Index
+                            - entity: $current_ozone_level$
                 - type: vertical-stack
                   cards:
                     - type: custom:stack-in-card
@@ -344,82 +427,8 @@ card:
                                 none
                               {% endif %}
                       
-                    - type: "custom:weather-card"
-                      style: |
-                        ha-card {
-                          border-radius: 10px;
-                          padding-bottom: 10px;
-                          background-color: var(--dwains-theme-primary)
-                        }
-                        :host {
-                          --paper-item-icon-color: var(--dwains-theme-accent) !important;
-                        }
-                        .card-header {
-                          padding: 5px 16px;
-                          font-size: 15px;
-                          font-weight: 700 !important;
-                        }
-                        #states {
-                          padding-top: 0px !important;
-                          padding-bottom: 0px !important;
-                        }
-                        .secondary {
-                          color: darkgray !important;
-                          margin-left: 2px !important;
-                        }
-                      entity: $weather_entity$
-                      current: true
-                      details: true
-                      forecast: true
-                      hourly_forecast: false
-                      number_of_forecasts: '5'
-                    - type: entities
-                      title: $Stats$
-                      style: |
-                        ha-card {
-                          border-radius: 10px;
-                          padding-bottom: 10px;
-                          background-color: var(--dwains-theme-primary)
-                        }
-                        :host {
-                          --paper-item-icon-color: var(--dwains-theme-accent) !important;
-                        }
-                        .card-header {
-                          padding: 5px 16px;
-                          font-size: 15px;
-                          font-weight: 700 !important;
-                        }
-                        #states {
-                          padding-top: 0px !important;
-                          padding-bottom: 0px !important;
-                        }
-                        .secondary {
-                          color: darkgray !important;
-                          margin-left: 2px !important;
-                        }
-                      entities:
-                        - entity: $weather_entity_feels_like$
-                          name: $Feels_Like$
-                        - entity: $wind_speed$
-                          name: $Wind_speed$
-                        - entity: $weather_entity_humidity$
-                          name: $Humditiy$
-                        - entity: $weather_entity_pressure$
-                          name: $Barometric_Pressure$
-                        - entity: $wind_bearing$
-                          name: $Wind_direction$
-                          icon: mdi:compass
-                        - type: custom:fold-entity-row
-                          head:
-                            type: section
-                            label: $Learn_More$
-                          entities:
-                            - entity: $allergy_index_today$
-                              name: Allergy Index
-                            - entity: $asthma_index_today$
-                              name: Asthma Index
-                            - entity: $current_ozone_level$
-                    - type: "custom:ha-card-weather-conditions"
+
+                    - type: custom:ha-card-weather-conditions
                       style: |
                         ha-card {
                           border-radius: 10px;
@@ -497,10 +506,48 @@ card:
                             navigation_path: '#stats'
                           hold_action:
                             action: none
+                        - type: template
+                          icon: mdi:flower-pollen-outline
+                          content: $Risks$ # <- translate the button name
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#risks'
+                          hold_action:
+                            action: none
+                    - type: entities
+                      title: $Forecast$ $Rain$
+                      style: |
+                        ha-card {
+                          border-radius: 10px;
+                          padding-bottom: 10px;
+                          background-color: var(--dwains-theme-primary)
+                        }
+                        :host {
+                          --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                        }
+                        .card-header {
+                          padding: 5px 16px;
+                          font-size: 15px;
+                          font-weight: 700 !important;
+                        }
+                        #states {
+                          padding-top: 0px !important;
+                          padding-bottom: 0px !important;
+                        }
+                        .secondary {
+                          color: darkgray !important;
+                          margin-left: 2px !important;
+                        }
+                      entities:
+                        - entity: $forecast_rain_chance$
+                          name: $Forecast$ $Rain$ %
+                        - entity: $forecast_rain$
+                          name: $Forecast$ $Rain$
                 - type: vertical-stack
                   cards:
                     - type: custom:mini-graph-card
                       title: $Last_24_Hours$ # <- translate this line
+                      name: $Last_24_Hours$ # <- translate this line
                       icon: ios:cloud-rain
                       style: |
                         ha-card {
@@ -543,35 +590,6 @@ card:
                         graph: bar
                         extrema: true
                         average: true
-                    - type: entities
-                      title: $Forecast$ $Rain$
-                      style: |
-                        ha-card {
-                          border-radius: 10px;
-                          padding-bottom: 10px;
-                          background-color: var(--dwains-theme-primary)
-                        }
-                        :host {
-                          --paper-item-icon-color: var(--dwains-theme-accent) !important;
-                        }
-                        .card-header {
-                          padding: 5px 16px;
-                          font-size: 15px;
-                          font-weight: 700 !important;
-                        }
-                        #states {
-                          padding-top: 0px !important;
-                          padding-bottom: 0px !important;
-                        }
-                        .secondary {
-                          color: darkgray !important;
-                          margin-left: 2px !important;
-                        }
-                      entities:
-                        - entity: $forecast_rain_chance$
-                          name: $Forecast$ $Rain$ %
-                        - entity: $forecast_rain$
-                          name: $Forecast$ $Rain$
 
             #TEMP VIEW
             temperature:
@@ -613,6 +631,14 @@ card:
                           tap_action:
                             action: navigate
                             navigation_path: '#stats'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:flower-pollen-outline
+                          content: $Risks$ # <- translate the button name
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#risks'
                           hold_action:
                             action: none
                 #TEMP VIEW
@@ -786,6 +812,14 @@ card:
                             navigation_path: '#stats'
                           hold_action:
                             action: none
+                        - type: template
+                          icon: mdi:flower-pollen-outline
+                          content: $Risks$ # <- translate the button name
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#risks'
+                          hold_action:
+                            action: none
                 - type: vertical-stack
                   cards:
                     - type: entities
@@ -826,71 +860,8 @@ card:
                           name: $Wind_direction$
                           icon: mdi:compass
                             
-                    - type: entities
-                      title: $Risks$
-                      style: |
-                        ha-card {
-                          border-radius: 10px;
-                          padding-bottom: 10px;
-                          background-color: var(--dwains-theme-primary)
-                        }
-                        :host {
-                          --paper-item-icon-color: var(--dwains-theme-accent) !important;
-                        }
-                        .card-header {
-                          padding: 5px 16px;
-                          font-size: 15px;
-                          font-weight: 700 !important;
-                        }
-                        #states {
-                          padding-top: 0px !important;
-                          padding-bottom: 0px !important;
-                        }
-                        .secondary {
-                          color: darkgray !important;
-                          margin-left: 2px !important;
-                        }
-                      entities: 
-                        - entity: $allergy_index_today$
-                        - entity: $allergy_index_forecasted_average$
-                        - type: custom:entity-attributes-card
-                          entity: $allergy_index_forecasted_average$
-                          filter:
-                            include:
-                              - $allergy_index_forecasted_average$.season
-                              - $allergy_index_forecasted_average$.rating
-                              - $allergy_index_forecasted_average$.trend
-                              - $allergy_index_forecasted_average$.outlook
-                        - entity: $current_ozone_level$
-                        - entity: $asthma_index_today$
-                        - entity: $asthma_index_forecasted_average$
-                        - type: custom:entity-attributes-card
-                          entity: $asthma_index_forecasted_average$
-                          filter:
-                            include:
-                              - $asthma_index_forecasted_average$.rating
-                              - $asthma_index_forecasted_average$.trend
-                        - entity: $cold_flu_index_today$
-                        - entity: $cold_flu_forecasted_average$
-                        - type: custom:entity-attributes-card
-                          entity: $cold_flu_forecasted_average$
-                          filter:
-                            include:
-                              - $cold_flu_forecasted_average$.rating
-                              - $cold_flu_forecasted_average$.trend
-
-    #RADAR VIEWS
-
-    - type: vertical-stack
-      item_classes: col-xs-12 col-sm-8
-      cards:
-        #Start of rooms and devices
-        - type: custom:state-switch
-          entity: hash
-          default: forecast
-          states:
-            #RADAR VIEW
-            forecast:
+            #Health Risk VIEW
+            risks:
               type: vertical-stack
               cards:
                 - type: custom:dwains-flexbox-card
@@ -929,6 +900,107 @@ card:
                           tap_action:
                             action: navigate
                             navigation_path: '#stats'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:flower-pollen-outline
+                          content: $Risks$ # <- translate the button name
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#risks'
+                          hold_action:
+                            action: none
+                - type: vertical-stack
+                  cards:
+                    - type: entities
+                      title: $Risks$
+                      entities:
+                        - entity: $allergy_index_today$
+                          icon: mdi:flower-pollen-outline
+                        - entity: $allergy_index_forecasted_average$
+                        - type: custom:entity-attributes-card
+                          entity: $allergy_index_forecasted_average$
+                          filter:
+                            include:
+                              - $allergy_index_forecasted_average$.season
+                              - $allergy_index_forecasted_average$.rating
+                              - $allergy_index_forecasted_average$.trend
+                              - $allergy_index_forecasted_average$.outlook
+                        - entity: $current_ozone_level$
+                        - entity: $asthma_index_today$
+                        - entity: $asthma_index_forecasted_average$
+                        - type: custom:entity-attributes-card
+                          entity: $asthma_index_forecasted_average$
+                          filter:
+                            include:
+                              - $asthma_index_forecasted_average$.rating
+                              - $asthma_index_forecasted_average$.trend
+                        - entity: $cold_flu_index_today$
+                        - entity: $cold_flu_forecasted_average$
+                        - type: custom:entity-attributes-card
+                          entity: $cold_flu_forecasted_average$
+                          filter:
+                            include:
+                              - $cold_flu_forecasted_average$.rating
+                              - $cold_flu_forecasted_average$.trend
+    #RADAR VIEWS
+
+    - type: vertical-stack
+      item_classes: col-xs-12 col-sm-8
+      cards:
+        #Start of rooms and devices
+        - type: custom:state-switch
+          entity: hash
+          default: forecast
+          states:
+            #RADAR VIEW
+            forecast:
+              type: vertical-stack
+              cards:
+                - type: custom:dwains-flexbox-card
+                  padding: true
+                  cards:
+                    #heading
+                    - type: custom:mushroom-chips-card
+                      chips:
+                        - type: template
+                          icon: mdi:weather-cloudy-clock
+                          content: $Radar$ # <- translate the button name
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#forecast'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:thermometer
+                          content: $Temp$ # <- translate the button name
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#temperature'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:weather-pouring
+                          content: $Rain$ # <- translate the button name
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#rain'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:wind-power-outline
+                          content: $Wind$ # <- translate the button name
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#wind'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:flower-pollen-outline
+                          content: $Risks$ # <- translate the button name
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#risks'
                           hold_action:
                             action: none
                 - type: iframe
@@ -971,7 +1043,7 @@ card:
                       chips:
                         - type: template
                           icon: mdi:weather-cloudy-clock
-                          content: $Forecast$ # <- translate the button name
+                          content: $Radar$ # <- translate the button name
                           tap_action:
                             action: navigate
                             navigation_path: '#forecast'
@@ -994,11 +1066,19 @@ card:
                           hold_action:
                             action: none
                         - type: template
-                          icon: mdi:format-list-numbered
-                          content: $Stats$ # <- translate the button name
+                          icon: mdi:wind-power-outline
+                          content: $Wind$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: '#stats'
+                            navigation_path: '#wind'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:flower-pollen-outline
+                          content: $Risks$ # <- translate the button name
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#risks'
                           hold_action:
                             action: none
                   #regen row 1
@@ -1027,7 +1107,7 @@ card:
                     }
                   aspect_ratio: 80%
                   url: >-
-                    https://embed.windy.com/embed2.html?lat=$lat_home$&lon=$long_home$&detailLat=$lat_home$0&detailLon=$long_home$&width=750&height=800&zoom=9&level=surface&overlay=rain&product=ecmwf&menu=&message=true&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&radarRange=-1
+                    https://embed.windy.com/embed2.html?lat=$lat_home$&lon=$long_home$&detailLat=$lat_home$&detailLon=$long_home$&width=750&height=800&zoom=9&level=surface&overlay=rain&product=ecmwf&menu=&message=true&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&radarRange=-1
                   name: Windy.com
                   show_state: false
                   show_name: false
@@ -1043,7 +1123,7 @@ card:
                       chips:
                         - type: template
                           icon: mdi:weather-cloudy-clock
-                          content: $Forecast$ # <- translate the button name
+                          content: $Radar$ # <- translate the button name
                           tap_action:
                             action: navigate
                             navigation_path: '#forecast'
@@ -1066,11 +1146,19 @@ card:
                           hold_action:
                             action: none
                         - type: template
-                          icon: mdi:format-list-numbered
-                          content: $Stats$ # <- translate the button name
+                          icon: mdi:wind-power-outline
+                          content: $Wind$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: '#stats'
+                            navigation_path: '#wind'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:flower-pollen-outline
+                          content: $Risks$ # <- translate the button name
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#risks'
                           hold_action:
                             action: none
                   #wind row 1
@@ -1105,7 +1193,7 @@ card:
                   show_name: false
 
             #TEMP VIEW
-            temperatuur:
+            temperature:
               type: vertical-stack
               cards:
                 - type: custom:dwains-flexbox-card
@@ -1116,7 +1204,7 @@ card:
                       chips:
                         - type: template
                           icon: mdi:weather-cloudy-clock
-                          content: $Forecast$ # <- translate the button name
+                          content: $Radar$ # <- translate the button name
                           tap_action:
                             action: navigate
                             navigation_path: '#forecast'
@@ -1139,11 +1227,19 @@ card:
                           hold_action:
                             action: none
                         - type: template
-                          icon: mdi:format-list-numbered
-                          content: $Stats$ # <- translate the button name
+                          icon: mdi:wind-power-outline
+                          content: $Wind$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: '#stats'
+                            navigation_path: '#wind'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:flower-pollen-outline
+                          content: $Risks$ # <- translate the button name
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#risks'
                           hold_action:
                             action: none
                   #iFRAME TEMP
@@ -1189,7 +1285,7 @@ card:
                       chips:
                         - type: template
                           icon: mdi:weather-cloudy-clock
-                          content: $Forecast$ # <- translate the button name
+                          content: $Radar$ # <- translate the button name
                           tap_action:
                             action: navigate
                             navigation_path: '#forecast'
@@ -1212,11 +1308,19 @@ card:
                           hold_action:
                             action: none
                         - type: template
-                          icon: mdi:format-list-numbered
-                          content: $Stats$ # <- translate the button name
+                          icon: mdi:wind-power-outline
+                          content: $Wind$ # <- translate the button name
                           tap_action:
                             action: navigate
-                            navigation_path: '#stats'
+                            navigation_path: '#wind'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:flower-pollen-outline
+                          content: $Risks$ # <- translate the button name
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#risks'
                           hold_action:
                             action: none
                 #iFRAME PRESSURE
@@ -1249,7 +1353,87 @@ card:
                   name: Windy.com
                   show_state: false
                   show_name: false
-                  
+            #Risk VIEW
+            risks:
+              type: vertical-stack
+              cards:
+                - type: custom:dwains-flexbox-card
+                  padding: true
+                  cards:
+                    #heading
+                    - type: custom:mushroom-chips-card
+                      chips:
+                        - type: template
+                          icon: mdi:weather-cloudy-clock
+                          content: $Radar$ # <- translate the button name
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#forecast'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:thermometer
+                          content: $Temp$ # <- translate the button name
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#temperature'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:weather-pouring
+                          content: $Rain$ # <- translate the button name
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#rain'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:wind-power-outline
+                          content: $Wind$ # <- translate the button name
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#wind'
+                          hold_action:
+                            action: none
+                        - type: template
+                          icon: mdi:flower-pollen-outline
+                          content: $Risks$ # <- translate the button name
+                          tap_action:
+                            action: navigate
+                            navigation_path: '#risks'
+                          hold_action:
+                            action: none
+                #iFRAME PRESSURE
+                - type: iframe
+                  style: |
+                    ha-card {
+                      border-radius: 10px;
+                      padding-bottom: 10px;
+                      background-color: var(--dwains-theme-primary)
+                    }
+                      :host {
+                        --paper-item-icon-color: var(--dwains-theme-accent) !important;
+                    }
+                    .card-header {
+                      padding: 5px 16px;
+                      font-size: 15px;
+                      font-weight: 700 !important;
+                    }
+                    #states {
+                      padding-top: 0px !important;
+                      padding-bottom: 0px !important;
+                    }
+                    .secondary {
+                      color: darkgray !important;
+                      margin-left: 2px !important;
+                    }
+                  aspect_ratio: 80%
+                  url: >-
+                    https://embed.windy.com/embed2.html?lat=$lat_home$&lon=$long_home$&detailLat=$lat_home$&detailLon=$long_home$&width=750&height=800&zoom=9&llevel=surface&overlay=dustsm&product=geos5&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1
+                  name: Windy.com
+                  show_state: false
+                  show_name: false
+#Is this still necessary?
 button_card_templates:
   weather_dashboard_blueprint_heading:
     show_icon: false
